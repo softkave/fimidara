@@ -7,13 +7,13 @@
     "name": "softkave"
   },
   "license": "MIT",
-  "homepage": "https://github.com/softkave/fimidara-server-node/tree/main/sdk/js-sdk",
+  "homepage": "https://github.com/softkave/fimidara/tree/main/fimidara-server-node/sdk/js-sdk",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/softkave/fimidara-server-node.git"
+    "url": "git+https://github.com/softkave/fimidara.git"
   },
   "bugs": {
-    "url": "https://github.com/softkave/fimidara-server-node/issues"
+    "url": "https://github.com/softkave/fimidara/issues"
   },
   "keywords": [
     "file",
