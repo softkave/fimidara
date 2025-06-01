@@ -1,0 +1,9 @@
+.item {
+  position: relative;
+  top: 2px;
+  border-bottom: 1px solid var(--border-hex);
+}
+
+.active {
+  border-bottom: 1px solid var(--primary-hex);
+}

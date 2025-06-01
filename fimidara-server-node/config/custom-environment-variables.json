@@ -1,0 +1,37 @@
+{
+  "mongoDbURI": "MONGODB_URI",
+  "mongoDbDatabaseName": "MONGODB_DATABASE_NAME",
+  "jwtSecret": "JWT_SECRET",
+  "port": "PORT",
+  "awsConfigs": {
+    "s3Bucket": "S3_BUCKET",
+    "all": {
+      "accessKeyId": "AWS_ACCESS_KEY_ID",
+      "secretAccessKey": "AWS_SECRET_ACCESS_KEY",
+      "region": "AWS_REGION"
+    },
+    "ses": {
+      "accessKeyId": "SES_AWS_ACCESS_KEY_ID",
+      "secretAccessKey": "SES_AWS_SECRET_ACCESS_KEY",
+      "region": "SES_AWS_REGION"
+    },
+    "s3": {
+      "accessKeyId": "S3_AWS_ACCESS_KEY_ID",
+      "secretAccessKey": "S3_AWS_SECRET_ACCESS_KEY",
+      "region": "S3_AWS_REGION"
+    },
+    "secretsManager": {
+      "accessKeyId": "SECRETS_MANAGER_AWS_ACCESS_KEY_ID",
+      "secretAccessKey": "SECRETS_MANAGER_AWS_SECRET_ACCESS_KEY",
+      "region": "SECRETS_MANAGER_AWS_REGION"
+    }
+  },
+  "queueProvider": "QUEUE_PROVIDER",
+  "pubSubProvider": "PUB_SUB_PROVIDER",
+  "cacheProvider": "CACHE_PROVIDER",
+  "redlockProvider": "REDLOCK_PROVIDER",
+  "dsetProvider": "DSET_PROVIDER",
+  "redisURL": "REDIS_URL",
+  "redisDatabase": "REDIS_DATABASE",
+  "interServerAuthSecret": "INTER_SERVER_AUTH_SECRET"
+}

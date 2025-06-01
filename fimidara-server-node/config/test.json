@@ -1,0 +1,18 @@
+{
+  "emailProvider": "noop",
+  "secretsManagerProvider": "mem",
+  "FLAG_waitlistNewSignups": false,
+  "fileBackend": "fs",
+  "localFsDir": "./test-local-fs",
+  "localPartsFsDir": "./test-local-parts-fs",
+  "addFolderTimeoutMs": 10000,
+  "addFolderQueuePrefix": "test_addFolderQueue",
+  "addFolderPubSubChannelPrefix": "test_addFolderPubSub",
+  "addUsageRecordQueuePrefix": "test_addUsageRecordQueue",
+  "addUsageRecordPubSubChannelPrefix": "test_addUsageRecordPubSub",
+  "addInternalMultipartIdQueuePrefix": "test_addInternalMultipartIdQueue",
+  "addInternalMultipartIdPubSubChannelPrefix": "test_addInternalMultipartIdPubSub",
+  "prepareFileQueuePrefix": "test_prepareFileQueue",
+  "prepareFilePubSubChannelPrefix": "test_prepareFilePubSub",
+  "noJobSleepForMs": 1000
+}

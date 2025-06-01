@@ -1,0 +1,38 @@
+<h1 className="font-bold text-xl">Workspace</h1>
+<br></br>
+
+<h2 className="font-bold text-lg">What is a workspace?</h2>
+<br></br>
+
+The **workspace** is the root of all resources and operations in fimidara. You can think of it as a special (root) folder identified by the workspace **rootname**. In a workspace, you can invite others to collaborate and should they accept, you can assign them permissions or permission groups as needed. By default, three permission groups are automatically created when a workspace is created:
+
+- `Public` - for unauthenticated requests, basically everyone on the internet. It starts with 0 permissions. To allow public read on a file, you'll grant the `Public` permission group access and everyone on the internet can then access it.
+- `Collaborator` - intended for collaborators who've accepted your collaboration request. Comes with mostly read permissions, and access to create, read, and update folders and files, but not delete them.
+- `Admin` - for workspace admins. It grants access to all operations and resources and it's automatically assigned to the workspace creator.
+<br></br>
+
+<h2 className="font-bold text-lg">Files and folder</h2>
+<br></br>
+
+**fimidara** provides **folders** to make it easier to manage files and permissions. With folders, you can group similar files and folders together, and grant/deny access to the whole. Folders and files in **fimidara** are identified by their path which is a unique, slash-separated list of names with the workspace's rootname coming first, then the folder name(s), then lastly the file/folder name. Example, `/workspace-rootname/web/images/funny-image.png` or `/workspace-rootname/web/images/funny-image-folder`.
+<br></br>
+
+Another thing of note is that we currently have an individual file limit of `2gb` which we plan to in the future increase. If you need a larger file limit, please reach out to `abayomi@softkave.com`.
+<br></br>
+
+<h2 className="font-bold text-lg">Usage records</h2>
+<br></br>
+
+**fimidara** is going to be a paid service though we're not quite there yet. When we do, we'll be following the pay-for-what-you-use model. **fimidara** records usage in the following categories:
+
+- `storage` - for files stored, in bytes.
+- `bandwidth-in` - for data transferred into **fimidara**, in bytes.
+- `bandwidth-out` - for data transferred out of **fimidara**, in bytes.
+- `total` - for total usage, in USD,
+<br></br>
+
+**Each usage category is reported monthly. We will also provide thresholds in unit (bytes for Storage, etc.) and USD for managing cost. Lastly, we provide dropped usage to report on requests we were not able to serve due to threshold limit.
+<br></br>
+
+Pending implementation of our billing system, we offer a free tier of 30 USD per workspace per month. We will also post how much we charge per category soon. **Should you need an increase to the free tier, you can reach out to `abayomi@softkave.com`.** **Pending implementation** but within a reporting month, if you exceed your usage limit, you will be notified via email and operations on that category will be locked until the next reporting period or till threshold is increased.
+<br></br>

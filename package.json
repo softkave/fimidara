@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {},
+  "packageManager": "pnpm@10.6.1",
+  "engines": {
+    "node": ">=18"
+  },
+  "name": "fimidara"
+}

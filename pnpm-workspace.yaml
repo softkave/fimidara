@@ -1,0 +1,10 @@
+packages:
+  - fimidara-server-node
+  - fimidara-nextjs
+onlyBuiltDependencies:
+  - argon2
+  - core-js
+  - esbuild
+  - sharp
+  - sqlite3
+  - unrs-resolver
