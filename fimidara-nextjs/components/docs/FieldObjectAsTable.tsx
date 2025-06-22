@@ -1,39 +1,36 @@
-import { css } from "@emotion/css";
-import { Table, TableColumnType } from "antd";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { forEach, map } from "lodash-es";
+import {
+  isMfdocCustomType,
+  isMfdocFieldArray,
+  isMfdocFieldBinary,
+  isMfdocFieldBoolean,
+  isMfdocFieldDate,
+  isMfdocFieldNull,
+  isMfdocFieldNumber,
+  isMfdocFieldObject,
+  isMfdocFieldOrCombination,
+  isMfdocFieldString,
+  isMfdocFieldUndefined,
+  MfdocFieldObjectTypePrimitive,
+} from "mfdoc/mfdoc-core";
 import React from "react";
-import { htmlCharacterCodes } from "../utils/utils";
 import FieldDescription from "./FieldDescription";
 import { useContainedFieldObjects } from "./hooks";
-import { FieldObject } from "./types";
-import {
-  getTypeNameID,
-  isFieldArray,
-  isFieldBinary,
-  isFieldBoolean,
-  isFieldCustomType,
-  isFieldDate,
-  isFieldNull,
-  isFieldNumber,
-  isFieldObject,
-  isFieldOrCombination,
-  isFieldString,
-  isFieldUndefined,
-} from "./utils";
+import { getTypeNameID } from "./utils";
 
 export interface FieldObjectAsTableProps {
   propName?: string;
   isForJsSdk?: boolean;
-  fieldObject: FieldObject;
+  fieldObject: MfdocFieldObjectTypePrimitive<any>;
 }
-
-const classes = {
-  description: css({
-    "& .ant-typography": {
-      margin: 0,
-    },
-  }),
-};
 
 const FieldObjectAsTable: React.FC<FieldObjectAsTableProps> = (props) => {
   const { propName, fieldObject, isForJsSdk } = props;
@@ -70,19 +67,19 @@ export function renderTableFieldType(
   data: any,
   isForJsSdk: boolean
 ): React.ReactNode {
-  if (isFieldString(data)) {
+  if (isMfdocFieldString(data)) {
     return <code>string</code>;
-  } else if (isFieldNumber(data)) {
+  } else if (isMfdocFieldNumber(data)) {
     return <code>number</code>;
-  } else if (isFieldBoolean(data)) {
+  } else if (isMfdocFieldBoolean(data)) {
     return <code>boolean</code>;
-  } else if (isFieldNull(data)) {
+  } else if (isMfdocFieldNull(data)) {
     return <code>null</code>;
-  } else if (isFieldUndefined(data)) {
+  } else if (isMfdocFieldUndefined(data)) {
     return <code>undefined</code>;
-  } else if (isFieldDate(data)) {
+  } else if (isMfdocFieldDate(data)) {
     return <code>number</code>;
-  } else if (isFieldArray(data)) {
+  } else if (isMfdocFieldArray(data)) {
     if (!data.type) return "";
     const containedTypeNode = renderTableFieldType(data.type, isForJsSdk);
     return (
@@ -90,13 +87,13 @@ export function renderTableFieldType(
         <code>array</code> of {containedTypeNode}
       </span>
     );
-  } else if (isFieldObject(data)) {
+  } else if (isMfdocFieldObject(data)) {
     return data.name ? (
       <a href={`#${getTypeNameID(data.name)}`}>
         <code className="line-clamp-1">{data.name}</code>
       </a>
     ) : null;
-  } else if (isFieldOrCombination(data)) {
+  } else if (isMfdocFieldOrCombination(data)) {
     if (!data.types) return "";
     const nodes: React.ReactNode[] = [];
 
@@ -107,7 +104,7 @@ export function renderTableFieldType(
     });
 
     return nodes;
-  } else if (isFieldBinary(data)) {
+  } else if (isMfdocFieldBinary(data)) {
     return (
       <span>
         <code>string</code> |<br />
@@ -120,7 +117,7 @@ export function renderTableFieldType(
         </a>{" "}
       </span>
     );
-  } else if (isFieldCustomType(data)) {
+  } else if (isMfdocCustomType(data)) {
     if (data.descriptionLink) {
       return (
         <a href={data.descriptionLink}>
@@ -136,7 +133,7 @@ export function renderTableFieldType(
 }
 
 function renderFieldObjectAsTable(
-  nextObject: FieldObject,
+  nextObject: MfdocFieldObjectTypePrimitive<any>,
   isForJsSdk: boolean,
   index: number | string | undefined,
   propName?: string
@@ -153,47 +150,6 @@ function renderFieldObjectAsTable(
     }
   );
 
-  const columns: TableColumnType<FieldObjectTableColumns>[] = [
-    {
-      title: "Field",
-      dataIndex: "field",
-      key: "field",
-      width: "150px",
-      render: (value) => <code>{value}</code>,
-    },
-    {
-      title: "Type",
-      dataIndex: "type",
-      key: "type",
-      render: (value: any, data) => {
-        return renderTableFieldType(data.fieldbase, isForJsSdk);
-      },
-      width: "150px",
-    },
-    {
-      title: "Required",
-      dataIndex: "required",
-      key: "required",
-      render: (required, data) => {
-        return required ? "Yes" : "No";
-      },
-      width: "80px",
-    },
-    {
-      title: "Description",
-      key: "description",
-      dataIndex: "description",
-      render: (value: any, data) => {
-        return (
-          <FieldDescription
-            fieldbase={data.fieldbase}
-            className={classes.description}
-          />
-        );
-      },
-    },
-  ];
-
   return (
     <div key={nextObject.name || index}>
       <div className="space-x-2 flex mb-4">
@@ -203,27 +159,39 @@ function renderFieldObjectAsTable(
             {nextObject.name}
           </h5>
         )}
-        {nextObject.required ? (
-          <>
-            <span>{htmlCharacterCodes.doubleDash}</span>
-            <code>Required</code>
-          </>
-        ) : (
-          <>
-            <span>{htmlCharacterCodes.doubleDash}</span>
-            <code>Optional</code>
-          </>
-        )}
       </div>
       <FieldDescription fieldbase={nextObject} style={{ margin: 0 }} />
-      <Table
-        bordered
-        key={nextObject.name}
-        columns={columns}
-        dataSource={rows}
-        size="small"
-        pagination={false}
-      />
+      <div className="border rounded-md">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="w-[150px]">Field</TableHead>
+              <TableHead className="w-[150px]">Type</TableHead>
+              <TableHead className="w-[80px]">Required</TableHead>
+              <TableHead>Description</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {rows.map((row, rowIndex) => (
+              <TableRow key={rowIndex}>
+                <TableCell className="font-mono">
+                  <code>{row.field}</code>
+                </TableCell>
+                <TableCell>
+                  {renderTableFieldType(row.fieldbase, isForJsSdk)}
+                </TableCell>
+                <TableCell>{row.required ? "Yes" : "No"}</TableCell>
+                <TableCell>
+                  <FieldDescription
+                    fieldbase={row.fieldbase}
+                    className="[&_.ant-typography]:m-0"
+                  />
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
     </div>
   );
 }

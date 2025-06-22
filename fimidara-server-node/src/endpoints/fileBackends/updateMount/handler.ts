@@ -19,6 +19,7 @@ import {kReuseableErrors} from '../../../utils/reusableErrors.js';
 import {getActionAgentFromSessionAgent} from '../../../utils/sessionUtils.js';
 import {validate} from '../../../utils/validate.js';
 import {
+  addRootnameToPath,
   areFolderpathsEqual,
   ensureFolders,
   getFolderpathInfo,
@@ -122,7 +123,7 @@ const updateFileBackendMount: UpdateFileBackendMountEndpoint =
         data.mount.folderpath &&
         !areFolderpathsEqual(
           data.mount.folderpath,
-          mount.namepath,
+          addRootnameToPath(mount.namepath, workspace.rootname),
           /** isCaseSensitive */ true
         );
 

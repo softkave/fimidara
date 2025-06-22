@@ -96,6 +96,7 @@ export function TransferProgressList(props: ITransferProgressListProps) {
       }}
       getId={identity}
       space="sm"
+      emptyMessage="No files are being uploaded"
     />
   );
 }

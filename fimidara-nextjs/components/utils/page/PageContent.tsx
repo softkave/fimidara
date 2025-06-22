@@ -1,9 +1,8 @@
-import { cx } from "@emotion/css";
+import { cn } from "@/components/utils";
 import { defaultTo, isFunction } from "lodash-es";
 import React from "react";
 import { GridHelpers, GridPortions, GridTemplateLayout } from "../styling/grid";
 import { StyleableComponentProps } from "../styling/types";
-import { appClasses } from "../theme";
 import EmptyMessage from "./EmptyMessage";
 import InlineLoading from "./InlineLoading";
 import LoadingEllipsis from "./LoadingEllipsis";
@@ -45,7 +44,7 @@ function PageContent<T>(props: IPageContentProps<T>) {
       gridTemplateRows: GridHelpers.toStringGridTemplate(columnsLayout),
     };
     return (
-      <div style={rootStyle} className={cx(className, appClasses.grid)}>
+      <div style={rootStyle} className={cn(className, "grid")}>
         {isLoading && (
           <InlineLoading
             key="inline-loading"

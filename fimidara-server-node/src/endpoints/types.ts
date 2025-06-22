@@ -1,7 +1,7 @@
 import {Request, RequestHandler, Response} from 'express';
+import {MfdocHttpEndpointDefinitionTypePrimitive} from 'mfdoc';
 import {AnyObject} from 'softkave-js-utils';
 import {ValueOf} from 'type-fest';
-import {HttpEndpointDefinitionType} from '../mddoc/mddoc.js';
 import {FimidaraExternalError} from '../utils/OperationError.js';
 import {OrPromise} from '../utils/types.js';
 import RequestData from './RequestData.js';
@@ -134,21 +134,19 @@ export type ExportedHttpEndpoint_Cleanup = (
   res: Response
 ) => OrPromise<void>;
 
-export type ExportedHttpEndpointWithMddocDefinition<
+export type ExportedHttpEndpointWithMfdocDefinition<
   TEndpoint extends Endpoint = Endpoint,
-  TRequestHeaders extends
-    AnyObject = HttpEndpointRequestHeaders_AuthRequired_ContentType,
+  TRequestHeaders extends AnyObject = HttpEndpointRequestHeaders_AuthRequired_ContentType,
   TPathParameters extends AnyObject = AnyObject,
   TQuery extends AnyObject = AnyObject,
   TRequestBody extends AnyObject = InferEndpointParams<TEndpoint>,
-  TResponseHeaders extends
-    AnyObject = HttpEndpointResponseHeaders_ContentType_ContentLength,
+  TResponseHeaders extends AnyObject = HttpEndpointResponseHeaders_ContentType_ContentLength,
   TResponseBody extends AnyObject = InferEndpointResult<TEndpoint>,
-  TSdkParams extends AnyObject = TRequestBody,
+  TSdkParams extends AnyObject = TRequestBody
 > = {
   tag: string[];
   fn: TEndpoint;
-  mddocHttpDefinition: HttpEndpointDefinitionType<
+  mfdocHttpDefinition: MfdocHttpEndpointDefinitionTypePrimitive<
     TRequestHeaders,
     TPathParameters,
     TQuery,
@@ -169,8 +167,8 @@ export type ExportedHttpEndpointWithMddocDefinition<
   expressRouteMiddleware?: RequestHandler;
 };
 
-export type InferMddocHttpEndpointFromMddocEndpointDefinition<T> =
-  T extends ExportedHttpEndpointWithMddocDefinition<
+export type InferMfdocHttpEndpointFromMddocEndpointDefinition<T> =
+  T extends ExportedHttpEndpointWithMfdocDefinition<
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     any,
     infer T0,
@@ -181,7 +179,7 @@ export type InferMddocHttpEndpointFromMddocEndpointDefinition<T> =
     infer T5,
     infer T6
   >
-    ? HttpEndpointDefinitionType<T0, T1, T2, T3, T4, T5, T6>
+    ? MfdocHttpEndpointDefinitionTypePrimitive<T0, T1, T2, T3, T4, T5, T6>
     : never;
 
 export const kEndpointResultNoteCodeMap = {

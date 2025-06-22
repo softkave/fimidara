@@ -1,5 +1,5 @@
 import {kEndpointTag} from '../types.js';
-import {getJobStatusEndpointDefinition} from './endpoints.mddoc.js';
+import {getJobStatusEndpointDefinition} from './endpoints.mfdoc.js';
 import getJobStatus from './getJobStatus/handler.js';
 import {JobsExportedEndpoints} from './types.js';
 
@@ -8,7 +8,7 @@ export function getJobsHttpEndpoints() {
     getJobStatus: {
       tag: [kEndpointTag.public],
       fn: getJobStatus,
-      mddocHttpDefinition: getJobStatusEndpointDefinition,
+      mfdocHttpDefinition: getJobStatusEndpointDefinition,
     },
   };
   return jobsExportedEndpoints;

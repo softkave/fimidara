@@ -3,7 +3,7 @@ import IconButton from "@/components/utils/buttons/IconButton.tsx";
 import PageDrawer from "@/components/utils/page/PageDrawer";
 import { KeyValueKeys, useKvStore } from "@/lib/hooks/kvStore.ts";
 import { useToggle } from "ahooks";
-import { FimidaraEndpointProgressEvent } from "fimidara";
+import { MfdocEndpointProgressEvent as FimidaraEndpointProgressEvent } from "fimidara";
 import { map } from "lodash-es";
 import { FC, Fragment } from "react";
 import { FiDownload } from "react-icons/fi";

@@ -1,4 +1,4 @@
-import { Computer } from "lucide-react";
+import { NotebookTabsIcon } from "lucide-react";
 import AppAvatar from "../../utils/AppAvatar";
 
 export interface IWorkspaceAvatarProps {
@@ -10,10 +10,11 @@ export interface IWorkspaceAvatarProps {
 export default function WorkspaceAvatar(props: IWorkspaceAvatarProps) {
   return (
     <AppAvatar
-      fallback={<Computer className="h-4 w-4" />}
+      fallback={<NotebookTabsIcon className="h-4 w-4" />}
       // filepath={systemConstants.workspaceImagesFolder + "/" + props.workspaceId}
       alt={props.alt}
       className={props.className}
+      shape="square"
     />
   );
 }

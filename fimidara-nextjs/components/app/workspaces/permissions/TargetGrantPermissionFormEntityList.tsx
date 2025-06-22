@@ -1,10 +1,10 @@
+import { MaybeScroll } from "@/components/internal/maybe-scroll";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion.tsx";
-import { ScrollArea } from "@/components/ui/scroll-area.tsx";
 import PageError from "@/components/utils/page/PageError";
 import PageLoading from "@/components/utils/page/PageLoading";
 import {
@@ -187,7 +187,7 @@ function TargetGrantPermissionFormEntityList<T extends { resourceId: string }>(
                 <p>{info.name}</p>
               </AccordionTrigger>
               <AccordionContent>
-                <ScrollArea className="h-full max-h-80 overflow-y-auto">
+                <MaybeScroll className="h-full max-h-80 overflow-y-auto">
                   <EntityPermissionForm
                     actions={actions}
                     everyAction={everyAction}
@@ -196,7 +196,7 @@ function TargetGrantPermissionFormEntityList<T extends { resourceId: string }>(
                     permissionsMap={activePermissionsMap}
                     onChange={handleChange}
                   />
-                </ScrollArea>
+                </MaybeScroll>
               </AccordionContent>
             </AccordionItem>
           );

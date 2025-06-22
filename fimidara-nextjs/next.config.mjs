@@ -48,14 +48,9 @@ const baseNextConfig = {
     ];
   },
   transpilePackages: [
-    "antd",
     "@ant-design/icons",
-    "rc-util",
-    "rc-pagination",
-    "rc-picker",
     "@ant-design/icons-svg",
-    "rc-tree",
-    "rc-table",
+    "rc-upload",
     "geist",
   ],
 };

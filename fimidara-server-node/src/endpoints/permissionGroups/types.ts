@@ -1,4 +1,4 @@
-import {ExportedHttpEndpointWithMddocDefinition} from '../types.js';
+import {ExportedHttpEndpointWithMfdocDefinition} from '../types.js';
 import {AddPermissionGroupEndpoint} from './addPermissionGroup/types.js';
 import {AssignPermissionGroupsEndpoint} from './assignPermissionGroups/types.js';
 import {CountWorkspacePermissionGroupsEndpoint} from './countWorkspacePermissionGroups/types.js';
@@ -10,23 +10,23 @@ import {UpdatePermissionGroupEndpoint} from './udpatePermissionGroup/types.js';
 import {UnassignPermissionGroupsEndpoint} from './unassignPermissionGroups/types.js';
 
 export type AddPermissionGroupHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<AddPermissionGroupEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<AddPermissionGroupEndpoint>;
 export type DeletePermissionGroupHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<DeletePermissionGroupEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<DeletePermissionGroupEndpoint>;
 export type GetWorkspacePermissionGroupsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetWorkspacePermissionGroupsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetWorkspacePermissionGroupsEndpoint>;
 export type GetPermissionGroupHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetPermissionGroupEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetPermissionGroupEndpoint>;
 export type UpdatePermissionGroupHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<UpdatePermissionGroupEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<UpdatePermissionGroupEndpoint>;
 export type CountWorkspacePermissionGroupsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<CountWorkspacePermissionGroupsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<CountWorkspacePermissionGroupsEndpoint>;
 export type AssignPermissionGroupsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<AssignPermissionGroupsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<AssignPermissionGroupsEndpoint>;
 export type UnassignPermissionGroupsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<UnassignPermissionGroupsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<UnassignPermissionGroupsEndpoint>;
 export type GetEntityAssignedPermissionGroupsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetEntityAssignedPermissionGroupsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetEntityAssignedPermissionGroupsEndpoint>;
 
 export type PermissionGroupsExportedEndpoints = {
   addPermissionGroup: AddPermissionGroupHttpEndpoint;

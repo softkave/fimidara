@@ -1,0 +1,591 @@
+{
+    "__id": "HttpEndpointDefinition",
+    "path": "/v1/files/uploadFile/:filepathOrId",
+    "pathParamaters": {
+        "__id": "FieldObject",
+        "name": "FileMatcherPathParameters",
+        "description": "Path parameters for identifying a file by either filepath or file ID",
+        "fields": {
+            "filepathOrId": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "File path with workspace rootname (case insensitive) or file ID for flexible file identification",
+                    "example": "/workspace-rootname/folder/file.ext"
+                }
+            }
+        }
+    },
+    "method": "post",
+    "requestBody": {
+        "__id": "HttpEndpointMultipartFormdata",
+        "description": "Multipart form data for file upload",
+        "items": {
+            "__id": "FieldObject",
+            "name": "UploadFileEndpointParams",
+            "description": "File upload parameters including binary data",
+            "fields": {
+                "data": {
+                    "__id": "FieldObjectField",
+                    "required": true,
+                    "data": {
+                        "__id": "FieldBinary",
+                        "description": "File binary",
+                        "max": 1073741824
+                    }
+                }
+            }
+        }
+    },
+    "requestHeaders": {
+        "__id": "FieldObject",
+        "name": "UploadFileEndpointHTTPHeaders",
+        "description": "HTTP headers for file upload requests",
+        "fields": {
+            "Authorization": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Access token",
+                    "example": "Bearer <token>"
+                }
+            },
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP multipart form-data request content type",
+                    "example": "multipart/form-data",
+                    "valid": [
+                        "multipart/form-data"
+                    ]
+                }
+            },
+            "content-length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldNumber",
+                    "description": "File size in bytes",
+                    "max": 1073741824,
+                    "example": 1024000
+                }
+            },
+            "x-fimidara-file-description": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Resource description",
+                    "example": "This is a resource description."
+                }
+            },
+            "x-fimidara-file-mimetype": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "File MIME type",
+                    "example": "image/jpeg"
+                }
+            },
+            "x-fimidara-file-encoding": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "File encoding",
+                    "example": "utf8"
+                }
+            },
+            "x-fimidara-file-size": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldNumber",
+                    "description": "File size in bytes",
+                    "max": 1073741824,
+                    "example": 1024000
+                }
+            },
+            "x-fimidara-multipart-id": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Client generated unique identifier for multipart uploads. It is used to identify the same multipart upload across multiple requests",
+                    "example": "upload-123e4567-e89b-12d3-a456-426614174000"
+                }
+            },
+            "x-fimidara-multipart-part": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldNumber",
+                    "description": "Part number of the multipart upload. -1 can be used to signify the end of a multipart upload.",
+                    "example": 1
+                }
+            }
+        }
+    },
+    "responseHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointResponseHeaders_ContentType_ContentLength",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON response content type",
+                    "example": "application/json"
+                }
+            },
+            "Content-Length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP response content length in bytes",
+                    "example": "1024"
+                }
+            }
+        }
+    },
+    "responseBody": {
+        "__id": "FieldObject",
+        "name": "UploadFileEndpointResult",
+        "description": "Response containing the uploaded file information",
+        "fields": {
+            "file": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldObject",
+                    "name": "File",
+                    "description": "File resource with metadata and location information",
+                    "fields": {
+                        "resourceId": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "Resource ID",
+                                "example": "wrkspce_000000000000000000000"
+                            }
+                        },
+                        "createdBy": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldObject",
+                                "name": "Agent",
+                                "description": "Represents a user or system entity that performed an action (e.g., created or updated a resource)",
+                                "fields": {
+                                    "agentId": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent ID. Possible agents are users and agent tokens",
+                                            "example": "user000_000000000000000000000"
+                                        }
+                                    },
+                                    "agentType": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent type",
+                                            "example": "agentToken",
+                                            "valid": [
+                                                "user",
+                                                "agentToken"
+                                            ],
+                                            "enumName": "AgentType"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "createdAt": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldNumber",
+                                "description": "UTC timestamp in milliseconds",
+                                "example": 1672531200000
+                            }
+                        },
+                        "lastUpdatedBy": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldObject",
+                                "name": "Agent",
+                                "description": "Represents a user or system entity that performed an action (e.g., created or updated a resource)",
+                                "fields": {
+                                    "agentId": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent ID. Possible agents are users and agent tokens",
+                                            "example": "user000_000000000000000000000"
+                                        }
+                                    },
+                                    "agentType": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent type",
+                                            "example": "agentToken",
+                                            "valid": [
+                                                "user",
+                                                "agentToken"
+                                            ],
+                                            "enumName": "AgentType"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "lastUpdatedAt": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldNumber",
+                                "description": "UTC timestamp in milliseconds",
+                                "example": 1672531200000
+                            }
+                        },
+                        "isDeleted": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldBoolean"
+                            }
+                        },
+                        "deletedAt": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldNumber",
+                                "description": "UTC timestamp in milliseconds",
+                                "example": 1672531200000
+                            }
+                        },
+                        "deletedBy": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldObject",
+                                "name": "Agent",
+                                "description": "Represents a user or system entity that performed an action (e.g., created or updated a resource)",
+                                "fields": {
+                                    "agentId": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent ID. Possible agents are users and agent tokens",
+                                            "example": "user000_000000000000000000000"
+                                        }
+                                    },
+                                    "agentType": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent type",
+                                            "example": "agentToken",
+                                            "valid": [
+                                                "user",
+                                                "agentToken"
+                                            ],
+                                            "enumName": "AgentType"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "workspaceId": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "Workspace ID",
+                                "example": "wrkspce_000000000000000000000"
+                            }
+                        },
+                        "size": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldNumber",
+                                "description": "File size in bytes",
+                                "max": 1073741824,
+                                "example": 1024000
+                            }
+                        },
+                        "ext": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "File ext, case insensitive",
+                                "example": "jpg"
+                            }
+                        },
+                        "parentId": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldOrCombination",
+                                "description": "Folder ID or null if resource is not in a folder (e.g., at workspace root)",
+                                "types": [
+                                    {
+                                        "__id": "FieldString",
+                                        "description": "Folder ID",
+                                        "example": "folder0_000000000000000000000"
+                                    },
+                                    {
+                                        "__id": "FieldNull"
+                                    }
+                                ]
+                            }
+                        },
+                        "idPath": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldArray",
+                                "type": {
+                                    "__id": "FieldString",
+                                    "description": "Folder ID",
+                                    "example": "folder0_000000000000000000000"
+                                },
+                                "description": "List of parent folder IDs"
+                            }
+                        },
+                        "namepath": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldArray",
+                                "description": "Folder path as a list of folder names. It should not include the workspace rootname. e.g [\"my-folder\", \"my-sub-folder\"].",
+                                "type": {
+                                    "__id": "FieldString"
+                                },
+                                "example": [
+                                    "my-folder",
+                                    "my-sub-folder"
+                                ]
+                            }
+                        },
+                        "mimetype": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "File MIME type",
+                                "example": "image/jpeg"
+                            }
+                        },
+                        "encoding": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "File encoding",
+                                "example": "utf8"
+                            }
+                        },
+                        "name": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "File name, case insensitive",
+                                "example": "my-file"
+                            }
+                        },
+                        "description": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "Resource description",
+                                "example": "This is a resource description."
+                            }
+                        },
+                        "version": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldNumber",
+                                "description": "File version, representing how many times a file has been uploaded",
+                                "example": 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "sdkParamsBody": {
+        "__id": "SdkParamsBody",
+        "def": {
+            "__id": "FieldObject",
+            "name": "UploadFileEndpointParams",
+            "description": "Complete parameters for file upload including metadata and binary data",
+            "fields": {
+                "filepath": {
+                    "__id": "FieldObjectField",
+                    "required": false,
+                    "data": {
+                        "__id": "FieldString",
+                        "description": "File path, with each folder name separated by a forward slash. The first item must be the workspace rootname, and must include the file extension. e.g /workspace-rootname/my-folder/my-file.txt.",
+                        "example": "/workspace-rootname/my-folder/my-file.txt"
+                    }
+                },
+                "fileId": {
+                    "__id": "FieldObjectField",
+                    "required": false,
+                    "data": {
+                        "__id": "FieldString",
+                        "description": "File ID",
+                        "example": "file000_000000000000000000000"
+                    }
+                },
+                "data": {
+                    "__id": "FieldObjectField",
+                    "required": true,
+                    "data": {
+                        "__id": "FieldBinary",
+                        "description": "File binary",
+                        "max": 1073741824
+                    }
+                },
+                "description": {
+                    "__id": "FieldObjectField",
+                    "required": false,
+                    "data": {
+                        "__id": "FieldString",
+                        "description": "Resource description",
+                        "example": "This is a resource description."
+                    }
+                },
+                "size": {
+                    "__id": "FieldObjectField",
+                    "required": true,
+                    "data": {
+                        "__id": "FieldNumber",
+                        "description": "File size in bytes",
+                        "max": 1073741824,
+                        "example": 1024000
+                    }
+                },
+                "encoding": {
+                    "__id": "FieldObjectField",
+                    "required": false,
+                    "data": {
+                        "__id": "FieldString",
+                        "description": "File encoding",
+                        "example": "utf8"
+                    }
+                },
+                "mimetype": {
+                    "__id": "FieldObjectField",
+                    "required": false,
+                    "data": {
+                        "__id": "FieldString",
+                        "description": "File MIME type",
+                        "example": "image/jpeg"
+                    }
+                },
+                "clientMultipartId": {
+                    "__id": "FieldObjectField",
+                    "required": false,
+                    "data": {
+                        "__id": "FieldString",
+                        "description": "Client generated unique identifier for multipart uploads. It is used to identify the same multipart upload across multiple requests",
+                        "example": "upload-123e4567-e89b-12d3-a456-426614174000"
+                    }
+                },
+                "part": {
+                    "__id": "FieldObjectField",
+                    "required": false,
+                    "data": {
+                        "__id": "FieldNumber",
+                        "description": "Part number of the multipart upload. -1 can be used to signify the end of a multipart upload.",
+                        "example": 1
+                    }
+                }
+            }
+        },
+        "serializeAs": "formdata"
+    },
+    "name": "fimidara/files/uploadFile",
+    "description": "Upload a file or file part for multipart uploads",
+    "tags": [
+        "public"
+    ],
+    "errorResponseHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointResponseHeaders_ContentType_ContentLength",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON response content type",
+                    "example": "application/json"
+                }
+            },
+            "Content-Length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP response content length in bytes"
+                }
+            }
+        }
+    },
+    "errorResponseBody": {
+        "__id": "FieldObject",
+        "name": "EndpointErrorResult",
+        "description": "Endpoint error result",
+        "fields": {
+            "errors": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldArray",
+                    "type": {
+                        "__id": "FieldObject",
+                        "name": "ExternalError",
+                        "fields": {
+                            "message": {
+                                "__id": "FieldObjectField",
+                                "required": true,
+                                "data": {
+                                    "__id": "FieldString",
+                                    "description": "Error message",
+                                    "example": "Workspace name is invalid"
+                                }
+                            }
+                        }
+                    },
+                    "description": "Endpoint call response errors"
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,5 @@
-import { cx } from "@emotion/css";
+import { cn } from "@/components/utils";
 import React from "react";
-import { appClasses } from "../theme";
 import PageError from "./PageError";
 
 export interface IErrorBoundaryProps {
@@ -26,7 +25,7 @@ class ErrorBoundary extends React.Component<IErrorBoundaryProps> {
 
     if (error) {
       return (
-        <div className={cx(appClasses.main, className)}>
+        <div className={cn("max-w-[1200px] mx-auto", className)}>
           <PageError message="An error occurred, please reload the page to continue" />
         </div>
       );

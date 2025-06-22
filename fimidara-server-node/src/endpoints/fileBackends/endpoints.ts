@@ -19,7 +19,7 @@ import {
   resolveFileBackendMountsEndpointDefinition,
   updateFileBackendConfigEndpointDefinition,
   updateFileBackendMountEndpointDefinition,
-} from './endpoints.mddoc.js';
+} from './endpoints.mfdoc.js';
 import getFileBackendConfig from './getConfig/handler.js';
 import getFileBackendConfigs from './getConfigs/handler.js';
 import getFileBackendMount from './getMount/handler.js';
@@ -34,68 +34,68 @@ export function getFileBackendsHttpEndpoints() {
     addMount: {
       tag: [kEndpointTag.public],
       fn: addFileBackendMountEndpoint,
-      mddocHttpDefinition: addFileBackendMountEndpointDefinition,
+      mfdocHttpDefinition: addFileBackendMountEndpointDefinition,
     },
     deleteMount: {
       tag: [kEndpointTag.public],
       fn: deleteFileBackendMount,
-      mddocHttpDefinition: deleteFileBackendMountEndpointDefinition,
+      mfdocHttpDefinition: deleteFileBackendMountEndpointDefinition,
     },
     getMount: {
       tag: [kEndpointTag.public],
       fn: getFileBackendMount,
-      mddocHttpDefinition: getFileBackendMountEndpointDefinition,
+      mfdocHttpDefinition: getFileBackendMountEndpointDefinition,
     },
     getMounts: {
       tag: [kEndpointTag.public],
       fn: getFileBackendMounts,
-      mddocHttpDefinition: getFileBackendMountsEndpointDefinition,
+      mfdocHttpDefinition: getFileBackendMountsEndpointDefinition,
     },
     countMounts: {
       tag: [kEndpointTag.public],
       fn: countFileBackendMounts,
-      mddocHttpDefinition: countFileBackendMountsEndpointDefinition,
+      mfdocHttpDefinition: countFileBackendMountsEndpointDefinition,
     },
     updateMount: {
       tag: [kEndpointTag.public],
       fn: updateFileBackendMount,
-      mddocHttpDefinition: updateFileBackendMountEndpointDefinition,
+      mfdocHttpDefinition: updateFileBackendMountEndpointDefinition,
     },
     resolveMounts: {
       tag: [kEndpointTag.public],
       fn: resolveFileBackendMounts,
-      mddocHttpDefinition: resolveFileBackendMountsEndpointDefinition,
+      mfdocHttpDefinition: resolveFileBackendMountsEndpointDefinition,
     },
 
     addConfig: {
       tag: [kEndpointTag.public],
       fn: addFileBackendConfig,
-      mddocHttpDefinition: addFileBackendConfigEndpointDefinition,
+      mfdocHttpDefinition: addFileBackendConfigEndpointDefinition,
     },
     deleteConfig: {
       tag: [kEndpointTag.public],
       fn: deleteFileBackendConfig,
-      mddocHttpDefinition: deleteFileBackendConfigEndpointDefinition,
+      mfdocHttpDefinition: deleteFileBackendConfigEndpointDefinition,
     },
     getConfig: {
       tag: [kEndpointTag.public],
       fn: getFileBackendConfig,
-      mddocHttpDefinition: getFileBackendConfigEndpointDefinition,
+      mfdocHttpDefinition: getFileBackendConfigEndpointDefinition,
     },
     getConfigs: {
       tag: [kEndpointTag.public],
       fn: getFileBackendConfigs,
-      mddocHttpDefinition: getFileBackendConfigsEndpointDefinition,
+      mfdocHttpDefinition: getFileBackendConfigsEndpointDefinition,
     },
     countConfigs: {
       tag: [kEndpointTag.public],
       fn: countFileBackendConfigs,
-      mddocHttpDefinition: countFileBackendConfigsEndpointDefinition,
+      mfdocHttpDefinition: countFileBackendConfigsEndpointDefinition,
     },
     updateConfig: {
       tag: [kEndpointTag.public],
       fn: updateFileBackendConfig,
-      mddocHttpDefinition: updateFileBackendConfigEndpointDefinition,
+      mfdocHttpDefinition: updateFileBackendConfigEndpointDefinition,
     },
   };
   return fileBackendMountsExportedEndpoints;

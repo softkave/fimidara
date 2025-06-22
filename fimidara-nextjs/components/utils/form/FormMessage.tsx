@@ -1,5 +1,4 @@
 import { cn } from "@/components/utils.ts";
-import { css } from "@emotion/css";
 import { compact, isObject, isString } from "lodash-es";
 import React from "react";
 import { AppError } from "../../../lib/utils/errors";
@@ -63,13 +62,7 @@ const FormMessage: React.FC<IFormMessageProps> = (props) => {
   return (
     <div
       style={style}
-      className={cn(
-        className,
-        css({
-          color: getFontColor(type as FormMessageType),
-          lineHeight: "24px",
-        })
-      )}
+      className={cn(className, getTailwindClasses(type as FormMessageType))}
     >
       {children}
       {renderedMessages.length === 1 && renderedMessages[0]}
@@ -89,14 +82,16 @@ FormMessage.defaultProps = {
   visible: true,
 };
 
-function getFontColor(type: FormMessageType) {
+function getTailwindClasses(type: FormMessageType) {
+  const baseClasses = "leading-6"; // equivalent to lineHeight: "24px"
+
   switch (type) {
     case "error":
-      return "red";
+      return `${baseClasses} text-red-500`;
     case "message":
-      return "green";
+      return `${baseClasses} text-green-500`;
     default:
-      return "black";
+      return `${baseClasses} text-black`;
   }
 }
 

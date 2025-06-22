@@ -1,4 +1,4 @@
-import {ExportedHttpEndpointWithMddocDefinition} from '../types.js';
+import {ExportedHttpEndpointWithMfdocDefinition} from '../types.js';
 import {AddAgentTokenEndpoint} from './addToken/types.js';
 import {CountWorkspaceAgentTokensEndpoint} from './countWorkspaceTokens/types.js';
 import {DeleteAgentTokenEndpoint} from './deleteToken/types.js';
@@ -9,21 +9,21 @@ import {RefreshAgentTokenEndpoint} from './refreshToken/types.js';
 import {UpdateAgentTokenEndpoint} from './updateToken/types.js';
 
 export type AddAgentTokenHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<AddAgentTokenEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<AddAgentTokenEndpoint>;
 export type DeleteAgentTokenHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<DeleteAgentTokenEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<DeleteAgentTokenEndpoint>;
 export type GetWorkspaceAgentTokensHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetWorkspaceAgentTokensEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetWorkspaceAgentTokensEndpoint>;
 export type CountWorkspaceAgentTokensHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<CountWorkspaceAgentTokensEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<CountWorkspaceAgentTokensEndpoint>;
 export type GetAgentTokenHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetAgentTokenEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetAgentTokenEndpoint>;
 export type UpdateAgentTokenHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<UpdateAgentTokenEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<UpdateAgentTokenEndpoint>;
 export type RefreshAgentTokenHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<RefreshAgentTokenEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<RefreshAgentTokenEndpoint>;
 export type EncodeAgentTokenHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<EncodeAgentTokenEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<EncodeAgentTokenEndpoint>;
 
 export type AgentTokensExportedEndpoints = {
   addToken: AddAgentTokenHttpEndpoint;

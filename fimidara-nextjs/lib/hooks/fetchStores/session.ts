@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  LoginResult,
-  User,
-} from "@/lib/api-internal/endpoints/privateTypes.ts";
-import { RefreshUserToken } from "@/lib/api-internal/RefreshUserToken.ts";
+import { LoginResult, RefreshUserToken, User } from "fimidara-private-js-sdk";
 import { useUsersStore } from "../resourceListStores.ts";
 import { makeSingleFetchStore } from "./makeSingleFetchStore.ts";
 

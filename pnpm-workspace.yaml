@@ -1,10 +1,13 @@
 packages:
   - fimidara-server-node
   - fimidara-nextjs
+  - fimidara-js-sdk
+  - fimidara-private-js-sdk
 onlyBuiltDependencies:
   - argon2
   - core-js
   - esbuild
+  - msw
   - sharp
   - sqlite3
   - unrs-resolver

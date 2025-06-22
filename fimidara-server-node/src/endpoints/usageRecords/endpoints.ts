@@ -4,7 +4,7 @@ import {
   countWorkspaceSummedUsageEndpointDefinition,
   getUsageCostsEndpointDefinition,
   getWorkspaceSummedUsageEndpointDefinition,
-} from './endpoints.mddoc.js';
+} from './endpoints.mfdoc.js';
 import getUsageCosts from './getUsageCosts/handler.js';
 import getWorkspaceSummedUsage from './getWorkspaceSummedUsage/handler.js';
 import {UsageRecordsExportedEndpoints} from './types.js';
@@ -14,17 +14,17 @@ export function getUsageRecordsHttpEndpoints() {
     getUsageCosts: {
       tag: [kEndpointTag.public],
       fn: getUsageCosts,
-      mddocHttpDefinition: getUsageCostsEndpointDefinition,
+      mfdocHttpDefinition: getUsageCostsEndpointDefinition,
     },
     getWorkspaceSummedUsage: {
       tag: [kEndpointTag.public],
       fn: getWorkspaceSummedUsage,
-      mddocHttpDefinition: getWorkspaceSummedUsageEndpointDefinition,
+      mfdocHttpDefinition: getWorkspaceSummedUsageEndpointDefinition,
     },
     countWorkspaceSummedUsage: {
       tag: [kEndpointTag.public],
       fn: countWorkspaceSummedUsage,
-      mddocHttpDefinition: countWorkspaceSummedUsageEndpointDefinition,
+      mfdocHttpDefinition: countWorkspaceSummedUsageEndpointDefinition,
     },
   };
   return usageRecordsExportedEndpoints;

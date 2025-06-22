@@ -1,14 +1,17 @@
 import { flatten, map } from "lodash-es";
+import { MfdocFieldObjectTypePrimitive } from "mfdoc/mfdoc-core";
 import React from "react";
-import { FieldObject } from "./types";
 import { extractContainedFieldObjects } from "./utils";
 
-export function useContainedFieldObjects(props: { fieldObject: FieldObject }) {
+export function useContainedFieldObjects(props: {
+  fieldObject: MfdocFieldObjectTypePrimitive<any>;
+}) {
   const { fieldObject } = props;
   const containedObjects = React.useMemo(() => {
-    const objectsMap: Map<string | undefined, FieldObject> = new Map([
-      [fieldObject.name, fieldObject],
-    ]);
+    const objectsMap: Map<
+      string | undefined,
+      MfdocFieldObjectTypePrimitive<any>
+    > = new Map([[fieldObject.name, fieldObject]]);
 
     objectsMap.forEach((nextObject) => {
       const nextContainedObjects = flatten(

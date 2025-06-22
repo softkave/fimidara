@@ -12,7 +12,7 @@ import {
   getWorkspaceAgentTokensEndpointDefinition,
   refreshAgentTokenEndpointDefinition,
   updateAgentTokenEndpointDefinition,
-} from './endpoints.mddoc.js';
+} from './endpoints.mfdoc.js';
 import getAgentToken from './getToken/handler.js';
 import getWorkspaceAgentTokens from './getWorkspaceTokens/handler.js';
 import refreshAgentToken from './refreshToken/handler.js';
@@ -24,42 +24,42 @@ export function getAgentTokenHttpEndpoints() {
     addToken: {
       tag: [kEndpointTag.public],
       fn: addAgentTokenEndpoint,
-      mddocHttpDefinition: addAgentTokenEndpointDefinition,
+      mfdocHttpDefinition: addAgentTokenEndpointDefinition,
     },
     deleteToken: {
       tag: [kEndpointTag.public],
       fn: deleteAgentToken,
-      mddocHttpDefinition: deleteAgentTokenEndpointDefinition,
+      mfdocHttpDefinition: deleteAgentTokenEndpointDefinition,
     },
     getToken: {
       tag: [kEndpointTag.public],
       fn: getAgentToken,
-      mddocHttpDefinition: getAgentTokenEndpointDefinition,
+      mfdocHttpDefinition: getAgentTokenEndpointDefinition,
     },
     getWorkspaceTokens: {
       tag: [kEndpointTag.public],
       fn: getWorkspaceAgentTokens,
-      mddocHttpDefinition: getWorkspaceAgentTokensEndpointDefinition,
+      mfdocHttpDefinition: getWorkspaceAgentTokensEndpointDefinition,
     },
     countWorkspaceTokens: {
       tag: [kEndpointTag.public],
       fn: countWorkspaceAgentTokens,
-      mddocHttpDefinition: countWorkspaceAgentTokensEndpointDefinition,
+      mfdocHttpDefinition: countWorkspaceAgentTokensEndpointDefinition,
     },
     updateToken: {
       tag: [kEndpointTag.public],
       fn: updateAgentToken,
-      mddocHttpDefinition: updateAgentTokenEndpointDefinition,
+      mfdocHttpDefinition: updateAgentTokenEndpointDefinition,
     },
     refreshToken: {
       tag: [kEndpointTag.public],
       fn: refreshAgentToken,
-      mddocHttpDefinition: refreshAgentTokenEndpointDefinition,
+      mfdocHttpDefinition: refreshAgentTokenEndpointDefinition,
     },
     encodeToken: {
       tag: [kEndpointTag.public],
       fn: encodeAgentToken,
-      mddocHttpDefinition: encodeAgentTokenEndpointDefinition,
+      mfdocHttpDefinition: encodeAgentTokenEndpointDefinition,
     },
   };
   return agentTokensExportedEndpoints;

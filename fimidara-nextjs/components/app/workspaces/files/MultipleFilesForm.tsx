@@ -1,3 +1,7 @@
+import {
+  MultipleFilesUpload,
+  type UploadFile,
+} from "@/components/internal/upload";
 import { Button } from "@/components/ui/button.tsx";
 import {
   FormControl,
@@ -5,10 +9,9 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form.tsx";
+import { cn } from "@/components/utils.ts";
 import { StyleableComponentProps } from "@/components/utils/styling/types";
 import { indexArray } from "@/lib/utils/indexArray";
-import { cx } from "@emotion/css";
-import { Upload } from "antd";
 import { compact } from "lodash-es";
 import { FileUp } from "lucide-react";
 import { UseFormReturn } from "react-hook-form";
@@ -35,17 +38,15 @@ export function MultipleFilesForm(props: MultipleFilesFormProps) {
       render={({ field }) => (
         <FormItem>
           <FormControl>
-            <Upload
-              multiple
-              showUploadList={false}
+            <MultipleFilesUpload
               disabled={disabled}
-              fileList={compact(field.value?.map((item) => item.file))}
-              beforeUpload={(file, fileList) => {
+              value={compact(field.value?.map((item) => item.file))}
+              onFileSelect={(uploadFiles: UploadFile[]) => {
                 const existingFilesMap = indexArray(field.value ?? [], {
                   indexer: (current) => current.file?.uid ?? current.name,
                 });
                 const update = (field.value ?? []).concat(
-                  fileList
+                  uploadFiles
                     .filter((file) => !existingFilesMap[file.uid ?? file.name])
                     .map(
                       (file): SingleFileFormValue => ({
@@ -59,8 +60,10 @@ export function MultipleFilesForm(props: MultipleFilesFormProps) {
                 );
 
                 form.setValue("files", update);
-                return false;
               }}
+              buttonText="Select Files"
+              showFileList={false}
+              showUploadButton={true}
             >
               <Button title="Select Files" type="button" variant="outline">
                 <div className="space-x-2 flex items-center">
@@ -68,7 +71,7 @@ export function MultipleFilesForm(props: MultipleFilesFormProps) {
                   <span>Select Files</span>
                 </div>
               </Button>
-            </Upload>
+            </MultipleFilesUpload>
           </FormControl>
           <FormMessage />
         </FormItem>
@@ -77,7 +80,7 @@ export function MultipleFilesForm(props: MultipleFilesFormProps) {
   );
 
   return (
-    <div className={cx(className)} style={style}>
+    <div className={cn(className)} style={style}>
       <SelectedFilesForm {...props} />
       {selectFileNode}
     </div>

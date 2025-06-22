@@ -17,7 +17,6 @@ import { Separator } from "@/components/ui/separator.tsx";
 import { cn } from "@/components/utils.ts";
 import styles from "@/components/utils/form/form.module.css";
 import { FormAlert } from "@/components/utils/FormAlert.tsx";
-import { SignupEndpointParams } from "@/lib/api-internal/endpoints/privateTypes.ts";
 import { kUserConstants } from "@/lib/definitions/user.ts";
 import { useUserSignupMutationHook } from "@/lib/hooks/mutationHooks.ts";
 import { useFormHelpers } from "@/lib/hooks/useFormHelpers.ts";
@@ -26,11 +25,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
-interface ISignupFormValues extends Required<SignupEndpointParams> {
-  // confirmEmail: string;
-  // confirmPassword: string;
-}
 
 export interface ISignupProps {}
 

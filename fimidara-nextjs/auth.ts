@@ -1,11 +1,11 @@
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import assert from "assert";
+import { FimidaraEndpoints } from "fimidara-private-js-sdk";
 import NextAuth, { Session } from "next-auth";
 import GitHub from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
 import { NextRequest } from "next/server";
 import { db } from "./db/schema";
-import { FimidaraEndpoints } from "./lib/api-internal/endpoints/privateEndpoints.ts";
 import { systemConstants } from "./lib/definitions/system.ts";
 import { IOAuthUser } from "./lib/definitions/user.ts";
 

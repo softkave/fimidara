@@ -1,4 +1,4 @@
-import { css, cx } from "@emotion/css";
+import { cn } from "@/components/utils";
 import React from "react";
 import { StyleableComponentProps } from "../styling/types";
 
@@ -6,17 +6,10 @@ export interface AppIconProps extends StyleableComponentProps {
   icon: React.ReactNode;
 }
 
-const classes = {
-  root: css({
-    display: "inline-flex",
-    alignItems: "center",
-  }),
-};
-
 const AppTabText: React.FC<AppIconProps> = (props) => {
   const { icon: node, className, style } = props;
   return (
-    <span className={cx(classes.root, className)} style={style}>
+    <span className={cn("inline-flex items-center", className)} style={style}>
       {node}
     </span>
   );

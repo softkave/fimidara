@@ -31,7 +31,7 @@ export const systemConstants = {
   ),
   endpointInfoPath: defaultTo(
     process.env.ENDPOINT_INFO_PATH,
-    `/api-raw/endpoints/v1`
+    `../fimidara-mfdoc-out/public-endpoints/fimidara`
   ),
   serverAddr: defaultTo(
     process.env.NEXT_PUBLIC_SERVER_ADDR,

@@ -1,12 +1,26 @@
 import { systemConstants } from "@/lib/definitions/system";
+import { cn } from "@/lib/utils";
 import { useRequest } from "ahooks";
 import assert from "assert";
+import { cva, VariantProps } from "class-variance-authority";
 import { getFimidaraReadFileURL } from "fimidara";
 import { first } from "lodash-es";
 import { getPublicFimidaraEndpointsUsingUserToken } from "../../lib/api/fimidaraEndpoints";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar.tsx";
 
-export interface IAppAvatarProps {
+const avatarVariants = cva("", {
+  variants: {
+    shape: {
+      rounded: "rounded-full",
+      square: "rounded-md",
+    },
+  },
+  defaultVariants: {
+    shape: "rounded",
+  },
+});
+
+export interface IAppAvatarProps extends VariantProps<typeof avatarVariants> {
   alt: string;
   filepath?: string;
   fallback?: React.ReactNode;
@@ -14,7 +28,7 @@ export interface IAppAvatarProps {
 }
 
 export default function AppAvatar(props: IAppAvatarProps) {
-  const { filepath, alt, fallback, className } = props;
+  const { filepath, alt, fallback, className, shape } = props;
 
   const getPresignedPath = async () => {
     if (!filepath) return undefined;
@@ -47,9 +61,17 @@ export default function AppAvatar(props: IAppAvatarProps) {
     : undefined;
 
   return (
-    <Avatar className={className}>
-      <AvatarImage src={src} alt={alt} />
-      {fallback && <AvatarFallback>{fallback}</AvatarFallback>}
+    <Avatar className={cn(avatarVariants({ shape }), className)}>
+      <AvatarImage
+        src={src}
+        alt={alt}
+        className={cn(avatarVariants({ shape }))}
+      />
+      {fallback && (
+        <AvatarFallback className={cn(avatarVariants({ shape }))}>
+          {fallback}
+        </AvatarFallback>
+      )}
     </Avatar>
   );
 }

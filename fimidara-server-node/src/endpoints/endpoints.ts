@@ -24,7 +24,7 @@ import {getPresignedPathsHttpEndpoints} from './presignedPaths/endpoints.js';
 import {PresignedPathsExportedEndpoints} from './presignedPaths/types.js';
 import {getResourcesHttpEndpoints} from './resources/endpoints.js';
 import {ResourcesExportedEndpoints} from './resources/types.js';
-import {ExportedHttpEndpointWithMddocDefinition} from './types.js';
+import {ExportedHttpEndpointWithMfdocDefinition} from './types.js';
 import {getUsageRecordsHttpEndpoints} from './usageRecords/endpoints.js';
 import {UsageRecordsExportedEndpoints} from './usageRecords/types.js';
 import {getUsersHttpEndpoints} from './users/endpoints.js';
@@ -34,13 +34,13 @@ import {getWorkspacesHttpEndpoints} from './workspaces/endpoints.js';
 import {WorkspacesExportedEndpoints} from './workspaces/types.js';
 
 export type AppExportedHttpEndpoints = Array<
-  ExportedHttpEndpointWithMddocDefinition<any>
+  ExportedHttpEndpointWithMfdocDefinition<any>
 >;
 
 type RecordExportedHttpEndpoints = Record<
   string,
-  | ExportedHttpEndpointWithMddocDefinition<any>
-  | Array<ExportedHttpEndpointWithMddocDefinition<any>>
+  | ExportedHttpEndpointWithMfdocDefinition<any>
+  | Array<ExportedHttpEndpointWithMfdocDefinition<any>>
   | /** RecordExportedHttpEndpoints */ Record<string, any>
 >;
 
@@ -86,11 +86,11 @@ function getFimidaraRawHttpEndpoints() {
 
 function isExportedHttpEndpoint(
   item: any
-): item is ExportedHttpEndpointWithMddocDefinition {
+): item is ExportedHttpEndpointWithMfdocDefinition {
   return (
     item &&
-    (item as ExportedHttpEndpointWithMddocDefinition<any>).fn &&
-    (item as ExportedHttpEndpointWithMddocDefinition<any>).mddocHttpDefinition
+    (item as ExportedHttpEndpointWithMfdocDefinition<any>).fn &&
+    (item as ExportedHttpEndpointWithMfdocDefinition<any>).mfdocHttpDefinition
   );
 }
 

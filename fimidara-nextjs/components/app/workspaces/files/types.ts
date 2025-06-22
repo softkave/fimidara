@@ -1,4 +1,4 @@
-import type { RcFile } from "antd/lib/upload";
+import type { RcFile } from "rc-upload/es/interface";
 
 export type SingleFileFormValue = {
   __localId: string;

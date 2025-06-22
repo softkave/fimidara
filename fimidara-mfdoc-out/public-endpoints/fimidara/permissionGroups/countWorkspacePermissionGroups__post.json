@@ -1,0 +1,143 @@
+{
+    "__id": "HttpEndpointDefinition",
+    "path": "/v1/permissionGroups/countWorkspacePermissionGroups",
+    "method": "post",
+    "requestBody": {
+        "__id": "FieldObject",
+        "name": "CountWorkspacePermissionGroupsEndpointParams",
+        "description": "Parameters for counting permission groups in a workspace",
+        "fields": {
+            "workspaceId": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Workspace ID to count permission groups in. If not provided, uses the workspace from the agent token",
+                    "example": "wrkspce_000000000000000000000"
+                }
+            }
+        }
+    },
+    "requestHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointRequestHeaders_AuthRequired_JsonContentType",
+        "fields": {
+            "Authorization": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Access token",
+                    "example": "Bearer <token>"
+                }
+            },
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON request content type",
+                    "example": "application/json"
+                }
+            }
+        }
+    },
+    "responseHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointResponseHeaders_ContentType_ContentLength",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON response content type",
+                    "example": "application/json"
+                }
+            },
+            "Content-Length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP response content length in bytes",
+                    "example": "1024"
+                }
+            }
+        }
+    },
+    "responseBody": {
+        "__id": "FieldObject",
+        "name": "CountItemsResult",
+        "description": "Response containing the count of resources matching the query criteria",
+        "fields": {
+            "count": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldNumber",
+                    "description": "Total number of resources matching the query",
+                    "example": 42
+                }
+            }
+        }
+    },
+    "name": "fimidara/permissionGroups/countWorkspacePermissionGroups",
+    "description": "Get the total count of permission groups in a workspace. Useful for pagination calculations and workspace management.",
+    "tags": [
+        "public"
+    ],
+    "errorResponseHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointResponseHeaders_ContentType_ContentLength",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON response content type",
+                    "example": "application/json"
+                }
+            },
+            "Content-Length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP response content length in bytes"
+                }
+            }
+        }
+    },
+    "errorResponseBody": {
+        "__id": "FieldObject",
+        "name": "EndpointErrorResult",
+        "description": "Endpoint error result",
+        "fields": {
+            "errors": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldArray",
+                    "type": {
+                        "__id": "FieldObject",
+                        "name": "ExternalError",
+                        "fields": {
+                            "message": {
+                                "__id": "FieldObjectField",
+                                "required": true,
+                                "data": {
+                                    "__id": "FieldString",
+                                    "description": "Error message",
+                                    "example": "Workspace name is invalid"
+                                }
+                            }
+                        }
+                    },
+                    "description": "Endpoint call response errors"
+                }
+            }
+        }
+    }
+}

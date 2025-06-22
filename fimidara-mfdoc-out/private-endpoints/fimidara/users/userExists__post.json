@@ -1,0 +1,134 @@
+{
+    "__id": "HttpEndpointDefinition",
+    "path": "/v1/users/userExists",
+    "method": "post",
+    "requestBody": {
+        "__id": "FieldObject",
+        "name": "UserExistsEndpointParams",
+        "description": "Email address to check for existing user account",
+        "fields": {
+            "email": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Email address, case insensitive",
+                    "example": "my-email-address@email-domain.com"
+                }
+            }
+        }
+    },
+    "requestHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointRequestHeaders_JsonContentType",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON request content type",
+                    "example": "application/json"
+                }
+            }
+        }
+    },
+    "responseHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointResponseHeaders_ContentType_ContentLength",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON response content type",
+                    "example": "application/json"
+                }
+            },
+            "Content-Length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP response content length in bytes",
+                    "example": "1024"
+                }
+            }
+        }
+    },
+    "responseBody": {
+        "__id": "FieldObject",
+        "name": "UserExistsEndpointResult",
+        "description": "Response indicating whether a user account exists for the given email",
+        "fields": {
+            "exists": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldBoolean",
+                    "description": "True if a user account exists with the provided email address",
+                    "example": true
+                }
+            }
+        }
+    },
+    "name": "fimidara/users/userExists",
+    "description": "Check if a user account exists for the given email address. Useful for registration flow validation.",
+    "tags": [
+        "private"
+    ],
+    "errorResponseHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointResponseHeaders_ContentType_ContentLength",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON response content type",
+                    "example": "application/json"
+                }
+            },
+            "Content-Length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP response content length in bytes"
+                }
+            }
+        }
+    },
+    "errorResponseBody": {
+        "__id": "FieldObject",
+        "name": "EndpointErrorResult",
+        "description": "Endpoint error result",
+        "fields": {
+            "errors": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldArray",
+                    "type": {
+                        "__id": "FieldObject",
+                        "name": "ExternalError",
+                        "fields": {
+                            "message": {
+                                "__id": "FieldObjectField",
+                                "required": true,
+                                "data": {
+                                    "__id": "FieldString",
+                                    "description": "Error message",
+                                    "example": "Workspace name is invalid"
+                                }
+                            }
+                        }
+                    },
+                    "description": "Endpoint call response errors"
+                }
+            }
+        }
+    }
+}

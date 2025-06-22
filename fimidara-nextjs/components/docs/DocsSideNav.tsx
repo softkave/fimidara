@@ -7,7 +7,6 @@ import { useAppMenu } from "../app/useAppMenu.tsx";
 import { SideNav } from "../utils/page/side-nav/old-side-nav.tsx";
 import {
   DOCS_BASE_PATH,
-  fimidaraJsSdkSideNavItems,
   fimidaraRestApiSideNavItems,
   fimidaraSideNavItems,
   kDocNavRootKeysMap,
@@ -52,8 +51,7 @@ export function DocsSideNav() {
   }, [pathname]);
 
   const completeNavItems = fimidaraSideNavItems.concat(
-    fimidaraRestApiSideNavItems,
-    fimidaraJsSdkSideNavItems
+    fimidaraRestApiSideNavItems
   );
 
   return (

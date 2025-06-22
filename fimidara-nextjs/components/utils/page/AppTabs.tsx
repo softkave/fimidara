@@ -1,5 +1,5 @@
+import { cn } from "@/components/utils";
 import { AnyFn } from "@/lib/utils/types";
-import { css, cx } from "@emotion/css";
 import React from "react";
 import { StyleableComponentProps } from "../styling/types";
 
@@ -16,41 +16,6 @@ export interface AppTabsProps extends StyleableComponentProps {
   items: Array<AppTabItem>;
   onChange: AnyFn<[string, AppTabItem], void>;
 }
-
-const classes = {
-  root: css({
-    display: "flex",
-    flexDirection: "row",
-  }),
-  item: css({
-    display: "inline-flex",
-    alignItems: "center",
-    margin: "0px 16px",
-    lineHeight: "32px",
-    padding: "4px 0px",
-    cursor: "pointer",
-
-    "&:first-of-type": {
-      marginLeft: "0px",
-    },
-    "&:last-of-type": {
-      marginRight: "0px",
-    },
-  }),
-  active: css({
-    fontWeight: "bold",
-  }),
-  icon: css({
-    display: "inline-flex",
-    alignItems: "center",
-    marginRight: "8px",
-    lineHeight: "32px",
-
-    "& svg": {
-      fontSize: "14px",
-    },
-  }),
-};
 
 const AppTabs: React.FC<AppTabsProps> = (props) => {
   const {
@@ -69,20 +34,24 @@ const AppTabs: React.FC<AppTabsProps> = (props) => {
       <div
         key={item.key}
         onClick={() => onChange(item.key, item)}
-        className={cx(
-          classes.item,
-          active && classes.active,
+        className={cn(
+          "inline-flex items-center mx-4 leading-8 py-1 cursor-pointer first:ml-0 last:mr-0",
+          active && "font-bold",
           itemClassName,
           active && activeKeyClassName
         )}
       >
-        {item.icon && <span className={classes.icon}>{item.icon}</span>}
+        {item.icon && (
+          <span className="inline-flex items-center mr-2 leading-8 [&>svg]:text-sm">
+            {item.icon}
+          </span>
+        )}
         {item.label}
       </div>
     );
   });
   return (
-    <div style={style} className={cx(classes.root, className)}>
+    <div style={style} className={cn("flex flex-row", className)}>
       {itemsNode}
     </div>
   );

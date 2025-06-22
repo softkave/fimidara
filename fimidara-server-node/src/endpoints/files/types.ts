@@ -1,7 +1,7 @@
-import {FieldBinaryType} from '../../mddoc/mddoc.js';
+import {MfdocFieldBinaryTypePrimitive} from 'mfdoc';
 import {EmptyObject} from '../../utils/types.js';
 import {
-  ExportedHttpEndpointWithMddocDefinition,
+  ExportedHttpEndpointWithMfdocDefinition,
   HttpEndpointRequestHeaders_AuthOptional,
   HttpEndpointRequestHeaders_AuthOptional_ContentType,
   HttpEndpointResponseHeaders_ContentType_ContentLength,
@@ -39,36 +39,36 @@ export type ReadFileEndpointHTTPHeaders =
     'Content-Disposition'?: string;
   };
 
-export type ReadFilePOSTHttpEndpoint = ExportedHttpEndpointWithMddocDefinition<
+export type ReadFilePOSTHttpEndpoint = ExportedHttpEndpointWithMfdocDefinition<
   /** TEndpoint */ ReadFileEndpoint,
   /** TRequestHeaders */ HttpEndpointRequestHeaders_AuthOptional_ContentType,
   /** TPathParameters */ FileMatcherPathParameters,
   /** TQuery */ ReadFileEndpointHttpQuery,
   /** TRequestBody */ ReadFileEndpointParams,
   /** TResponseHeaders */ ReadFileEndpointHTTPHeaders,
-  /** TResponseBody */ FieldBinaryType,
+  /** TResponseBody */ MfdocFieldBinaryTypePrimitive,
   /** TSdkparams */ ReadFileEndpointParams
 >;
-export type ReadFileGETHttpEndpoint = ExportedHttpEndpointWithMddocDefinition<
+export type ReadFileGETHttpEndpoint = ExportedHttpEndpointWithMfdocDefinition<
   /** TEndpoint */ ReadFileEndpoint,
   /** TRequestHeaders */ HttpEndpointRequestHeaders_AuthOptional,
   /** TPathParameters */ FileMatcherPathParameters,
   /** TQuery */ ReadFileEndpointHttpQuery,
   /** TRequestBody */ {},
   /** TResponseHeaders */ ReadFileEndpointHTTPHeaders,
-  /** TResponseBody */ FieldBinaryType,
+  /** TResponseBody */ MfdocFieldBinaryTypePrimitive,
   /** TSdkparams */ ReadFileEndpointParams
 >;
 export type DeleteFileHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<DeleteFileEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<DeleteFileEndpoint>;
 export type GetFileDetailsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetFileDetailsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetFileDetailsEndpoint>;
 export type ListPartsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<ListPartsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<ListPartsEndpoint>;
 export type UpdateFileDetailsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<UpdateFileDetailsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<UpdateFileDetailsEndpoint>;
 export type UploadFileEndpointSdkParams = UploadFileEndpointParams;
-export type UploadFileHttpEndpoint = ExportedHttpEndpointWithMddocDefinition<
+export type UploadFileHttpEndpoint = ExportedHttpEndpointWithMfdocDefinition<
   /** TEndpoint */ UploadFileEndpoint,
   /** TRequestHeaders */ UploadFileEndpointHTTPHeaders,
   /** TPathParameters */ FileMatcherPathParameters,
@@ -79,9 +79,9 @@ export type UploadFileHttpEndpoint = ExportedHttpEndpointWithMddocDefinition<
   /** TSdkparams */ UploadFileEndpointSdkParams
 >;
 export type StartMultipartUploadHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<StartMultipartUploadEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<StartMultipartUploadEndpoint>;
 export type CompleteMultipartUploadHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<CompleteMultipartUploadEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<CompleteMultipartUploadEndpoint>;
 
 export type FilesExportedEndpoints = {
   readFile: [ReadFilePOSTHttpEndpoint, ReadFileGETHttpEndpoint];

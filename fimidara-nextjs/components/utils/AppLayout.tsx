@@ -3,7 +3,7 @@
 import AppHeader from "../app/AppHeader.tsx";
 import FimidaraSideNav from "../app/FimidaraSideNav.tsx";
 import { usePageAuthRequired } from "../hooks/usePageAuthRequired.tsx";
-import { ScrollArea } from "../ui/scroll-area.tsx";
+import { MaybeScroll } from "../internal/maybe-scroll.tsx";
 import { cn } from "../utils.ts";
 
 export interface IAppLayoutProps {
@@ -21,16 +21,16 @@ export const AppLayout = (props: IAppLayoutProps) => {
           <FimidaraSideNav />
           <div className="flex-1 flex flex-col">
             <AppHeader />
-            <ScrollArea>
+            <MaybeScroll>
               <div
                 className={cn(
-                  "mx-auto p-4 flex-1 w-full max-w-4xl",
+                  "mx-auto p-4 flex-1 w-full max-w-lg",
                   contentClassName
                 )}
               >
                 {children}
               </div>
-            </ScrollArea>
+            </MaybeScroll>
           </div>
         </div>
       );

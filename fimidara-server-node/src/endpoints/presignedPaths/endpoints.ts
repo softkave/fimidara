@@ -3,7 +3,7 @@ import {ExportedHttpEndpoint_HandleErrorFn, kEndpointTag} from '../types.js';
 import {
   getPresignedPathsForFilesEndpointDefinition,
   issuePresignedPathEndpointDefinition,
-} from './endpoints.mddoc.js';
+} from './endpoints.mfdoc.js';
 import getPresignedPathsForFiles from './getPresignedPaths/handler.js';
 import issuePresignedPath from './issuePresignedPath/handler.js';
 import {PresignedPathsExportedEndpoints} from './types.js';
@@ -23,13 +23,13 @@ export function getPresignedPathsHttpEndpoints() {
     issuePresignedPath: {
       tag: [kEndpointTag.public],
       fn: issuePresignedPath,
-      mddocHttpDefinition: issuePresignedPathEndpointDefinition,
+      mfdocHttpDefinition: issuePresignedPathEndpointDefinition,
       handleError: handleNotFoundError,
     },
     getPresignedPathsForFiles: {
       tag: [kEndpointTag.public],
       fn: getPresignedPathsForFiles,
-      mddocHttpDefinition: getPresignedPathsForFilesEndpointDefinition,
+      mfdocHttpDefinition: getPresignedPathsForFilesEndpointDefinition,
       handleError: handleNotFoundError,
     },
   };

@@ -36,6 +36,7 @@ export function SelectedFilesForm(props: SelectedFilesFormProps) {
   const handleRemoveFile = (index: number) => {
     const update = wFiles.filter((nextValue, nextIndex) => nextIndex !== index);
     form.setValue("files", update);
+    form.clearErrors(`files.${index}`);
   };
 
   // TODO: show file entry error in panel

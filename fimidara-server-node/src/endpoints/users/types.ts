@@ -1,6 +1,6 @@
 import {EmptyObject} from 'softkave-js-utils';
 import {
-  ExportedHttpEndpointWithMddocDefinition,
+  ExportedHttpEndpointWithMfdocDefinition,
   HttpEndpointRequestHeaders_ContentType,
   HttpEndpointRequestHeaders_InterServerAuth,
   HttpEndpointResponseHeaders_ContentType_ContentLength,
@@ -25,39 +25,39 @@ import {
 import {UpdateUserEndpoint} from './updateUser/types.js';
 import {UserExistsEndpoint} from './userExists/types.js';
 
-export type SignupHttpEndpoint = ExportedHttpEndpointWithMddocDefinition<
+export type SignupHttpEndpoint = ExportedHttpEndpointWithMfdocDefinition<
   SignupEndpoint,
   HttpEndpointRequestHeaders_ContentType
 >;
-export type LoginHttpEndpoint = ExportedHttpEndpointWithMddocDefinition<
+export type LoginHttpEndpoint = ExportedHttpEndpointWithMfdocDefinition<
   LoginEndpoint,
   HttpEndpointRequestHeaders_ContentType
 >;
 export type ForgotPasswordHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<
+  ExportedHttpEndpointWithMfdocDefinition<
     ForgotPasswordEndpoint,
     HttpEndpointRequestHeaders_ContentType
   >;
 export type ChangePasswordWithCurrentPasswordHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<ChangePasswordWithCurrentPasswordEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<ChangePasswordWithCurrentPasswordEndpoint>;
 export type ChangePasswordWithTokenHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<ChangePasswordWithTokenEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<ChangePasswordWithTokenEndpoint>;
 export type UpdateUserHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<UpdateUserEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<UpdateUserEndpoint>;
 export type GetUserDataHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetUserDataEndpoint>;
-export type UserExistsHttpEndpoint = ExportedHttpEndpointWithMddocDefinition<
+  ExportedHttpEndpointWithMfdocDefinition<GetUserDataEndpoint>;
+export type UserExistsHttpEndpoint = ExportedHttpEndpointWithMfdocDefinition<
   UserExistsEndpoint,
   HttpEndpointRequestHeaders_ContentType
 >;
 export type ConfirmEmailAddressHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<ConfirmEmailAddressEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<ConfirmEmailAddressEndpoint>;
 export type SendEmailVerificationCodeHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<SendEmailVerificationCodeEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<SendEmailVerificationCodeEndpoint>;
 export type RefreshUserTokenHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<RefreshUserTokenEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<RefreshUserTokenEndpoint>;
 export type LoginWithOAuthHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<
+  ExportedHttpEndpointWithMfdocDefinition<
     LoginWithOAuthEndpoint,
     HttpEndpointRequestHeaders_ContentType &
       HttpEndpointRequestHeaders_InterServerAuth,
@@ -71,7 +71,7 @@ export type LoginWithOAuthHttpEndpoint =
     }
   >;
 export type SignupWithOAuthHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<
+  ExportedHttpEndpointWithMfdocDefinition<
     SignupWithOAuthEndpoint,
     HttpEndpointRequestHeaders_ContentType &
       HttpEndpointRequestHeaders_InterServerAuth,

@@ -14,15 +14,12 @@ import { Input } from "@/components/ui/input.tsx";
 import { cn } from "@/components/utils.ts";
 import styles from "@/components/utils/form/form.module.css";
 import { useToast } from "@/hooks/use-toast.ts";
-import {
-  LoginResult,
-  User,
-} from "@/lib/api-internal/endpoints/privateTypes.ts";
 import { kUserConstants } from "@/lib/definitions/user";
 import { useUserUpdateMutationHook } from "@/lib/hooks/mutationHooks";
 import { useFormHelpers } from "@/lib/hooks/useFormHelpers.ts";
 import { signupValidationParts } from "@/lib/validation/user";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { LoginResult, User } from "fimidara-private-js-sdk";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { FormAlert } from "../../utils/FormAlert";

@@ -1,4 +1,4 @@
-import { css, cx } from "@emotion/css";
+import { cn } from "@/components/utils";
 import React from "react";
 
 export interface IButtonGroupProps {
@@ -7,27 +7,18 @@ export interface IButtonGroupProps {
   children: React.ReactNode;
 }
 
-const classes = {
-  root: css({
-    "& .ant-btn": {
-      borderRadius: "0px !important",
-      borderLeft: 0,
-    },
-    "& .ant-btn:first-of-type": {
-      borderTopLeftRadius: "4px !important",
-      borderBottomLeftRadius: "4px !important",
-    },
-    "& .ant-btn:last-of-type": {
-      borderTopRightRadius: "4px !important",
-      borderBottomRightRadius: "4px !important",
-    },
-  }),
-};
-
 const ButtonGroup: React.FC<IButtonGroupProps> = (props) => {
   const { style, className, children } = props;
   return (
-    <div className={cx(className, classes.root)} style={style}>
+    <div
+      className={cn(
+        className,
+        "[&_.ant-btn]:rounded-none [&_.ant-btn]:border-l-0",
+        "[&_.ant-btn:first-of-type]:rounded-l [&_.ant-btn:first-of-type]:border-l",
+        "[&_.ant-btn:last-of-type]:rounded-r"
+      )}
+      style={style}
+    >
       {children}
     </div>
   );

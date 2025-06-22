@@ -16,7 +16,7 @@ import {
   signupWithOAuthEndpointDefinition,
   updateUserEndpointDefinition,
   userExistsEndpointDefinition,
-} from './endpoint.mddoc.js';
+} from './endpoint.mfdoc.js';
 import forgotPassword from './forgotPassword/handler.js';
 import getUserData from './getUserData/handler.js';
 import login from './login/handler.js';
@@ -34,67 +34,67 @@ export function getUsersHttpEndpoints() {
     getUserData: {
       tag: [kEndpointTag.private],
       fn: getUserData,
-      mddocHttpDefinition: getUserDataEndpointDefinition,
+      mfdocHttpDefinition: getUserDataEndpointDefinition,
     },
     updateUser: {
       tag: [kEndpointTag.private],
       fn: updateUser,
-      mddocHttpDefinition: updateUserEndpointDefinition,
+      mfdocHttpDefinition: updateUserEndpointDefinition,
     },
     changePasswordWithCurrentPassword: {
       tag: [kEndpointTag.private],
       fn: changePasswordWithCurrentPassword,
-      mddocHttpDefinition: changePasswordWithCurrentPasswordEndpointDefinition,
+      mfdocHttpDefinition: changePasswordWithCurrentPasswordEndpointDefinition,
     },
     changePasswordWithToken: {
       tag: [kEndpointTag.private],
       fn: changePasswordWithToken,
-      mddocHttpDefinition: changePasswordWithTokenEndpointDefinition,
+      mfdocHttpDefinition: changePasswordWithTokenEndpointDefinition,
     },
     confirmEmailAddress: {
       tag: [kEndpointTag.private],
       fn: confirmEmailAddress,
-      mddocHttpDefinition: confirmEmailAddressEndpointDefinition,
+      mfdocHttpDefinition: confirmEmailAddressEndpointDefinition,
     },
     forgotPassword: {
       tag: [kEndpointTag.private],
       fn: forgotPassword,
-      mddocHttpDefinition: forgotPasswordEndpointDefinition,
+      mfdocHttpDefinition: forgotPasswordEndpointDefinition,
     },
     login: {
       tag: [kEndpointTag.private],
       fn: login,
-      mddocHttpDefinition: loginEndpointDefinition,
+      mfdocHttpDefinition: loginEndpointDefinition,
     },
     sendEmailVerificationCode: {
       tag: [kEndpointTag.private],
       fn: sendEmailVerificationCode,
-      mddocHttpDefinition: sendEmailVerificationCodeEndpointDefinition,
+      mfdocHttpDefinition: sendEmailVerificationCodeEndpointDefinition,
     },
     refreshToken: {
       tag: [kEndpointTag.private],
       fn: refreshUserToken,
-      mddocHttpDefinition: refreshUserTokenEndpointDefinition,
+      mfdocHttpDefinition: refreshUserTokenEndpointDefinition,
     },
     signup: {
       tag: [kEndpointTag.private],
       fn: signup,
-      mddocHttpDefinition: signupEndpointDefinition,
+      mfdocHttpDefinition: signupEndpointDefinition,
     },
     userExists: {
       tag: [kEndpointTag.private],
       fn: userExists,
-      mddocHttpDefinition: userExistsEndpointDefinition,
+      mfdocHttpDefinition: userExistsEndpointDefinition,
     },
     loginWithOAuth: {
       tag: [kEndpointTag.private],
       fn: loginWithOAuth,
-      mddocHttpDefinition: loginWithOAuthEndpointDefinition,
+      mfdocHttpDefinition: loginWithOAuthEndpointDefinition,
     },
     signupWithOAuth: {
       tag: [kEndpointTag.private],
       fn: signupWithOAuth,
-      mddocHttpDefinition: signupWithOAuthEndpointDefinition,
+      mfdocHttpDefinition: signupWithOAuthEndpointDefinition,
     },
   };
 

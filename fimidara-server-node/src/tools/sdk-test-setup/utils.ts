@@ -67,7 +67,8 @@ export async function setupSDKTestReq() {
     });
 
   try {
-    const jsSdkTestEnvFilepath = './sdk/js-sdk/.env.test';
+    const jsSdkTestEnvFilepath =
+      process.argv[2] || '../fimidara-js-sdk/.env.test';
     await fspromises.access(jsSdkTestEnvFilepath);
 
     // TODO: pick server URL port from env file

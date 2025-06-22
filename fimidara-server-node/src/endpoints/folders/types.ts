@@ -1,4 +1,4 @@
-import {ExportedHttpEndpointWithMddocDefinition} from '../types.js';
+import {ExportedHttpEndpointWithMfdocDefinition} from '../types.js';
 import {AddFolderEndpoint} from './addFolder/types.js';
 import {CountFolderContentEndpoint} from './countFolderContent/types.js';
 import {DeleteFolderEndpoint} from './deleteFolder/types.js';
@@ -7,17 +7,17 @@ import {ListFolderContentEndpoint} from './listFolderContent/types.js';
 import {UpdateFolderEndpoint} from './updateFolder/types.js';
 
 export type AddFolderHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<AddFolderEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<AddFolderEndpoint>;
 export type DeleteFolderHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<DeleteFolderEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<DeleteFolderEndpoint>;
 export type GetFolderHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetFolderEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetFolderEndpoint>;
 export type ListFolderContentHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<ListFolderContentEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<ListFolderContentEndpoint>;
 export type CountFolderContentHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<CountFolderContentEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<CountFolderContentEndpoint>;
 export type UpdateFolderHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<UpdateFolderEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<UpdateFolderEndpoint>;
 
 export type FoldersExportedEndpoints = {
   addFolder: AddFolderHttpEndpoint;

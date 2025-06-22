@@ -1,0 +1,594 @@
+{
+    "__id": "HttpEndpointDefinition",
+    "path": "/v1/users/login",
+    "method": "post",
+    "requestBody": {
+        "__id": "FieldObject",
+        "name": "LoginParams",
+        "description": "Credentials required for user authentication",
+        "fields": {
+            "email": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Email address, case insensitive",
+                    "example": "my-email-address@email-domain.com"
+                }
+            },
+            "password": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Current password",
+                    "example": "myCurrentPassword123"
+                }
+            }
+        }
+    },
+    "requestHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointRequestHeaders_JsonContentType",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON request content type",
+                    "example": "application/json"
+                }
+            }
+        }
+    },
+    "responseHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointResponseHeaders_ContentType_ContentLength",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON response content type",
+                    "example": "application/json"
+                }
+            },
+            "Content-Length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP response content length in bytes",
+                    "example": "1024"
+                }
+            }
+        }
+    },
+    "responseBody": {
+        "__id": "FieldObject",
+        "name": "LoginResult",
+        "description": "Successful login response containing user data and authentication tokens",
+        "fields": {
+            "user": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldObject",
+                    "name": "User",
+                    "description": "User account information with profile details and associated workspaces",
+                    "fields": {
+                        "resourceId": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "Resource ID",
+                                "example": "wrkspce_000000000000000000000"
+                            }
+                        },
+                        "createdBy": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldObject",
+                                "name": "Agent",
+                                "description": "Represents a user or system entity that performed an action (e.g., created or updated a resource)",
+                                "fields": {
+                                    "agentId": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent ID. Possible agents are users and agent tokens",
+                                            "example": "user000_000000000000000000000"
+                                        }
+                                    },
+                                    "agentType": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent type",
+                                            "example": "agentToken",
+                                            "valid": [
+                                                "user",
+                                                "agentToken"
+                                            ],
+                                            "enumName": "AgentType"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "createdAt": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldNumber",
+                                "description": "UTC timestamp in milliseconds",
+                                "example": 1672531200000
+                            }
+                        },
+                        "lastUpdatedBy": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldObject",
+                                "name": "Agent",
+                                "description": "Represents a user or system entity that performed an action (e.g., created or updated a resource)",
+                                "fields": {
+                                    "agentId": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent ID. Possible agents are users and agent tokens",
+                                            "example": "user000_000000000000000000000"
+                                        }
+                                    },
+                                    "agentType": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent type",
+                                            "example": "agentToken",
+                                            "valid": [
+                                                "user",
+                                                "agentToken"
+                                            ],
+                                            "enumName": "AgentType"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "lastUpdatedAt": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldNumber",
+                                "description": "UTC timestamp in milliseconds",
+                                "example": 1672531200000
+                            }
+                        },
+                        "isDeleted": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldBoolean"
+                            }
+                        },
+                        "deletedAt": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldNumber",
+                                "description": "UTC timestamp in milliseconds",
+                                "example": 1672531200000
+                            }
+                        },
+                        "deletedBy": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldObject",
+                                "name": "Agent",
+                                "description": "Represents a user or system entity that performed an action (e.g., created or updated a resource)",
+                                "fields": {
+                                    "agentId": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent ID. Possible agents are users and agent tokens",
+                                            "example": "user000_000000000000000000000"
+                                        }
+                                    },
+                                    "agentType": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent type",
+                                            "example": "agentToken",
+                                            "valid": [
+                                                "user",
+                                                "agentToken"
+                                            ],
+                                            "enumName": "AgentType"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "firstName": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "First name",
+                                "example": "Jesus"
+                            }
+                        },
+                        "lastName": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "Last name",
+                                "example": "Christ"
+                            }
+                        },
+                        "email": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "Email address, case insensitive",
+                                "example": "my-email-address@email-domain.com"
+                            }
+                        },
+                        "passwordLastChangedAt": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldNumber",
+                                "description": "UTC timestamp in milliseconds",
+                                "example": 1672531200000
+                            }
+                        },
+                        "requiresPasswordChange": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldBoolean",
+                                "description": "Whether the user is required to change their password on next login",
+                                "example": false
+                            }
+                        },
+                        "isEmailVerified": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldBoolean",
+                                "description": "Whether the user has verified their email address",
+                                "example": true
+                            }
+                        },
+                        "emailVerifiedAt": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldOrCombination",
+                                "description": "UTC timestamp in milliseconds, or null if not set",
+                                "types": [
+                                    {
+                                        "__id": "FieldNumber",
+                                        "description": "UTC timestamp in milliseconds",
+                                        "example": 1672531200000
+                                    },
+                                    {
+                                        "__id": "FieldNull",
+                                        "description": "Null value, indicating the field is not set or not applicable"
+                                    }
+                                ]
+                            }
+                        },
+                        "emailVerificationEmailSentAt": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldOrCombination",
+                                "description": "UTC timestamp in milliseconds, or null if not set",
+                                "types": [
+                                    {
+                                        "__id": "FieldNumber",
+                                        "description": "UTC timestamp in milliseconds",
+                                        "example": 1672531200000
+                                    },
+                                    {
+                                        "__id": "FieldNull",
+                                        "description": "Null value, indicating the field is not set or not applicable"
+                                    }
+                                ]
+                            }
+                        },
+                        "workspaces": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldArray",
+                                "description": "List of workspaces the user has access to",
+                                "type": {
+                                    "__id": "FieldObject",
+                                    "name": "PublicWorkspaceResource",
+                                    "fields": {
+                                        "resourceId": {
+                                            "__id": "FieldObjectField",
+                                            "required": true,
+                                            "data": {
+                                                "__id": "FieldString",
+                                                "description": "Resource ID",
+                                                "example": "wrkspce_000000000000000000000"
+                                            }
+                                        },
+                                        "createdBy": {
+                                            "__id": "FieldObjectField",
+                                            "required": true,
+                                            "data": {
+                                                "__id": "FieldObject",
+                                                "name": "Agent",
+                                                "description": "Represents a user or system entity that performed an action (e.g., created or updated a resource)",
+                                                "fields": {
+                                                    "agentId": {
+                                                        "__id": "FieldObjectField",
+                                                        "required": true,
+                                                        "data": {
+                                                            "__id": "FieldString",
+                                                            "description": "Agent ID. Possible agents are users and agent tokens",
+                                                            "example": "user000_000000000000000000000"
+                                                        }
+                                                    },
+                                                    "agentType": {
+                                                        "__id": "FieldObjectField",
+                                                        "required": true,
+                                                        "data": {
+                                                            "__id": "FieldString",
+                                                            "description": "Agent type",
+                                                            "example": "agentToken",
+                                                            "valid": [
+                                                                "user",
+                                                                "agentToken"
+                                                            ],
+                                                            "enumName": "AgentType"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "createdAt": {
+                                            "__id": "FieldObjectField",
+                                            "required": true,
+                                            "data": {
+                                                "__id": "FieldNumber",
+                                                "description": "UTC timestamp in milliseconds",
+                                                "example": 1672531200000
+                                            }
+                                        },
+                                        "lastUpdatedBy": {
+                                            "__id": "FieldObjectField",
+                                            "required": true,
+                                            "data": {
+                                                "__id": "FieldObject",
+                                                "name": "Agent",
+                                                "description": "Represents a user or system entity that performed an action (e.g., created or updated a resource)",
+                                                "fields": {
+                                                    "agentId": {
+                                                        "__id": "FieldObjectField",
+                                                        "required": true,
+                                                        "data": {
+                                                            "__id": "FieldString",
+                                                            "description": "Agent ID. Possible agents are users and agent tokens",
+                                                            "example": "user000_000000000000000000000"
+                                                        }
+                                                    },
+                                                    "agentType": {
+                                                        "__id": "FieldObjectField",
+                                                        "required": true,
+                                                        "data": {
+                                                            "__id": "FieldString",
+                                                            "description": "Agent type",
+                                                            "example": "agentToken",
+                                                            "valid": [
+                                                                "user",
+                                                                "agentToken"
+                                                            ],
+                                                            "enumName": "AgentType"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "lastUpdatedAt": {
+                                            "__id": "FieldObjectField",
+                                            "required": true,
+                                            "data": {
+                                                "__id": "FieldNumber",
+                                                "description": "UTC timestamp in milliseconds",
+                                                "example": 1672531200000
+                                            }
+                                        },
+                                        "isDeleted": {
+                                            "__id": "FieldObjectField",
+                                            "required": true,
+                                            "data": {
+                                                "__id": "FieldBoolean"
+                                            }
+                                        },
+                                        "deletedAt": {
+                                            "__id": "FieldObjectField",
+                                            "required": false,
+                                            "data": {
+                                                "__id": "FieldNumber",
+                                                "description": "UTC timestamp in milliseconds",
+                                                "example": 1672531200000
+                                            }
+                                        },
+                                        "deletedBy": {
+                                            "__id": "FieldObjectField",
+                                            "required": false,
+                                            "data": {
+                                                "__id": "FieldObject",
+                                                "name": "Agent",
+                                                "description": "Represents a user or system entity that performed an action (e.g., created or updated a resource)",
+                                                "fields": {
+                                                    "agentId": {
+                                                        "__id": "FieldObjectField",
+                                                        "required": true,
+                                                        "data": {
+                                                            "__id": "FieldString",
+                                                            "description": "Agent ID. Possible agents are users and agent tokens",
+                                                            "example": "user000_000000000000000000000"
+                                                        }
+                                                    },
+                                                    "agentType": {
+                                                        "__id": "FieldObjectField",
+                                                        "required": true,
+                                                        "data": {
+                                                            "__id": "FieldString",
+                                                            "description": "Agent type",
+                                                            "example": "agentToken",
+                                                            "valid": [
+                                                                "user",
+                                                                "agentToken"
+                                                            ],
+                                                            "enumName": "AgentType"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "workspaceId": {
+                                            "__id": "FieldObjectField",
+                                            "required": true,
+                                            "data": {
+                                                "__id": "FieldString",
+                                                "description": "Workspace ID. If not provided, the user's workspace is used",
+                                                "example": "wrkspce_000000000000000000000"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "isOnWaitlist": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldBoolean",
+                                "description": "Whether the user is on the waitlist for the service",
+                                "example": false
+                            }
+                        }
+                    }
+                }
+            },
+            "jwtToken": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "JWT token string used for authentication",
+                    "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                }
+            },
+            "clientJwtToken": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "JWT token string used for authentication",
+                    "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                }
+            },
+            "refreshToken": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "JWT refresh token string used to obtain new access tokens",
+                    "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                }
+            },
+            "jwtTokenExpiresAt": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldNumber",
+                    "description": "JWT token expiration date. Not the expiration date of the token itself."
+                }
+            }
+        }
+    },
+    "name": "fimidara/users/login",
+    "description": "Authenticate a user with email and password. Returns user data and authentication tokens on success.",
+    "tags": [
+        "private"
+    ],
+    "errorResponseHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointResponseHeaders_ContentType_ContentLength",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON response content type",
+                    "example": "application/json"
+                }
+            },
+            "Content-Length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP response content length in bytes"
+                }
+            }
+        }
+    },
+    "errorResponseBody": {
+        "__id": "FieldObject",
+        "name": "EndpointErrorResult",
+        "description": "Endpoint error result",
+        "fields": {
+            "errors": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldArray",
+                    "type": {
+                        "__id": "FieldObject",
+                        "name": "ExternalError",
+                        "fields": {
+                            "message": {
+                                "__id": "FieldObjectField",
+                                "required": true,
+                                "data": {
+                                    "__id": "FieldString",
+                                    "description": "Error message",
+                                    "example": "Workspace name is invalid"
+                                }
+                            }
+                        }
+                    },
+                    "description": "Endpoint call response errors"
+                }
+            }
+        }
+    }
+}

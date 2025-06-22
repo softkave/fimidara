@@ -147,7 +147,6 @@
 - link to go back to file or folder from form
   - open in drawer/sidebar
 - highlight in buttons particularly signup form
-  - maybe move off antd gradually to shadcn
   - Tag not showing correctly, waitlist page
 - little lag where dashboard shows sidebar and login/signup form
 - workspace name not centered in list
@@ -187,7 +186,6 @@
 - error pages
 - new homepage with features + code
 - devlog and changelog
-- convert last of antd to shadcn
 - sidenav on mobile
 - usage page
 - select workspace from sidenav

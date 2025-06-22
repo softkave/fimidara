@@ -1,0 +1,48 @@
+{
+  "name": "fimidara-private-js-sdk",
+  "version": "0.1.0",
+  "description": "private js sdk for fimidara",
+  "type": "module",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build/{*.js,**/*.js}",
+    "build/{*.js.map,**/*.js.map}",
+    "build/{*.d.ts,**/*.d.ts}",
+    "build/{*.d.ts.map,**/*.d.ts.map}",
+    "!build/**/__tests__/**/*",
+    "!build/**/testUtils/**/*"
+  ],
+  "keywords": [],
+  "scripts": {
+    "lint": "gts lint",
+    "clean": "gts clean && rm -f tsconfig.tsbuildinfo",
+    "compile": "npm run clean && tsc",
+    "fix": "gts fix",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint",
+    "test": "env-cmd -f \".env.test\" vitest --config=./vitest.config.ts",
+    "test:browser": "env-cmd -f \".env.test\" vitest --config=./vitest.browser.config.ts",
+    "publish:npm": "npm run clean && tsc && npm publish",
+    "publish:local": "npm run clean && tsc && yalc publish",
+    "show:packlist": "npm run clean && tsc && npm pack --dry-run",
+    "pretty": "prettier --write"
+  },
+  "engines": {
+    "node": ">=13"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.5.0",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^22.7.5",
+    "env-cmd": "^10.1.0",
+    "gts": "^6.0.2",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
+  },
+  "dependencies": {
+    "mfdoc-js-sdk-base": "^0.3.0",
+    "softkave-js-utils": "^0.17.0"
+  }
+}

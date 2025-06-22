@@ -18,7 +18,9 @@ export default function UserMenu() {
   const userNode = useAssertGetUser();
 
   const renderBtnNode = (userId: string, withError?: boolean) => {
-    return <UserAvatar userId={userId} alt="Your profile picture" />;
+    return (
+      <UserAvatar userId={userId} alt="Your profile picture" shape="square" />
+    );
   };
 
   const items: Array<IDropdownItem> = insertMenuDivider([

@@ -1,8 +1,7 @@
-import { cx } from "@emotion/css";
+import { cn } from "@/components/utils";
 import { defaultTo } from "lodash-es";
 import React from "react";
 import { GridHelpers, GridPortions, GridTemplateLayout } from "../styling/grid";
-import { appClasses } from "../theme";
 import PagePagination from "./PagePagination";
 import { IPaginationData } from "./utils";
 
@@ -30,16 +29,13 @@ function PaginatedContent(props: IPaginatedContentProps) {
   };
 
   return (
-    <div
-      className={cx(appClasses.h100, appClasses.grid, className)}
-      style={rootStyle}
-    >
+    <div className={cn("h-full grid", className)} style={rootStyle}>
       {header}
       {content}
       {pagination && (
         <PagePagination
           {...pagination}
-          className={cx(paginationClassName, appClasses.pt16)}
+          className={cn(paginationClassName, "pt-16")}
         />
       )}
     </div>

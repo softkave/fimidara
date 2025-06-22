@@ -1,4 +1,4 @@
-import {ExportedHttpEndpointWithMddocDefinition} from '../types.js';
+import {ExportedHttpEndpointWithMfdocDefinition} from '../types.js';
 import {CountUserCollaborationRequestsEndpoint} from './countUserRequests/types.js';
 import {CountWorkspaceCollaborationRequestsEndpoint} from './countWorkspaceRequests/types.js';
 import {DeleteCollaborationRequestEndpoint} from './deleteRequest/types.js';
@@ -12,27 +12,27 @@ import {SendCollaborationRequestEndpoint} from './sendRequest/types.js';
 import {UpdateCollaborationRequestEndpoint} from './updateRequest/types.js';
 
 export type SendCollaborationRequestHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<SendCollaborationRequestEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<SendCollaborationRequestEndpoint>;
 export type DeleteCollaborationRequestHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<DeleteCollaborationRequestEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<DeleteCollaborationRequestEndpoint>;
 export type GetWorkspaceCollaborationRequestsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetWorkspaceCollaborationRequestsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetWorkspaceCollaborationRequestsEndpoint>;
 export type GetUserCollaborationRequestsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetUserCollaborationRequestsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetUserCollaborationRequestsEndpoint>;
 export type CountWorkspaceCollaborationRequestsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<CountWorkspaceCollaborationRequestsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<CountWorkspaceCollaborationRequestsEndpoint>;
 export type CountUserCollaborationRequestsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<CountUserCollaborationRequestsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<CountUserCollaborationRequestsEndpoint>;
 export type RespondToCollaborationRequestHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<RespondToCollaborationRequestEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<RespondToCollaborationRequestEndpoint>;
 export type RevokeCollaborationRequestHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<RevokeCollaborationRequestEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<RevokeCollaborationRequestEndpoint>;
 export type UpdateCollaborationRequestHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<UpdateCollaborationRequestEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<UpdateCollaborationRequestEndpoint>;
 export type GetUserCollaborationRequestHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetUserCollaborationRequestEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetUserCollaborationRequestEndpoint>;
 export type GetWorkspaceCollaborationRequestHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetWorkspaceCollaborationRequestEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetWorkspaceCollaborationRequestEndpoint>;
 
 export type CollaborationRequestsExportedEndpoints = {
   sendRequest: SendCollaborationRequestHttpEndpoint;

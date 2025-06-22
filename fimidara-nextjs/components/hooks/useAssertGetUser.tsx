@@ -1,8 +1,8 @@
 "use client";
 
-import { LoginResult } from "@/lib/api-internal/endpoints/privateTypes.ts";
 import { useUserSessionFetchStore } from "@/lib/hooks/fetchStores/session.ts";
 import assert from "assert";
+import { LoginResult } from "fimidara-private-js-sdk";
 import { first } from "lodash-es";
 
 export interface IUseAssertGetUserResult {

@@ -1,9 +1,12 @@
 "use client";
 
-import { FimidaraEndpoints, FimidaraJsConfigAuthToken } from "fimidara";
+import { FimidaraEndpoints } from "fimidara";
+import {
+  FimidaraJsConfigAuthToken,
+  FimidaraEndpoints as PrivateFimidaraEndpoints,
+} from "fimidara-private-js-sdk";
 import { first } from "lodash-es";
 import { getSession } from "next-auth/react";
-import { FimidaraEndpoints as PrivateFimidaraEndpoints } from "../api-internal/endpoints/privateEndpoints.ts";
 import { systemConstants } from "../definitions/system";
 import { IOAuthUser } from "../definitions/user.ts";
 import { useUserSessionFetchStore } from "../hooks/fetchStores/session.ts";

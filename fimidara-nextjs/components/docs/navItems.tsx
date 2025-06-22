@@ -1,9 +1,9 @@
 import { kAppDocPaths } from "@/lib/definitions/paths/docs.ts";
 import assert from "assert";
-import { first, forEach, get, last, set } from "lodash-es";
+import { first } from "lodash-es";
+import { MfdocEndpointsTableOfContent } from "mfdoc/endpointInfo.d.ts";
 import { ValueOf } from "type-fest";
-import restApiTableOfContent from "../../api-raw/toc/v1/table-of-content.json";
-import { isObjectEmpty } from "../../lib/utils/fns";
+import restApiTableOfContent from "../../../fimidara-mfdoc-out/public-endpoints/table-of-content.json";
 import { IRawNavItem } from "../utils/page/side-nav/types.ts";
 import { renderToSideNavMenuItemList } from "../utils/page/side-nav/utils.tsx";
 import { htmlCharacterCodes } from "../utils/utils";
@@ -13,9 +13,7 @@ export const apiVersion = "v1";
 
 export function getNavItemPath(item: IRawNavItem, parentItems: IRawNavItem[]) {
   const rootItem = first(parentItems);
-  const includeVersion =
-    rootItem?.key === kDocNavRootKeysMap.jsSdk ||
-    rootItem?.key === kDocNavRootKeysMap.restApi;
+  const includeVersion = rootItem?.key === kDocNavRootKeysMap.restApi;
   let prefixPath = "";
 
   if (rootItem) {
@@ -29,7 +27,6 @@ export function getNavItemPath(item: IRawNavItem, parentItems: IRawNavItem[]) {
 export const kDocNavRootKeysMap = {
   fimidara: "fimidara",
   restApi: "fimidara-rest-api",
-  jsSdk: "fimidara-js-sdk",
 } as const;
 
 export const kDocNavRootKeysList = Object.values(kDocNavRootKeysMap);
@@ -39,10 +36,6 @@ export type DocNavRootKeys = ValueOf<typeof kDocNavRootKeysMap>;
 export const restApiRawNavItems = extractRestApiFromRawTableOfContent(
   restApiTableOfContent as any,
   kDocNavRootKeysMap.restApi
-);
-export const jsSdkRawNavItems = extractRestApiFromRawTableOfContent(
-  restApiTableOfContent as any,
-  kDocNavRootKeysMap.jsSdk
 );
 
 export const fimidaraNavItems: IRawNavItem[] = [
@@ -78,116 +71,124 @@ export const fimidaraRestApiNavItems: IRawNavItem[] = [
     ).concat(restApiRawNavItems),
   },
 ];
-export const fimidaraJsSdkNavItems: IRawNavItem[] = [
-  {
-    key: kDocNavRootKeysMap.jsSdk,
-    label: "fimidara JS SDK",
-    children: (
-      [
-        {
-          label: "overview",
-          key: kDocNavRootKeysMap.jsSdk + "__" + "overview",
-          href: kAppDocPaths.fimidaraJsSdkDoc("overview"),
-        },
-      ] as IRawNavItem[]
-    ).concat(jsSdkRawNavItems),
-  },
-];
 
 export const fimidaraSideNavItems =
   renderToSideNavMenuItemList(fimidaraNavItems);
 export const fimidaraRestApiSideNavItems = renderToSideNavMenuItemList(
   fimidaraRestApiNavItems
 );
-export const fimidaraJsSdkSideNavItems = renderToSideNavMenuItemList(
-  fimidaraJsSdkNavItems
-);
 
 function extractRestApiFromRawTableOfContent(
-  records: Array<[/** path */ string, /** http method */ string]>,
+  tableOfContent: MfdocEndpointsTableOfContent[],
   rootKey: DocNavRootKeys
-) {
-  interface NavItemIntermediateRep {
-    key: string;
-    label: React.ReactNode;
-    withLink?: boolean;
-    children?: Record<string, NavItemIntermediateRep>;
-  }
-
+): IRawNavItem[] {
   const links: IRawNavItem[] = [];
-  const linksMap: Record<string, NavItemIntermediateRep> = {};
   const pFn =
     rootKey === kDocNavRootKeysMap.restApi
       ? kAppDocPaths.fimidaraRestApiDoc
-      : rootKey === kDocNavRootKeysMap.jsSdk
-      ? kAppDocPaths.fimidaraJsSdkDoc
       : undefined;
   assert(pFn);
 
-  function setEntry(endpointPath: string, httpMethod: string) {
-    const [unused, apiVersion, ...restPath] = endpointPath
-      .split("/")
-      // filter out sections starting with ":". ":" represents path variable
-      .filter((p) => !p.startsWith(":"));
-    const fnName = last(restPath);
+  function processTableOfContent(
+    toc: MfdocEndpointsTableOfContent,
+    parentKey: string = ""
+  ): IRawNavItem[] {
+    const items: IRawNavItem[] = [];
 
-    restPath.forEach((nextKey, index) => {
-      const keyList = restPath.slice(0, index + 1);
-      const keysJoined = keyList.join("__");
-      const isFn = nextKey === fnName;
-      const itemKey =
-        rootKey + "__" + (isFn ? `${keysJoined}__${httpMethod}` : keysJoined);
-      let fullKeyPath = keyList.join(".children.");
-      fullKeyPath = isFn ? `${fullKeyPath}__${httpMethod}` : fullKeyPath;
-      const label =
-        isFn && rootKey === kDocNavRootKeysMap.restApi
-          ? `${nextKey}${htmlCharacterCodes.doubleDash}${httpMethod}`
-          : nextKey;
+    // Process children recursively
+    Object.entries(toc.children).forEach(([childKey, childToc]) => {
+      const currentKey = parentKey ? `${parentKey}__${childKey}` : childKey;
+      const isLeaf = Object.keys(childToc.children).length === 0;
+
+      // Extract HTTP method from basename if it's a leaf endpoint
+      let label = childToc.basename;
+      let href: string | undefined;
+
+      if (isLeaf && childToc.filepath) {
+        // This is an endpoint - extract method from basename
+        const methodMatch = childToc.basename.match(/__([a-z]+)$/);
+        if (methodMatch) {
+          const method = methodMatch[1];
+          const endpointName = childToc.basename.replace(/__[a-z]+$/, "");
+          label = `${endpointName}${htmlCharacterCodes.doubleDash}${method}`;
+          href = pFn?.(currentKey);
+        }
+      }
+
       const item: IRawNavItem = {
+        key: currentKey,
         label,
-        key: itemKey,
-        href: pFn?.(itemKey),
+        href,
+        children: isLeaf
+          ? undefined
+          : processTableOfContent(childToc, currentKey),
       };
 
-      if (!get(linksMap, fullKeyPath)) {
-        set(linksMap, fullKeyPath, item);
-      }
+      items.push(item);
     });
+
+    return items;
   }
 
-  function toList(
-    parentItems: IRawNavItem[],
-    items: Record<string, NavItemIntermediateRep>
-  ) {
-    forEach(items, (nextItem) => {
-      const item: IRawNavItem = { ...nextItem, children: undefined };
-      parentItems.push(item);
-
-      if (nextItem.children && !isObjectEmpty(nextItem.children)) {
-        item.children = [];
-        toList(item.children, nextItem.children);
-      }
-    });
-  }
-
-  if (rootKey === kDocNavRootKeysMap.jsSdk) {
-    const localMap: Record<string, [string, string]> = {};
-    records = records.filter(([endpointPath, endpointMethod]) => {
-      const entry = localMap[endpointPath];
-
-      if (entry) {
-        if (entry[1] === "post") return false;
-      }
-
-      localMap[endpointPath] = [endpointPath, endpointMethod];
-      return true;
-    });
-  }
-
-  records.forEach(([endpointPath, httpMethod]) => {
-    setEntry(endpointPath, httpMethod);
+  // Process each root item, but skip the "fimidara" root and only process its children
+  tableOfContent.forEach((rootToc) => {
+    if (rootToc.basename === "fimidara") {
+      // Skip the root "fimidara" item and process its children directly
+      Object.entries(rootToc.children).forEach(([childKey, childToc]) => {
+        const items = processTableOfContent(childToc, childKey);
+        links.push(...items);
+      });
+    } else {
+      // For other root items, process normally
+      const items = processTableOfContent(rootToc, rootToc.basename);
+      links.push(...items);
+    }
   });
 
-  toList(links, linksMap);
   return links;
+}
+
+/**
+ * Extracts the filepath for a leaf endpoint from an href
+ * @param href The href string containing the endpoint path
+ * @returns The filepath for the endpoint, or undefined if not found
+ */
+export function extractFilepathFromHref(href: string): string | undefined {
+  try {
+    // Extract the endpoint path from the href
+    // href format: /docs/fimidara-rest-api/v1/[endpointPath]
+    const url = new URL(href, "http://localhost");
+    const pathSegments = url.pathname.split("/").filter(Boolean);
+
+    // Find the endpoint path after the version
+    const versionIndex = pathSegments.findIndex((segment) => segment === "v1");
+    if (versionIndex === -1 || versionIndex === pathSegments.length - 1) {
+      return undefined;
+    }
+
+    const endpointPath = pathSegments.slice(versionIndex + 1).join("/");
+    if (!endpointPath) {
+      return undefined;
+    }
+
+    // Convert the endpoint path to the expected filepath format
+    // endpointPath format: "agentTokens__addToken__post"
+    // filepath format: "fimidara/agentTokens/addToken__post.json"
+    const pathParts = endpointPath.split("__");
+    if (pathParts.length < 2) {
+      return undefined;
+    }
+
+    // The last part is the HTTP method
+    const method = pathParts[pathParts.length - 1];
+    const endpointName = pathParts[pathParts.length - 2];
+    const category = pathParts.slice(0, -2).join("/");
+
+    // Construct the filepath
+    const filepath = `fimidara/${category}/${endpointName}__${method}.json`;
+    return filepath;
+  } catch (error) {
+    console.error("Error extracting filepath from href:", error);
+    return undefined;
+  }
 }

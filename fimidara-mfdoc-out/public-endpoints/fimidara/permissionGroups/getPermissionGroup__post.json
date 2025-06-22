@@ -1,0 +1,335 @@
+{
+    "__id": "HttpEndpointDefinition",
+    "path": "/v1/permissionGroups/getPermissionGroup",
+    "method": "post",
+    "requestBody": {
+        "__id": "FieldObject",
+        "name": "GetPermissionGroupEndpointParams",
+        "description": "Parameters for retrieving a single permission group by ID or name",
+        "fields": {
+            "permissionGroupId": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Permission group ID. Either provide the permission group ID, or provide the workspace ID and permission group name",
+                    "example": "perm_group_01234567890"
+                }
+            },
+            "name": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Permission group name. Either provide the permission group ID, or provide the workspace ID and permission group name",
+                    "example": "Editors"
+                }
+            },
+            "workspaceId": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Workspace ID. When not provided, will default to using workspace ID from agent token. Either provide the permission group ID, or provide the workspace ID and permission group name",
+                    "example": "wrkspce_000000000000000000000"
+                }
+            }
+        }
+    },
+    "requestHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointRequestHeaders_AuthRequired_JsonContentType",
+        "fields": {
+            "Authorization": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Access token",
+                    "example": "Bearer <token>"
+                }
+            },
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON request content type",
+                    "example": "application/json"
+                }
+            }
+        }
+    },
+    "responseHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointResponseHeaders_ContentType_ContentLength",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON response content type",
+                    "example": "application/json"
+                }
+            },
+            "Content-Length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP response content length in bytes",
+                    "example": "1024"
+                }
+            }
+        }
+    },
+    "responseBody": {
+        "__id": "FieldObject",
+        "name": "GetPermissionGroupEndpointResult",
+        "description": "Response containing the requested permission group",
+        "fields": {
+            "permissionGroup": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldObject",
+                    "name": "PermissionGroup",
+                    "description": "A permission group that can be assigned to entities to grant access to workspace resources",
+                    "fields": {
+                        "resourceId": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "Resource ID",
+                                "example": "wrkspce_000000000000000000000"
+                            }
+                        },
+                        "createdBy": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldObject",
+                                "name": "Agent",
+                                "description": "Represents a user or system entity that performed an action (e.g., created or updated a resource)",
+                                "fields": {
+                                    "agentId": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent ID. Possible agents are users and agent tokens",
+                                            "example": "user000_000000000000000000000"
+                                        }
+                                    },
+                                    "agentType": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent type",
+                                            "example": "agentToken",
+                                            "valid": [
+                                                "user",
+                                                "agentToken"
+                                            ],
+                                            "enumName": "AgentType"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "createdAt": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldNumber",
+                                "description": "UTC timestamp in milliseconds",
+                                "example": 1672531200000
+                            }
+                        },
+                        "lastUpdatedBy": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldObject",
+                                "name": "Agent",
+                                "description": "Represents a user or system entity that performed an action (e.g., created or updated a resource)",
+                                "fields": {
+                                    "agentId": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent ID. Possible agents are users and agent tokens",
+                                            "example": "user000_000000000000000000000"
+                                        }
+                                    },
+                                    "agentType": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent type",
+                                            "example": "agentToken",
+                                            "valid": [
+                                                "user",
+                                                "agentToken"
+                                            ],
+                                            "enumName": "AgentType"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "lastUpdatedAt": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldNumber",
+                                "description": "UTC timestamp in milliseconds",
+                                "example": 1672531200000
+                            }
+                        },
+                        "isDeleted": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldBoolean"
+                            }
+                        },
+                        "deletedAt": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldNumber",
+                                "description": "UTC timestamp in milliseconds",
+                                "example": 1672531200000
+                            }
+                        },
+                        "deletedBy": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldObject",
+                                "name": "Agent",
+                                "description": "Represents a user or system entity that performed an action (e.g., created or updated a resource)",
+                                "fields": {
+                                    "agentId": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent ID. Possible agents are users and agent tokens",
+                                            "example": "user000_000000000000000000000"
+                                        }
+                                    },
+                                    "agentType": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent type",
+                                            "example": "agentToken",
+                                            "valid": [
+                                                "user",
+                                                "agentToken"
+                                            ],
+                                            "enumName": "AgentType"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "workspaceId": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "Workspace ID",
+                                "example": "wrkspce_000000000000000000000"
+                            }
+                        },
+                        "name": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "The name of the permission group",
+                                "example": "Editors"
+                            }
+                        },
+                        "description": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "Optional description explaining the purpose of this permission group",
+                                "example": "Users who can edit files and folders in the workspace"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "name": "fimidara/permissionGroups/getPermissionGroup",
+    "description": "Retrieve a specific permission group by its ID or name. You can identify the permission group either by providing its ID directly, or by providing the workspace ID and permission group name.",
+    "tags": [
+        "public"
+    ],
+    "errorResponseHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointResponseHeaders_ContentType_ContentLength",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON response content type",
+                    "example": "application/json"
+                }
+            },
+            "Content-Length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP response content length in bytes"
+                }
+            }
+        }
+    },
+    "errorResponseBody": {
+        "__id": "FieldObject",
+        "name": "EndpointErrorResult",
+        "description": "Endpoint error result",
+        "fields": {
+            "errors": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldArray",
+                    "type": {
+                        "__id": "FieldObject",
+                        "name": "ExternalError",
+                        "fields": {
+                            "message": {
+                                "__id": "FieldObjectField",
+                                "required": true,
+                                "data": {
+                                    "__id": "FieldString",
+                                    "description": "Error message",
+                                    "example": "Workspace name is invalid"
+                                }
+                            }
+                        }
+                    },
+                    "description": "Endpoint call response errors"
+                }
+            }
+        }
+    }
+}

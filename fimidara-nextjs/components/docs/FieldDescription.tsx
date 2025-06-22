@@ -1,20 +1,20 @@
 import { map } from "lodash-es";
+import {
+  isMfdocCustomType,
+  isMfdocFieldArray,
+  isMfdocFieldBinary,
+  isMfdocFieldBoolean,
+  isMfdocFieldDate,
+  isMfdocFieldNumber,
+  isMfdocFieldOrCombination,
+  isMfdocFieldString,
+  MfdocFieldBaseTypePrimitive,
+} from "mfdoc/mfdoc-core";
 import prettyBytes from "pretty-bytes";
 import React from "react";
 import { Separator } from "../ui/separator.tsx";
 import { cn } from "../utils.ts";
 import { StyleableComponentProps } from "../utils/styling/types";
-import { FieldBase } from "./types";
-import {
-  isFieldArray,
-  isFieldBinary,
-  isFieldBoolean,
-  isFieldCustomType,
-  isFieldDate,
-  isFieldNumber,
-  isFieldOrCombination,
-  isFieldString,
-} from "./utils";
 
 export interface FieldDescriptionProps extends StyleableComponentProps {
   fieldbase: any;
@@ -24,7 +24,10 @@ export interface FieldDescriptionProps extends StyleableComponentProps {
 const FieldDescription: React.FC<FieldDescriptionProps> = (props) => {
   const { fieldbase, style, className, type } = props;
   const nodes: React.ReactNode[] = [];
-  if (fieldbase && (fieldbase as Pick<FieldBase, "description">)) {
+  if (
+    fieldbase &&
+    (fieldbase as Pick<MfdocFieldBaseTypePrimitive, "description">)
+  ) {
     nodes.push(
       <p
         key="description"
@@ -35,7 +38,7 @@ const FieldDescription: React.FC<FieldDescriptionProps> = (props) => {
     );
   }
 
-  if (isFieldString(fieldbase)) {
+  if (isMfdocFieldString(fieldbase)) {
     if (fieldbase.valid) {
       nodes.push(
         <p key="string-enum">
@@ -67,7 +70,7 @@ const FieldDescription: React.FC<FieldDescriptionProps> = (props) => {
         </p>
       );
     }
-  } else if (isFieldNumber(fieldbase)) {
+  } else if (isMfdocFieldNumber(fieldbase)) {
     if (fieldbase.integer) {
       nodes.push(
         <p key="number-subset">
@@ -104,7 +107,7 @@ const FieldDescription: React.FC<FieldDescriptionProps> = (props) => {
         </p>
       );
     }
-  } else if (isFieldBoolean(fieldbase)) {
+  } else if (isMfdocFieldBoolean(fieldbase)) {
     if (fieldbase.example) {
       nodes.push(
         <p key="boolean-example">
@@ -112,7 +115,7 @@ const FieldDescription: React.FC<FieldDescriptionProps> = (props) => {
         </p>
       );
     }
-  } else if (isFieldDate(fieldbase)) {
+  } else if (isMfdocFieldDate(fieldbase)) {
     nodes.push(
       <p key="date-fieldbase-type">
         <code>unix milliseconds timestamp</code>
@@ -126,7 +129,7 @@ const FieldDescription: React.FC<FieldDescriptionProps> = (props) => {
         </p>
       );
     }
-  } else if (isFieldArray(fieldbase)) {
+  } else if (isMfdocFieldArray(fieldbase)) {
     if (fieldbase.min) {
       nodes.push(
         <p key="array-min">
@@ -141,7 +144,7 @@ const FieldDescription: React.FC<FieldDescriptionProps> = (props) => {
         </p>
       );
     }
-  } else if (isFieldBinary(fieldbase)) {
+  } else if (isMfdocFieldBinary(fieldbase)) {
     if (fieldbase.min) {
       nodes.push(
         <p key="binary-min">
@@ -156,7 +159,7 @@ const FieldDescription: React.FC<FieldDescriptionProps> = (props) => {
         </p>
       );
     }
-  } else if (isFieldCustomType(fieldbase)) {
+  } else if (isMfdocCustomType(fieldbase)) {
     if (fieldbase.descriptionLink) {
       nodes.push(
         <p key="custom-type-description-link">
@@ -165,7 +168,7 @@ const FieldDescription: React.FC<FieldDescriptionProps> = (props) => {
         </p>
       );
     }
-  } else if (isFieldOrCombination(fieldbase)) {
+  } else if (isMfdocFieldOrCombination(fieldbase)) {
     const descriptions = map(fieldbase.types ?? {}, (type, i) => (
       <React.Fragment key={i}>
         {Number(i) != 0 && <Separator />}

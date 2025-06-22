@@ -1,5 +1,5 @@
 import {FimidaraPermissionAction} from '../../definitions/permissionItem.js';
-import {ExportedHttpEndpointWithMddocDefinition} from '../types.js';
+import {ExportedHttpEndpointWithMfdocDefinition} from '../types.js';
 import {GetResourcesEndpoint} from './getResources/types.js';
 
 export interface FetchResourceItem {
@@ -12,7 +12,7 @@ export interface FetchResourceItem {
 }
 
 export type GetResourcesHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetResourcesEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetResourcesEndpoint>;
 
 export type ResourcesExportedEndpoints = {
   getResources: GetResourcesHttpEndpoint;

@@ -1,5 +1,5 @@
 import {FimidaraPermissionAction} from '../../definitions/permissionItem.js';
-import {ExportedHttpEndpointWithMddocDefinition} from '../types.js';
+import {ExportedHttpEndpointWithMfdocDefinition} from '../types.js';
 import {AddPermissionItemsEndpoint} from './addItems/types.js';
 import {DeletePermissionItemsEndpoint} from './deleteItems/types.js';
 import {ResolveEntityPermissionsEndpoint} from './resolveEntityPermissions/types.js';
@@ -25,11 +25,11 @@ export interface PermissionItemInput extends PermissionItemInputTarget {
 }
 
 export type AddPermissionItemsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<AddPermissionItemsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<AddPermissionItemsEndpoint>;
 export type DeletePermissionItemsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<DeletePermissionItemsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<DeletePermissionItemsEndpoint>;
 export type ResolveEntityPermissionsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<ResolveEntityPermissionsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<ResolveEntityPermissionsEndpoint>;
 
 export type PermissionItemsExportedEndpoints = {
   addItems: AddPermissionItemsHttpEndpoint;

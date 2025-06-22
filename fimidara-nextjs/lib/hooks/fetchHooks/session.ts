@@ -1,9 +1,8 @@
 "use client";
 
-import { User } from "@/lib/api-internal/endpoints/privateTypes.ts";
-import { RefreshUserToken } from "@/lib/api-internal/RefreshUserToken.ts";
 import { callSetCookieEndpoint } from "@/lib/api/account/index.ts";
 import { getPrivateFimidaraEndpointsUsingUserToken } from "@/lib/api/fimidaraEndpoints.ts";
+import { RefreshUserToken, User } from "fimidara-private-js-sdk";
 import {
   UserSessionFetchStoreOther,
   useUserSessionFetchStore,

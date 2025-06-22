@@ -26,12 +26,17 @@
     "test:integration": "env-cmd -f \".env.integration-test\" vitest --config ./vitest.config.ts",
     "dev:test": "tsc && env-cmd -f \".env.unit-test\" npm start",
     "check:circular-deps": "npx dpdm --no-warning --no-tree ./src/index.ts",
-    "gen:rest-api": "env-cmd -f \".env.dev\" npx tsx src/mddoc/restApiGen.ts",
-    "gen:js-sdk": "env-cmd -f \".env.dev\" npx tsx src/mddoc/jsSdkCodeGen.ts",
     "mongo:dev": "npx run-rs --host localhost --portStart 27000 --dbpath dev-mongo-rs-data --keep",
     "mongo:test": "npx run-rs --host localhost --portStart 27005 --dbpath test-mongo-rs-data",
     "render:email-templates": "env-cmd -f \".env.dev\" npx tsx src/tools/email-templates/index.ts",
-    "setup:sdk-test": "npx env-cmd -f \".env.unit-test\" npx tsx src/tools/sdk-test-setup/index.ts"
+    "gen:public:endpoints-info": "mfdoc gen-http-api-endpoints-info ./src/endpoints/endpoints.mfdoc.ts --output-path ../fimidara-mfdoc-out/public-endpoints --tags public",
+    "gen:public:setup-js-sdk": "mfdoc setup-js-sdk ../fimidara-js-sdk --name fimidara --provider pnpm",
+    "gen:public:js-sdk": "mfdoc gen-js-sdk ./src/endpoints/endpoints.mfdoc.ts --output-path ../fimidara-js-sdk --tags public --filename-prefix public",
+    "gen:private:endpoints-info": "mfdoc gen-http-api-endpoints-info ./src/endpoints/endpoints.mfdoc.ts --output-path ../fimidara-mfdoc-out/private-endpoints --tags private",
+    "gen:private:setup-js-sdk": "mfdoc setup-js-sdk ../fimidara-private-js-sdk --name fimidara-private --provider pnpm",
+    "gen:private:js-sdk": "mfdoc gen-js-sdk ./src/endpoints/endpoints.mfdoc.ts --output-path ../fimidara-private-js-sdk --tags private --filename-prefix private",
+    "setup:sdk-test:public": "npx env-cmd -f \".env.unit-test\" npx tsx src/tools/sdk-test-setup/index.ts",
+    "setup:sdk-test:private": "npx env-cmd -f \".env.unit-test\" npx tsx src/tools/sdk-test-setup/index.ts ../fimidara-private-js-sdk/.env.test"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.705.0",
@@ -54,6 +59,7 @@
     "js-accessor": "^1.1.0",
     "jsonwebtoken": "^9.0.2",
     "lodash-es": "^4.17.21",
+    "mfdoc": "^0.4.0",
     "mongoose": "^8.1.2",
     "nanoid": "^5.0.7",
     "redis": "^4.7.0",
@@ -86,10 +92,12 @@
     "@types/validator": "^13.1.2",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
+    "concurrently": "^9.1.2",
     "env-cmd": "^10.1.0",
     "expect-type": "^0.19.0",
     "gts": "^5.3.0",
     "inquirer": "^9.2.15",
+    "tsx": "^4.20.3",
     "typescript": "^5.3.3",
     "vitest": "^3.1.1"
   }

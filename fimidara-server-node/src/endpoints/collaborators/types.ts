@@ -1,4 +1,4 @@
-import {ExportedHttpEndpointWithMddocDefinition} from '../types.js';
+import {ExportedHttpEndpointWithMfdocDefinition} from '../types.js';
 import {CountWorkspaceCollaboratorsEndpoint} from './countWorkspaceCollaborators/types.js';
 import {GetCollaboratorEndpoint} from './getCollaborator/types.js';
 import {GetCollaboratorsWithoutPermissionEndpoint} from './getCollaboratorsWithoutPermission/types.js';
@@ -6,15 +6,15 @@ import {GetWorkspaceCollaboratorsEndpoint} from './getWorkspaceCollaborators/typ
 import {RemoveCollaboratorEndpoint} from './removeCollaborator/types.js';
 
 export type GetCollaboratorHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetCollaboratorEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetCollaboratorEndpoint>;
 export type GetWorkspaceCollaboratorsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetWorkspaceCollaboratorsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetWorkspaceCollaboratorsEndpoint>;
 export type CountWorkspaceCollaboratorsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<CountWorkspaceCollaboratorsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<CountWorkspaceCollaboratorsEndpoint>;
 export type RemoveCollaboratorHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<RemoveCollaboratorEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<RemoveCollaboratorEndpoint>;
 export type GetCollaboratorsWithoutPermissionHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetCollaboratorsWithoutPermissionEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetCollaboratorsWithoutPermissionEndpoint>;
 
 export type CollaboratorsExportedEndpoints = {
   getCollaborator: GetCollaboratorHttpEndpoint;

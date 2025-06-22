@@ -1,6 +1,12 @@
 "use client";
 
-import { css } from "@emotion/css";
+import {
+  isMfdocFieldBinary,
+  isMfdocFieldObject,
+  isMfdocMultipartFormdata,
+  MfdocFieldObjectTypePrimitive,
+  MfdocHttpEndpointDefinitionTypePrimitive,
+} from "mfdoc/mfdoc-core";
 import React from "react";
 import { Separator } from "../ui/separator.tsx";
 import { cn } from "../utils.ts";
@@ -8,27 +14,10 @@ import PageMessage from "../utils/page/PageMessage";
 import { htmlCharacterCodes } from "../utils/utils";
 import FieldObjectAsTable from "./FieldObjectAsTable";
 import FieldObjectRender from "./FieldObjectRender";
-import { HttpEndpointDefinition } from "./types";
-import {
-  isFieldBinary,
-  isFieldObject,
-  isHttpEndpointMultipartFormdata,
-} from "./utils";
 
 export interface HttpEndpointDocProps {
-  endpoint: HttpEndpointDefinition;
+  endpoint: MfdocHttpEndpointDefinitionTypePrimitive;
 }
-
-const classes = {
-  root: css({
-    "& table": {
-      fontFamily: `var(--font-default), -apple-system, BlinkMacSystemFont,
-        "Work Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji" !important`,
-    },
-  }),
-};
 
 const HttpEndpointDoc: React.FC<HttpEndpointDocProps> = (props) => {
   const { endpoint } = props;
@@ -37,10 +26,15 @@ const HttpEndpointDoc: React.FC<HttpEndpointDocProps> = (props) => {
   );
 
   return (
-    <div style={{ width: "100%" }} className={cn("space-y-8", classes.root)}>
+    <div
+      style={{ width: "100%" }}
+      className={cn(
+        "space-y-8 [&_table]:font-[var(--font-default),-apple-system,BlinkMacSystemFont,'Work_Sans','Segoe_UI',Roboto,'Helvetica_Neue',Arial,'Noto_Sans',sans-serif,'Apple_Color_Emoji','Segoe_UI_Emoji','Segoe_UI_Symbol','Noto_Color_Emoji']"
+      )}
+    >
       <div>
         <h5 className="inline-block" style={{ margin: 0 }}>
-          <code>{endpoint.basePathname}</code>
+          <code>{endpoint.path}</code>
         </h5>{" "}
         {htmlCharacterCodes.doubleDash}{" "}
         <h5 className="inline-block" style={{ margin: 0 }}>
@@ -50,7 +44,11 @@ const HttpEndpointDoc: React.FC<HttpEndpointDocProps> = (props) => {
       <div className="space-y-4">
         <h5>Path Parameters</h5>
         {endpoint.pathParamaters ? (
-          <FieldObjectAsTable fieldObject={endpoint.pathParamaters} />
+          <FieldObjectAsTable
+            fieldObject={
+              endpoint.pathParamaters as MfdocFieldObjectTypePrimitive<any>
+            }
+          />
         ) : (
           notApplicableNode
         )}
@@ -59,7 +57,11 @@ const HttpEndpointDoc: React.FC<HttpEndpointDocProps> = (props) => {
       <div className="space-y-4">
         <h5>Request Headers</h5>
         {endpoint.requestHeaders ? (
-          <FieldObjectAsTable fieldObject={endpoint.requestHeaders} />
+          <FieldObjectAsTable
+            fieldObject={
+              endpoint.requestHeaders as MfdocFieldObjectTypePrimitive<any>
+            }
+          />
         ) : (
           notApplicableNode
         )}
@@ -68,7 +70,9 @@ const HttpEndpointDoc: React.FC<HttpEndpointDocProps> = (props) => {
       <div className="space-y-4">
         <h5>Request Query</h5>
         {endpoint.query ? (
-          <FieldObjectAsTable fieldObject={endpoint.query} />
+          <FieldObjectAsTable
+            fieldObject={endpoint.query as MfdocFieldObjectTypePrimitive<any>}
+          />
         ) : (
           notApplicableNode
         )}
@@ -76,9 +80,9 @@ const HttpEndpointDoc: React.FC<HttpEndpointDocProps> = (props) => {
       <Separator />
       <div className="space-y-4">
         <h5>Request Body</h5>
-        {isFieldObject(endpoint.requestBody) ? (
+        {isMfdocFieldObject(endpoint.requestBody) ? (
           <FieldObjectRender fieldObject={endpoint.requestBody} />
-        ) : isHttpEndpointMultipartFormdata(endpoint.requestBody) &&
+        ) : isMfdocMultipartFormdata(endpoint.requestBody) &&
           endpoint.requestBody.items ? (
           <FieldObjectAsTable fieldObject={endpoint.requestBody.items} />
         ) : (
@@ -89,7 +93,11 @@ const HttpEndpointDoc: React.FC<HttpEndpointDocProps> = (props) => {
       <div className="space-y-4">
         <h5>200 {htmlCharacterCodes.doubleDash} Response Headers</h5>
         {endpoint.responseHeaders ? (
-          <FieldObjectAsTable fieldObject={endpoint.responseHeaders} />
+          <FieldObjectAsTable
+            fieldObject={
+              endpoint.responseHeaders as MfdocFieldObjectTypePrimitive<any>
+            }
+          />
         ) : (
           notApplicableNode
         )}
@@ -97,9 +105,9 @@ const HttpEndpointDoc: React.FC<HttpEndpointDocProps> = (props) => {
       <Separator />
       <div className="space-y-4">
         <h5>200 {htmlCharacterCodes.doubleDash} Response Body</h5>
-        {isFieldObject(endpoint.responseBody) ? (
+        {isMfdocFieldObject(endpoint.responseBody) ? (
           <FieldObjectRender fieldObject={endpoint.responseBody} />
-        ) : isFieldBinary(endpoint.responseBody) ? (
+        ) : isMfdocFieldBinary(endpoint.responseBody) ? (
           <code>binary</code>
         ) : (
           notApplicableNode
@@ -109,7 +117,11 @@ const HttpEndpointDoc: React.FC<HttpEndpointDocProps> = (props) => {
       <div className="space-y-4">
         <h5>4XX or 5XX {htmlCharacterCodes.doubleDash} Response Headers</h5>
         {endpoint.errorResponseHeaders ? (
-          <FieldObjectAsTable fieldObject={endpoint.errorResponseHeaders} />
+          <FieldObjectAsTable
+            fieldObject={
+              endpoint.errorResponseHeaders as MfdocFieldObjectTypePrimitive<any>
+            }
+          />
         ) : (
           notApplicableNode
         )}

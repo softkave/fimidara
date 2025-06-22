@@ -3,7 +3,6 @@
 import ItemList from "@/components/utils/list/ItemList";
 import AppIcon from "@/components/utils/page/AppIcon";
 import ThumbnailContent from "@/components/utils/page/ThumbnailContent";
-import { appClasses } from "@/components/utils/theme";
 import { kAppWorkspacePaths } from "@/lib/definitions/paths/workspace.ts";
 import { Folder } from "fimidara";
 import { noop } from "lodash-es";
@@ -59,7 +58,7 @@ const FolderList: FC<FolderListProps> = (props) => {
             <div className="flex flex-col justify-center">
               <AppIcon
                 icon={<FolderIcon className="w-4 h-4" />}
-                className={appClasses.alignStart}
+                className="items-start"
                 style={{ marginTop: "1px" }}
               />
             </div>

@@ -10,7 +10,7 @@ import {
   getFolderEndpointDefinition,
   listFolderContentEndpointDefinition,
   updateFolderEndpointDefinition,
-} from './endpoints.mddoc.js';
+} from './endpoints.mfdoc.js';
 import getFolder from './getFolder/handler.js';
 import listFolderContent from './listFolderContent/handler.js';
 import {FoldersExportedEndpoints} from './types.js';
@@ -31,37 +31,37 @@ export function getFoldersHttpEndpoints() {
     addFolder: {
       tag: [kEndpointTag.public],
       fn: addFolder,
-      mddocHttpDefinition: addFolderEndpointDefinition,
+      mfdocHttpDefinition: addFolderEndpointDefinition,
       handleError: handleNotFoundError,
     },
     deleteFolder: {
       tag: [kEndpointTag.public],
       fn: deleteFolder,
-      mddocHttpDefinition: deleteFolderEndpointDefinition,
+      mfdocHttpDefinition: deleteFolderEndpointDefinition,
       handleError: handleNotFoundError,
     },
     getFolder: {
       tag: [kEndpointTag.public],
       fn: getFolder,
-      mddocHttpDefinition: getFolderEndpointDefinition,
+      mfdocHttpDefinition: getFolderEndpointDefinition,
       handleError: handleNotFoundError,
     },
     listFolderContent: {
       tag: [kEndpointTag.public],
       fn: listFolderContent,
-      mddocHttpDefinition: listFolderContentEndpointDefinition,
+      mfdocHttpDefinition: listFolderContentEndpointDefinition,
       handleError: handleNotFoundError,
     },
     countFolderContent: {
       tag: [kEndpointTag.public],
       fn: countFolderContent,
-      mddocHttpDefinition: countFolderContentEndpointDefinition,
+      mfdocHttpDefinition: countFolderContentEndpointDefinition,
       handleError: handleNotFoundError,
     },
     updateFolder: {
       tag: [kEndpointTag.public],
       fn: updateFolder,
-      mddocHttpDefinition: updateFolderEndpointDefinition,
+      mfdocHttpDefinition: updateFolderEndpointDefinition,
       handleError: handleNotFoundError,
     },
   };

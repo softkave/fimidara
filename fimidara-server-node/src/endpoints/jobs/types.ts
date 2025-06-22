@@ -1,6 +1,6 @@
 import {MessagePort} from 'worker_threads';
 import {AppShardId} from '../../definitions/app.js';
-import {ExportedHttpEndpointWithMddocDefinition} from '../types.js';
+import {ExportedHttpEndpointWithMfdocDefinition} from '../types.js';
 import {GetJobStatusEndpoint} from './getJobStatus/types.js';
 
 export interface LongRunningJobResult {
@@ -12,7 +12,7 @@ export interface MultipleLongRunningJobResult {
 }
 
 export type GetJobStatusHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetJobStatusEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetJobStatusEndpoint>;
 
 export type JobsExportedEndpoints = {
   getJobStatus: GetJobStatusHttpEndpoint;
@@ -35,7 +35,9 @@ export const kRunnerWorkerMessageType = {
   getPickFromShards: 'getPickFromShards',
   setPickFromShards: 'setPickFromShards',
 } as const;
-export const kRunnerWorkerMessageTypeList = Object.values(kRunnerWorkerMessageType);
+export const kRunnerWorkerMessageTypeList = Object.values(
+  kRunnerWorkerMessageType
+);
 
 export interface ChildRunnerWorkerData {
   runnerId: string;

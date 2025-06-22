@@ -1,0 +1,32 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["./src/indexBrowser.ts", "./src/indexNode.ts"],
+  "outputs": [
+    {
+      "name": "html",
+      "path": "./docs_html"
+    },
+    {
+      "name": "html",
+      "path": "./docs_html_full_nav",
+      "options": {
+        "navigation": {
+          "includeCategories": true,
+          "includeGroups": true,
+          "excludeReferences": false,
+          "includeFolders": true
+        }
+      }
+    },
+    {
+      "name": "json",
+      "path": "./docs.json"
+    },
+    {
+      // requires typedoc-plugin-markdown
+      "name": "markdown",
+      "path": "./docs_markdown"
+    }
+  ],
+  "plugin": ["typedoc-plugin-markdown"]
+}

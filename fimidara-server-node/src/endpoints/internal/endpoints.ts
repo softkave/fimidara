@@ -4,7 +4,7 @@ import {
   getWaitlistedUsersEndpointDefinition,
   getWorkspacesEndpointDefinition,
   upgradeWaitlistedUsersEndpointDefinition,
-} from './endpoint.mddoc.js';
+} from './endpoints.mfdoc.js';
 import getUsers from './getUsers/handler.js';
 import getWaitlistedUsers from './getWaitlistedUsers/handler.js';
 import getWorkspaces from './getWorkspaces/handler.js';
@@ -16,22 +16,22 @@ export function getInternalsHttpEndpoints() {
     getWaitlistedUsers: {
       tag: [kEndpointTag.private],
       fn: getWaitlistedUsers,
-      mddocHttpDefinition: getWaitlistedUsersEndpointDefinition,
+      mfdocHttpDefinition: getWaitlistedUsersEndpointDefinition,
     },
     upgradeWaitlistedUsers: {
       tag: [kEndpointTag.private],
       fn: upgradeWaitlistedUsers,
-      mddocHttpDefinition: upgradeWaitlistedUsersEndpointDefinition,
+      mfdocHttpDefinition: upgradeWaitlistedUsersEndpointDefinition,
     },
     getUsers: {
       tag: [kEndpointTag.private],
       fn: getUsers,
-      mddocHttpDefinition: getUsersEndpointDefinition,
+      mfdocHttpDefinition: getUsersEndpointDefinition,
     },
     getWorkspaces: {
       tag: [kEndpointTag.private],
       fn: getWorkspaces,
-      mddocHttpDefinition: getWorkspacesEndpointDefinition,
+      mfdocHttpDefinition: getWorkspacesEndpointDefinition,
     },
   };
   return internalsExportedEndpoints;

@@ -1,17 +1,17 @@
-import {ExportedHttpEndpointWithMddocDefinition} from '../types.js';
+import {ExportedHttpEndpointWithMfdocDefinition} from '../types.js';
 import {GetUsersEndpoint} from './getUsers/types.js';
 import {GetWaitlistedUsersEndpoint} from './getWaitlistedUsers/types.js';
 import {GetWorkspacesEndpoint} from './getWorkspaces/types.js';
 import {UpgradeWaitlistedUsersEndpoint} from './upgradeWaitlistedUsers/types.js';
 
 export type GetWaitlistedUsersHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetWaitlistedUsersEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetWaitlistedUsersEndpoint>;
 export type UpgradeWaitlistedUsersHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<UpgradeWaitlistedUsersEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<UpgradeWaitlistedUsersEndpoint>;
 export type GetUsersHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetUsersEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetUsersEndpoint>;
 export type GetWorkspacesHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetWorkspacesEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetWorkspacesEndpoint>;
 
 export type InternalsExportedEndpoints = {
   getWaitlistedUsers: GetWaitlistedUsersHttpEndpoint;

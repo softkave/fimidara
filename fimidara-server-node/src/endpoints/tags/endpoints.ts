@@ -9,7 +9,7 @@ import {
   getTagEndpointDefinition,
   getWorkspaceTagsEndpointDefinition,
   updateTagEndpointDefinition,
-} from './endpoints.mddoc.js';
+} from './endpoints.mfdoc.js';
 import getTag from './getTag/handler.js';
 import getWorkspaceTags from './getWorkspaceTags/handler.js';
 import {TagsExportedEndpoints} from './types.js';
@@ -20,32 +20,32 @@ export function getTagsHttpEndpoints() {
     addTag: {
       tag: [kEndpointTag.public],
       fn: addTag,
-      mddocHttpDefinition: addTagEndpointDefinition,
+      mfdocHttpDefinition: addTagEndpointDefinition,
     },
     deleteTag: {
       tag: [kEndpointTag.public],
       fn: deleteTag,
-      mddocHttpDefinition: deleteTagEndpointDefinition,
+      mfdocHttpDefinition: deleteTagEndpointDefinition,
     },
     getTag: {
       tag: [kEndpointTag.public],
       fn: getTag,
-      mddocHttpDefinition: getTagEndpointDefinition,
+      mfdocHttpDefinition: getTagEndpointDefinition,
     },
     getWorkspaceTags: {
       tag: [kEndpointTag.public],
       fn: getWorkspaceTags,
-      mddocHttpDefinition: getWorkspaceTagsEndpointDefinition,
+      mfdocHttpDefinition: getWorkspaceTagsEndpointDefinition,
     },
     countWorkspaceTags: {
       tag: [kEndpointTag.public],
       fn: countWorkspaceTags,
-      mddocHttpDefinition: countWorkspaceTagsEndpointDefinition,
+      mfdocHttpDefinition: countWorkspaceTagsEndpointDefinition,
     },
     updateTag: {
       tag: [kEndpointTag.public],
       fn: updateTag,
-      mddocHttpDefinition: updateTagEndpointDefinition,
+      mfdocHttpDefinition: updateTagEndpointDefinition,
     },
   };
   return tagsExportedEndpoints;

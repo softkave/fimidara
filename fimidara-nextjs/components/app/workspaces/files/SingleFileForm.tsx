@@ -1,3 +1,7 @@
+import {
+  SingleFileUpload,
+  type UploadFile,
+} from "@/components/internal/upload";
 import { Button } from "@/components/ui/button.tsx";
 import {
   FormControl,
@@ -10,13 +14,11 @@ import { InputCounter } from "@/components/ui/input-counter.tsx";
 import { Input } from "@/components/ui/input.tsx";
 import { Textarea } from "@/components/ui/textarea.tsx";
 import { cn } from "@/components/utils.ts";
-import IconButton from "@/components/utils/buttons/IconButton";
 import { StyleableComponentProps } from "@/components/utils/styling/types";
 import { folderConstants } from "@/lib/definitions/folder.ts";
 import { systemConstants } from "@/lib/definitions/system";
-import { UploadOutlined } from "@ant-design/icons";
-import { Upload } from "antd";
 import { values } from "lodash-es";
+import { FileUp } from "lucide-react";
 import prettyBytes from "pretty-bytes";
 import { UseFormReturn } from "react-hook-form";
 import { pathExtension } from "softkave-js-utils";
@@ -174,12 +176,10 @@ export function SingleFileForm(props: SingleFileFormProps) {
       render={({ field }) => (
         <FormItem>
           <FormControl>
-            <Upload
-              showUploadList={false}
-              multiple={false}
+            <SingleFileUpload
               disabled={field.disabled}
-              fileList={field.value ? [field.value] : []}
-              beforeUpload={(file, fileList) => {
+              value={field.value ? [field.value] : []}
+              onFileSelect={(uploadFile: UploadFile) => {
                 const existingBaseFoldername =
                   isDirectory && values?.name
                     ? getFirstFoldername([values.name])
@@ -187,14 +187,14 @@ export function SingleFileForm(props: SingleFileFormProps) {
                 const name = isExistingFile
                   ? values.name
                   : isDirectory
-                  ? file.webkitRelativePath || file.name
-                  : file.name;
+                  ? uploadFile.webkitRelativePath || uploadFile.name
+                  : uploadFile.name;
 
                 type ValuesType = [
                   Partial<SingleFileFormValue> &
                     Pick<SingleFileFormValue, "name">
                 ];
-                let newValues: ValuesType = [{ file, name }];
+                let newValues: ValuesType = [{ file: uploadFile, name }];
 
                 if (existingBaseFoldername) {
                   newValues = replaceBaseFoldername(
@@ -204,25 +204,36 @@ export function SingleFileForm(props: SingleFileFormProps) {
                 }
 
                 form.setValue(`files.${index}.file`, newValues[0]);
-                return false;
               }}
+              showFileList={false}
+              showUploadButton={true}
             >
               <div className="space-x-4">
-                <IconButton
-                  icon={<UploadOutlined />}
+                <Button
                   title={
                     field.value
                       ? messages.existingFileButtonTitle
                       : messages.newFileButtonTitle
                   }
-                />
+                  type="button"
+                  variant="outline"
+                >
+                  <div className="space-x-2 flex items-center">
+                    <FileUp className="h-4 w-4" />
+                    <span>
+                      {field.value
+                        ? messages.existingFileButtonTitle
+                        : messages.newFileButtonTitle}
+                    </span>
+                  </div>
+                </Button>
                 {field.value ? (
                   <span className="text-secondary">
                     {prettyBytes(field.value.size)}
                   </span>
                 ) : null}
               </div>
-            </Upload>
+            </SingleFileUpload>
           </FormControl>
           <FormMessage />
         </FormItem>

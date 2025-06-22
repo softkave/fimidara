@@ -1,0 +1,293 @@
+{
+    "__id": "HttpEndpointDefinition",
+    "path": "/v1/presignedPaths/issuePresignedPath",
+    "method": "post",
+    "requestBody": {
+        "__id": "FieldObject",
+        "name": "IssuePresignedPathEndpointParams",
+        "fields": {
+            "filepath": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Full path to the file within the workspace. Required if fileId is not provided",
+                    "example": "/documents/reports/quarterly-report.pdf"
+                }
+            },
+            "fileId": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Unique identifier for the file. Required if filepath is not provided",
+                    "example": "file_01h2x3y4z5a6b7c8d9e0f1g2h3"
+                }
+            },
+            "action": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldOrCombination",
+                    "description": "The action the presigned path will be valid for. Defaults to \"readFile\" if not specified",
+                    "types": [
+                        {
+                            "__id": "FieldString",
+                            "description": "Permission action",
+                            "example": "uploadFile",
+                            "valid": [
+                                "*",
+                                "updateWorkspace",
+                                "deleteWorkspace",
+                                "readWorkspace",
+                                "addFolder",
+                                "readFolder",
+                                "updateFolder",
+                                "transferFolder",
+                                "deleteFolder",
+                                "uploadFile",
+                                "readFile",
+                                "transferFile",
+                                "deleteFile",
+                                "addCollaborator",
+                                "readCollaborator",
+                                "removeCollaborator",
+                                "readCollaborationRequest",
+                                "revokeCollaborationRequest",
+                                "updateCollaborationRequest",
+                                "deleteCollaborationRequest",
+                                "updatePermission",
+                                "readPermission",
+                                "addAgentToken",
+                                "readAgentToken",
+                                "updateAgentToken",
+                                "deleteAgentToken",
+                                "addTag",
+                                "readTag",
+                                "updateTag",
+                                "deleteTag",
+                                "assignTag",
+                                "readUsageRecord",
+                                "addFileBackendConfig",
+                                "deleteFileBackendConfig",
+                                "readFileBackendConfig",
+                                "updateFileBackendConfig",
+                                "addFileBackendMount",
+                                "deleteFileBackendMount",
+                                "ingestFileBackendMount",
+                                "readFileBackendMount",
+                                "updateFileBackendMount"
+                            ],
+                            "enumName": "FimidaraPermissionAction"
+                        },
+                        {
+                            "__id": "FieldArray",
+                            "description": "List of permission actions",
+                            "type": {
+                                "__id": "FieldString",
+                                "description": "Permission action",
+                                "example": "uploadFile",
+                                "valid": [
+                                    "*",
+                                    "updateWorkspace",
+                                    "deleteWorkspace",
+                                    "readWorkspace",
+                                    "addFolder",
+                                    "readFolder",
+                                    "updateFolder",
+                                    "transferFolder",
+                                    "deleteFolder",
+                                    "uploadFile",
+                                    "readFile",
+                                    "transferFile",
+                                    "deleteFile",
+                                    "addCollaborator",
+                                    "readCollaborator",
+                                    "removeCollaborator",
+                                    "readCollaborationRequest",
+                                    "revokeCollaborationRequest",
+                                    "updateCollaborationRequest",
+                                    "deleteCollaborationRequest",
+                                    "updatePermission",
+                                    "readPermission",
+                                    "addAgentToken",
+                                    "readAgentToken",
+                                    "updateAgentToken",
+                                    "deleteAgentToken",
+                                    "addTag",
+                                    "readTag",
+                                    "updateTag",
+                                    "deleteTag",
+                                    "assignTag",
+                                    "readUsageRecord",
+                                    "addFileBackendConfig",
+                                    "deleteFileBackendConfig",
+                                    "readFileBackendConfig",
+                                    "updateFileBackendConfig",
+                                    "addFileBackendMount",
+                                    "deleteFileBackendMount",
+                                    "ingestFileBackendMount",
+                                    "readFileBackendMount",
+                                    "updateFileBackendMount"
+                                ],
+                                "enumName": "FimidaraPermissionAction"
+                            },
+                            "example": [
+                                "addFolder"
+                            ]
+                        }
+                    ],
+                    "example": "readFile"
+                }
+            },
+            "duration": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldNumber",
+                    "description": "How long the presigned path should remain valid, in seconds. Defaults to 3600 seconds (1 hour)",
+                    "example": 3600
+                }
+            },
+            "expires": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldNumber",
+                    "description": "Specific expiration timestamp for the presigned path. Alternative to duration",
+                    "example": 1640995200000
+                }
+            },
+            "usageCount": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldNumber",
+                    "description": "Maximum number of times the presigned path can be used before it becomes invalid. Defaults to unlimited if not specified",
+                    "example": 5
+                }
+            }
+        }
+    },
+    "requestHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointRequestHeaders_AuthRequired_JsonContentType",
+        "fields": {
+            "Authorization": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Access token",
+                    "example": "Bearer <token>"
+                }
+            },
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON request content type",
+                    "example": "application/json"
+                }
+            }
+        }
+    },
+    "responseHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointResponseHeaders_ContentType_ContentLength",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON response content type",
+                    "example": "application/json"
+                }
+            },
+            "Content-Length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP response content length in bytes",
+                    "example": "1024"
+                }
+            }
+        }
+    },
+    "responseBody": {
+        "__id": "FieldObject",
+        "name": "IssuePresignedPathEndpointResult",
+        "fields": {
+            "path": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "The generated presigned path that can be used to access the file without authentication",
+                    "example": "/v1/files/presigned/abc123def456/quarterly-report.pdf?token=xyz789"
+                }
+            }
+        }
+    },
+    "name": "fimidara/presignedPaths/issuePresignedPath",
+    "description": "Generates a temporary presigned path for accessing private files without authentication headers. This is particularly useful for embedding files in HTML img tags, allowing direct downloads, or sharing files with external services that cannot handle authentication headers. Currently supports reading files only - upload functionality will be added in future versions.",
+    "tags": [
+        "public"
+    ],
+    "errorResponseHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointResponseHeaders_ContentType_ContentLength",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON response content type",
+                    "example": "application/json"
+                }
+            },
+            "Content-Length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP response content length in bytes"
+                }
+            }
+        }
+    },
+    "errorResponseBody": {
+        "__id": "FieldObject",
+        "name": "EndpointErrorResult",
+        "description": "Endpoint error result",
+        "fields": {
+            "errors": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldArray",
+                    "type": {
+                        "__id": "FieldObject",
+                        "name": "ExternalError",
+                        "fields": {
+                            "message": {
+                                "__id": "FieldObjectField",
+                                "required": true,
+                                "data": {
+                                    "__id": "FieldString",
+                                    "description": "Error message",
+                                    "example": "Workspace name is invalid"
+                                }
+                            }
+                        }
+                    },
+                    "description": "Endpoint call response errors"
+                }
+            }
+        }
+    }
+}

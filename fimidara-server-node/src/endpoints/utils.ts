@@ -23,7 +23,7 @@ import {kEndpointConstants} from './constants.js';
 import {InvalidRequestError, NotFoundError} from './errors.js';
 import {
   Endpoint,
-  ExportedHttpEndpointWithMddocDefinition,
+  ExportedHttpEndpointWithMfdocDefinition,
   ExportedHttpEndpoint_Cleanup,
   ExportedHttpEndpoint_GetDataFromReqFn,
   ExportedHttpEndpoint_HandleErrorFn,
@@ -232,14 +232,12 @@ export function assertUpdateNotEmpty(update: AnyObject) {
 
 export function registerExpressRouteFromEndpoint(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  endpoint: ExportedHttpEndpointWithMddocDefinition<any>,
+  endpoint: ExportedHttpEndpointWithMfdocDefinition<any>,
   app: Express
 ) {
-  const p = endpoint.mddocHttpDefinition.assertGetBasePathname();
-  const expressPath = endpoint.mddocHttpDefinition.getPathParamaters()
-    ? `${p}*`
-    : p;
-  app[endpoint.mddocHttpDefinition.assertGetMethod()](
+  const p = endpoint.mfdocHttpDefinition.path;
+  const expressPath = endpoint.mfdocHttpDefinition.pathParamaters ? `${p}*` : p;
+  app[endpoint.mfdocHttpDefinition.method](
     expressPath,
     ...compact([
       endpoint.expressRouteMiddleware,

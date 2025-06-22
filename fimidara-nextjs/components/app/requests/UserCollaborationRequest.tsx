@@ -4,27 +4,17 @@ import InlineLoading from "@/components/utils/page/InlineLoading.tsx";
 import PageError from "@/components/utils/page/PageError.tsx";
 import PageLoading from "@/components/utils/page/PageLoading.tsx";
 import PageNothingFound from "@/components/utils/page/PageNothingFound.tsx";
-import { appDimensions } from "@/components/utils/theme.ts";
 import { useToast } from "@/hooks/use-toast.ts";
 import { useUserCollaborationRequestFetchHook } from "@/lib/hooks/fetchHooks/userCollaborationRequest.ts";
 import { useFetchSingleResourceFetchState } from "@/lib/hooks/fetchHookUtils";
 import { useUserCollaborationRequestResponseMutationHook } from "@/lib/hooks/mutationHooks";
 import { getBaseError } from "@/lib/utils/errors";
-import { css } from "@emotion/css";
 import { formatRelative } from "date-fns";
 import { use } from "react";
 
 export interface IUserCollaborationRequestProps {
   params: Promise<{ requestId: string }>;
 }
-
-const classes = {
-  main: css({
-    width: "100%",
-    maxWidth: appDimensions.app.maxWidth,
-    margin: "auto",
-  }),
-};
 
 function UserCollaborationRequest(props: IUserCollaborationRequestProps) {
   const { toast } = useToast();
@@ -106,7 +96,7 @@ function UserCollaborationRequest(props: IUserCollaborationRequestProps) {
         );
 
       return (
-        <div className={classes.main}>
+        <div className="w-full max-w-[1200px] mx-auto">
           <div className="space-y-8">
             <div className="space-y-0.5">
               <h4>Collaboration Request from {resource.workspaceName}</h4>

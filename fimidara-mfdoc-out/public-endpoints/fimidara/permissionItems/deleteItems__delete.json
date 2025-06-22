@@ -1,0 +1,414 @@
+{
+    "__id": "HttpEndpointDefinition",
+    "path": "/v1/permissionItems/deleteItems",
+    "method": "delete",
+    "requestBody": {
+        "__id": "FieldObject",
+        "name": "DeletePermissionItemsEndpointParams",
+        "description": "Parameters for deleting permission items from a workspace.",
+        "fields": {
+            "workspaceId": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Workspace ID",
+                    "example": "wrkspce_000000000000000000000"
+                },
+                "description": "Workspace ID. If not provided, will be inferred from authentication context."
+            },
+            "items": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldArray",
+                    "type": {
+                        "__id": "FieldObject",
+                        "name": "DeletePermissionItemInput",
+                        "description": "Input for deleting a permission item. At least one target (targetId, filepath, folderpath, or workspaceRootname) must be specified.",
+                        "fields": {
+                            "targetId": {
+                                "__id": "FieldObjectField",
+                                "required": false,
+                                "data": {
+                                    "__id": "FieldOrCombination",
+                                    "types": [
+                                        {
+                                            "__id": "FieldString",
+                                            "description": "Resource ID permission is effected on",
+                                            "example": "folder_01234567890123456789abcd"
+                                        },
+                                        {
+                                            "__id": "FieldArray",
+                                            "type": {
+                                                "__id": "FieldString",
+                                                "description": "Resource ID permission is effected on",
+                                                "example": "folder_01234567890123456789abcd"
+                                            },
+                                            "description": "List of target resource IDs permission is effected on",
+                                            "example": [
+                                                "folder_01234567890123456789abcd",
+                                                "file_01234567890123456789abcd"
+                                            ]
+                                        }
+                                    ],
+                                    "description": "Target resource ID or list of target resource IDs permission is effected on"
+                                },
+                                "description": "Specific resource ID(s) to remove permissions from"
+                            },
+                            "filepath": {
+                                "__id": "FieldObjectField",
+                                "required": false,
+                                "data": {
+                                    "__id": "FieldOrCombination",
+                                    "description": "A single file path or an array of file paths",
+                                    "types": [
+                                        {
+                                            "__id": "FieldString",
+                                            "description": "File path, with each folder name separated by a forward slash. The first item must be the workspace rootname, and must include the file extension. e.g /workspace-rootname/my-folder/my-file.txt.",
+                                            "example": "/workspace-rootname/my-folder/my-file.txt"
+                                        },
+                                        {
+                                            "__id": "FieldArray",
+                                            "description": "File path as a list of folder and file names. e.g [\"my-folder\", \"my-file.txt\"].",
+                                            "type": {
+                                                "__id": "FieldString"
+                                            },
+                                            "example": [
+                                                "my-folder",
+                                                "my-file.txt"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "description": "File path(s) to remove permissions from"
+                            },
+                            "folderpath": {
+                                "__id": "FieldObjectField",
+                                "required": false,
+                                "data": {
+                                    "__id": "FieldOrCombination",
+                                    "description": "A single folder path or an array of folder paths",
+                                    "types": [
+                                        {
+                                            "__id": "FieldString",
+                                            "description": "Folder path, with each folder name separated by a forward slash. The first item must be the workspace rootname. e.g /workspace-rootname/my-folder/my-sub-folder.",
+                                            "example": "/workspace-rootname/my-folder/my-sub-folder"
+                                        },
+                                        {
+                                            "__id": "FieldArray",
+                                            "description": "Folder path as a list of folder names. Must include the workspace rootname. e.g [\"workspace-rootname\", \"my-folder\", \"my-sub-folder\"].",
+                                            "type": {
+                                                "__id": "FieldString"
+                                            },
+                                            "example": [
+                                                "workspace-rootname",
+                                                "my-folder",
+                                                "my-sub-folder"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "description": "Folder path(s) to remove permissions from"
+                            },
+                            "workspaceRootname": {
+                                "__id": "FieldObjectField",
+                                "required": false,
+                                "data": {
+                                    "__id": "FieldString",
+                                    "description": "Workspace root name, must be a URL compatible name, case insensitive",
+                                    "example": "fimidara-rootname"
+                                },
+                                "description": "Workspace root name to remove permissions from"
+                            },
+                            "action": {
+                                "__id": "FieldObjectField",
+                                "required": false,
+                                "data": {
+                                    "__id": "FieldOrCombination",
+                                    "description": "A single permission action or an array of permission actions",
+                                    "types": [
+                                        {
+                                            "__id": "FieldString",
+                                            "description": "Permission action",
+                                            "example": "uploadFile",
+                                            "valid": [
+                                                "*",
+                                                "updateWorkspace",
+                                                "deleteWorkspace",
+                                                "readWorkspace",
+                                                "addFolder",
+                                                "readFolder",
+                                                "updateFolder",
+                                                "transferFolder",
+                                                "deleteFolder",
+                                                "uploadFile",
+                                                "readFile",
+                                                "transferFile",
+                                                "deleteFile",
+                                                "addCollaborator",
+                                                "readCollaborator",
+                                                "removeCollaborator",
+                                                "readCollaborationRequest",
+                                                "revokeCollaborationRequest",
+                                                "updateCollaborationRequest",
+                                                "deleteCollaborationRequest",
+                                                "updatePermission",
+                                                "readPermission",
+                                                "addAgentToken",
+                                                "readAgentToken",
+                                                "updateAgentToken",
+                                                "deleteAgentToken",
+                                                "addTag",
+                                                "readTag",
+                                                "updateTag",
+                                                "deleteTag",
+                                                "assignTag",
+                                                "readUsageRecord",
+                                                "addFileBackendConfig",
+                                                "deleteFileBackendConfig",
+                                                "readFileBackendConfig",
+                                                "updateFileBackendConfig",
+                                                "addFileBackendMount",
+                                                "deleteFileBackendMount",
+                                                "ingestFileBackendMount",
+                                                "readFileBackendMount",
+                                                "updateFileBackendMount"
+                                            ],
+                                            "enumName": "FimidaraPermissionAction"
+                                        },
+                                        {
+                                            "__id": "FieldArray",
+                                            "description": "List of permission actions",
+                                            "type": {
+                                                "__id": "FieldString",
+                                                "description": "Permission action",
+                                                "example": "uploadFile",
+                                                "valid": [
+                                                    "*",
+                                                    "updateWorkspace",
+                                                    "deleteWorkspace",
+                                                    "readWorkspace",
+                                                    "addFolder",
+                                                    "readFolder",
+                                                    "updateFolder",
+                                                    "transferFolder",
+                                                    "deleteFolder",
+                                                    "uploadFile",
+                                                    "readFile",
+                                                    "transferFile",
+                                                    "deleteFile",
+                                                    "addCollaborator",
+                                                    "readCollaborator",
+                                                    "removeCollaborator",
+                                                    "readCollaborationRequest",
+                                                    "revokeCollaborationRequest",
+                                                    "updateCollaborationRequest",
+                                                    "deleteCollaborationRequest",
+                                                    "updatePermission",
+                                                    "readPermission",
+                                                    "addAgentToken",
+                                                    "readAgentToken",
+                                                    "updateAgentToken",
+                                                    "deleteAgentToken",
+                                                    "addTag",
+                                                    "readTag",
+                                                    "updateTag",
+                                                    "deleteTag",
+                                                    "assignTag",
+                                                    "readUsageRecord",
+                                                    "addFileBackendConfig",
+                                                    "deleteFileBackendConfig",
+                                                    "readFileBackendConfig",
+                                                    "updateFileBackendConfig",
+                                                    "addFileBackendMount",
+                                                    "deleteFileBackendMount",
+                                                    "ingestFileBackendMount",
+                                                    "readFileBackendMount",
+                                                    "updateFileBackendMount"
+                                                ],
+                                                "enumName": "FimidaraPermissionAction"
+                                            },
+                                            "example": [
+                                                "addFolder"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "description": "Permission action(s) to remove. If not specified, removes all actions."
+                            },
+                            "access": {
+                                "__id": "FieldObjectField",
+                                "required": false,
+                                "data": {
+                                    "__id": "FieldBoolean",
+                                    "description": "Whether access is granted or not. Access is granted if true, denied if false",
+                                    "example": true
+                                },
+                                "description": "Access level to remove. If not specified, removes both grant and deny permissions."
+                            },
+                            "entityId": {
+                                "__id": "FieldObjectField",
+                                "required": false,
+                                "data": {
+                                    "__id": "FieldOrCombination",
+                                    "types": [
+                                        {
+                                            "__id": "FieldString",
+                                            "description": "Permission entity resource ID. A permission entity is a resource granted or deny access. This can be a user, a permission group, or an agent token",
+                                            "example": "user_01234567890123456789abcd"
+                                        },
+                                        {
+                                            "__id": "FieldArray",
+                                            "type": {
+                                                "__id": "FieldString",
+                                                "description": "Permission entity resource ID. A permission entity is a resource granted or deny access. This can be a user, a permission group, or an agent token",
+                                                "example": "user_01234567890123456789abcd"
+                                            },
+                                            "description": "Permission entity resource ID list. A permission entity is a resource granted or deny access. This can be a user, a permission group, or an agent token",
+                                            "example": [
+                                                "user_01234567890123456789abcd",
+                                                "permissionGroup_01234567890123456789abcd"
+                                            ]
+                                        }
+                                    ],
+                                    "description": "Permission entity resource ID or list of permission entity resource IDs. A permission entity is a resource granted or deny access. This can be a user, a permission group, or an agent token"
+                                },
+                                "description": "Entity ID(s) to remove permissions from. If not specified, removes permissions for all entities."
+                            }
+                        }
+                    },
+                    "max": 1000,
+                    "description": "List of permission items to delete. Maximum 1000 items per request."
+                },
+                "description": "List of permission items to delete from the workspace."
+            }
+        }
+    },
+    "requestHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointRequestHeaders_AuthRequired_JsonContentType",
+        "fields": {
+            "Authorization": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Access token",
+                    "example": "Bearer <token>"
+                }
+            },
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON request content type",
+                    "example": "application/json"
+                }
+            }
+        }
+    },
+    "responseHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointResponseHeaders_ContentType_ContentLength",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON response content type",
+                    "example": "application/json"
+                }
+            },
+            "Content-Length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP response content length in bytes",
+                    "example": "1024"
+                }
+            }
+        }
+    },
+    "responseBody": {
+        "__id": "FieldObject",
+        "name": "MultipleLongRunningJobResult",
+        "description": "Response for operations that spawn multiple background jobs",
+        "fields": {
+            "jobIds": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldArray",
+                    "description": "Multiple long running job IDs",
+                    "type": {
+                        "__id": "FieldString",
+                        "description": "Long-running job ID",
+                        "example": "job0000_000000000000000000000"
+                    }
+                }
+            }
+        }
+    },
+    "name": "fimidara/permissionItems/deleteItems",
+    "description": "Delete permission items from a workspace. This operation removes existing permission grants or denials. You can delete permissions by specifying the exact criteria (target, entity, action) or use broader criteria to delete multiple permission items at once. The deletion is processed as a long-running job.",
+    "tags": [
+        "public"
+    ],
+    "errorResponseHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointResponseHeaders_ContentType_ContentLength",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON response content type",
+                    "example": "application/json"
+                }
+            },
+            "Content-Length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP response content length in bytes"
+                }
+            }
+        }
+    },
+    "errorResponseBody": {
+        "__id": "FieldObject",
+        "name": "EndpointErrorResult",
+        "description": "Endpoint error result",
+        "fields": {
+            "errors": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldArray",
+                    "type": {
+                        "__id": "FieldObject",
+                        "name": "ExternalError",
+                        "fields": {
+                            "message": {
+                                "__id": "FieldObjectField",
+                                "required": true,
+                                "data": {
+                                    "__id": "FieldString",
+                                    "description": "Error message",
+                                    "example": "Workspace name is invalid"
+                                }
+                            }
+                        }
+                    },
+                    "description": "Endpoint call response errors"
+                }
+            }
+        }
+    }
+}

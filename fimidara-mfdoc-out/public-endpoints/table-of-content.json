@@ -1,0 +1,738 @@
+[
+    {
+        "basename": "fimidara",
+        "names": [
+            "fimidara"
+        ],
+        "children": {
+            "agentTokens": {
+                "basename": "agentTokens",
+                "names": [
+                    "fimidara",
+                    "agentTokens"
+                ],
+                "children": {
+                    "addToken__post": {
+                        "basename": "addToken__post",
+                        "filepath": "fimidara/agentTokens/addToken__post.json",
+                        "names": [
+                            "fimidara",
+                            "agentTokens",
+                            "addToken__post"
+                        ],
+                        "children": {}
+                    },
+                    "countWorkspaceTokens__post": {
+                        "basename": "countWorkspaceTokens__post",
+                        "filepath": "fimidara/agentTokens/countWorkspaceTokens__post.json",
+                        "names": [
+                            "fimidara",
+                            "agentTokens",
+                            "countWorkspaceTokens__post"
+                        ],
+                        "children": {}
+                    },
+                    "deleteToken__delete": {
+                        "basename": "deleteToken__delete",
+                        "filepath": "fimidara/agentTokens/deleteToken__delete.json",
+                        "names": [
+                            "fimidara",
+                            "agentTokens",
+                            "deleteToken__delete"
+                        ],
+                        "children": {}
+                    },
+                    "encodeToken__post": {
+                        "basename": "encodeToken__post",
+                        "filepath": "fimidara/agentTokens/encodeToken__post.json",
+                        "names": [
+                            "fimidara",
+                            "agentTokens",
+                            "encodeToken__post"
+                        ],
+                        "children": {}
+                    },
+                    "getToken__post": {
+                        "basename": "getToken__post",
+                        "filepath": "fimidara/agentTokens/getToken__post.json",
+                        "names": [
+                            "fimidara",
+                            "agentTokens",
+                            "getToken__post"
+                        ],
+                        "children": {}
+                    },
+                    "getWorkspaceTokens__post": {
+                        "basename": "getWorkspaceTokens__post",
+                        "filepath": "fimidara/agentTokens/getWorkspaceTokens__post.json",
+                        "names": [
+                            "fimidara",
+                            "agentTokens",
+                            "getWorkspaceTokens__post"
+                        ],
+                        "children": {}
+                    },
+                    "refreshToken__post": {
+                        "basename": "refreshToken__post",
+                        "filepath": "fimidara/agentTokens/refreshToken__post.json",
+                        "names": [
+                            "fimidara",
+                            "agentTokens",
+                            "refreshToken__post"
+                        ],
+                        "children": {}
+                    },
+                    "updateToken__post": {
+                        "basename": "updateToken__post",
+                        "filepath": "fimidara/agentTokens/updateToken__post.json",
+                        "names": [
+                            "fimidara",
+                            "agentTokens",
+                            "updateToken__post"
+                        ],
+                        "children": {}
+                    }
+                }
+            },
+            "fileBackends": {
+                "basename": "fileBackends",
+                "names": [
+                    "fimidara",
+                    "fileBackends"
+                ],
+                "children": {
+                    "addConfig__post": {
+                        "basename": "addConfig__post",
+                        "filepath": "fimidara/fileBackends/addConfig__post.json",
+                        "names": [
+                            "fimidara",
+                            "fileBackends",
+                            "addConfig__post"
+                        ],
+                        "children": {}
+                    },
+                    "addMount__post": {
+                        "basename": "addMount__post",
+                        "filepath": "fimidara/fileBackends/addMount__post.json",
+                        "names": [
+                            "fimidara",
+                            "fileBackends",
+                            "addMount__post"
+                        ],
+                        "children": {}
+                    },
+                    "countConfigs__post": {
+                        "basename": "countConfigs__post",
+                        "filepath": "fimidara/fileBackends/countConfigs__post.json",
+                        "names": [
+                            "fimidara",
+                            "fileBackends",
+                            "countConfigs__post"
+                        ],
+                        "children": {}
+                    },
+                    "countMounts__post": {
+                        "basename": "countMounts__post",
+                        "filepath": "fimidara/fileBackends/countMounts__post.json",
+                        "names": [
+                            "fimidara",
+                            "fileBackends",
+                            "countMounts__post"
+                        ],
+                        "children": {}
+                    },
+                    "deleteConfig__delete": {
+                        "basename": "deleteConfig__delete",
+                        "filepath": "fimidara/fileBackends/deleteConfig__delete.json",
+                        "names": [
+                            "fimidara",
+                            "fileBackends",
+                            "deleteConfig__delete"
+                        ],
+                        "children": {}
+                    },
+                    "deleteMount__delete": {
+                        "basename": "deleteMount__delete",
+                        "filepath": "fimidara/fileBackends/deleteMount__delete.json",
+                        "names": [
+                            "fimidara",
+                            "fileBackends",
+                            "deleteMount__delete"
+                        ],
+                        "children": {}
+                    },
+                    "getConfig__post": {
+                        "basename": "getConfig__post",
+                        "filepath": "fimidara/fileBackends/getConfig__post.json",
+                        "names": [
+                            "fimidara",
+                            "fileBackends",
+                            "getConfig__post"
+                        ],
+                        "children": {}
+                    },
+                    "getConfigs__post": {
+                        "basename": "getConfigs__post",
+                        "filepath": "fimidara/fileBackends/getConfigs__post.json",
+                        "names": [
+                            "fimidara",
+                            "fileBackends",
+                            "getConfigs__post"
+                        ],
+                        "children": {}
+                    },
+                    "getMount__post": {
+                        "basename": "getMount__post",
+                        "filepath": "fimidara/fileBackends/getMount__post.json",
+                        "names": [
+                            "fimidara",
+                            "fileBackends",
+                            "getMount__post"
+                        ],
+                        "children": {}
+                    },
+                    "getMounts__post": {
+                        "basename": "getMounts__post",
+                        "filepath": "fimidara/fileBackends/getMounts__post.json",
+                        "names": [
+                            "fimidara",
+                            "fileBackends",
+                            "getMounts__post"
+                        ],
+                        "children": {}
+                    },
+                    "resolveMounts__post": {
+                        "basename": "resolveMounts__post",
+                        "filepath": "fimidara/fileBackends/resolveMounts__post.json",
+                        "names": [
+                            "fimidara",
+                            "fileBackends",
+                            "resolveMounts__post"
+                        ],
+                        "children": {}
+                    },
+                    "updateConfig__post": {
+                        "basename": "updateConfig__post",
+                        "filepath": "fimidara/fileBackends/updateConfig__post.json",
+                        "names": [
+                            "fimidara",
+                            "fileBackends",
+                            "updateConfig__post"
+                        ],
+                        "children": {}
+                    },
+                    "updateMount__post": {
+                        "basename": "updateMount__post",
+                        "filepath": "fimidara/fileBackends/updateMount__post.json",
+                        "names": [
+                            "fimidara",
+                            "fileBackends",
+                            "updateMount__post"
+                        ],
+                        "children": {}
+                    }
+                }
+            },
+            "folders": {
+                "basename": "folders",
+                "names": [
+                    "fimidara",
+                    "folders"
+                ],
+                "children": {
+                    "addFolder__post": {
+                        "basename": "addFolder__post",
+                        "filepath": "fimidara/folders/addFolder__post.json",
+                        "names": [
+                            "fimidara",
+                            "folders",
+                            "addFolder__post"
+                        ],
+                        "children": {}
+                    },
+                    "countFolderContent__post": {
+                        "basename": "countFolderContent__post",
+                        "filepath": "fimidara/folders/countFolderContent__post.json",
+                        "names": [
+                            "fimidara",
+                            "folders",
+                            "countFolderContent__post"
+                        ],
+                        "children": {}
+                    },
+                    "deleteFolder__delete": {
+                        "basename": "deleteFolder__delete",
+                        "filepath": "fimidara/folders/deleteFolder__delete.json",
+                        "names": [
+                            "fimidara",
+                            "folders",
+                            "deleteFolder__delete"
+                        ],
+                        "children": {}
+                    },
+                    "getFolder__post": {
+                        "basename": "getFolder__post",
+                        "filepath": "fimidara/folders/getFolder__post.json",
+                        "names": [
+                            "fimidara",
+                            "folders",
+                            "getFolder__post"
+                        ],
+                        "children": {}
+                    },
+                    "listFolderContent__post": {
+                        "basename": "listFolderContent__post",
+                        "filepath": "fimidara/folders/listFolderContent__post.json",
+                        "names": [
+                            "fimidara",
+                            "folders",
+                            "listFolderContent__post"
+                        ],
+                        "children": {}
+                    },
+                    "updateFolder__post": {
+                        "basename": "updateFolder__post",
+                        "filepath": "fimidara/folders/updateFolder__post.json",
+                        "names": [
+                            "fimidara",
+                            "folders",
+                            "updateFolder__post"
+                        ],
+                        "children": {}
+                    }
+                }
+            },
+            "permissionGroups": {
+                "basename": "permissionGroups",
+                "names": [
+                    "fimidara",
+                    "permissionGroups"
+                ],
+                "children": {
+                    "addPermissionGroup__post": {
+                        "basename": "addPermissionGroup__post",
+                        "filepath": "fimidara/permissionGroups/addPermissionGroup__post.json",
+                        "names": [
+                            "fimidara",
+                            "permissionGroups",
+                            "addPermissionGroup__post"
+                        ],
+                        "children": {}
+                    },
+                    "assignPermissionGroups__post": {
+                        "basename": "assignPermissionGroups__post",
+                        "filepath": "fimidara/permissionGroups/assignPermissionGroups__post.json",
+                        "names": [
+                            "fimidara",
+                            "permissionGroups",
+                            "assignPermissionGroups__post"
+                        ],
+                        "children": {}
+                    },
+                    "countWorkspacePermissionGroups__post": {
+                        "basename": "countWorkspacePermissionGroups__post",
+                        "filepath": "fimidara/permissionGroups/countWorkspacePermissionGroups__post.json",
+                        "names": [
+                            "fimidara",
+                            "permissionGroups",
+                            "countWorkspacePermissionGroups__post"
+                        ],
+                        "children": {}
+                    },
+                    "deletePermissionGroup__delete": {
+                        "basename": "deletePermissionGroup__delete",
+                        "filepath": "fimidara/permissionGroups/deletePermissionGroup__delete.json",
+                        "names": [
+                            "fimidara",
+                            "permissionGroups",
+                            "deletePermissionGroup__delete"
+                        ],
+                        "children": {}
+                    },
+                    "getEntityAssignedPermissionGroups__post": {
+                        "basename": "getEntityAssignedPermissionGroups__post",
+                        "filepath": "fimidara/permissionGroups/getEntityAssignedPermissionGroups__post.json",
+                        "names": [
+                            "fimidara",
+                            "permissionGroups",
+                            "getEntityAssignedPermissionGroups__post"
+                        ],
+                        "children": {}
+                    },
+                    "getPermissionGroup__post": {
+                        "basename": "getPermissionGroup__post",
+                        "filepath": "fimidara/permissionGroups/getPermissionGroup__post.json",
+                        "names": [
+                            "fimidara",
+                            "permissionGroups",
+                            "getPermissionGroup__post"
+                        ],
+                        "children": {}
+                    },
+                    "getWorkspacePermissionGroups__post": {
+                        "basename": "getWorkspacePermissionGroups__post",
+                        "filepath": "fimidara/permissionGroups/getWorkspacePermissionGroups__post.json",
+                        "names": [
+                            "fimidara",
+                            "permissionGroups",
+                            "getWorkspacePermissionGroups__post"
+                        ],
+                        "children": {}
+                    },
+                    "unassignPermissionGroups__post": {
+                        "basename": "unassignPermissionGroups__post",
+                        "filepath": "fimidara/permissionGroups/unassignPermissionGroups__post.json",
+                        "names": [
+                            "fimidara",
+                            "permissionGroups",
+                            "unassignPermissionGroups__post"
+                        ],
+                        "children": {}
+                    },
+                    "updatePermissionGroup__post": {
+                        "basename": "updatePermissionGroup__post",
+                        "filepath": "fimidara/permissionGroups/updatePermissionGroup__post.json",
+                        "names": [
+                            "fimidara",
+                            "permissionGroups",
+                            "updatePermissionGroup__post"
+                        ],
+                        "children": {}
+                    }
+                }
+            },
+            "permissionItems": {
+                "basename": "permissionItems",
+                "names": [
+                    "fimidara",
+                    "permissionItems"
+                ],
+                "children": {
+                    "addItems__post": {
+                        "basename": "addItems__post",
+                        "filepath": "fimidara/permissionItems/addItems__post.json",
+                        "names": [
+                            "fimidara",
+                            "permissionItems",
+                            "addItems__post"
+                        ],
+                        "children": {}
+                    },
+                    "deleteItems__delete": {
+                        "basename": "deleteItems__delete",
+                        "filepath": "fimidara/permissionItems/deleteItems__delete.json",
+                        "names": [
+                            "fimidara",
+                            "permissionItems",
+                            "deleteItems__delete"
+                        ],
+                        "children": {}
+                    },
+                    "resolveEntityPermissions__post": {
+                        "basename": "resolveEntityPermissions__post",
+                        "filepath": "fimidara/permissionItems/resolveEntityPermissions__post.json",
+                        "names": [
+                            "fimidara",
+                            "permissionItems",
+                            "resolveEntityPermissions__post"
+                        ],
+                        "children": {}
+                    }
+                }
+            },
+            "files": {
+                "basename": "files",
+                "names": [
+                    "fimidara",
+                    "files"
+                ],
+                "children": {
+                    "completeMultipartUpload__post": {
+                        "basename": "completeMultipartUpload__post",
+                        "filepath": "fimidara/files/completeMultipartUpload__post.json",
+                        "names": [
+                            "fimidara",
+                            "files",
+                            "completeMultipartUpload__post"
+                        ],
+                        "children": {}
+                    },
+                    "deleteFile__delete": {
+                        "basename": "deleteFile__delete",
+                        "filepath": "fimidara/files/deleteFile__delete.json",
+                        "names": [
+                            "fimidara",
+                            "files",
+                            "deleteFile__delete"
+                        ],
+                        "children": {}
+                    },
+                    "getFileDetails__post": {
+                        "basename": "getFileDetails__post",
+                        "filepath": "fimidara/files/getFileDetails__post.json",
+                        "names": [
+                            "fimidara",
+                            "files",
+                            "getFileDetails__post"
+                        ],
+                        "children": {}
+                    },
+                    "listParts__post": {
+                        "basename": "listParts__post",
+                        "filepath": "fimidara/files/listParts__post.json",
+                        "names": [
+                            "fimidara",
+                            "files",
+                            "listParts__post"
+                        ],
+                        "children": {}
+                    },
+                    "readFile__get": {
+                        "basename": "readFile__get",
+                        "filepath": "fimidara/files/readFile__get.json",
+                        "names": [
+                            "fimidara",
+                            "files",
+                            "readFile__get"
+                        ],
+                        "children": {}
+                    },
+                    "readFile__post": {
+                        "basename": "readFile__post",
+                        "filepath": "fimidara/files/readFile__post.json",
+                        "names": [
+                            "fimidara",
+                            "files",
+                            "readFile__post"
+                        ],
+                        "children": {}
+                    },
+                    "startMultipartUpload__post": {
+                        "basename": "startMultipartUpload__post",
+                        "filepath": "fimidara/files/startMultipartUpload__post.json",
+                        "names": [
+                            "fimidara",
+                            "files",
+                            "startMultipartUpload__post"
+                        ],
+                        "children": {}
+                    },
+                    "updateFileDetails__post": {
+                        "basename": "updateFileDetails__post",
+                        "filepath": "fimidara/files/updateFileDetails__post.json",
+                        "names": [
+                            "fimidara",
+                            "files",
+                            "updateFileDetails__post"
+                        ],
+                        "children": {}
+                    },
+                    "uploadFile__post": {
+                        "basename": "uploadFile__post",
+                        "filepath": "fimidara/files/uploadFile__post.json",
+                        "names": [
+                            "fimidara",
+                            "files",
+                            "uploadFile__post"
+                        ],
+                        "children": {}
+                    }
+                }
+            },
+            "collaborationRequests": {
+                "basename": "collaborationRequests",
+                "names": [
+                    "fimidara",
+                    "collaborationRequests"
+                ],
+                "children": {
+                    "countWorkspaceRequests__post": {
+                        "basename": "countWorkspaceRequests__post",
+                        "filepath": "fimidara/collaborationRequests/countWorkspaceRequests__post.json",
+                        "names": [
+                            "fimidara",
+                            "collaborationRequests",
+                            "countWorkspaceRequests__post"
+                        ],
+                        "children": {}
+                    },
+                    "deleteRequest__delete": {
+                        "basename": "deleteRequest__delete",
+                        "filepath": "fimidara/collaborationRequests/deleteRequest__delete.json",
+                        "names": [
+                            "fimidara",
+                            "collaborationRequests",
+                            "deleteRequest__delete"
+                        ],
+                        "children": {}
+                    },
+                    "getWorkspaceRequests__post": {
+                        "basename": "getWorkspaceRequests__post",
+                        "filepath": "fimidara/collaborationRequests/getWorkspaceRequests__post.json",
+                        "names": [
+                            "fimidara",
+                            "collaborationRequests",
+                            "getWorkspaceRequests__post"
+                        ],
+                        "children": {}
+                    },
+                    "revokeRequest__post": {
+                        "basename": "revokeRequest__post",
+                        "filepath": "fimidara/collaborationRequests/revokeRequest__post.json",
+                        "names": [
+                            "fimidara",
+                            "collaborationRequests",
+                            "revokeRequest__post"
+                        ],
+                        "children": {}
+                    },
+                    "sendRequest__post": {
+                        "basename": "sendRequest__post",
+                        "filepath": "fimidara/collaborationRequests/sendRequest__post.json",
+                        "names": [
+                            "fimidara",
+                            "collaborationRequests",
+                            "sendRequest__post"
+                        ],
+                        "children": {}
+                    }
+                }
+            },
+            "usageRecords": {
+                "basename": "usageRecords",
+                "names": [
+                    "fimidara",
+                    "usageRecords"
+                ],
+                "children": {
+                    "countWorkspaceSummedUsage__post": {
+                        "basename": "countWorkspaceSummedUsage__post",
+                        "filepath": "fimidara/usageRecords/countWorkspaceSummedUsage__post.json",
+                        "names": [
+                            "fimidara",
+                            "usageRecords",
+                            "countWorkspaceSummedUsage__post"
+                        ],
+                        "children": {}
+                    },
+                    "getUsageCosts__post": {
+                        "basename": "getUsageCosts__post",
+                        "filepath": "fimidara/usageRecords/getUsageCosts__post.json",
+                        "names": [
+                            "fimidara",
+                            "usageRecords",
+                            "getUsageCosts__post"
+                        ],
+                        "children": {}
+                    },
+                    "getWorkspaceSummedUsage__post": {
+                        "basename": "getWorkspaceSummedUsage__post",
+                        "filepath": "fimidara/usageRecords/getWorkspaceSummedUsage__post.json",
+                        "names": [
+                            "fimidara",
+                            "usageRecords",
+                            "getWorkspaceSummedUsage__post"
+                        ],
+                        "children": {}
+                    }
+                }
+            },
+            "jobs": {
+                "basename": "jobs",
+                "names": [
+                    "fimidara",
+                    "jobs"
+                ],
+                "children": {
+                    "getJobStatus__post": {
+                        "basename": "getJobStatus__post",
+                        "filepath": "fimidara/jobs/getJobStatus__post.json",
+                        "names": [
+                            "fimidara",
+                            "jobs",
+                            "getJobStatus__post"
+                        ],
+                        "children": {}
+                    }
+                }
+            },
+            "presignedPaths": {
+                "basename": "presignedPaths",
+                "names": [
+                    "fimidara",
+                    "presignedPaths"
+                ],
+                "children": {
+                    "getPresignedPaths__post": {
+                        "basename": "getPresignedPaths__post",
+                        "filepath": "fimidara/presignedPaths/getPresignedPaths__post.json",
+                        "names": [
+                            "fimidara",
+                            "presignedPaths",
+                            "getPresignedPaths__post"
+                        ],
+                        "children": {}
+                    },
+                    "issuePresignedPath__post": {
+                        "basename": "issuePresignedPath__post",
+                        "filepath": "fimidara/presignedPaths/issuePresignedPath__post.json",
+                        "names": [
+                            "fimidara",
+                            "presignedPaths",
+                            "issuePresignedPath__post"
+                        ],
+                        "children": {}
+                    }
+                }
+            },
+            "resources": {
+                "basename": "resources",
+                "names": [
+                    "fimidara",
+                    "resources"
+                ],
+                "children": {
+                    "getResources__post": {
+                        "basename": "getResources__post",
+                        "filepath": "fimidara/resources/getResources__post.json",
+                        "names": [
+                            "fimidara",
+                            "resources",
+                            "getResources__post"
+                        ],
+                        "children": {}
+                    }
+                }
+            },
+            "workspaces": {
+                "basename": "workspaces",
+                "names": [
+                    "fimidara",
+                    "workspaces"
+                ],
+                "children": {
+                    "getWorkspace__post": {
+                        "basename": "getWorkspace__post",
+                        "filepath": "fimidara/workspaces/getWorkspace__post.json",
+                        "names": [
+                            "fimidara",
+                            "workspaces",
+                            "getWorkspace__post"
+                        ],
+                        "children": {}
+                    },
+                    "updateWorkspace__post": {
+                        "basename": "updateWorkspace__post",
+                        "filepath": "fimidara/workspaces/updateWorkspace__post.json",
+                        "names": [
+                            "fimidara",
+                            "workspaces",
+                            "updateWorkspace__post"
+                        ],
+                        "children": {}
+                    }
+                }
+            }
+        }
+    }
+]

@@ -1,6 +1,6 @@
+import { cn } from "@/components/utils";
 import { Omit1 } from "@/lib/utils/types";
 import Icon from "@ant-design/icons/lib/components/Icon";
-import { css, cx } from "@emotion/css";
 import { isFunction } from "lodash-es";
 import React from "react";
 import { IconType } from "react-icons/lib";
@@ -15,21 +15,13 @@ export interface ICustomIconProps {
 
 export type IExtendsCustomIconProps = Omit1<ICustomIconProps, "icon">;
 
-const classes = {
-  root: css({
-    "&": {
-      fontSize: "16px !important",
-    },
-  }),
-};
-
 const CustomIcon: React.FC<ICustomIconProps> = (props) => {
   const { style, className, disabled, icon, onClick } = props;
   return (
     <Icon
       disabled={disabled}
       onClick={onClick}
-      className={cx(classes.root, className)}
+      className={cn("text-base", className)}
       style={style}
       component={isFunction(icon) ? icon : () => icon}
     >

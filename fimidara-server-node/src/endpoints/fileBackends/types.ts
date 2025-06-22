@@ -1,4 +1,4 @@
-import {ExportedHttpEndpointWithMddocDefinition} from '../types.js';
+import {ExportedHttpEndpointWithMfdocDefinition} from '../types.js';
 import {AddFileBackendConfigEndpoint} from './addConfig/types.js';
 import {AddFileBackendMountEndpoint} from './addMount/types.js';
 import {CountFileBackendConfigsEndpoint} from './countConfigs/types.js';
@@ -14,32 +14,32 @@ import {UpdateFileBackendConfigEndpoint} from './updateConfig/types.js';
 import {UpdateFileBackendMountEndpoint} from './updateMount/types.js';
 
 export type AddFileBackendMountHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<AddFileBackendMountEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<AddFileBackendMountEndpoint>;
 export type DeleteFileBackendMountHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<DeleteFileBackendMountEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<DeleteFileBackendMountEndpoint>;
 export type GetFileBackendMountsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetFileBackendMountsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetFileBackendMountsEndpoint>;
 export type CountFileBackendMountsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<CountFileBackendMountsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<CountFileBackendMountsEndpoint>;
 export type GetFileBackendMountHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetFileBackendMountEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetFileBackendMountEndpoint>;
 export type UpdateFileBackendMountHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<UpdateFileBackendMountEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<UpdateFileBackendMountEndpoint>;
 export type ResolveFileBackendMountsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<ResolveFileBackendMountsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<ResolveFileBackendMountsEndpoint>;
 
 export type AddFileBackendConfigHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<AddFileBackendConfigEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<AddFileBackendConfigEndpoint>;
 export type DeleteFileBackendConfigHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<DeleteFileBackendConfigEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<DeleteFileBackendConfigEndpoint>;
 export type GetFileBackendConfigsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetFileBackendConfigsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetFileBackendConfigsEndpoint>;
 export type CountFileBackendConfigsHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<CountFileBackendConfigsEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<CountFileBackendConfigsEndpoint>;
 export type GetFileBackendConfigHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetFileBackendConfigEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetFileBackendConfigEndpoint>;
 export type UpdateFileBackendConfigHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<UpdateFileBackendConfigEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<UpdateFileBackendConfigEndpoint>;
 
 export type FileBackendsExportedEndpoints = {
   addMount: AddFileBackendMountHttpEndpoint;

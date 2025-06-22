@@ -1,6 +1,6 @@
 "use client";
 
-import { LoginResult } from "@/lib/api-internal/endpoints/privateTypes.ts";
+import { LoginResult } from "fimidara-private-js-sdk";
 import React from "react";
 import { useAssertGetUser } from "../../hooks/useAssertGetUser";
 

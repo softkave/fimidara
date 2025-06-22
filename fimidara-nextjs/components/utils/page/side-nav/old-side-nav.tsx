@@ -1,5 +1,5 @@
 import AppTitle from "@/components/app/AppTitle.tsx";
-import { ScrollArea } from "@/components/ui/scroll-area.tsx";
+import { MaybeScroll } from "@/components/internal/maybe-scroll";
 import { cn } from "@/components/utils.ts";
 import React from "react";
 import PageDrawer from "../PageDrawer.tsx";
@@ -51,7 +51,7 @@ export function SideNav(props: ISideNavProps) {
           )}
         />
         <div className="overflow-hidden">
-          <ScrollArea className="h-full">{menuNode}</ScrollArea>
+          <MaybeScroll className="h-full">{menuNode}</MaybeScroll>
         </div>
       </div>
     );
@@ -66,7 +66,7 @@ export function SideNav(props: ISideNavProps) {
         side="left"
         contentClassName="overflow-hidden p-0"
       >
-        <ScrollArea className="h-full">{menuNode}</ScrollArea>
+        <MaybeScroll className="h-full">{menuNode}</MaybeScroll>
       </PageDrawer>
     );
   }

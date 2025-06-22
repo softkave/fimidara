@@ -9,7 +9,7 @@ export function useUserLoggedIn() {
   let isLoggedIn: boolean | undefined = undefined;
 
   if (!isLoading) {
-    if (other?.refresh.getJwtToken()) {
+    if (other?.refresh.getBearerToken()) {
       isLoggedIn = true;
     } else {
       isLoggedIn = false;

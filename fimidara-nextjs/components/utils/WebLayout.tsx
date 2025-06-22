@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 import { redirect } from "next/navigation";
 import { use } from "react";
 import { DocsSideNav } from "../docs/DocsSideNav.tsx";
-import { ScrollArea } from "../ui/scroll-area.tsx";
 import WebHeader from "../web/WebHeader.tsx";
+import { MaybeScroll } from "../internal/maybe-scroll.tsx";
 
 export interface IWebLayoutProps {
   isDocs: boolean;
@@ -28,7 +28,7 @@ export const WebLayout = (props: IWebLayoutProps) => {
       {isDocs && <DocsSideNav />}
       <div className="flex-1 flex flex-col">
         <WebHeader />
-        <ScrollArea>
+        <MaybeScroll>
           <div
             className={cn(
               "mx-auto p-4 flex-1 w-full max-w-4xl",
@@ -37,7 +37,7 @@ export const WebLayout = (props: IWebLayoutProps) => {
           >
             {children}
           </div>
-        </ScrollArea>
+        </MaybeScroll>
       </div>
     </div>
   );

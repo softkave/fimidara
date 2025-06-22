@@ -7,7 +7,7 @@ import {
   getUserWorkspacesEndpointDefinition,
   getWorkspaceEndpointDefinition,
   updateWorkspaceEndpointDefinition,
-} from './endpoints.mddoc.js';
+} from './endpoints.mfdoc.js';
 import getUserWorkspaces from './getUserWorkspaces/handler.js';
 import getWorkspace from './getWorkspace/handler.js';
 import {WorkspacesExportedEndpoints} from './types.js';
@@ -18,31 +18,31 @@ export function getWorkspacesHttpEndpoints() {
     addWorkspace: {
       tag: [kEndpointTag.private],
       fn: addWorkspace,
-      mddocHttpDefinition: addWorkspaceEndpointDefinition,
+      mfdocHttpDefinition: addWorkspaceEndpointDefinition,
     },
     // deleteWorkspace: {
     //   fn: deleteWorkspace,
-    //   mddocHttpDefinition: deleteWorkspaceEndpointDefinition,
+    //   mfdocHttpDefinition: deleteWorkspaceEndpointDefinition,
     // },
     getUserWorkspaces: {
       tag: [kEndpointTag.private],
       fn: getUserWorkspaces,
-      mddocHttpDefinition: getUserWorkspacesEndpointDefinition,
+      mfdocHttpDefinition: getUserWorkspacesEndpointDefinition,
     },
     countUserWorkspaces: {
       tag: [kEndpointTag.private],
       fn: countUserWorkspaces,
-      mddocHttpDefinition: countUserWorkspacesEndpointDefinition,
+      mfdocHttpDefinition: countUserWorkspacesEndpointDefinition,
     },
     getWorkspace: {
       tag: [kEndpointTag.public],
       fn: getWorkspace,
-      mddocHttpDefinition: getWorkspaceEndpointDefinition,
+      mfdocHttpDefinition: getWorkspaceEndpointDefinition,
     },
     updateWorkspace: {
       tag: [kEndpointTag.public],
       fn: updateWorkspace,
-      mddocHttpDefinition: updateWorkspaceEndpointDefinition,
+      mfdocHttpDefinition: updateWorkspaceEndpointDefinition,
     },
   };
   return workspacesExportedEndpoints;

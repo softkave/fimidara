@@ -22,7 +22,6 @@ import {
   UsageRecord,
   Workspace,
 } from "fimidara";
-import { isEqual, omit } from "lodash-es";
 import {
   CollaborationRequestForUser,
   GetUserCollaborationRequestsEndpointParams,
@@ -30,7 +29,8 @@ import {
   GetUsersEndpointResult,
   GetWaitlistedUsersEndpointResult,
   GetWorkspacesEndpointResult,
-} from "../api-internal/endpoints/privateTypes.ts";
+} from "fimidara-private-js-sdk";
+import { isEqual, omit } from "lodash-es";
 import {
   getPrivateFimidaraEndpointsUsingUserToken,
   getPublicFimidaraEndpointsUsingUserToken,
@@ -223,19 +223,19 @@ async function resolveEntityPermissionInputFetchFn(
 
 async function getWaitlistedUsersInputFetchFn() {
   const endpoints = await getPrivateFimidaraEndpointsUsingUserToken();
-  const data = await endpoints.internals.getWaitlistedUsers();
+  const data = await endpoints.internal.getWaitlistedUsers();
   return data;
 }
 
 async function getUsersInputFetchFn() {
   const endpoints = await getPrivateFimidaraEndpointsUsingUserToken();
-  const data = await endpoints.internals.getUsers();
+  const data = await endpoints.internal.getUsers();
   return data;
 }
 
 async function getWorkspacesInputFetchFn() {
   const endpoints = await getPrivateFimidaraEndpointsUsingUserToken();
-  const data = await endpoints.internals.getWorkspaces();
+  const data = await endpoints.internal.getWorkspaces();
   return data;
 }
 

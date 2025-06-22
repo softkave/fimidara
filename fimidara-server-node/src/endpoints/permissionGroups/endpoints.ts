@@ -13,7 +13,7 @@ import {
   getWorkspacePermissionGroupsEndpointDefinition,
   unassignPermissionGroupsEndpointDefinition,
   updatePermissionGroupEndpointDefinition,
-} from './endpoints.mddoc.js';
+} from './endpoints.mfdoc.js';
 import getEntityAssignedPermissionGroups from './getEntityAssignedPermissionGroups/handler.js';
 import getPermissionGroup from './getPermissionGroup/handler.js';
 import getWorkspacePermissionGroups from './getWorkspacePermissionGroups/handler.js';
@@ -26,47 +26,47 @@ export function getPermissionGroupsHttpEndpoints() {
     addPermissionGroup: {
       tag: [kEndpointTag.public],
       fn: addPermissionGroup,
-      mddocHttpDefinition: addPermissionGroupEndpointDefinition,
+      mfdocHttpDefinition: addPermissionGroupEndpointDefinition,
     },
     assignPermissionGroups: {
       tag: [kEndpointTag.public],
       fn: assignPermissionGroups,
-      mddocHttpDefinition: assignPermissionGroupsEndpointDefinition,
+      mfdocHttpDefinition: assignPermissionGroupsEndpointDefinition,
     },
     unassignPermissionGroups: {
       tag: [kEndpointTag.public],
       fn: unassignPermissionGroups,
-      mddocHttpDefinition: unassignPermissionGroupsEndpointDefinition,
+      mfdocHttpDefinition: unassignPermissionGroupsEndpointDefinition,
     },
     deletePermissionGroup: {
       tag: [kEndpointTag.public],
       fn: deletePermissionGroup,
-      mddocHttpDefinition: deletePermissionGroupEndpointDefinition,
+      mfdocHttpDefinition: deletePermissionGroupEndpointDefinition,
     },
     getPermissionGroup: {
       tag: [kEndpointTag.public],
       fn: getPermissionGroup,
-      mddocHttpDefinition: getPermissionGroupEndpointDefinition,
+      mfdocHttpDefinition: getPermissionGroupEndpointDefinition,
     },
     getEntityAssignedPermissionGroups: {
       tag: [kEndpointTag.public],
       fn: getEntityAssignedPermissionGroups,
-      mddocHttpDefinition: getEntityAssignedPermissionGroupsEndpointDefinition,
+      mfdocHttpDefinition: getEntityAssignedPermissionGroupsEndpointDefinition,
     },
     getWorkspacePermissionGroups: {
       tag: [kEndpointTag.public],
       fn: getWorkspacePermissionGroups,
-      mddocHttpDefinition: getWorkspacePermissionGroupsEndpointDefinition,
+      mfdocHttpDefinition: getWorkspacePermissionGroupsEndpointDefinition,
     },
     countWorkspacePermissionGroups: {
       tag: [kEndpointTag.public],
       fn: countWorkspacePermissionGroups,
-      mddocHttpDefinition: countWorkspacePermissionGroupsEndpointDefinition,
+      mfdocHttpDefinition: countWorkspacePermissionGroupsEndpointDefinition,
     },
     updatePermissionGroup: {
       tag: [kEndpointTag.public],
       fn: updatePermissionGroup,
-      mddocHttpDefinition: updatePermissionGroupEndpointDefinition,
+      mfdocHttpDefinition: updatePermissionGroupEndpointDefinition,
     },
   };
   return permissionGroupsExportedEndpoints;

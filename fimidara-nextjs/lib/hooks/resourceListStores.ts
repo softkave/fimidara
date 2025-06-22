@@ -11,10 +11,7 @@ import {
   UsageRecord,
   Workspace,
 } from "fimidara";
-import {
-  CollaborationRequestForUser,
-  User,
-} from "../api-internal/endpoints/privateTypes.ts";
+import { CollaborationRequestForUser, User } from "fimidara-private-js-sdk";
 import { makeKey } from "../utils/fns";
 import { makeResourceListStore } from "./makeResourceListStore";
 

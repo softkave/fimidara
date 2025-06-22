@@ -2,7 +2,7 @@ import { File } from "fimidara";
 import { isBoolean } from "lodash-es";
 import { useState } from "react";
 import FileForm from "../app/workspaces/files/FileForm.tsx";
-import { ScrollArea } from "../ui/scroll-area.tsx";
+import { MaybeScroll } from "../internal/maybe-scroll.tsx";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "../ui/sheet.tsx";
 
 export function useFileForm(props: {
@@ -18,7 +18,7 @@ export function useFileForm(props: {
     <Sheet open={!!formOpen} onOpenChange={setFormOpen}>
       <SheetContent className="w-full max-w-[420px] p-0">
         <div className="h-full max-h-full">
-          <ScrollArea className="h-full overflow-y-auto">
+          <MaybeScroll className="h-full overflow-y-auto">
             <SheetHeader>
               <SheetTitle className="p-6">
                 {isNewResourceForm ? "New Files" : "Update File"}
@@ -31,7 +31,7 @@ export function useFileForm(props: {
               className="p-6 pt-0"
               folderpath={folderpath}
             />
-          </ScrollArea>
+          </MaybeScroll>
         </div>
       </SheetContent>
     </Sheet>

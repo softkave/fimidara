@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  FimidaraEndpointProgressEvent,
+  MfdocEndpointProgressEvent as FimidaraEndpointProgressEvent,
   IMultipartUploadHookFnParams,
 } from "fimidara";
 import { merge, uniq } from "lodash-es";

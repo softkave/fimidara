@@ -6,7 +6,7 @@ import {
   getCollaboratorsWithoutPermissionEndpointDefinition,
   getWorkspaceCollaboratorsEndpointDefinition,
   removeCollaboratorEndpointDefinition,
-} from './endpoints.mddoc.js';
+} from './endpoints.mfdoc.js';
 import getCollaborator from './getCollaborator/handler.js';
 import getCollaboratorsWithoutPermission from './getCollaboratorsWithoutPermission/handler.js';
 import getWorkspaceCollaborators from './getWorkspaceCollaborators/handler.js';
@@ -18,27 +18,27 @@ export function getCollaboratorsHttpEndpoints() {
     getCollaborator: {
       tag: [kEndpointTag.public],
       fn: getCollaborator,
-      mddocHttpDefinition: getCollaboratorEndpointDefinition,
+      mfdocHttpDefinition: getCollaboratorEndpointDefinition,
     },
     getWorkspaceCollaborators: {
       tag: [kEndpointTag.public],
       fn: getWorkspaceCollaborators,
-      mddocHttpDefinition: getWorkspaceCollaboratorsEndpointDefinition,
+      mfdocHttpDefinition: getWorkspaceCollaboratorsEndpointDefinition,
     },
     countWorkspaceCollaborators: {
       tag: [kEndpointTag.public],
       fn: countWorkspaceCollaborators,
-      mddocHttpDefinition: countWorkspaceCollaboratorsEndpointDefinition,
+      mfdocHttpDefinition: countWorkspaceCollaboratorsEndpointDefinition,
     },
     removeCollaborator: {
       tag: [kEndpointTag.public],
       fn: removeCollaborator,
-      mddocHttpDefinition: removeCollaboratorEndpointDefinition,
+      mfdocHttpDefinition: removeCollaboratorEndpointDefinition,
     },
     getCollaboratorsWithoutPermission: {
       tag: [kEndpointTag.private],
       fn: getCollaboratorsWithoutPermission,
-      mddocHttpDefinition: getCollaboratorsWithoutPermissionEndpointDefinition,
+      mfdocHttpDefinition: getCollaboratorsWithoutPermissionEndpointDefinition,
     },
   };
 

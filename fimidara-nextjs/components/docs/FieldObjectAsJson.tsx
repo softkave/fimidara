@@ -1,49 +1,29 @@
-import { css } from "@emotion/css";
 import { forEach, map } from "lodash-es";
+import {
+  isMfdocCustomType,
+  isMfdocFieldArray,
+  isMfdocFieldBinary,
+  isMfdocFieldBoolean,
+  isMfdocFieldDate,
+  isMfdocFieldNull,
+  isMfdocFieldNumber,
+  isMfdocFieldObject,
+  isMfdocFieldOrCombination,
+  isMfdocFieldString,
+  isMfdocFieldUndefined,
+  MfdocFieldObjectTypePrimitive,
+} from "mfdoc/mfdoc-core";
 import React from "react";
 import { cn } from "../utils.ts";
-import { htmlCharacterCodes } from "../utils/utils";
 import FieldDescription from "./FieldDescription";
 import { useContainedFieldObjects } from "./hooks";
-import { FieldObject } from "./types";
-import {
-  getTypeNameID,
-  isFieldArray,
-  isFieldBinary,
-  isFieldBoolean,
-  isFieldCustomType,
-  isFieldDate,
-  isFieldNull,
-  isFieldNumber,
-  isFieldObject,
-  isFieldOrCombination,
-  isFieldString,
-  isFieldUndefined,
-} from "./utils";
+import { getTypeNameID } from "./utils";
 
 export interface FieldObjectAsJsonProps {
-  fieldObject: FieldObject;
+  fieldObject: MfdocFieldObjectTypePrimitive<any>;
   propName?: string;
   isForJsSdk?: boolean;
 }
-
-const classes = {
-  jsonRoot: css({
-    margin: "24px 0px",
-  }),
-  jsonEntry: css({
-    margin: "0px 16px",
-  }),
-  jsonContent: css({
-    padding: "16px",
-    borderRadius: "4px",
-    fontFamily: `var(--font-code), monospace !important`,
-
-    "& *": {
-      fontFamily: `var(--font-code), monospace !important`,
-    },
-  }),
-};
 
 const FieldObjectAsJson: React.FC<FieldObjectAsJsonProps> = (props) => {
   const { fieldObject, propName, isForJsSdk } = props;
@@ -74,19 +54,19 @@ export function renderJsonFieldType(
   data: any,
   isForJsSdk: boolean
 ): React.ReactNode {
-  if (isFieldString(data)) {
+  if (isMfdocFieldString(data)) {
     return "string";
-  } else if (isFieldNumber(data)) {
+  } else if (isMfdocFieldNumber(data)) {
     return "number";
-  } else if (isFieldBoolean(data)) {
+  } else if (isMfdocFieldBoolean(data)) {
     return "boolean";
-  } else if (isFieldNull(data)) {
+  } else if (isMfdocFieldNull(data)) {
     return "null";
-  } else if (isFieldUndefined(data)) {
+  } else if (isMfdocFieldUndefined(data)) {
     return "undefined";
-  } else if (isFieldDate(data)) {
+  } else if (isMfdocFieldDate(data)) {
     return "number";
-  } else if (isFieldArray(data)) {
+  } else if (isMfdocFieldArray(data)) {
     if (!data.type) return "[]";
     const containedTypeNode = renderJsonFieldType(data.type, isForJsSdk);
     return (
@@ -96,13 +76,13 @@ export function renderJsonFieldType(
         {">"}
       </span>
     );
-  } else if (isFieldObject(data)) {
+  } else if (isMfdocFieldObject(data)) {
     return data.name ? (
       <a href={`#${getTypeNameID(data.name)}`} className="underline">
         {data.name}
       </a>
     ) : null;
-  } else if (isFieldOrCombination(data)) {
+  } else if (isMfdocFieldOrCombination(data)) {
     if (!data.types) return "";
     const nodes: React.ReactNode[] = [];
     forEach(data.types, (nextType, index) => {
@@ -110,7 +90,7 @@ export function renderJsonFieldType(
       nodes.push(renderJsonFieldType(nextType, isForJsSdk));
     });
     return nodes;
-  } else if (isFieldBinary(data)) {
+  } else if (isMfdocFieldBinary(data)) {
     if (isForJsSdk)
       return (
         <span>
@@ -135,7 +115,7 @@ export function renderJsonFieldType(
         </span>
       );
     return "binary";
-  } else if (isFieldCustomType(data)) {
+  } else if (isMfdocCustomType(data)) {
     if (data.descriptionLink) {
       return (
         <a href={data.descriptionLink} className="underline">
@@ -151,7 +131,7 @@ export function renderJsonFieldType(
 }
 
 function renderFieldObjectAsJson(
-  nextObject: FieldObject,
+  nextObject: MfdocFieldObjectTypePrimitive<any>,
   isForJsSdk: boolean,
   propName: string | undefined,
   key: string | number
@@ -161,7 +141,7 @@ function renderFieldObjectAsJson(
     const typeNode = renderJsonFieldType(fieldbase.data, isForJsSdk);
     const separator = fieldbase.required ? ":" : "?:";
     return (
-      <div className={classes.jsonEntry} key={key}>
+      <div className="mx-4" key={key}>
         {keyNode}
         {separator} {typeNode}
       </div>
@@ -169,26 +149,17 @@ function renderFieldObjectAsJson(
   });
 
   return (
-    <div className={classes.jsonRoot} key={key}>
+    <div className="my-6" key={key}>
       <div className="space-x-2 flex">
         {propName && <code>{propName}</code>}
         {nextObject.name && (
           <h5 id={getTypeNameID(nextObject.name)}>{nextObject.name}</h5>
         )}
-        {nextObject.required ? (
-          <>
-            <span>{htmlCharacterCodes.doubleDash}</span>
-            <code>Required</code>
-          </>
-        ) : (
-          <>
-            <span>{htmlCharacterCodes.doubleDash}</span>
-            <code>Optional</code>
-          </>
-        )}
       </div>
       <FieldDescription fieldbase={nextObject} type="secondary" />
-      <div className={cn(classes.jsonContent, "bg-gray-100 w-full mt-4")}>
+      <div
+        className={cn("p-4 rounded font-mono text-sm bg-gray-100 w-full mt-4")}
+      >
         &#123;
         {rows}
         &#125;

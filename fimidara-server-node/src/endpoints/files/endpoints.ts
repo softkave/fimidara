@@ -26,7 +26,7 @@ import {
   startMultipartUploadEndpointDefinition,
   updateFileDetailsEndpointDefinition,
   uploadFileEndpointDefinition,
-} from './endpoints.mddoc.js';
+} from './endpoints.mfdoc.js';
 import getFileDetails from './getFileDetails/handler.js';
 import listParts from './listParts/handler.js';
 import readFile from './readFile/handler.js';
@@ -264,26 +264,26 @@ export function getFilesHttpEndpoints() {
   const filesExportedEndpoints: FilesExportedEndpoints = {
     deleteFile: {
       tag: [kEndpointTag.public],
-      mddocHttpDefinition: deleteFileEndpointDefinition,
+      mfdocHttpDefinition: deleteFileEndpointDefinition,
       handleError: handleNotFoundError,
       fn: deleteFile,
     },
     getFileDetails: {
       tag: [kEndpointTag.public],
-      mddocHttpDefinition: getFileDetailsEndpointDefinition,
+      mfdocHttpDefinition: getFileDetailsEndpointDefinition,
       handleError: handleNotFoundError,
       fn: getFileDetails,
     },
     listParts: {
       tag: [kEndpointTag.public],
-      mddocHttpDefinition: listPartsEndpointDefinition,
+      mfdocHttpDefinition: listPartsEndpointDefinition,
       handleError: handleNotFoundError,
       fn: listParts,
     },
     readFile: [
       {
         tag: [kEndpointTag.public],
-        mddocHttpDefinition: readFilePOSTEndpointDefinition,
+        mfdocHttpDefinition: readFilePOSTEndpointDefinition,
         getDataFromReq: extractReadFileParamsFromReq,
         handleResponse: handleReadFileResponse,
         handleError: handleNotFoundError,
@@ -296,7 +296,7 @@ export function getFilesHttpEndpoints() {
         // be one. Fix will take more time to fix, compared to ts-ignore, so,
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        mddocHttpDefinition: readFileGETEndpointDefinition,
+        mfdocHttpDefinition: readFileGETEndpointDefinition,
         getDataFromReq: extractReadFileParamsFromReq,
         handleResponse: handleReadFileResponse,
         handleError: handleNotFoundError,
@@ -305,13 +305,13 @@ export function getFilesHttpEndpoints() {
     ],
     updateFileDetails: {
       tag: [kEndpointTag.public],
-      mddocHttpDefinition: updateFileDetailsEndpointDefinition,
+      mfdocHttpDefinition: updateFileDetailsEndpointDefinition,
       handleError: handleNotFoundError,
       fn: updateFileDetails,
     },
     uploadFile: {
       tag: [kEndpointTag.public],
-      mddocHttpDefinition: uploadFileEndpointDefinition,
+      mfdocHttpDefinition: uploadFileEndpointDefinition,
       getDataFromReq: extractUploadFileParamsFromReq,
       handleError: handleNotFoundError,
       cleanup: cleanupUploadFileReq,
@@ -319,13 +319,13 @@ export function getFilesHttpEndpoints() {
     },
     startMultipartUpload: {
       tag: [kEndpointTag.public],
-      mddocHttpDefinition: startMultipartUploadEndpointDefinition,
+      mfdocHttpDefinition: startMultipartUploadEndpointDefinition,
       handleError: handleNotFoundError,
       fn: startMultipartUpload,
     },
     completeMultipartUpload: {
       tag: [kEndpointTag.public],
-      mddocHttpDefinition: completeMultipartUploadEndpointDefinition,
+      mfdocHttpDefinition: completeMultipartUploadEndpointDefinition,
       handleError: handleNotFoundError,
       fn: completeMultipartUpload,
     },

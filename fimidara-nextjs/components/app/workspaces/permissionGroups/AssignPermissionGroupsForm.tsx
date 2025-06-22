@@ -6,7 +6,6 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form.tsx";
-import { ScrollArea } from "@/components/ui/scroll-area.tsx";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet.tsx";
 import { FormAlert } from "@/components/utils/FormAlert";
 import { StyleableComponentProps } from "@/components/utils/styling/types";
@@ -24,6 +23,7 @@ import { useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import PermissionGroupListContainer from "./PermissionGroupListContainer";
+import { MaybeScroll } from "@/components/internal/maybe-scroll";
 
 type AssignPermissionGroupsFormValues = {
   permissionGroups: string[];
@@ -157,10 +157,10 @@ export default function AssignPermissionGroupsForm(
   return (
     <Sheet open onOpenChange={onClose}>
       <SheetContent className="w-full max-w-[420px] p-0">
-        <ScrollArea className="h-full overflow-y-auto">
+        <MaybeScroll className="h-full overflow-y-auto">
           <SheetTitle className="p-6">Assign Permission Groups</SheetTitle>
           <div className="p-6 pt-0">{mainNode}</div>
-        </ScrollArea>
+        </MaybeScroll>
       </SheetContent>
     </Sheet>
   );

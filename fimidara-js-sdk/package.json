@@ -1,0 +1,103 @@
+{
+  "name": "fimidara",
+  "version": "1.36.0",
+  "description": "js sdk for fimidara file storage service",
+  "author": {
+    "email": "ywordk@gmail.com",
+    "name": "softkave"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/softkave/fimidara/tree/main/fimidara-js-sdk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softkave/fimidara.git"
+  },
+  "bugs": {
+    "url": "https://github.com/softkave/fimidara/issues"
+  },
+  "keywords": [
+    "fimidara",
+    "file storage",
+    "file access control"
+  ],
+  "type": "module",
+  "main": "./build/index.js",
+  "typings": "./build/index.d.ts",
+  "exports": {
+    ".": {
+      "node": {
+        "types": "./build/indexNode.d.ts",
+        "default": "./build/indexNode.js"
+      },
+      "browser": {
+        "types": "./build/indexBrowser.d.ts",
+        "default": "./build/indexBrowser.js"
+      },
+      "default": {
+        "types": "./build/index.d.ts",
+        "default": "./build/index.js"
+      }
+    },
+    "./*": {
+      "types": "./build/*.d.ts",
+      "default": "./build/*.js"
+    },
+    "./node/*": {
+      "types": "./build/node/*.d.ts",
+      "default": "./build/node/*.js"
+    },
+    "./cmd/*": null
+  },
+  "files": [
+    "build/{*.js,**/*.js}",
+    "build/{*.js.map,**/*.js.map}",
+    "build/{*.d.ts,**/*.d.ts}",
+    "!build/**/__tests__/**/*",
+    "!build/**/testutils/**/*",
+    "!build/private*"
+  ],
+  "bin": "build/cmd/index.js",
+  "scripts": {
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "npm run clean && tsc",
+    "fix": "gts fix",
+    "test": "env-cmd -f \".env.test\" vitest --config=./vitest.config.ts",
+    "test:browser": "env-cmd -f \".env.test\" vitest --config=./vitest.browser.config.ts",
+    "publish:npm": "npm run compile && npm publish",
+    "publish:local": "npm run compile && pnpm link --global",
+    "show:packlist": "npm run compile && npm pack --dry-run",
+    "pretty": "prettier --write"
+  },
+  "engines": {
+    "node": ">=13"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^20.14.8",
+    "@types/path-browserify": "^1.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitest/browser": "^2.1.8",
+    "env-cmd": "^10.1.0",
+    "gts": "^3.1.1",
+    "playwright": "^1.49.1",
+    "typedoc": "^0.28.5",
+    "typedoc-plugin-markdown": "^4.6.4",
+    "typescript": "^5.5.2",
+    "vitest": "^2.1.8",
+    "vitest-browser-react": "^0.0.4",
+    "zx": "^7.2.3"
+  },
+  "dependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "assert": "^2.1.0",
+    "commander": "^12.1.0",
+    "fs-extra": "^11.3.0",
+    "lodash-es": "^4.17.21",
+    "mfdoc-js-sdk-base": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "softkave-js-utils": "^0.10.0",
+    "type-fest": "^4.41.0"
+  }
+}

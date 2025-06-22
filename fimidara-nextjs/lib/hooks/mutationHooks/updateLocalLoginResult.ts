@@ -1,8 +1,7 @@
-import { LoginResult } from "@/lib/api-internal/endpoints/privateTypes.ts";
-import { RefreshUserToken } from "@/lib/api-internal/RefreshUserToken.ts";
 import { callSetCookieEndpoint } from "@/lib/api/account/index.ts";
 import { getPrivateFimidaraEndpoints } from "@/lib/api/fimidaraEndpoints.ts";
 import { kUserSessionStorageFns } from "@/lib/storage/UserSessionStorageFns.ts";
+import { LoginResult, RefreshUserToken } from "fimidara-private-js-sdk";
 import { FetchSingleResourceData, FetchState } from "../fetchHooks/types.ts";
 import {
   UserSessionFetchStoreOther,

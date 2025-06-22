@@ -1,0 +1,408 @@
+{
+    "__id": "HttpEndpointDefinition",
+    "path": "/v1/folders/addFolder",
+    "method": "post",
+    "requestBody": {
+        "__id": "FieldObject",
+        "name": "AddFolderEndpointParams",
+        "description": "Parameters for creating a new folder",
+        "fields": {
+            "description": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Resource description",
+                    "example": "This is a resource description."
+                }
+            },
+            "folderpath": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Folder path, with each folder name separated by a forward slash. The first item must be the workspace rootname. e.g /workspace-rootname/my-folder/my-sub-folder.",
+                    "example": "/workspace-rootname/my-folder/my-sub-folder"
+                }
+            }
+        }
+    },
+    "requestHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointRequestHeaders_AuthRequired_JsonContentType",
+        "fields": {
+            "Authorization": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Access token",
+                    "example": "Bearer <token>"
+                }
+            },
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON request content type",
+                    "example": "application/json"
+                }
+            }
+        }
+    },
+    "responseHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointResponseHeaders_ContentType_ContentLength",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON response content type",
+                    "example": "application/json"
+                }
+            },
+            "Content-Length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP response content length in bytes",
+                    "example": "1024"
+                }
+            }
+        }
+    },
+    "responseBody": {
+        "__id": "FieldObject",
+        "name": "AddFolderEndpointResult",
+        "description": "Response containing the newly created folder information",
+        "fields": {
+            "folder": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldObject",
+                    "name": "Folder",
+                    "description": "Represents a folder in the workspace with its metadata and hierarchy information",
+                    "fields": {
+                        "resourceId": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "Resource ID",
+                                "example": "wrkspce_000000000000000000000"
+                            }
+                        },
+                        "createdBy": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldObject",
+                                "name": "Agent",
+                                "description": "Represents a user or system entity that performed an action (e.g., created or updated a resource)",
+                                "fields": {
+                                    "agentId": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent ID. Possible agents are users and agent tokens",
+                                            "example": "user000_000000000000000000000"
+                                        }
+                                    },
+                                    "agentType": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent type",
+                                            "example": "agentToken",
+                                            "valid": [
+                                                "user",
+                                                "agentToken"
+                                            ],
+                                            "enumName": "AgentType"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "createdAt": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldNumber",
+                                "description": "UTC timestamp in milliseconds",
+                                "example": 1672531200000
+                            }
+                        },
+                        "lastUpdatedBy": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldObject",
+                                "name": "Agent",
+                                "description": "Represents a user or system entity that performed an action (e.g., created or updated a resource)",
+                                "fields": {
+                                    "agentId": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent ID. Possible agents are users and agent tokens",
+                                            "example": "user000_000000000000000000000"
+                                        }
+                                    },
+                                    "agentType": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent type",
+                                            "example": "agentToken",
+                                            "valid": [
+                                                "user",
+                                                "agentToken"
+                                            ],
+                                            "enumName": "AgentType"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "lastUpdatedAt": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldNumber",
+                                "description": "UTC timestamp in milliseconds",
+                                "example": 1672531200000
+                            }
+                        },
+                        "isDeleted": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldBoolean"
+                            }
+                        },
+                        "deletedAt": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldNumber",
+                                "description": "UTC timestamp in milliseconds",
+                                "example": 1672531200000
+                            }
+                        },
+                        "deletedBy": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldObject",
+                                "name": "Agent",
+                                "description": "Represents a user or system entity that performed an action (e.g., created or updated a resource)",
+                                "fields": {
+                                    "agentId": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent ID. Possible agents are users and agent tokens",
+                                            "example": "user000_000000000000000000000"
+                                        }
+                                    },
+                                    "agentType": {
+                                        "__id": "FieldObjectField",
+                                        "required": true,
+                                        "data": {
+                                            "__id": "FieldString",
+                                            "description": "Agent type",
+                                            "example": "agentToken",
+                                            "valid": [
+                                                "user",
+                                                "agentToken"
+                                            ],
+                                            "enumName": "AgentType"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "workspaceId": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "Workspace ID",
+                                "example": "wrkspce_000000000000000000000"
+                            }
+                        },
+                        "name": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "Resource name",
+                                "example": "My resource name"
+                            }
+                        },
+                        "description": {
+                            "__id": "FieldObjectField",
+                            "required": false,
+                            "data": {
+                                "__id": "FieldString",
+                                "description": "Resource description",
+                                "example": "This is a resource description."
+                            }
+                        },
+                        "idPath": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldArray",
+                                "type": {
+                                    "__id": "FieldString",
+                                    "description": "Folder ID",
+                                    "example": "folder0_000000000000000000000"
+                                },
+                                "description": "List of parent folder IDs"
+                            }
+                        },
+                        "namepath": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldArray",
+                                "description": "Folder path as a list of folder names. It should not include the workspace rootname. e.g [\"my-folder\", \"my-sub-folder\"].",
+                                "type": {
+                                    "__id": "FieldString"
+                                },
+                                "example": [
+                                    "my-folder",
+                                    "my-sub-folder"
+                                ]
+                            }
+                        },
+                        "parentId": {
+                            "__id": "FieldObjectField",
+                            "required": true,
+                            "data": {
+                                "__id": "FieldOrCombination",
+                                "description": "Folder ID or null if resource is not in a folder (e.g., at workspace root)",
+                                "types": [
+                                    {
+                                        "__id": "FieldString",
+                                        "description": "Folder ID",
+                                        "example": "folder0_000000000000000000000"
+                                    },
+                                    {
+                                        "__id": "FieldNull"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "notes": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldArray",
+                    "type": {
+                        "__id": "FieldObject",
+                        "name": "EndpointResultNote",
+                        "fields": {
+                            "code": {
+                                "__id": "FieldObjectField",
+                                "required": true,
+                                "data": {
+                                    "__id": "FieldString",
+                                    "description": "Endpoint result or error note code",
+                                    "example": "unsupportedOperationInMountBackend",
+                                    "valid": [
+                                        "unsupportedOperationInMountBackend",
+                                        "mountsNotCompletelyIngested"
+                                    ],
+                                    "enumName": "EndpointResultNoteCode"
+                                }
+                            },
+                            "message": {
+                                "__id": "FieldObjectField",
+                                "required": true,
+                                "data": {
+                                    "__id": "FieldString",
+                                    "description": "Endpoint result or error note message",
+                                    "example": "Some mounts in the requested folder's mount chain do not support operation abc"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "name": "fimidara/folders/addFolder",
+    "description": "Creates a new folder at the specified path within the workspace",
+    "tags": [
+        "public"
+    ],
+    "errorResponseHeaders": {
+        "__id": "FieldObject",
+        "name": "HttpEndpointResponseHeaders_ContentType_ContentLength",
+        "fields": {
+            "Content-Type": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP JSON response content type",
+                    "example": "application/json"
+                }
+            },
+            "Content-Length": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "HTTP response content length in bytes"
+                }
+            }
+        }
+    },
+    "errorResponseBody": {
+        "__id": "FieldObject",
+        "name": "EndpointErrorResult",
+        "description": "Endpoint error result",
+        "fields": {
+            "errors": {
+                "__id": "FieldObjectField",
+                "required": false,
+                "data": {
+                    "__id": "FieldArray",
+                    "type": {
+                        "__id": "FieldObject",
+                        "name": "ExternalError",
+                        "fields": {
+                            "message": {
+                                "__id": "FieldObjectField",
+                                "required": true,
+                                "data": {
+                                    "__id": "FieldString",
+                                    "description": "Error message",
+                                    "example": "Workspace name is invalid"
+                                }
+                            }
+                        }
+                    },
+                    "description": "Endpoint call response errors"
+                }
+            }
+        }
+    }
+}

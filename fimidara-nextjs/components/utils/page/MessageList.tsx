@@ -1,11 +1,9 @@
 import { cn } from "@/components/utils.ts";
 import { AppError } from "@/lib/utils/errors";
-import { css } from "@emotion/css";
 import { isBoolean, isNumber, merge } from "lodash-es";
 import isString from "lodash-es/isString";
 import React from "react";
 import { StyleableComponentProps } from "../styling/types";
-import { appClasses } from "../theme";
 import { AlertGroup } from "./AlertGroup";
 import EmptyMessage from "./EmptyMessage";
 
@@ -19,19 +17,6 @@ export interface IMessageListProps extends StyleableComponentProps {
   useEmptyMessage?: boolean;
   maxWidth?: boolean | number;
 }
-
-const classes = {
-  fillParent: css({
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 1,
-    padding: "0 16px",
-    height: "100%",
-    margin: "auto",
-  }),
-};
 
 const MessageList: React.FC<IMessageListProps> = (props) => {
   const {
@@ -82,9 +67,9 @@ const MessageList: React.FC<IMessageListProps> = (props) => {
       )}
       className={cn(
         className,
-        appClasses.w100,
-        shouldFillParent && classes.fillParent,
-        shouldPad && appClasses.p16
+        shouldFillParent &&
+          "flex flex-col justify-center items-center flex-1 px-4 h-full mx-auto",
+        shouldPad && "p-16"
       )}
     >
       {contentNode}

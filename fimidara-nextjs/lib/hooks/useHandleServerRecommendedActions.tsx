@@ -2,10 +2,10 @@
 
 import { useToast } from "@/hooks/use-toast.ts";
 import { usePathname } from "next/navigation";
-import { isFimidaraEndpointError } from "../api/fimidaraEndpointUtils.ts";
 import { kAppAccountPaths } from "../definitions/paths/account.ts";
 import { kUserSessionStorageFns } from "../storage/UserSessionStorageFns.ts";
 import { useRequestLogout } from "./session/useRequestLogout.ts";
+import { isFimidaraEndpointError } from "../api/fimidaraEndpointUtils.ts";
 
 const kTimeout = 3_000; // 3 seconds
 const kMessageDuration = 10_000; // seconds

@@ -1,3 +1,4 @@
+import { DirectoryUpload, type UploadFile } from "@/components/internal/upload";
 import { Button } from "@/components/ui/button.tsx";
 import {
   Form,
@@ -28,10 +29,9 @@ import { fileValidationParts } from "@/lib/validation/file";
 import { systemValidation } from "@/lib/validation/system";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMount } from "ahooks";
-import { Upload } from "antd";
 import { Folder, stringifyFimidaraFolderpath } from "fimidara";
 import { compact, last } from "lodash-es";
-import { CircleChevronRight, FolderUp } from "lucide-react";
+import { CircleChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { ChangeEventHandler, ReactNode, useMemo } from "react";
 import { useForm, UseFormReturn } from "react-hook-form";
@@ -335,19 +335,18 @@ export default function FolderForm(props: FolderFormProps) {
       render={({ field }) => (
         <FormItem>
           <FormControl>
-            <Upload
-              directory
-              showUploadList={false}
-              multiple={false}
+            <DirectoryUpload
               disabled={hookLoading}
-              fileList={compact(field.value?.map((item) => item.file))}
-              beforeUpload={(file, fileList) => {
-                const files = fileList.map(
+              showFileList={false}
+              buttonText="Select Folder"
+              onDirectorySelect={(uploadFiles: UploadFile[]) => {
+                const files = uploadFiles.map(
                   (file): SingleFileFormValue => ({
                     file,
                     mimetype: file.type,
                     resourceId: undefined,
-                    name: last(file.webkitRelativePath.split("/")) || "",
+                    name:
+                      last(file.webkitRelativePath?.split("/")) || file.name,
                     __localId: getNewFileLocalId(),
                   })
                 );
@@ -355,22 +354,17 @@ export default function FolderForm(props: FolderFormProps) {
                 if (!folder && !wFoldername) {
                   const foldername =
                     getFirstFoldername(
-                      compact(fileList.map((file) => file.webkitRelativePath))
+                      compact(
+                        uploadFiles.map((file) => file.webkitRelativePath)
+                      )
                     ) || "";
+
                   form.setValue("name", foldername);
                 }
 
                 form.setValue("files", files);
-                return false;
               }}
-            >
-              <Button title="Select Folder" variant="outline" type="button">
-                <div className="space-x-2 flex items-center">
-                  <FolderUp className="h-4 w-4" />
-                  <span>Select Folder</span>
-                </div>
-              </Button>
-            </Upload>
+            />
           </FormControl>
           <FormMessage />
         </FormItem>

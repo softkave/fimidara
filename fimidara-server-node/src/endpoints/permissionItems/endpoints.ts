@@ -5,7 +5,7 @@ import {
   addPermissionItemsEndpointDefinition,
   deletePermissionItemsEndpointDefinition,
   resolveEntityPermissionsEndpointDefinition,
-} from './endpoints.mddoc.js';
+} from './endpoints.mfdoc.js';
 import resolveEntityPermissions from './resolveEntityPermissions/handler.js';
 import {PermissionItemsExportedEndpoints} from './types.js';
 
@@ -14,17 +14,17 @@ export function getPermissionItemsHttpEndpoints() {
     addItems: {
       tag: [kEndpointTag.public],
       fn: addPermissionItems,
-      mddocHttpDefinition: addPermissionItemsEndpointDefinition,
+      mfdocHttpDefinition: addPermissionItemsEndpointDefinition,
     },
     deleteItems: {
       tag: [kEndpointTag.public],
       fn: deletePermissionItems,
-      mddocHttpDefinition: deletePermissionItemsEndpointDefinition,
+      mfdocHttpDefinition: deletePermissionItemsEndpointDefinition,
     },
     resolveEntityPermissions: {
       tag: [kEndpointTag.public],
       fn: resolveEntityPermissions,
-      mddocHttpDefinition: resolveEntityPermissionsEndpointDefinition,
+      mfdocHttpDefinition: resolveEntityPermissionsEndpointDefinition,
     },
   };
   return permissionItemsExportedEndpoints;

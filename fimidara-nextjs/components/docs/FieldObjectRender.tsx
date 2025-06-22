@@ -1,15 +1,15 @@
 import { first } from "lodash-es";
+import { MfdocFieldObjectTypePrimitive } from "mfdoc/mfdoc-core";
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs.tsx";
 import FieldObjectAsJson from "./FieldObjectAsJson";
 import FieldObjectAsTable from "./FieldObjectAsTable";
-import { FieldObject } from "./types";
 
 const kTableMode = "table" as const;
 const kJsonMode = "json" as const;
 
 export interface FieldObjectRenderProps {
-  fieldObject: FieldObject;
+  fieldObject: MfdocFieldObjectTypePrimitive<any>;
   modes?: Array<typeof kJsonMode | typeof kTableMode>;
   propName?: string;
   isForJsSdk?: boolean;

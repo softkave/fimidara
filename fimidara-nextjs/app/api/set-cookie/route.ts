@@ -1,4 +1,3 @@
-import { FimidaraEndpoints } from "@/lib/api-internal/endpoints/privateEndpoints.ts";
 import { systemConstants } from "@/lib/definitions/system.ts";
 import {
   kUserConstants,
@@ -6,6 +5,7 @@ import {
 } from "@/lib/definitions/user.ts";
 import { wrapRoute } from "@/lib/server/wrapRoute.ts";
 import assert from "assert";
+import { FimidaraEndpoints } from "fimidara-private-js-sdk";
 import { cookies } from "next/headers";
 import { NextRequest } from "next/server";
 

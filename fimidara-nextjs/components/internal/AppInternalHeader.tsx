@@ -1,25 +1,13 @@
-import { css } from "@emotion/css";
+import { kAppInternalPaths } from "@/lib/definitions/paths/internal.ts";
 import { usePathname, useRouter } from "next/navigation";
 import { FiUserPlus, FiUsers } from "react-icons/fi";
 import { MdOutlineWorkOutline } from "react-icons/md";
 import AppTabs, { AppTabItem } from "../utils/page/AppTabs";
-import { kAppInternalPaths } from "@/lib/definitions/paths/internal.ts";
 
 export interface IAppInternalHeaderProps {
   className?: string;
   style?: React.CSSProperties;
 }
-
-const classes = {
-  item: css({
-    position: "relative",
-    top: "2px",
-    borderBottom: "1px solid var(--border-hex)",
-  }),
-  active: css({
-    borderBottom: "1px solid var(--primary-hex)",
-  }),
-};
 
 export default function AppInternalHeader(props: IAppInternalHeaderProps) {
   const { className, style } = props;
@@ -55,8 +43,8 @@ export default function AppInternalHeader(props: IAppInternalHeaderProps) {
       onChange={onChange}
       style={style}
       className={className}
-      activeKeyClassName={classes.active}
-      itemClassName={classes.item}
+      activeKeyClassName="border-b border-primary"
+      itemClassName="relative top-0.5 border-b border-border"
     />
   );
 }

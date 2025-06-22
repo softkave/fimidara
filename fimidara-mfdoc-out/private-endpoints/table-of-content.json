@@ -1,0 +1,316 @@
+[
+    {
+        "basename": "fimidara",
+        "names": [
+            "fimidara"
+        ],
+        "children": {
+            "workspaces": {
+                "basename": "workspaces",
+                "names": [
+                    "fimidara",
+                    "workspaces"
+                ],
+                "children": {
+                    "addWorkspace__post": {
+                        "basename": "addWorkspace__post",
+                        "filepath": "fimidara/workspaces/addWorkspace__post.json",
+                        "names": [
+                            "fimidara",
+                            "workspaces",
+                            "addWorkspace__post"
+                        ],
+                        "children": {}
+                    },
+                    "countUserWorkspaces__post": {
+                        "basename": "countUserWorkspaces__post",
+                        "filepath": "fimidara/workspaces/countUserWorkspaces__post.json",
+                        "names": [
+                            "fimidara",
+                            "workspaces",
+                            "countUserWorkspaces__post"
+                        ],
+                        "children": {}
+                    },
+                    "deleteWorkspace__delete": {
+                        "basename": "deleteWorkspace__delete",
+                        "filepath": "fimidara/workspaces/deleteWorkspace__delete.json",
+                        "names": [
+                            "fimidara",
+                            "workspaces",
+                            "deleteWorkspace__delete"
+                        ],
+                        "children": {}
+                    },
+                    "getUserWorkspaces__post": {
+                        "basename": "getUserWorkspaces__post",
+                        "filepath": "fimidara/workspaces/getUserWorkspaces__post.json",
+                        "names": [
+                            "fimidara",
+                            "workspaces",
+                            "getUserWorkspaces__post"
+                        ],
+                        "children": {}
+                    }
+                }
+            },
+            "users": {
+                "basename": "users",
+                "names": [
+                    "fimidara",
+                    "users"
+                ],
+                "children": {
+                    "changePasswordWithCurrentPassword__post": {
+                        "basename": "changePasswordWithCurrentPassword__post",
+                        "filepath": "fimidara/users/changePasswordWithCurrentPassword__post.json",
+                        "names": [
+                            "fimidara",
+                            "users",
+                            "changePasswordWithCurrentPassword__post"
+                        ],
+                        "children": {}
+                    },
+                    "changePasswordWithToken__post": {
+                        "basename": "changePasswordWithToken__post",
+                        "filepath": "fimidara/users/changePasswordWithToken__post.json",
+                        "names": [
+                            "fimidara",
+                            "users",
+                            "changePasswordWithToken__post"
+                        ],
+                        "children": {}
+                    },
+                    "confirmEmailAddress__post": {
+                        "basename": "confirmEmailAddress__post",
+                        "filepath": "fimidara/users/confirmEmailAddress__post.json",
+                        "names": [
+                            "fimidara",
+                            "users",
+                            "confirmEmailAddress__post"
+                        ],
+                        "children": {}
+                    },
+                    "forgotPassword__post": {
+                        "basename": "forgotPassword__post",
+                        "filepath": "fimidara/users/forgotPassword__post.json",
+                        "names": [
+                            "fimidara",
+                            "users",
+                            "forgotPassword__post"
+                        ],
+                        "children": {}
+                    },
+                    "getUserData__post": {
+                        "basename": "getUserData__post",
+                        "filepath": "fimidara/users/getUserData__post.json",
+                        "names": [
+                            "fimidara",
+                            "users",
+                            "getUserData__post"
+                        ],
+                        "children": {}
+                    },
+                    "login__post": {
+                        "basename": "login__post",
+                        "filepath": "fimidara/users/login__post.json",
+                        "names": [
+                            "fimidara",
+                            "users",
+                            "login__post"
+                        ],
+                        "children": {}
+                    },
+                    "loginWithOAuth__post": {
+                        "basename": "loginWithOAuth__post",
+                        "filepath": "fimidara/users/loginWithOAuth__post.json",
+                        "names": [
+                            "fimidara",
+                            "users",
+                            "loginWithOAuth__post"
+                        ],
+                        "children": {}
+                    },
+                    "refreshToken__post": {
+                        "basename": "refreshToken__post",
+                        "filepath": "fimidara/users/refreshToken__post.json",
+                        "names": [
+                            "fimidara",
+                            "users",
+                            "refreshToken__post"
+                        ],
+                        "children": {}
+                    },
+                    "sendEmailVerificationCode__post": {
+                        "basename": "sendEmailVerificationCode__post",
+                        "filepath": "fimidara/users/sendEmailVerificationCode__post.json",
+                        "names": [
+                            "fimidara",
+                            "users",
+                            "sendEmailVerificationCode__post"
+                        ],
+                        "children": {}
+                    },
+                    "signup__post": {
+                        "basename": "signup__post",
+                        "filepath": "fimidara/users/signup__post.json",
+                        "names": [
+                            "fimidara",
+                            "users",
+                            "signup__post"
+                        ],
+                        "children": {}
+                    },
+                    "signupWithOAuth__post": {
+                        "basename": "signupWithOAuth__post",
+                        "filepath": "fimidara/users/signupWithOAuth__post.json",
+                        "names": [
+                            "fimidara",
+                            "users",
+                            "signupWithOAuth__post"
+                        ],
+                        "children": {}
+                    },
+                    "updateUser__post": {
+                        "basename": "updateUser__post",
+                        "filepath": "fimidara/users/updateUser__post.json",
+                        "names": [
+                            "fimidara",
+                            "users",
+                            "updateUser__post"
+                        ],
+                        "children": {}
+                    },
+                    "userExists__post": {
+                        "basename": "userExists__post",
+                        "filepath": "fimidara/users/userExists__post.json",
+                        "names": [
+                            "fimidara",
+                            "users",
+                            "userExists__post"
+                        ],
+                        "children": {}
+                    }
+                }
+            },
+            "collaborationRequests": {
+                "basename": "collaborationRequests",
+                "names": [
+                    "fimidara",
+                    "collaborationRequests"
+                ],
+                "children": {
+                    "countUserRequests__post": {
+                        "basename": "countUserRequests__post",
+                        "filepath": "fimidara/collaborationRequests/countUserRequests__post.json",
+                        "names": [
+                            "fimidara",
+                            "collaborationRequests",
+                            "countUserRequests__post"
+                        ],
+                        "children": {}
+                    },
+                    "getUserRequest__post": {
+                        "basename": "getUserRequest__post",
+                        "filepath": "fimidara/collaborationRequests/getUserRequest__post.json",
+                        "names": [
+                            "fimidara",
+                            "collaborationRequests",
+                            "getUserRequest__post"
+                        ],
+                        "children": {}
+                    },
+                    "getUserRequests__post": {
+                        "basename": "getUserRequests__post",
+                        "filepath": "fimidara/collaborationRequests/getUserRequests__post.json",
+                        "names": [
+                            "fimidara",
+                            "collaborationRequests",
+                            "getUserRequests__post"
+                        ],
+                        "children": {}
+                    },
+                    "getWorkspaceRequest__post": {
+                        "basename": "getWorkspaceRequest__post",
+                        "filepath": "fimidara/collaborationRequests/getWorkspaceRequest__post.json",
+                        "names": [
+                            "fimidara",
+                            "collaborationRequests",
+                            "getWorkspaceRequest__post"
+                        ],
+                        "children": {}
+                    },
+                    "respondToRequest__post": {
+                        "basename": "respondToRequest__post",
+                        "filepath": "fimidara/collaborationRequests/respondToRequest__post.json",
+                        "names": [
+                            "fimidara",
+                            "collaborationRequests",
+                            "respondToRequest__post"
+                        ],
+                        "children": {}
+                    },
+                    "updateRequest__post": {
+                        "basename": "updateRequest__post",
+                        "filepath": "fimidara/collaborationRequests/updateRequest__post.json",
+                        "names": [
+                            "fimidara",
+                            "collaborationRequests",
+                            "updateRequest__post"
+                        ],
+                        "children": {}
+                    }
+                }
+            },
+            "internal": {
+                "basename": "internal",
+                "names": [
+                    "fimidara",
+                    "internal"
+                ],
+                "children": {
+                    "getUsers__post": {
+                        "basename": "getUsers__post",
+                        "filepath": "fimidara/internal/getUsers__post.json",
+                        "names": [
+                            "fimidara",
+                            "internal",
+                            "getUsers__post"
+                        ],
+                        "children": {}
+                    },
+                    "getWaitlistedUsers__post": {
+                        "basename": "getWaitlistedUsers__post",
+                        "filepath": "fimidara/internal/getWaitlistedUsers__post.json",
+                        "names": [
+                            "fimidara",
+                            "internal",
+                            "getWaitlistedUsers__post"
+                        ],
+                        "children": {}
+                    },
+                    "getWorkspaces__post": {
+                        "basename": "getWorkspaces__post",
+                        "filepath": "fimidara/internal/getWorkspaces__post.json",
+                        "names": [
+                            "fimidara",
+                            "internal",
+                            "getWorkspaces__post"
+                        ],
+                        "children": {}
+                    },
+                    "upgradeWaitlistedUsers__post": {
+                        "basename": "upgradeWaitlistedUsers__post",
+                        "filepath": "fimidara/internal/upgradeWaitlistedUsers__post.json",
+                        "names": [
+                            "fimidara",
+                            "internal",
+                            "upgradeWaitlistedUsers__post"
+                        ],
+                        "children": {}
+                    }
+                }
+            }
+        }
+    }
+]

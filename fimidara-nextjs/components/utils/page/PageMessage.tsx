@@ -56,7 +56,6 @@ function isError(message: any): message is Pick<AppError, "message"> {
 
 const PageMessage: React.FC<IPageMessageProps> = (props) => {
   const { message, children, type, actions, className } = props;
-
   let messageNode: React.ReactNode = null;
 
   if (isString(message)) {

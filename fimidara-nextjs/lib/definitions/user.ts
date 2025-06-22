@@ -1,6 +1,6 @@
+import { LoginResult } from "fimidara-private-js-sdk";
 import { AdapterUser } from "next-auth/adapters";
 import { z } from "zod";
-import { LoginResult } from "../api-internal/endpoints/privateTypes.ts";
 
 export const kUserConstants = {
   minNameLength: 1,

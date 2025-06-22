@@ -47,4 +47,10 @@ yalc.lock
 # dist
 dist
 
+# env files
 .env*
+
+# DS_Store
+.DS_Store
+*.DS_Store
+**/.DS_Store

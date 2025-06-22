@@ -1,4 +1,4 @@
-import {ExportedHttpEndpointWithMddocDefinition} from '../types.js';
+import {ExportedHttpEndpointWithMfdocDefinition} from '../types.js';
 import {AddWorkspaceEndpoint} from './addWorkspace/types.js';
 import {CountUserWorkspacesEndpoint} from './countUserWorkspaces/types.js';
 import {DeleteWorkspaceEndpoint} from './deleteWorkspace/types.js';
@@ -7,17 +7,17 @@ import {GetWorkspaceEndpoint} from './getWorkspace/types.js';
 import {UpdateWorkspaceEndpoint} from './updateWorkspace/types.js';
 
 export type AddWorkspaceHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<AddWorkspaceEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<AddWorkspaceEndpoint>;
 export type DeleteWorkspaceHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<DeleteWorkspaceEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<DeleteWorkspaceEndpoint>;
 export type GetUserWorkspacesHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetUserWorkspacesEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetUserWorkspacesEndpoint>;
 export type CountUserWorkspacesHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<CountUserWorkspacesEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<CountUserWorkspacesEndpoint>;
 export type GetWorkspaceHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<GetWorkspaceEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<GetWorkspaceEndpoint>;
 export type UpdateWorkspaceHttpEndpoint =
-  ExportedHttpEndpointWithMddocDefinition<UpdateWorkspaceEndpoint>;
+  ExportedHttpEndpointWithMfdocDefinition<UpdateWorkspaceEndpoint>;
 
 export type WorkspacesExportedEndpoints = {
   addWorkspace: AddWorkspaceHttpEndpoint;

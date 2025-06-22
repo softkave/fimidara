@@ -1,7 +1,7 @@
 import { kAppInternalPaths } from "@/lib/definitions/paths/internal.ts";
 import { kAppUserPaths } from "@/lib/definitions/paths/user.ts";
 import { kAppWorkspacePaths } from "@/lib/definitions/paths/workspace.ts";
-import { Computer, GitPullRequestArrow, UserCog } from "lucide-react";
+import { GitPullRequestArrow, NotebookTabsIcon, UserCog } from "lucide-react";
 import {
   FiFile,
   FiKey,
@@ -94,7 +94,7 @@ export function getUserNavItems(workspaceId?: string) {
       key: kAppWorkspacePaths.workspaces,
       href: kAppWorkspacePaths.workspaces,
       label: "Workspaces",
-      icon: <Computer className="w-4 h-4" />,
+      icon: <NotebookTabsIcon className="w-4 h-4" />,
     },
     ...userItems,
   ];

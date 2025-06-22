@@ -1,9 +1,9 @@
 "use client";
 
-import { cx } from "@emotion/css";
 import Head from "next/head";
 import React, { useState } from "react";
 import useAppResponsive from "../../lib/hooks/useAppResponsive";
+import { cn } from "../utils";
 
 export interface IDocsMainProps {
   pageTitle: string;
@@ -29,7 +29,7 @@ const DocsMain: React.FC<IDocsMainProps> = (props) => {
         <meta name="title" content={pageTitle} />
         <meta name="description" content={pageDescription} />
       </Head>
-      <div className={cx("docsMain", className)}>
+      <div className={cn("docsMain", className)}>
         <div className="docsMainInner">
           <main>
             <div className={contentClassName}>{children}</div>

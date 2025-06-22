@@ -448,7 +448,7 @@ export const usePermissionsDeleteMutationHook = makeEndpointMutationHook(
 
 export const useWaitlistedUsersUpgradeMutationHook = makeEndpointMutationHook(
   getPrivateFimidaraEndpointsUsingUserToken,
-  (endpoints) => endpoints.internals.upgradeWaitlistedUsers
+  (endpoints) => endpoints.internal.upgradeWaitlistedUsers
 );
 
 export function clearOutResolvedPermissionFetchStore() {
@@ -481,11 +481,14 @@ function insertInFetchStoreAddMutationFn<
     useFetchStore.getState().setFetchState(
       fetchState[0],
       (state) => {
-        if (!state?.data) return state as any;
+        if (!state?.data) {
+          return state as any;
+        }
+
         const idList = uniq(
           [resource.resourceId].concat(state?.data?.idList ?? [])
         );
-        return {
+        const newState = {
           ...state,
           data: {
             ...state?.data,
@@ -493,6 +496,8 @@ function insertInFetchStoreAddMutationFn<
             count: idList.length,
           },
         };
+
+        return newState;
       },
       /** initialize */ false
     );

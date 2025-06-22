@@ -1,10 +1,10 @@
 "use client";
 
+import { getPrivateFimidaraEndpointsUsingUserToken } from "@/lib/api/fimidaraEndpoints.ts";
 import {
   CollaborationRequestForUser,
   GetUserCollaborationRequestEndpointParams,
-} from "@/lib/api-internal/endpoints/privateTypes.ts";
-import { getPrivateFimidaraEndpointsUsingUserToken } from "@/lib/api/fimidaraEndpoints.ts";
+} from "fimidara-private-js-sdk";
 import { useUserCollaborationRequestFetchStore } from "../fetchStores/userCollaborationRequest.ts";
 import { useUserCollaborationRequestsStore } from "../resourceListStores.ts";
 import { makeSingleFetchHook } from "./makeSingleFetchHook.ts";
