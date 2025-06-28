@@ -1,6 +1,6 @@
 {
   "name": "fimidara",
-  "version": "1.36.0",
+  "version": "1.37.0",
   "description": "js sdk for fimidara file storage service",
   "author": {
     "email": "ywordk@gmail.com",
@@ -21,8 +21,8 @@
     "file access control"
   ],
   "type": "module",
-  "main": "./build/index.js",
-  "typings": "./build/index.d.ts",
+  "main": "./build/indexIsomorphic.js",
+  "typings": "./build/indexIsomorphic.d.ts",
   "exports": {
     ".": {
       "node": {
@@ -34,13 +34,25 @@
         "default": "./build/indexBrowser.js"
       },
       "default": {
-        "types": "./build/index.d.ts",
-        "default": "./build/index.js"
+        "types": "./build/indexIsomorphic.d.ts",
+        "default": "./build/indexIsomorphic.js"
       }
     },
     "./*": {
       "types": "./build/*.d.ts",
       "default": "./build/*.js"
+    },
+    "./indexNode": {
+      "types": "./build/indexNode.d.ts",
+      "default": "./build/indexNode.js"
+    },
+    "./indexBrowser": {
+      "types": "./build/indexBrowser.d.ts",
+      "default": "./build/indexBrowser.js"
+    },
+    "./indexIsomorphic": {
+      "types": "./build/indexIsomorphic.d.ts",
+      "default": "./build/indexIsomorphic.js"
     },
     "./node/*": {
       "types": "./build/node/*.d.ts",
@@ -67,7 +79,8 @@
     "publish:npm": "npm run compile && npm publish",
     "publish:local": "npm run compile && pnpm link --global",
     "show:packlist": "npm run compile && npm pack --dry-run",
-    "pretty": "prettier --write"
+    "pretty": "prettier --write",
+    "docs:build": "typedoc --options ./typedoc.json"
   },
   "engines": {
     "node": ">=13"

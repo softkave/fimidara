@@ -1,5 +1,12 @@
+import { MaybeScroll } from "@/components/internal/maybe-scroll";
 import { Button } from "@/components/ui/button.tsx";
-import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet.tsx";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet.tsx";
 import {
   Tabs,
   TabsContent,
@@ -187,21 +194,28 @@ const TargetGrantPermissionForm: FC<TargetGrantPermissionFormProps> = (
 
   return (
     <Sheet open onOpenChange={onClose}>
-      <SheetTitle className="p-6">Update Permissions</SheetTitle>
       <SheetContent className="w-full max-w-[420px] p-0">
-        <div className="p-6 pt-0">
-          {errorNode}
-          {tabsNode}
-          <div>
-            <Button
-              loading={loading}
-              onClick={() => handleOnSave()}
-              type="button"
-            >
-              Save Permissions
-            </Button>
+        <MaybeScroll>
+          <SheetHeader className="p-6 space-y-2">
+            <SheetTitle>Update Permissions</SheetTitle>
+            <SheetDescription>
+              Update the permissions for the target.
+            </SheetDescription>
+          </SheetHeader>
+          <div className="p-6 pt-0 space-y-6">
+            {errorNode}
+            {tabsNode}
+            <div>
+              <Button
+                loading={loading}
+                onClick={() => handleOnSave()}
+                type="button"
+              >
+                Save Permissions
+              </Button>
+            </div>
           </div>
-        </div>
+        </MaybeScroll>
       </SheetContent>
     </Sheet>
   );

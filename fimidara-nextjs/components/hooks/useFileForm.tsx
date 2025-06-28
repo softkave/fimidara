@@ -17,22 +17,20 @@ export function useFileForm(props: {
   const node = (
     <Sheet open={!!formOpen} onOpenChange={setFormOpen}>
       <SheetContent className="w-full max-w-[420px] p-0">
-        <div className="h-full max-h-full">
-          <MaybeScroll className="h-full overflow-y-auto">
-            <SheetHeader>
-              <SheetTitle className="p-6">
-                {isNewResourceForm ? "New Files" : "Update File"}
-              </SheetTitle>
-            </SheetHeader>
-            <FileForm
-              workspaceRootname={workspaceRootname}
-              workspaceId={workspaceId}
-              file={isBoolean(formOpen) ? undefined : formOpen}
-              className="p-6 pt-0"
-              folderpath={folderpath}
-            />
-          </MaybeScroll>
-        </div>
+        <MaybeScroll>
+          <SheetHeader className="p-6 space-y-2">
+            <SheetTitle>
+              {isNewResourceForm ? "New Files" : "Update File"}
+            </SheetTitle>
+          </SheetHeader>
+          <FileForm
+            workspaceRootname={workspaceRootname}
+            workspaceId={workspaceId}
+            file={isBoolean(formOpen) ? undefined : formOpen}
+            className="p-6 pt-0"
+            folderpath={folderpath}
+          />
+        </MaybeScroll>
       </SheetContent>
     </Sheet>
   );

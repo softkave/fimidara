@@ -1,199 +1,167 @@
 ## Server
 
-- resumable uploads
-- authentication + authorization + workspaces
-- metered read & read capacity
-- set cookies
-- test that multiple files with same name are not created
-- api idempotency
-- move from queue waitOnStream to pubsub
-- usage thresholds internal and reporting
-- docs
-- range download
-- cookies
-- when the agent is public, don't return all data
-- add providedId to add and update endpoints for workspace resources
-- regex match for email not working because email contained +
-- do not require rootname if using token
-- there was an error with sharp that broke the instance (maybe not waiting for
-  promise is why it breaks app)
-- in delete jobs, use versions marked deleted for original objects
-- usage records
-  - usage records alerting
-  - UI to set usage thresholds internal
-  - make sure api and users can't set thresholds themselves for now, but can read it
-  - UI to update costs, internal
-  - limit how many workspaces a user can create, maybe 3 or 5 for now
-- go through apis docs
-- logs, maybe Sentry
-- audit logs
-- use local fs?
-- check if email recipient is a user and only send login link, or signup link otherwise
-- tool to print config without values for env
-- email me with new signups in intervals
-- what happens when a user still have bandwidth in but no storage?
-- fix NotFoundException exception thrown from email deliverability check (AWS SES)
-  - switch email to resend
-- empty out test s3 bucket and write code to auto clean it after tests
-- download folder as zip
-- match file with node:fs stat, e.g. last accessed, last status change (though
-  we don't have a similar concept), and nano seconds, etc.
-- stop workers on sigint
-- use uncreated folder and file path for permissions
-- when surfacing jobs, make sure to not surface all info because a job can start
-  a job owned by a different workspace, like remove collaborator is linked to
-  unassigning a permission group owned by fimidara
-- check that read available works for all file providers, local, s3, etc.
-- add a create empty file endpoint
-- delete local dir and file for completed/deleted parts
+- Move these features to ChoreBuddy (eventual goal).
+- Implement resumable uploads.
+- Add authentication, authorization, and workspace support.
+- Meter read operations and enforce read capacity limits.
+- Set and manage cookies.
+- Prevent creation of multiple files with the same name.
+- Ensure API idempotency.
+- Replace queue waitOnStream with pub/sub.
+- Track and report usage thresholds.
+- Improve and complete documentation.
+- Support range downloads.
+- When agent is public, restrict returned data.
+- Add providedId to add/update workspace resource endpoints.
+- Fix email regex to support '+' in addresses.
+- Allow token-based access without requiring rootname.
+- Fix sharp error (possibly due to unhandled promises).
+- In delete jobs, use versions marked as deleted for original objects.
+- Implement usage records and alerting.
+- UI: Set and update internal usage thresholds and costs (read-only for users).
+- Limit number of workspaces a user can create (e.g., 3–5).
+- Review and update API documentation.
+- Add logging (consider Sentry).
+- Implement audit logs.
+- Optionally use local filesystem.
+- For email login/signup: send appropriate link based on user existence.
+- Tool: Print config without exposing env values.
+- Batch email notifications for new signups.
+- Handle case: user has bandwidth but no storage left.
+- Fix NotFoundException from email deliverability check (AWS SES); consider switching to Resend.
+- Auto-clean test S3 bucket after tests.
+- Support downloading folders as zip files.
+- Match file metadata with node:fs (e.g., last accessed, status change, nanoseconds).
+- Stop workers on SIGINT.
+- Use uncreated folder/file paths for permissions.
+- Limit job info exposure to relevant workspace.
+- Ensure read-available works for all file providers (local, S3, etc.).
+- Add endpoint to create empty files.
+- Delete local files/dirs for completed/deleted parts.
 
 ## JS SDK
 
-- api
-  - examples
-  - json example code
-  - hide N/A
-  - sample apps
-- auto extract and document exports
-- support esm and commonjs (current issue is softkave-js-utils only supports esm, and lodash-es + peer deps)
-- readFile typedef should return stream | blob depending on responseType
-- diff files content?
-- optimize node diff files
-- optimize copyFolderFiles because currently we fetch all local and fimidara files for diff
-  - issue is diff will be incomplete when we diff on paged results
-- authentication + authorization + workspaces
-- mount external backends
-- image manipulation
-- reusable upload hardening
-  - set multipart lifecycle in s3
-  - cleanup parts on delete file
-  - complete multipart upload should be a job and should release file when done. this is primarily for memory and local fs providers
-  - write multiparts to local file and stream to backend when merging
-  - flush redis on complete testing, and use different database
-  - enforce minimum multipart upload size of 5mb bcos of s3
-    - if s3 has a 5mb minimum, then we may need to merge some parts internally
-- byte range download
-- connection pool for redis
-- hardening
-  - use shard runner for addFolder
-    - check if folder exists before sending to shard runner
-    - shard runner, who logs errors
-  - use shard runner for usage
-    - queue in handler by workspaceId + category + operation
-  - use shard runner for creating internal multipart ID
-    - queue in handler by fileId
-    - lock by fileId and get before creating
-  - use shard runner for prepare file
-    - queue in handler by fileId or filepath
-    - lock by fileId or filepath and get before creating
-  - concurrency with insertJob idempotency check
-  - cache calls to resolveBackendsMountsAndConfigs
-  - Mongo unique constraint can serve as an alternative to shard runner
-  - multipart file tests should check that binary is correct after upload
-- retry failed part uploads
-- allow switching between axios and fetch
+- API improvements:
+  - Add examples and JSON sample code.
+  - Hide N/A fields.
+  - Provide sample apps.
+- Auto-extract and document exports.
+- Support both ESM and CommonJS (currently softkave-js-utils is ESM-only).
+- readFile typedef: return stream or blob based on responseType.
+- Optimize file diffing and copying (handle paged results).
+- Add authentication, authorization, and workspace support.
+- Support mounting external backends.
+- Add image manipulation features.
+- Harden resumable uploads:
+  - Set S3 multipart lifecycle.
+  - Clean up parts on file delete.
+  - Make multipart upload completion a job; release file when done.
+  - Write multiparts to local file, stream to backend on merge.
+  - Flush Redis after complete tests; use separate DB.
+  - Enforce S3 minimum multipart size (5MB); merge parts if needed.
+- Support byte-range downloads.
+- Add Redis connection pooling.
+- General hardening:
+  - Use shard runner for addFolder, usage, multipart ID, and file preparation.
+  - Ensure concurrency and idempotency in job insertion.
+  - Cache backend mount/config resolution.
+  - Consider Mongo unique constraint as shard runner alternative.
+  - Test multipart uploads for binary correctness.
+- Retry failed part uploads.
+- Allow switching between axios and fetch.
 
 ## CLI
 
-- login
-- mute errors not fatal in fimidara sync
-  - handle errors per file or global error like auth globally
-  - show only error message
-- show files it's working on/skipping
-- maybe add an option to show files and folders interacted with
-- show files and folders in sync it's working on
+- Implement login.
+- Mute non-fatal errors in fimidara sync.
+  - Handle errors per file and globally.
+  - Show only error messages.
+- Show files being processed or skipped.
+- Optionally display all files/folders interacted with.
+- Show files/folders in sync progress.
 
-## Next.js client
+## Next.js Client
 
-- workspace selector
-- calculate upload time better, it doesn't reduce as expected
-- retry failed upload parts
-- show done after upload
-- increase file name limit
-- disable delete file when uploading
-- use both upload event and part hooks to show progress
-- dark mode
-- select workspace from sidebar
-- remove page auth required from files and folders
-- it should be clearer when permissions are given to a resource, and when permissions are given to access a resource
-- add permissions assigned on accepting collaboration request
-- where to report issues
-- send email when permissions are assigned and removed
-- authentication + authorization + workspaces
-- image manipulation
-- add that you get $# free hosting for 1 year on fimidara as a banner
-- integrate sentry
-- changelog
-- agent token
-  - encode jwt
-  - hide agent token and toggle to see
-- new homepage with features + code
-- sample apps
-- report bug/request feature
-- prevent submit if error and data has not changed
-- group actions by resource type
-- search
-  - all resources
-  - permissions
-  - all list
-- prevent submit again of change password after success
-- only show actions if user has permission
-- toggle allow showing password
-- marketing emails & subscriptions using resend
-- copy in agent token and other info
-- add toast for long runnign tasks like delete so they can track and know it's not immediate
-- no separate folders/files loading and error
-- files and folders not refreshed after upload (testing in root)
-- link to go back to file or folder from form
-  - open in drawer/sidebar
-- highlight in buttons particularly signup form
-  - Tag not showing correctly, waitlist page
-- little lag where dashboard shows sidebar and login/signup form
-- workspace name not centered in list
-- spacing nav bar
-- disable mutation actions if not email verified
-- loading and error background
-- mobile docs and look through all pages for mobile
-- dark mode styling for 404 and other pages
-- center all "loading..."/"nothing found..." divs
-- shows not logged in home page on first load when logged in
-- only show errors not marked internal, but log in console
-- revise overview docs
-- revise docs one-by-one
-- display public errors only
-- logout
-- silently refresh data when user visits page if page already has data (files and folders)
-- not showing correct upload size for a file, and not advancing download progress
-- retrying failed/successful uploads does not show green status
-- custom yup error messages
-- confirm file errors are showing in uploaded file list
-- files and folders multi-select
-- show status of long-running tasks
-- move lodash to lodash-es
-- soft refresh data on first load page (remove clear fetch state in folder form also)
-- prevent mutation actions if user is not email verified
-- auto-scroll back to top of page on error to surface error
-- accessibility
-- mount external backends
-- login with token
-- show file size
-- choose first workspace if one
-- homepage refresh
-- icons to files, with size
-- open items in drawer panel
-- bolder font
-- mdx docs for sdk and rest api
-- error pages
-- new homepage with features + code
-- devlog and changelog
-- sidenav on mobile
-- usage page
-- select workspace from sidenav
-- integrate authjs
-- complete move to shadcn
-- share folder & files using presigned urls
-- allow public access to folders and files
-  - remove workspace id from url
-- allow obfuscation of file on upload and on download
-- allow fine-specifying of file name and extension when uploading
-- get filesystem access and create/modify file when downloading directly to local filesystem instead of using presigned url or anchor tag
+- Add workspace selector.
+- Improve upload time estimation.
+- Retry failed upload parts.
+- Show completion status after upload.
+- Increase file name length limit.
+- Disable file deletion during upload.
+- Use upload event and part hooks for progress.
+- Add dark mode.
+- Select workspace from sidebar.
+- Remove auth requirement from file/folder pages.
+- Clarify permission assignment UI.
+- Assign permissions on collaboration acceptance.
+- Add issue reporting.
+- Email notifications for permission changes.
+- Add authentication, authorization, and workspace support.
+- Add image manipulation.
+- Banner: "Get $# free hosting for 1 year on fimidara."
+- Integrate Sentry.
+- Add changelog.
+- Support agent tokens (encode JWT, hide/toggle visibility).
+- New homepage with features and code samples.
+- Add sample apps.
+- Add bug/feature report form.
+- Prevent resubmission if error or unchanged data.
+- Group actions by resource type.
+- Add search (resources, permissions, all lists).
+- Prevent repeat password change submissions after success.
+- Show actions only if user has permission.
+- Toggle password visibility.
+- Marketing emails & subscriptions via Resend.
+- Copy agent token and other info.
+- Add toast notifications for long-running tasks.
+- Unify loading/error states for files/folders.
+- Refresh files/folders after upload.
+- Add navigation links from forms to files/folders (drawer/sidebar).
+- Improve button highlights (e.g., signup form).
+- Fix tag display on waitlist page.
+- Reduce dashboard/sidebar/login/signup lag.
+- Center workspace names in lists.
+- Adjust navbar spacing.
+- Disable mutations if email not verified.
+- Improve loading/error backgrounds.
+- Review all pages for mobile and dark mode.
+- Center "loading..."/"nothing found..." messages.
+- Fix home page not showing logged-in state on first load.
+- Only show public errors; log internal errors to console.
+- Revise and update overview/docs.
+- Display only public errors.
+- Implement logout.
+- Silently refresh data on page visit if already loaded.
+- Fix file upload size/progress display.
+- Show status for retried uploads.
+- Improve custom Yup error messages.
+- Confirm file errors display in upload list.
+- Support multi-select for files/folders.
+- Show status of long-running tasks.
+- Switch lodash to lodash-es.
+- Soft refresh data on first page load.
+- Prevent mutations if email not verified.
+- Auto-scroll to top on error.
+- Improve accessibility.
+- Support mounting external backends.
+- Add token-based login.
+- Show file size.
+- Auto-select first workspace if only one.
+- Refresh homepage.
+- Add file icons and sizes.
+- Open items in drawer panel.
+- Use bolder fonts.
+- Add MDX docs for SDK and REST API.
+- Add error pages.
+- New homepage with features and code.
+- Add devlog and changelog.
+- Add mobile sidenav.
+- Add usage page.
+- Select workspace from sidenav.
+- Integrate Auth.js.
+- Complete migration to shadcn.
+- Share folders/files via presigned URLs.
+- Allow public access to folders/files (remove workspace ID from URL).
+- Support file obfuscation on upload/download.
+- Allow specifying file name/extension on upload.
+- Support direct filesystem access for downloads (bypass presigned URL/anchor tag).

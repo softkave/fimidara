@@ -6,11 +6,20 @@ import {kDefaultRefreshTokenTimeoutLatency} from './constants.js';
 import type {FimidaraEndpoints} from './endpoints/publicEndpoints.js';
 import type {AgentToken} from './endpoints/publicTypes.js';
 
+/**
+ * Essential token properties required for refreshing agent authentication.
+ * Contains the JWT token, refresh token, and expiration timestamp.
+ */
 export type RefreshAgentTokenValue = Pick<
   AgentToken,
   'jwtTokenExpiresAt' | 'jwtToken' | 'refreshToken'
 >;
 
+/**
+ * Manages automatic refresh of agent authentication tokens.
+ * Extends RefreshableResource to handle token lifecycle and implements IRefreshAuthToken interface.
+ * Automatically refreshes tokens before they expire using the provided refresh token.
+ */
 export class RefreshAgentToken
   extends RefreshableResource<RefreshAgentTokenValue>
   implements IRefreshAuthToken
@@ -52,6 +61,11 @@ export class RefreshAgentToken
     });
   }
 
+  /**
+   * Starts the automatic token refresh process.
+   * Only starts if a valid timeout is set (i.e., token has expiration).
+   * @returns This instance for method chaining
+   */
   public start() {
     if (this.timeout) {
       return super.start();
@@ -60,6 +74,10 @@ export class RefreshAgentToken
     return this;
   }
 
+  /**
+   * Gets the current JWT bearer token for authentication.
+   * @returns The current JWT token string
+   */
   public getBearerToken() {
     return this.getValue().jwtToken;
   }

@@ -5,5 +5,5 @@ Starts an instance of Redis server, and Mongodb for dev, then starts the dev ser
 ## Commands
 
 ```bash
-npx -y -- tsx src/tools/dev/index.ts
+npx -y -- tsx src/tools/dev/index.ts dev
 ```

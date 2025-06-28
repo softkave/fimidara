@@ -1,4 +1,10 @@
-import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet.tsx";
+import { MaybeScroll } from "@/components/internal/maybe-scroll";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet.tsx";
 import { cn } from "@/components/utils.ts";
 import {
   CSSProperties,
@@ -65,12 +71,18 @@ const PageDrawer: ForwardRefRenderFunction<IPageDrawerRef, IPageDrawerProps> = (
   return (
     <Sheet open={isOpen} onOpenChange={toggleOpen}>
       <SheetContent
-        className={cn("w-full max-w-[420px] p-0", className)}
+        className={cn("w-full max-w-[420px] p-0 h-full", className)}
         style={style}
         side={side}
       >
-        <SheetTitle className={cn("p-6", titleClassName)}>{title}</SheetTitle>
-        <div className={cn("p-6 pt-0", contentClassName)}>{children}</div>
+        <MaybeScroll>
+          <SheetHeader className="p-6 space-y-2">
+            <SheetTitle className={cn("p-6", titleClassName)}>
+              {title}
+            </SheetTitle>
+          </SheetHeader>
+          <div className={cn("p-6 pt-0", contentClassName)}>{children}</div>
+        </MaybeScroll>
       </SheetContent>
     </Sheet>
   );

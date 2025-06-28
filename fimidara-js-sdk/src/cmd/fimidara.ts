@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {FimidaraEndpoints} from '../index.js';
+import {FimidaraEndpoints} from '../indexIsomorphic.js';
 import {IFimidaraCmdOpts} from './types.js';
 
 export function getFimidara(opts: IFimidaraCmdOpts) {

@@ -80,6 +80,9 @@ import {fimidaraAddRootnameToPath} from './fimidaraAddRootnameToPath.js';
 //   typeof kFimidaraImageFormatEnumMap
 // >;
 
+/**
+ * Configuration for generating Fimidara file read URLs
+ */
 export type GetFimidaraReadFileURLProps = {
   /** Filepath including workspace rootname OR file presigned path. */
   filepath?: string;
@@ -156,6 +159,18 @@ function getFilepath(props: {
   return filepath;
 }
 
+/**
+ * Generates a URL for reading/downloading a file from Fimidara
+ * @param props - Configuration for the file read URL
+ * @returns The complete URL for reading the file
+ * @example
+ * ```typescript
+ * const url = getFimidaraReadFileURL({
+ *   filepath: '/workspace/path/to/file.jpg',
+ *   download: true
+ * });
+ * ```
+ */
 export function getFimidaraReadFileURL(props: GetFimidaraReadFileURLProps) {
   let query = '';
   const filepath = getFilepath(props);
@@ -181,6 +196,18 @@ export function getFimidaraReadFileURL(props: GetFimidaraReadFileURLProps) {
   );
 }
 
+/**
+ * Generates a URL for uploading a file to Fimidara
+ * @param props - Configuration for the file upload URL
+ * @returns The complete URL for uploading the file
+ * @example
+ * ```typescript
+ * const url = getFimidaraUploadFileURL({
+ *   filepathWithoutRootname: 'path/to/file.jpg',
+ *   workspaceRootname: 'my-workspace'
+ * });
+ * ```
+ */
 export function getFimidaraUploadFileURL(props: {
   /** Filepath including workspace rootname OR file presigned path. */
   filepath?: string;
@@ -204,11 +231,35 @@ export function getFimidaraUploadFileURL(props: {
   );
 }
 
+/**
+ * Combines a filename and extension into a single string
+ * @param file - Object containing name and optional extension
+ * @returns The complete filename with extension
+ * @example
+ * ```typescript
+ * const filename = stringifyFimidaraFilename({ name: 'document', ext: 'pdf' });
+ * // Returns: 'document.pdf'
+ * ```
+ */
 export function stringifyFimidaraFilename(file: {name: string; ext?: string}) {
   const name = file.name + (file.ext ? `.${file.ext}` : '');
   return name;
 }
 
+/**
+ * Combines file path components into a complete filepath string
+ * @param file - Object containing namepath array and optional extension
+ * @param rootname - Optional workspace rootname to prepend
+ * @returns The complete filepath with optional workspace rootname
+ * @example
+ * ```typescript
+ * const filepath = stringifyFimidaraFilepath({
+ *   namepath: ['folder', 'subfolder', 'file'],
+ *   ext: 'txt'
+ * }, 'my-workspace');
+ * // Returns: 'my-workspace/folder/subfolder/file.txt'
+ * ```
+ */
 export function stringifyFimidaraFilepath(
   file: {namepath: string[]; ext?: string},
   rootname?: string

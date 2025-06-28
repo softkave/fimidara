@@ -21,6 +21,7 @@
     "pretest": "tsc",
     "prod": "tsc && env-cmd -f \".env.prod\" npm start",
     "dev": "tsc && env-cmd -f \".env.dev\" npm start",
+    "dev:managed": "npx -y -- tsx src/tools/dev/index.ts dev",
     "test": "env-cmd -f \".env.unit-test\" vitest --config ./vitest.config.ts",
     "test:fn": "env-cmd -f \".env.unit-test\" vitest --config ./vitest.fn.config.ts",
     "test:integration": "env-cmd -f \".env.integration-test\" vitest --config ./vitest.config.ts",

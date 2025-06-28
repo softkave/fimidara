@@ -1,54 +1,56 @@
 # damilope's working notes
 
+The eventual goal is to move these to ChoreBuddy.
+
 ## Working On
 
 ## TODOs
 
-- remove page auth required from files and folders to allow public access to files and folders
-- select workspace from sidebar
-- better labeled node design
-- redesign main page
-- don't count reused parts towards upload rate
-- provide a custom react upload component
-- provide a custom upload and download progress listener
-- figure out how to resume download from browser
-- figure out thumbnail generation for download links
-- make it easier to make a file/resource public
-- a get download url from file
-- simple file share
-- newly uploaded files do not show in the file list until refresh
-- upload new file through update fails
-- add web header to error page
-- some docs are not working
-- fimidara sync is not working/slow
-- surface a percentage of completion for fimidara sync & upload api
-- a timestamp to logs
-- make sure presigned paths with single use last the duration of the upload multipart
-- encountered a resource is locked by another consumer error though I was the only consumer
-- cleanup parts after TTL
-- cleanup transfer progress after upload is retried
-- counter in transfer progress is not working
-- don't show time remaining for upload if it's done
-- a quick way to see if a file/folder is public and to make it public
-- add change log
-- config generation
-- heartbeat from runner
-- cache locally from other servers
-- cache locally from s3 and write post using your own story
-- write script to change entry
-- a possibility is a last upload is requested on a server and other parts on other servers are not done
-- save metas
-- validate parts in complete multipart upload
-- discrepancy between inter-server auth header names
-- a different design for namepath to allow changing the namepath of a file
-- whitelist local for http, everything else is https
-- there is an infinite loop when logging in
-- move email to Resend
-- heartbeat issue
-- move to Next 15
-- start, upload, and complete multipart uploads
-- only one file shows after upload 2 files
-- delete file not removing file
-- usage thresholds completion
+- Remove authentication requirement from files and folders pages to allow public access.
+- Enable workspace selection from the sidebar.
+- Improve node labeling and design.
+- Redesign the main page.
+- Exclude reused parts from upload rate calculations.
+- Provide a custom React upload component.
+- Add custom upload and download progress listeners.
+- Implement download resume functionality in the browser.
+- Generate thumbnails for download links.
+- Simplify making files/resources public.
+- Add an API to get a file's download URL.
+- Implement simple file sharing.
+- Ensure newly uploaded files appear in the file list without needing a refresh.
+- Fix file upload failures when updating existing files.
+- Add a web header to the error page.
+- Fix broken documentation pages.
+- Improve/speed up Fimidara sync.
+- Show percentage completion for Fimidara sync and upload APIs.
+- Add timestamps to logs.
+- Ensure presigned single-use paths last for the duration of multipart uploads.
+- Investigate and resolve resource lock errors when only one consumer is present.
+- Clean up parts after TTL expires.
+- Clean up transfer progress after upload retries.
+- Fix non-working counter in transfer progress.
+- Hide time remaining for uploads that are already complete.
+- Provide a quick way to check and toggle public status for files/folders.
+- Add a changelog.
+- Automate config generation.
+- Add heartbeat from runner.
+- Enable local caching from other servers.
+- Enable local caching from S3 and write a post about the process.
+- Write a script to change entry points.
+- Handle cases where the last upload is requested on one server but other parts are pending on others.
+- Save file metadata.
+- Validate parts during complete multipart upload.
+- Fix discrepancies in inter-server auth header names.
+- Redesign namepath to allow renaming files.
+- Whitelist localhost for HTTP; require HTTPS for all others.
+- Fix infinite login loop.
+- Migrate email functionality to Resend.
+- Resolve heartbeat issues.
+- Upgrade to Next.js 15.
+- Implement start, upload, and complete for multipart uploads.
+- Fix issue where only one file appears after uploading two.
+- Ensure file deletion fully removes files.
+- Show usage threshold completion status.
 
 ## Implementation notes

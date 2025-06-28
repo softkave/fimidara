@@ -1,3 +1,5 @@
+"use client";
+
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import { ScrollArea } from "../ui/scroll-area";

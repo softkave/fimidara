@@ -1,40 +1,46 @@
-# fimidara server node setup
+# Fimidara Server Node – Setup Guide
 
-## Environments and Config
+## Environment & Configuration
 
-We use [`config`](https://www.npmjs.com/package/config) to manage configurations, and [`env-cmd`](https://www.npmjs.com/package/env-cmd) to manage environment variables. See `package.json` for the list of commands that use `env-cmd`.
+- **Config Management:** Uses [`config`](https://www.npmjs.com/package/config) for configuration and [`env-cmd`](https://www.npmjs.com/package/env-cmd) for environment variables.
+- **Environment Files:**
+  - `.env.dev` – Development
+  - `.env.unit-test` – Unit tests
+  - `.env.integration-test` – Integration tests
+  - `.env` – Production
+- **Config Files:**
+  - `config/default.json` – Default settings
+  - `config/custom-environment-variables.json` – Required environment variables
+  - `config/development.json`, `config/local-development.json` – Local development
+  - `config/test.json`, `config/local-test.json` – Local testing
+- For a full list of config options, see `src/resources/config.ts`.
 
-Note that the actual `.env` file will vary depending on the environment you are running. Same goes for other config files. See `config/custom-environment-variables.json` for the list of variables you need to set for each environment.
+## Prerequisites
 
-- `.env.dev` for development.
-- `.env.unit-test` for unit testing.
-- `.env.integration-test` for integration testing.
-- `.env` for production.
+- Install [Redis](https://redis.io/docs/latest/operate/oss_and_stack/install/).
+- Set up the appropriate `.env` file for your environment.
+- Install dependencies:
+  ```sh
+  pnpm i
+  ```
 
-Other config files are also available. See `src/resources/config.ts` for a full list of configurations.
+## Running the Development Server
 
-- `config/default.json` for default config.
-- `config/custom-environment-variables.json` for custom environment variables.
-- `config/development.json` and `config/local-development.json` for local development config.
-- `config/test.json` and `config/local-test.json` for local test config.
+1. Set up `.env.dev`.
+2. Start the dev server (runs Redis, MongoDB, and the app):
+   ```sh
+   npx -y -- tsx src/tools/dev/index.ts dev
+   ```
+3. (Optional) Generate a dev user:
+   ```sh
+   npx env-cmd -f ".env.dev" npx tsx src/tools/dev-user-setup/index.ts
+   ```
+   Or create a user manually after the server starts.
 
-## Server Setup Instructions
+## Running Tests
 
-- Download and install Redis at [redis.io](https://redis.io/docs/latest/operate/oss_and_stack/install/).
-- Setup your `.env` file.
-- Install dependencies: `npm install`.
-
-## Run Development Server
-
-- Run `npm run dev-mongo-rs` to start `mongo` in replica set mode. We use [`run-rs`](https://www.npmjs.com/package/run-rs) to start the replica set.
-- Run `redis-server` to start Redis.
-- Setup your `.env.dev` file.
-- Run `npx env-cmd -f ".env.dev" npx tsx src/tools/dev-user-setup/index.ts` to generate a dev user or create one manually after starting the server.
-- Run `npm run dev`.
-
-## Run Tests
-
-- Run `npm run test-mongo-rs` to start `mongo`.
-- Run `redis-server` to start Redis.
-- Setup your `.env.unit-test` file.
-- Run tests, e.g `npm run test` to run all tests, or `npm run test src/endpoints/folders/addFolder/handler.test.ts` to run a specific test.
+1. Set up `.env.unit-test`.
+2. Run tests (spins up Redis, MongoDB, and runs Vitest):
+   ```sh
+   npx -y -- tsx src/tools/dev/index.ts test some-test.test.ts
+   ```

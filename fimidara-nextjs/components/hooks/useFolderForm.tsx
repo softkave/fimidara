@@ -2,8 +2,8 @@ import { Folder } from "fimidara";
 import { isBoolean } from "lodash-es";
 import { useState } from "react";
 import FolderForm from "../app/workspaces/files/FolderForm.tsx";
-import { Sheet, SheetContent, SheetTitle } from "../ui/sheet.tsx";
 import { MaybeScroll } from "../internal/maybe-scroll.tsx";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "../ui/sheet.tsx";
 
 export function useFolderForm(props: {
   workspaceId: string;
@@ -17,10 +17,12 @@ export function useFolderForm(props: {
   const node = formOpen && (
     <Sheet open={!!formOpen} onOpenChange={setFormOpen}>
       <SheetContent className="w-full max-w-[420px] p-0">
-        <MaybeScroll className="h-full overflow-y-auto">
-          <SheetTitle className="p-6">
-            {isNewResourceForm ? "New Folder" : "Update Folder"}
-          </SheetTitle>
+        <MaybeScroll>
+          <SheetHeader className="p-6 space-y-2">
+            <SheetTitle>
+              {isNewResourceForm ? "New Folder" : "Update Folder"}
+            </SheetTitle>
+          </SheetHeader>
           <FolderForm
             workspaceRootname={workspaceRootname}
             workspaceId={workspaceId}

@@ -75,29 +75,47 @@ async function listUploadedParts(params: {
   }
 }
 
+/**
+ * Parameters passed to hook functions during multipart upload
+ */
 export interface IMultipartUploadHookFnParams {
+  /** The part number being processed (1-based) */
   part: number;
+  /** Size of the current part in bytes */
   size: number;
+  /** Total estimated number of parts for the upload */
   estimatedNumParts: number;
+  /** Upload progress as a percentage (0-100) */
   percentComplete: number;
+  /** Total size completed so far in bytes */
   sizeCompleted: number;
 }
 
+/**
+ * Parameters for performing a multipart file upload
+ */
 export interface IMultipartUploadParams
   extends Pick<
     UploadFileEndpointParams,
     'description' | 'encoding' | 'mimetype' | 'fileId' | 'filepath'
   > {
+  /** Fimidara API endpoints instance */
   endpoints: FimidaraEndpoints;
+  /** Unique identifier for this multipart upload session */
   clientMultipartId: string;
+  /** Total size of the file to upload in bytes */
   size: number;
+  /** Function to read file data for a specific byte range */
   readFrom: (
     start: number,
     end: number,
     size: number
   ) => Promise<{data: UploadFileEndpointParams['data']; size: number}>;
+  /** Optional callback executed before each part upload */
   beforePart?: (params: IMultipartUploadHookFnParams) => OrPromise<void>;
+  /** Optional callback executed after each part upload */
   afterPart?: (params: IMultipartUploadHookFnParams) => OrPromise<void>;
+  /** Number of parts to upload concurrently (defaults to auto-calculated) */
   numConcurrentParts?: number;
   /**
    * If `true`, upload will be resumed from the last part uploaded. If `false`,
@@ -122,6 +140,9 @@ export interface IMultipartUploadParams
   shouldWaitForCompleteUploadJob?: boolean;
 }
 
+/**
+ * Internal interface for test instrumentation of multipart upload hooks
+ */
 export interface IMultipartUploadParamsWithTestInstrumentation {
   __beforePart?: (params: IMultipartUploadHookFnParams) => OrPromise<void>;
   __afterPart?: (params: IMultipartUploadHookFnParams) => OrPromise<void>;
@@ -207,6 +228,30 @@ async function waitForCompleteUploadJob(params: {
   return waitForCompleteUploadJob(params);
 }
 
+/**
+ * Performs a multipart file upload with automatic chunking, retry logic, and progress tracking.
+ *
+ * This function handles large file uploads by splitting them into smaller parts and uploading
+ * them concurrently. It supports resuming interrupted uploads and provides progress callbacks.
+ *
+ * @param params - Configuration parameters for the multipart upload
+ * @returns Promise that resolves to the upload result with optional file details
+ *
+ * @example
+ * ```typescript
+ * const result = await multipartUpload({
+ *   endpoints: fimidaraEndpoints,
+ *   clientMultipartId: 'unique-upload-id',
+ *   size: fileSize,
+ *   readFrom: async (start, end, size) => {
+ *     // Read file chunk logic
+ *     return { data: chunkData, size: chunkSize };
+ *   },
+ *   beforePart: (params) => console.log(`Starting part ${params.part}`),
+ *   afterPart: (params) => console.log(`Completed ${params.percentComplete}%`),
+ * });
+ * ```
+ */
 export async function multipartUpload(params: IMultipartUploadParams) {
   const {
     size,

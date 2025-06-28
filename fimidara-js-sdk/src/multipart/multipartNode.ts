@@ -5,13 +5,47 @@ import {LockStore, waitTimeout} from 'softkave-js-utils';
 import {Readable} from 'stream';
 import {IMultipartUploadParams, multipartUpload} from './multipart.js';
 
+/**
+ * Parameters for multipart upload operations in Node.js environment.
+ * Extends the base multipart upload params with Node.js-specific input options.
+ */
 export interface IMultipartUploadNodeParams
   extends Omit<IMultipartUploadParams, 'readFrom' | 'size'> {
+  /** Input data as string, Buffer, or Readable stream */
   data?: string | Buffer | Readable;
+  /** Path to local file to upload */
   localFilepath?: string;
+  /** Size of the data in bytes (auto-detected if not provided) */
   size?: number;
 }
 
+/**
+ * Performs multipart upload from Node.js-compatible data sources.
+ *
+ * Supports uploading from:
+ * - Buffer data
+ * - String data (converted to Buffer)
+ * - Readable streams
+ * - Local files
+ *
+ * @param params - Upload configuration and data source
+ * @returns Promise that resolves when upload completes
+ *
+ * @example
+ * ```typescript
+ * // Upload from Buffer
+ * await multipartUploadNode({
+ *   data: Buffer.from('Hello World'),
+ *   // ... other params
+ * });
+ *
+ * // Upload from local file
+ * await multipartUploadNode({
+ *   localFilepath: '/path/to/file.txt',
+ *   // ... other params
+ * });
+ * ```
+ */
 export async function multipartUploadNode(params: IMultipartUploadNodeParams) {
   const {data, localFilepath, ...rest} = params;
   const lockStore = new LockStore();

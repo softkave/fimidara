@@ -2,6 +2,11 @@ import {diffFiles} from '../diff/diffFiles.js';
 import {File as FimidaraFile} from '../endpoints/publicTypes.js';
 import {getNodeDirContent} from './getNodeDirContent.js';
 
+/**
+ * Type guard to check if the props contain existing directory content
+ * @param props - Partial directory content object
+ * @returns True if props contains all required directory content properties
+ */
 function isExistingDirContent(
   props: Partial<Awaited<ReturnType<typeof getNodeDirContent>>>
 ): props is Awaited<ReturnType<typeof getNodeDirContent>> {
@@ -12,6 +17,17 @@ function isExistingDirContent(
   );
 }
 
+/**
+ * Compares local Node.js filesystem content with Fimidara files to identify differences
+ * @template TFimidaraFile - Type extending FimidaraFile with required properties
+ * @param props - Configuration object containing folder path and Fimidara files
+ * @param props.folderpath - Local filesystem path to compare
+ * @param props.fimidaraFiles - Array or record of Fimidara files to compare against
+ * @param props.externalFilesRecord - Optional pre-fetched external files record
+ * @param props.fileStatsRecord - Optional pre-fetched file stats record
+ * @param props.folderStatsRecord - Optional pre-fetched folder stats record
+ * @returns Promise resolving to directory content and diff results
+ */
 export async function diffNodeFiles<
   TFimidaraFile extends Pick<
     FimidaraFile,

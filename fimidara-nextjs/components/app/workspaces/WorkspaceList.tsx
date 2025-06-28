@@ -1,6 +1,11 @@
 "use client";
 
-import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet.tsx";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet.tsx";
 import IconButton from "@/components/utils/buttons/IconButton";
 import ItemList from "@/components/utils/list/ItemList";
 import ListHeader from "@/components/utils/list/ListHeader";
@@ -102,9 +107,11 @@ const WorkspaceList: FC<IWorkspaceListProps> = (props) => {
   const sNode = (
     <Sheet open={!!formOpen} onOpenChange={setFormOpen}>
       <SheetContent className="w-full max-w-[420px] p-0">
-        <SheetTitle className="p-6">
-          {isNewWorkspaceForm ? "New Workspace" : "Update Workspace"}
-        </SheetTitle>
+        <SheetHeader className="p-6 space-y-2">
+          <SheetTitle>
+            {isNewWorkspaceForm ? "New Workspace" : "Update Workspace"}
+          </SheetTitle>
+        </SheetHeader>
         <WorkspaceForm
           workspace={isBoolean(formOpen) ? undefined : formOpen}
           className="p-6 pt-0"

@@ -13,6 +13,23 @@ export interface IWebFooterLinkGroup {
 
 export const kFooterLinkGroups: IWebFooterLinkGroup[] = [
   {
+    title: "Resources",
+    links: [
+      { label: "App Docs", href: "/docs/fimidara/introduction" },
+      { label: "REST API Docs", href: "/docs/fimidara-rest-api/v1" },
+      {
+        label: "JS SDK",
+        href: "https://github.com/softkave/fimidara/tree/main/fimidara-js-sdk",
+        isExternal: true,
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/softkave/fimidara",
+        isExternal: true,
+      },
+    ],
+  },
+  {
     title: "Other Products",
     links: [
       {
@@ -21,30 +38,12 @@ export const kFooterLinkGroups: IWebFooterLinkGroup[] = [
         isExternal: true,
       },
       {
-        label: "fmpost",
+        label: "fimipost",
         href: "https://fimipost.ywordk.com",
         isExternal: true,
       },
       { label: "mmind", href: "https://mmind.ywordk.com", isExternal: true },
       { label: "card game", href: "https://kder.ywordk.com", isExternal: true },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { label: "Application Docs", href: "/docs/fimidara/introduction" },
-      { label: "REST API Docs", href: "/docs/fimidara-rest-api/v1" },
-      { label: "JS SDK Docs", href: "/docs/fimidara-js-sdk/v1" },
-      {
-        label: "GitHub - Client",
-        href: "https://github.com/softkave/fimidara-nextjs",
-        isExternal: true,
-      },
-      {
-        label: "GitHub - Server",
-        href: "https://github.com/softkave/fimidara-server-node",
-        isExternal: true,
-      },
     ],
   },
 ];

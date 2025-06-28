@@ -1,15 +1,17 @@
 # Roadmap
 
+The long-term objective is to migrate these features to ChoreBuddy.
+
 ## Server
 
-- image manipulation
-- byte range download
-- self-host mongo, or use digital ocean mongo db, or use postgres with pongo
+- Add image manipulation capabilities
+- Support byte-range downloads
+- Use a self-hosted MongoDB, DigitalOcean MongoDB, or switch to Postgres with Pongo
 
-## Next.js client
+## Next.js Client
 
-- complete move to shadcn
-- remove page auth required from files and folders to allow public access to files and folders
-- select workspace from sidebar
-- better labeled node design
-- add sign in with Github
+- Fully migrate UI to shadcn
+- Remove authentication requirements from files and folders pages to enable public access
+- Allow workspace selection from the sidebar
+- Improve node labeling and design
+- Add GitHub sign-in option

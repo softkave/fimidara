@@ -1,5 +1,5 @@
 import {describe, expect, test} from 'vitest';
-import {FimidaraEndpoints} from '../index.js';
+import {FimidaraEndpoints} from '../indexIsomorphic.js';
 
 describe('config', () => {
   test('config changes cascades', async () => {

@@ -29,14 +29,11 @@ function PaginatedContent(props: IPaginatedContentProps) {
   };
 
   return (
-    <div className={cn("h-full grid", className)} style={rootStyle}>
+    <div className={cn("h-full grid gap-y-4", className)} style={rootStyle}>
       {header}
       {content}
       {pagination && (
-        <PagePagination
-          {...pagination}
-          className={cn(paginationClassName, "pt-16")}
-        />
+        <PagePagination {...pagination} className={paginationClassName} />
       )}
     </div>
   );

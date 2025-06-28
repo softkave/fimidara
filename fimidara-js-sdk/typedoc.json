@@ -1,32 +1,37 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "entryPoints": ["./src/indexBrowser.ts", "./src/indexNode.ts"],
+  "entryPoints": [
+    "./src/indexBrowser.ts",
+    "./src/indexNode.ts",
+    "./src/indexIsomorphic.ts"
+  ],
   "outputs": [
-    {
-      "name": "html",
-      "path": "./docs_html"
-    },
-    {
-      "name": "html",
-      "path": "./docs_html_full_nav",
-      "options": {
-        "navigation": {
-          "includeCategories": true,
-          "includeGroups": true,
-          "excludeReferences": false,
-          "includeFolders": true
-        }
-      }
-    },
-    {
-      "name": "json",
-      "path": "./docs.json"
-    },
+    // {
+    //   "name": "html",
+    //   "path": "./docs_html"
+    // },
+    // {
+    //   "name": "html",
+    //   "path": "./docs_html_full_nav",
+    //   "options": {
+    //     "navigation": {
+    //       "includeCategories": true,
+    //       "includeGroups": true,
+    //       "excludeReferences": false,
+    //       "includeFolders": true
+    //     }
+    //   }
+    // },
+    // {
+    //   "name": "json",
+    //   "path": "./docs.json"
+    // },
     {
       // requires typedoc-plugin-markdown
       "name": "markdown",
       "path": "./docs_markdown"
     }
   ],
+  "excludeProtected": true,
   "plugin": ["typedoc-plugin-markdown"]
 }

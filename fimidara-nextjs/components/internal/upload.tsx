@@ -220,14 +220,12 @@ export const Upload: React.FC<UploadProps> = ({
       for (const f of fileList) {
         const error = validateFile(f, { maxFileSize, accept, validator });
         if (error) {
-          console.error(`Validation error for ${f.name}:`, error);
           return false;
         }
       }
 
       // Check max files limit
       if (maxFiles && fileList.length > maxFiles) {
-        console.error(`Maximum ${maxFiles} files allowed`);
         return false;
       }
 

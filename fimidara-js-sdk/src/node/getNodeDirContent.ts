@@ -4,6 +4,13 @@ import {opendir} from 'fs/promises';
 import type {FimidaraDiffExternalFile} from '../diff/types.js';
 import {nodeFileToExternalFile} from './nodeFileToExternalFile.js';
 
+/**
+ * Retrieves directory content and converts files to Fimidara external file format.
+ *
+ * @param props - Configuration object
+ * @param props.folderpath - Path to the directory to scan
+ * @returns Object containing folder stats, file stats, and external files record
+ */
 export async function getNodeDirContent(props: {folderpath: string}) {
   const {folderpath} = props;
   const efRecord: Record<string, FimidaraDiffExternalFile> = {};
