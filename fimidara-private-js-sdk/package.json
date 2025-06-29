@@ -42,7 +42,7 @@
     "vitest": "^3.1.4"
   },
   "dependencies": {
-    "mfdoc-js-sdk-base": "^0.3.0",
+    "mfdoc-js-sdk-base": "^0.3.1",
     "softkave-js-utils": "^0.17.0"
   }
 }
