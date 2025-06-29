@@ -8,8 +8,6 @@
 
 > **multipartUpload**(`params`): `Promise`\<[`UploadFileEndpointResult`](../type-aliases/UploadFileEndpointResult.md)\>
 
-Defined in: [fimidara-js-sdk/src/multipart/multipart.ts:255](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/multipart/multipart.ts#L255)
-
 Performs a multipart file upload with automatic chunking, retry logic, and progress tracking.
 
 This function handles large file uploads by splitting them into smaller parts and uploading

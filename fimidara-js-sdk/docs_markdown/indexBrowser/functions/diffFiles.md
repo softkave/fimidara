@@ -8,8 +8,6 @@
 
 > **diffFiles**\<`TExternalFile`, `TFimidaraFile`\>(`props`): `object`
 
-Defined in: [fimidara-js-sdk/src/diff/diffFiles.ts:23](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/diff/diffFiles.ts#L23)
-
 Compares Fimidara files with external files to determine which files are new, updated, or unmodified.
 
 ## Type Parameters

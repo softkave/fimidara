@@ -8,8 +8,6 @@
 
 > **UpdateCollaborationRequestEndpointParams** = `object`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:4897](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L4897)
-
 Parameters for updating an existing collaboration request. You can modify the message or extend the expiration date.
 
 ## Properties
@@ -18,8 +16,6 @@ Parameters for updating an existing collaboration request. You can modify the me
 
 > **request**: [`UpdateCollaborationRequestInput`](UpdateCollaborationRequestInput.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:4909](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L4909)
-
 Fields you can update in a collaboration request. You can modify the message or extend the expiration date.
 
 ***
@@ -27,8 +23,6 @@ Fields you can update in a collaboration request. You can modify the message or 
 ### requestId
 
 > **requestId**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:4905](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L4905)
 
 Resource ID
 

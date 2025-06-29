@@ -6,8 +6,6 @@
 
 # Class: MfdocEndpointsBase\<TConfig\>
 
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/EndpointsBase.d.ts:7
-
 ## Extends
 
 - [`MfdocJsConfig`](MfdocJsConfig.md)\<`TConfig`\>
@@ -23,8 +21,6 @@ Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-brow
 ### Constructor
 
 > **new MfdocEndpointsBase**\<`TConfig`\>(`config?`, `inheritConfigFrom?`): `MfdocEndpointsBase`\<`TConfig`\>
-
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:11
 
 #### Parameters
 
@@ -50,8 +46,6 @@ Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-brow
 
 > **getSdkConfig**(): `TConfig`
 
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:14
-
 #### Returns
 
 `TConfig`
@@ -65,8 +59,6 @@ Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-brow
 ### setSdkAuthToken()
 
 > **setSdkAuthToken**(`token`): `void`
-
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:12
 
 #### Parameters
 
@@ -87,8 +79,6 @@ Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-brow
 ### setSdkConfig()
 
 > **setSdkConfig**(`update`): `void`
-
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:13
 
 #### Parameters
 

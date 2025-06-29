@@ -6,8 +6,6 @@
 
 # Class: PresignedPathsEndpoints
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1005](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1005)
-
 ## Extends
 
 - `AbstractSdkEndpoints`
@@ -17,8 +15,6 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1005](https://gith
 ### Constructor
 
 > **new PresignedPathsEndpoints**(`config`, `inheritConfigFrom?`): `PresignedPathsEndpoints`
-
-Defined in: [fimidara-js-sdk/src/endpoints/AbstractSdkEndpoints.ts:12](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/AbstractSdkEndpoints.ts#L12)
 
 #### Parameters
 
@@ -44,8 +40,6 @@ Defined in: [fimidara-js-sdk/src/endpoints/AbstractSdkEndpoints.ts:12](https://g
 
 > **getPresignedPaths**(`props?`, `opts?`): `Promise`\<[`GetPresignedPathsForFilesEndpointResult`](../type-aliases/GetPresignedPathsForFilesEndpointResult.md)\>
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1009](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1009)
-
 Bulk generates presigned paths for multiple files at once. This endpoint is more efficient than calling issuePresignedPath multiple times when you need presigned paths for several files. Each file can be identified by either its filepath or fileId. The response includes the generated presigned path along with the original filepath for easy mapping.
 
 #### Parameters
@@ -68,8 +62,6 @@ Bulk generates presigned paths for multiple files at once. This endpoint is more
 
 > **getSdkConfig**(): [`SdkConfig`](../interfaces/SdkConfig.md)
 
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:14
-
 #### Returns
 
 [`SdkConfig`](../interfaces/SdkConfig.md)
@@ -83,8 +75,6 @@ Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-brow
 ### issuePresignedPath()
 
 > **issuePresignedPath**(`props?`, `opts?`): `Promise`\<[`IssuePresignedPathEndpointResult`](../type-aliases/IssuePresignedPathEndpointResult.md)\>
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1022](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1022)
 
 #### Parameters
 
@@ -106,8 +96,6 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1022](https://gith
 
 > **setSdkAuthToken**(`token`): `void`
 
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:12
-
 #### Parameters
 
 ##### token
@@ -127,8 +115,6 @@ Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-brow
 ### setSdkConfig()
 
 > **setSdkConfig**(`update`): `void`
-
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:13
 
 #### Parameters
 

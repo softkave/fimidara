@@ -8,8 +8,6 @@
 
 > **fimidaraAddRootnameToPath**\<`T`\>(`fPath`, `workspaceRootname`): `T`
 
-Defined in: [fimidara-js-sdk/src/path/fimidaraAddRootnameToPath.ts:26](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/path/fimidaraAddRootnameToPath.ts#L26)
-
 Adds a workspace rootname to a file path or array of path segments.
 
 ## Type Parameters

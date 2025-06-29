@@ -8,8 +8,6 @@
 
 > **RefreshAgentTokenEndpointParams** = `object`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:4360](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L4360)
-
 Parameters for refreshing an agent token to get a new JWT
 
 ## Properties
@@ -17,8 +15,6 @@ Parameters for refreshing an agent token to get a new JWT
 ### refreshToken
 
 > **refreshToken**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:4368](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L4368)
 
 JWT refresh token string used to obtain new access tokens
 

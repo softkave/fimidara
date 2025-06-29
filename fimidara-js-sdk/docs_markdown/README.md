@@ -5,6 +5,7 @@
 # fimidara
 
 JavaScript SDK for [fimidara.com](https://www.fimidara.com), a file storage service. See REST API and other documentation at [https://www.fimidara.com/docs](https://www.fimidara.com/docs).
+<br></br>
 
 ## Installation
 
@@ -12,24 +13,28 @@ JavaScript SDK for [fimidara.com](https://www.fimidara.com), a file storage serv
 - Using `yarn` - `yarn add fimidara`
 - Using `pnpm` - `pnpm add fimidara`
 - Using `bun` - `bun add fimidara`
+  <br></br>
 
 ## JS SDK Usage
 
 ### Exports
 
 The `fimidara` package provides different exports optimized for different environments:
+<br></br>
 
 #### Main Exports
 
-- **`fimidara/indexIsomorphic` (default)** - Isomorphic version that works in both browser and Node.js environments. Provides core functionality like `FimidaraEndpoints`, `RefreshAgentToken`, and basic file operations. See [Isomorphic documentation](/docs_markdown/indexIsomorphic/README.md).
+- **`fimidara/indexIsomorphic` (default)** - Isomorphic version that works in both browser and Node.js environments. Provides core functionality like `FimidaraEndpoints`, `RefreshAgentToken`, and basic file operations. See [Isomorphic documentation](https://github.com/softkave/fimidara/tree/main/fimidara-js-sdk/docs_markdown/indexIsomorphic/README.md).
 
-- **`fimidara/indexNode`** - Server-side version with additional Node.js-specific functions like `multipartUploadNode` for handling large file uploads on the server. See [Node.js documentation](/docs_markdown/indexNode/README.md).
+- **`fimidara/indexNode`** - Server-side version with additional Node.js-specific functions like `multipartUploadNode` for handling large file uploads on the server. See [Node.js documentation](https://github.com/softkave/fimidara/tree/main/fimidara-js-sdk/docs_markdown/indexNode/README.md).
 
-- **`fimidara/indexBrowser`** - Browser-specific version with additional browser-only functions like `multipartUploadBrowser` for handling large file uploads in the browser. See [Browser documentation](/docs_markdown/indexBrowser/README.md).
+- **`fimidara/indexBrowser`** - Browser-specific version with additional browser-only functions like `multipartUploadBrowser` for handling large file uploads in the browser. See [Browser documentation](https://github.com/softkave/fimidara/tree/main/fimidara-js-sdk/docs_markdown/indexBrowser/README.md).
+  <br></br>
 
 #### Utility Exports
 
 - **`fimidara/node`** - Node.js utility functions like `getNodeDirContent` for reading local directory contents.
+  <br></br>
 
 #### Smart Import System
 
@@ -44,6 +49,8 @@ import * as fimidara from 'fimidara';
 // - Node.js: fimidara/indexNode
 // - Universal: fimidara/indexIsomorphic (isomorphic)
 ```
+
+<br></br>
 
 #### Explicit Imports (Advanced)
 
@@ -63,16 +70,19 @@ import * as fimidara from 'fimidara/indexIsomorphic';
 import {getNodeDirContent} from 'fimidara/node';
 ```
 
+<br></br>
+
 #### When to Use Each Version
 
 - **Use default import (`fimidara`)** for most applications - it's the safest choice
 - **Use `fimidara/indexNode`** when you need server-side specific features like `multipartUploadNode`
 - **Use `fimidara/indexBrowser`** when you need browser-specific features like `multipartUploadBrowser`
 - **Use `fimidara/node`** when you only need Node.js utility functions
+  <br></br>
 
 ### Setting up fimidara
 
-There are two ways to set up `fimidara`. You can use a JWT token generated from an agent token. See [/docs/fimidara/agent-token](https://www.fimidara.com/docs/fimidara/agent-token) for more information.
+There are two ways to set up `fimidara` using a JWT token generated from an agent token.
 
 ```typescript
 // Import fimidara
@@ -116,7 +126,7 @@ fimidara.setSdkAuthToken(autoRefreshToken);
 const fimidaraSdkConfig = fimidara.getSdkConfig();
 ```
 
-If you are self-hosting `fimidara`, you can also change the serverURL when you create a `FimidaraEndpoints` instance, or for each API call. You can also provide auth tokens per API call. This is useful for cases where different tokens have different permissions.
+If you are self-hosting `fimidara`, you can also change the `serverURL` when you create a `FimidaraEndpoints` instance, or for each API call. Similarly, you can also provide auth tokens per API call. This is useful for cases where different tokens have different permissions.
 
 ```typescript
 // Import fimidara
@@ -146,9 +156,11 @@ const file = await fimidara.files.readFile(
 );
 ```
 
+<br></br>
+
 ### Making API calls
 
-fimidara provides several APIs for operating with files, folders, permissions, agent tokens, etc. You can access them through an instance of [`FimidaraEndpoints`](/docs_markdown/indexBrowser/classes/FimidaraEndpoints.md).
+fimidara provides several APIs for operating with files, folders, permissions, agent tokens, etc. You can access them through an instance of [`FimidaraEndpoints`](https://github.com/softkave/fimidara/tree/main/fimidara-js-sdk/docs_markdown/indexBrowser/classes/FimidaraEndpoints.md).
 
 ```typescript
 // Import fimidara
@@ -172,7 +184,7 @@ const someFile = await fimidara.files.readFile(
   }
 );
 
-// Read folder information (not create a folder)
+// Read folder information
 const {folder: someRootFolder} = await fimidara.folders.readFolder({
   filepath: 'workspace-rootname/some-root-folder',
 });
@@ -180,6 +192,8 @@ const {folder: someChildFolder} = await fimidara.folders.readFolder({
   filepath: 'workspace-rootname/some-root-folder/some-child-folder',
 });
 ```
+
+<br></br>
 
 ### Utility and advanced functions
 
@@ -224,13 +238,9 @@ await multipartUploadNode({
   maxRetryCount: 0, // How many parts should be retried before the entire operation fails
   afterPart: hookParams => {
     // Called after a part has been uploaded
-    firstTryCompletedParts.push(hookParams.part);
   },
   beforePart: p => {
     // Called before a part is uploaded
-    if (firstTryCompletedParts.length > 0) {
-      throw new Error('Simulated error');
-    }
   },
   // ... other optional props similar to fimidara.files.uploadFile(...)
 });
@@ -247,9 +257,12 @@ await multipartUploadBrowser({
 });
 ```
 
+<br></br>
+
 ## CLI Usage
 
 The fimidara JS SDK also provides a CLI.
+<br></br>
 
 ### Installation
 
@@ -262,6 +275,8 @@ npm install -g fimidara
 # Or use npx to run without global installation
 npx fimidara --help
 ```
+
+<br></br>
 
 ### Available Commands
 
@@ -288,11 +303,14 @@ fimidara sync [options]
 | `--serverURL`    | `-u`  | Fimidara server URL                                              | No       | `https://api.fimidara.com` |
 | `--silent`       | `-s`  | Do not print logs                                                | No       | `false`                    |
 
+<br></br>
 **Direction Options:**
 
 - `up`: Upload from local to fimidara
 - `down`: Download from fimidara to local
 - `both`: Sync in both directions
+
+<br></br>
 
 **Examples:**
 
@@ -333,6 +351,8 @@ fimidara sync \
   --silent
 ```
 
+<br></br>
+
 **Short Options Examples:**
 
 ```bash
@@ -343,6 +363,8 @@ fimidara sync -f "workspace/docs" -l "./docs" -d up -r
 fimidara sync -f "workspace/file.txt" -l "./file.txt" -d down -u "https://custom-server.com" -t "your-token"
 ```
 
+<br></br>
+
 **Important Notes:**
 
 - The `--matchTree` option is useful for keeping two locations in perfect sync:
@@ -352,7 +374,5 @@ fimidara sync -f "workspace/file.txt" -l "./file.txt" -d down -u "https://custom
   - Use with caution as it can result in data loss
 
 - The `--recursive` option is enabled by default. Set to `false` to sync only the specified folder/file without its contents.
-
 - Authentication tokens can be provided via the `--authToken` option or by setting environment variables.
-
 - For self-hosted fimidara instances, use the `--serverURL` option to specify your custom server URL.

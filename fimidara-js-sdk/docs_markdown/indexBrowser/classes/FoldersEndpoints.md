@@ -6,8 +6,6 @@
 
 # Class: FoldersEndpoints
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:414](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L414)
-
 ## Extends
 
 - `AbstractSdkEndpoints`
@@ -17,8 +15,6 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:414](https://githu
 ### Constructor
 
 > **new FoldersEndpoints**(`config`, `inheritConfigFrom?`): `FoldersEndpoints`
-
-Defined in: [fimidara-js-sdk/src/endpoints/AbstractSdkEndpoints.ts:12](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/AbstractSdkEndpoints.ts#L12)
 
 #### Parameters
 
@@ -44,8 +40,6 @@ Defined in: [fimidara-js-sdk/src/endpoints/AbstractSdkEndpoints.ts:12](https://g
 
 > **addFolder**(`props`, `opts?`): `Promise`\<[`AddFolderEndpointResult`](../type-aliases/AddFolderEndpointResult.md)\>
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:418](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L418)
-
 Creates a new folder at the specified path within the workspace
 
 #### Parameters
@@ -68,8 +62,6 @@ Creates a new folder at the specified path within the workspace
 
 > **countFolderContent**(`props?`, `opts?`): `Promise`\<[`CountFolderContentEndpointResult`](../type-aliases/CountFolderContentEndpointResult.md)\>
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:431](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L431)
-
 #### Parameters
 
 ##### props?
@@ -89,8 +81,6 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:431](https://githu
 ### deleteFolder()
 
 > **deleteFolder**(`props?`, `opts?`): `Promise`\<[`DeleteFolderEndpointResult`](../type-aliases/DeleteFolderEndpointResult.md)\>
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:444](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L444)
 
 #### Parameters
 
@@ -112,8 +102,6 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:444](https://githu
 
 > **getFolder**(`props?`, `opts?`): `Promise`\<[`GetFolderEndpointResult`](../type-aliases/GetFolderEndpointResult.md)\>
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:457](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L457)
-
 #### Parameters
 
 ##### props?
@@ -134,8 +122,6 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:457](https://githu
 
 > **getSdkConfig**(): [`SdkConfig`](../interfaces/SdkConfig.md)
 
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:14
-
 #### Returns
 
 [`SdkConfig`](../interfaces/SdkConfig.md)
@@ -149,8 +135,6 @@ Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-brow
 ### listFolderContent()
 
 > **listFolderContent**(`props?`, `opts?`): `Promise`\<[`ListFolderContentEndpointResult`](../type-aliases/ListFolderContentEndpointResult.md)\>
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:470](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L470)
 
 #### Parameters
 
@@ -172,8 +156,6 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:470](https://githu
 
 > **setSdkAuthToken**(`token`): `void`
 
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:12
-
 #### Parameters
 
 ##### token
@@ -194,8 +176,6 @@ Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-brow
 
 > **setSdkConfig**(`update`): `void`
 
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:13
-
 #### Parameters
 
 ##### update
@@ -215,8 +195,6 @@ Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-brow
 ### updateFolder()
 
 > **updateFolder**(`props`, `opts?`): `Promise`\<[`UpdateFolderEndpointResult`](../type-aliases/UpdateFolderEndpointResult.md)\>
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:483](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L483)
 
 #### Parameters
 

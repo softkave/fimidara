@@ -8,8 +8,6 @@
 
 > **multipartUploadNode**(`params`): `Promise`\<[`UploadFileEndpointResult`](../../indexBrowser/type-aliases/UploadFileEndpointResult.md)\>
 
-Defined in: [fimidara-js-sdk/src/multipart/multipartNode.ts:49](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/multipart/multipartNode.ts#L49)
-
 Performs multipart upload from Node.js-compatible data sources.
 
 Supports uploading from:

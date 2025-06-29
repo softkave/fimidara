@@ -8,8 +8,6 @@
 
 > **GetWorkspaceCollaboratorsEndpointResult** = `object`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:3601](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L3601)
-
 Result of getting a list of workspace collaborators.
 
 ## Properties
@@ -17,8 +15,6 @@ Result of getting a list of workspace collaborators.
 ### collaborators
 
 > **collaborators**: [`Collaborator`](Collaborator.md)[]
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:3627](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L3627)
 
 List of collaborators in the workspace.
 
@@ -51,8 +47,6 @@ List of collaborators in the workspace.
 ### page
 
 > **page**: `number`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:3635](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L3635)
 
 The current page number of results returned.
 

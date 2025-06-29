@@ -8,8 +8,6 @@
 
 > **FileBackendConfig** = `object`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:307](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L307)
-
 A file backend config stores credentials and settings for connecting to external storage providers like AWS S3, Google Cloud Storage, etc.
 
 ## Properties
@@ -17,8 +15,6 @@ A file backend config stores credentials and settings for connecting to external
 ### backend
 
 > **backend**: [`FileBackendType`](FileBackendType.md)
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:384](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L384)
 
 The storage backend type this config is for
 
@@ -34,8 +30,6 @@ fimidara
 
 > **createdAt**: `number`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:327](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L327)
-
 UTC timestamp in milliseconds
 
 #### Example
@@ -50,8 +44,6 @@ UTC timestamp in milliseconds
 
 > **createdBy**: [`Agent`](Agent.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:319](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L319)
-
 Represents a user or system entity that performed an action (e.g., created or updated a resource)
 
 ***
@@ -59,8 +51,6 @@ Represents a user or system entity that performed an action (e.g., created or up
 ### deletedAt?
 
 > `optional` **deletedAt**: `number`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:348](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L348)
 
 UTC timestamp in milliseconds
 
@@ -76,8 +66,6 @@ UTC timestamp in milliseconds
 
 > `optional` **deletedBy**: [`Agent`](Agent.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:352](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L352)
-
 Represents a user or system entity that performed an action (e.g., created or updated a resource)
 
 ***
@@ -85,8 +73,6 @@ Represents a user or system entity that performed an action (e.g., created or up
 ### description?
 
 > `optional` **description**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:376](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L376)
 
 Optional description explaining what this config is used for
 
@@ -102,15 +88,11 @@ This is a resource description.
 
 > **isDeleted**: `boolean`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:340](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L340)
-
 ***
 
 ### lastUpdatedAt
 
 > **lastUpdatedAt**: `number`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:339](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L339)
 
 UTC timestamp in milliseconds
 
@@ -126,8 +108,6 @@ UTC timestamp in milliseconds
 
 > **lastUpdatedBy**: [`Agent`](Agent.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:331](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L331)
-
 Represents a user or system entity that performed an action (e.g., created or updated a resource)
 
 ***
@@ -135,8 +115,6 @@ Represents a user or system entity that performed an action (e.g., created or up
 ### name
 
 > **name**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:368](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L368)
 
 Display name for this backend config
 
@@ -152,8 +130,6 @@ My resource name
 
 > **resourceId**: `string`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:315](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L315)
-
 Resource ID
 
 #### Example
@@ -167,8 +143,6 @@ wrkspce_000000000000000000000
 ### workspaceId
 
 > **workspaceId**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:360](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L360)
 
 Workspace ID
 

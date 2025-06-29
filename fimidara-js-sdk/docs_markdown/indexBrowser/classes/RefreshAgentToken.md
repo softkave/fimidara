@@ -6,8 +6,6 @@
 
 # Class: RefreshAgentToken
 
-Defined in: [fimidara-js-sdk/src/RefreshAgentToken.ts:23](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/RefreshAgentToken.ts#L23)
-
 Manages automatic refresh of agent authentication tokens.
 Extends RefreshableResource to handle token lifecycle and implements IRefreshAuthToken interface.
 Automatically refreshes tokens before they expire using the provided refresh token.
@@ -25,8 +23,6 @@ Automatically refreshes tokens before they expire using the provided refresh tok
 ### Constructor
 
 > **new RefreshAgentToken**(`props`): `RefreshAgentToken`
-
-Defined in: [fimidara-js-sdk/src/RefreshAgentToken.ts:27](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/RefreshAgentToken.ts#L27)
 
 #### Parameters
 
@@ -62,8 +58,6 @@ Defined in: [fimidara-js-sdk/src/RefreshAgentToken.ts:27](https://github.com/sof
 
 > **dispose**(): `void`
 
-Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-es@4.17.21\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/softkave-js-utils/build/other/RefreshableResource.d.ts:32
-
 #### Returns
 
 `void`
@@ -77,8 +71,6 @@ Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-e
 ### getBearerToken()
 
 > **getBearerToken**(): `undefined` \| `string`
-
-Defined in: [fimidara-js-sdk/src/RefreshAgentToken.ts:81](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/RefreshAgentToken.ts#L81)
 
 Gets the current JWT bearer token for authentication.
 
@@ -97,8 +89,6 @@ The current JWT token string
 ### getOnError()
 
 > **getOnError**(): (`error`, `current`) => `void`
-
-Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-es@4.17.21\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/softkave-js-utils/build/other/RefreshableResource.d.ts:30
 
 #### Returns
 
@@ -128,8 +118,6 @@ Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-e
 
 > **getOnRefresh**(): (`resource`, `previous`) => `void`
 
-Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-es@4.17.21\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/softkave-js-utils/build/other/RefreshableResource.d.ts:28
-
 #### Returns
 
 > (`resource`, `previous`): `void`
@@ -158,8 +146,6 @@ Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-e
 
 > **getPreviousValue**(): `null` \| [`RefreshAgentTokenValue`](../type-aliases/RefreshAgentTokenValue.md)
 
-Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-es@4.17.21\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/softkave-js-utils/build/other/RefreshableResource.d.ts:22
-
 #### Returns
 
 `null` \| [`RefreshAgentTokenValue`](../type-aliases/RefreshAgentTokenValue.md)
@@ -173,8 +159,6 @@ Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-e
 ### getRefreshFn()
 
 > **getRefreshFn**(): (`current`) => `Promise`\<[`RefreshAgentTokenValue`](../type-aliases/RefreshAgentTokenValue.md)\>
-
-Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-es@4.17.21\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/softkave-js-utils/build/other/RefreshableResource.d.ts:26
 
 #### Returns
 
@@ -200,8 +184,6 @@ Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-e
 
 > **getRefreshTimeout**(): `number`
 
-Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-es@4.17.21\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/softkave-js-utils/build/other/RefreshableResource.d.ts:24
-
 #### Returns
 
 `number`
@@ -215,8 +197,6 @@ Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-e
 ### getValue()
 
 > **getValue**(): `T`
-
-Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-es@4.17.21\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/softkave-js-utils/build/other/RefreshableResource.d.ts:20
 
 #### Returns
 
@@ -232,8 +212,6 @@ Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-e
 
 > **refresh**(): `Promise`\<`void`\>
 
-Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-es@4.17.21\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/softkave-js-utils/build/other/RefreshableResource.d.ts:23
-
 #### Returns
 
 `Promise`\<`void`\>
@@ -247,8 +225,6 @@ Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-e
 ### setOnError()
 
 > **setOnError**(`onError`): `this`
-
-Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-es@4.17.21\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/softkave-js-utils/build/other/RefreshableResource.d.ts:31
 
 #### Parameters
 
@@ -270,8 +246,6 @@ Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-e
 
 > **setOnRefresh**(`onRefresh`): `this`
 
-Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-es@4.17.21\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/softkave-js-utils/build/other/RefreshableResource.d.ts:29
-
 #### Parameters
 
 ##### onRefresh
@@ -291,8 +265,6 @@ Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-e
 ### setRefreshFn()
 
 > **setRefreshFn**(`refreshFn`): `this`
-
-Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-es@4.17.21\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/softkave-js-utils/build/other/RefreshableResource.d.ts:27
 
 #### Parameters
 
@@ -314,8 +286,6 @@ Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-e
 
 > **setRefreshTimeout**(`timeout`): `this`
 
-Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-es@4.17.21\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/softkave-js-utils/build/other/RefreshableResource.d.ts:25
-
 #### Parameters
 
 ##### timeout
@@ -335,8 +305,6 @@ Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-e
 ### setValue()
 
 > **setValue**(`value`): `this`
-
-Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-es@4.17.21\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/softkave-js-utils/build/other/RefreshableResource.d.ts:21
 
 #### Parameters
 
@@ -358,8 +326,6 @@ Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-e
 
 > **start**(): `RefreshAgentToken`
 
-Defined in: [fimidara-js-sdk/src/RefreshAgentToken.ts:69](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/RefreshAgentToken.ts#L69)
-
 Starts the automatic token refresh process.
 Only starts if a valid timeout is set (i.e., token has expiration).
 
@@ -378,8 +344,6 @@ This instance for method chaining
 ### stop()
 
 > **stop**(): `this`
-
-Defined in: node\_modules/.pnpm/softkave-js-utils@0.10.0\_assert@2.1.0\_lodash-es@4.17.21\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/softkave-js-utils/build/other/RefreshableResource.d.ts:19
 
 #### Returns
 

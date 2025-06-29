@@ -6,8 +6,6 @@
 
 # Class: UsageRecordsEndpoints
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:945](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L945)
-
 ## Extends
 
 - `AbstractSdkEndpoints`
@@ -17,8 +15,6 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:945](https://githu
 ### Constructor
 
 > **new UsageRecordsEndpoints**(`config`, `inheritConfigFrom?`): `UsageRecordsEndpoints`
-
-Defined in: [fimidara-js-sdk/src/endpoints/AbstractSdkEndpoints.ts:12](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/AbstractSdkEndpoints.ts#L12)
 
 #### Parameters
 
@@ -44,8 +40,6 @@ Defined in: [fimidara-js-sdk/src/endpoints/AbstractSdkEndpoints.ts:12](https://g
 
 > **countWorkspaceSummedUsage**(`props?`, `opts?`): `Promise`\<[`CountItemsResult`](../type-aliases/CountItemsResult.md)\>
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:949](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L949)
-
 Count the total number of workspace usage records matching the specified filters
 
 #### Parameters
@@ -68,8 +62,6 @@ Count the total number of workspace usage records matching the specified filters
 
 > **getSdkConfig**(): [`SdkConfig`](../interfaces/SdkConfig.md)
 
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:14
-
 #### Returns
 
 [`SdkConfig`](../interfaces/SdkConfig.md)
@@ -83,8 +75,6 @@ Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-brow
 ### getUsageCosts()
 
 > **getUsageCosts**(`opts?`): `Promise`\<[`GetUsageCostsEndpointResult`](../type-aliases/GetUsageCostsEndpointResult.md)\>
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:962](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L962)
 
 #### Parameters
 
@@ -101,8 +91,6 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:962](https://githu
 ### getWorkspaceSummedUsage()
 
 > **getWorkspaceSummedUsage**(`props?`, `opts?`): `Promise`\<[`GetWorkspaceSummedUsageEndpointResult`](../type-aliases/GetWorkspaceSummedUsageEndpointResult.md)\>
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:973](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L973)
 
 #### Parameters
 
@@ -124,8 +112,6 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:973](https://githu
 
 > **setSdkAuthToken**(`token`): `void`
 
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:12
-
 #### Parameters
 
 ##### token
@@ -145,8 +131,6 @@ Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-brow
 ### setSdkConfig()
 
 > **setSdkConfig**(`update`): `void`
-
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:13
 
 #### Parameters
 

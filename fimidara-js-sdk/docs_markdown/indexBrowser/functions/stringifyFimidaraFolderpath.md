@@ -8,8 +8,6 @@
 
 > **stringifyFimidaraFolderpath**(`file`, `rootname?`): `string`
 
-Defined in: [fimidara-js-sdk/src/path/folder.ts:17](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/path/folder.ts#L17)
-
 Converts a file object with a namepath array to a string path representation.
 
 ## Parameters

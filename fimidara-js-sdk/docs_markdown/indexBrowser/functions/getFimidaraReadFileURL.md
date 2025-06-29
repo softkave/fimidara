@@ -8,8 +8,6 @@
 
 > **getFimidaraReadFileURL**(`props`): `string`
 
-Defined in: [fimidara-js-sdk/src/path/file.ts:174](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/path/file.ts#L174)
-
 Generates a URL for reading/downloading a file from Fimidara
 
 ## Parameters

@@ -6,8 +6,6 @@
 
 # Class: WorkspacesEndpoints
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1054](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1054)
-
 ## Extends
 
 - `AbstractSdkEndpoints`
@@ -17,8 +15,6 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1054](https://gith
 ### Constructor
 
 > **new WorkspacesEndpoints**(`config`, `inheritConfigFrom?`): `WorkspacesEndpoints`
-
-Defined in: [fimidara-js-sdk/src/endpoints/AbstractSdkEndpoints.ts:12](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/AbstractSdkEndpoints.ts#L12)
 
 #### Parameters
 
@@ -44,8 +40,6 @@ Defined in: [fimidara-js-sdk/src/endpoints/AbstractSdkEndpoints.ts:12](https://g
 
 > **getSdkConfig**(): [`SdkConfig`](../interfaces/SdkConfig.md)
 
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:14
-
 #### Returns
 
 [`SdkConfig`](../interfaces/SdkConfig.md)
@@ -59,8 +53,6 @@ Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-brow
 ### getWorkspace()
 
 > **getWorkspace**(`props?`, `opts?`): `Promise`\<[`GetWorkspaceEndpointResult`](../type-aliases/GetWorkspaceEndpointResult.md)\>
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1058](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1058)
 
 Retrieve information about a specific workspace or the current user's default workspace
 
@@ -84,8 +76,6 @@ Retrieve information about a specific workspace or the current user's default wo
 
 > **setSdkAuthToken**(`token`): `void`
 
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:12
-
 #### Parameters
 
 ##### token
@@ -106,8 +96,6 @@ Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-brow
 
 > **setSdkConfig**(`update`): `void`
 
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:13
-
 #### Parameters
 
 ##### update
@@ -127,8 +115,6 @@ Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-brow
 ### updateWorkspace()
 
 > **updateWorkspace**(`props`, `opts?`): `Promise`\<[`UpdateWorkspaceEndpointResult`](../type-aliases/UpdateWorkspaceEndpointResult.md)\>
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1071](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1071)
 
 #### Parameters
 

@@ -8,8 +8,6 @@
 
 > **GetResourcesEndpointResult** = `object`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:3235](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L3235)
-
 Response containing the requested resources. Each resource is wrapped with metadata for easy identification.
 
 ## Example
@@ -538,8 +536,6 @@ Response containing the requested resources. Each resource is wrapped with metad
 ### resources
 
 > **resources**: [`ResourceWrapper`](ResourceWrapper.md)[]
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:3277](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L3277)
 
 Array of resource wrappers containing the requested resources and their metadata.
 

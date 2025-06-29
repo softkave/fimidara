@@ -8,8 +8,6 @@
 
 > **multipartUploadBrowser**(`params`): `Promise`\<[`UploadFileEndpointResult`](../type-aliases/UploadFileEndpointResult.md)\>
 
-Defined in: [fimidara-js-sdk/src/multipart/multipartBrowser.ts:31](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/multipart/multipartBrowser.ts#L31)
-
 Performs a multipart upload in browser environments.
 
 ## Parameters

@@ -8,8 +8,6 @@
 
 > **stringifyFimidaraFilename**(`file`): `string`
 
-Defined in: [fimidara-js-sdk/src/path/file.ts:244](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/path/file.ts#L244)
-
 Combines a filename and extension into a single string
 
 ## Parameters

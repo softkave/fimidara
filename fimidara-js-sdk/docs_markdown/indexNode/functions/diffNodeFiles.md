@@ -8,8 +8,6 @@
 
 > **diffNodeFiles**\<`TFimidaraFile`\>(`props`): `Promise`\<\{ `externalFilesRecord`: `Record`\<`string`, [`FimidaraDiffExternalFile`](../../indexBrowser/type-aliases/FimidaraDiffExternalFile.md)\>; `fileStatsRecord`: `Record`\<`string`, `Stats`\>; `folderStatsRecord`: `Record`\<`string`, `Stats`\>; `newExternalFileList`: [`FimidaraDiffExternalFile`](../../indexBrowser/type-aliases/FimidaraDiffExternalFile.md)[]; `newExternalFileRecord`: `Record`\<`string`, [`FimidaraDiffExternalFile`](../../indexBrowser/type-aliases/FimidaraDiffExternalFile.md)\>; `newFimidaraFileList`: `TFimidaraFile`[]; `newFimidaraFileRecord`: `Record`\<`string`, `TFimidaraFile`\>; `unmodifiedExternalFileList`: [`FimidaraDiffExternalFile`](../../indexBrowser/type-aliases/FimidaraDiffExternalFile.md)[]; `unmodifiedExternalFileRecord`: `Record`\<`string`, [`FimidaraDiffExternalFile`](../../indexBrowser/type-aliases/FimidaraDiffExternalFile.md)\>; `unmodifiedFimidaraFileList`: `TFimidaraFile`[]; `unmodifiedFimidaraFileRecord`: `Record`\<`string`, `TFimidaraFile`\>; `updatedExternalFileList`: [`FimidaraDiffExternalFile`](../../indexBrowser/type-aliases/FimidaraDiffExternalFile.md)[]; `updatedExternalFileRecord`: `Record`\<`string`, [`FimidaraDiffExternalFile`](../../indexBrowser/type-aliases/FimidaraDiffExternalFile.md)\>; `updatedFimidaraFileList`: `TFimidaraFile`[]; `updatedFimidaraFileRecord`: `Record`\<`string`, `TFimidaraFile`\>; \}\>
 
-Defined in: [fimidara-js-sdk/src/node/diffNodeFiles.ts:31](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/node/diffNodeFiles.ts#L31)
-
 Compares local Node.js filesystem content with Fimidara files to identify differences
 
 ## Type Parameters

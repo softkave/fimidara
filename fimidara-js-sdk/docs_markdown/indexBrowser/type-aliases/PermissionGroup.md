@@ -8,8 +8,6 @@
 
 > **PermissionGroup** = `object`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:788](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L788)
-
 A permission group that can be assigned to entities to grant access to workspace resources
 
 ## Properties
@@ -17,8 +15,6 @@ A permission group that can be assigned to entities to grant access to workspace
 ### createdAt
 
 > **createdAt**: `number`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:808](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L808)
 
 UTC timestamp in milliseconds
 
@@ -34,8 +30,6 @@ UTC timestamp in milliseconds
 
 > **createdBy**: [`Agent`](Agent.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:800](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L800)
-
 Represents a user or system entity that performed an action (e.g., created or updated a resource)
 
 ***
@@ -43,8 +37,6 @@ Represents a user or system entity that performed an action (e.g., created or up
 ### deletedAt?
 
 > `optional` **deletedAt**: `number`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:829](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L829)
 
 UTC timestamp in milliseconds
 
@@ -60,8 +52,6 @@ UTC timestamp in milliseconds
 
 > `optional` **deletedBy**: [`Agent`](Agent.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:833](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L833)
-
 Represents a user or system entity that performed an action (e.g., created or updated a resource)
 
 ***
@@ -69,8 +59,6 @@ Represents a user or system entity that performed an action (e.g., created or up
 ### description?
 
 > `optional` **description**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:857](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L857)
 
 Optional description explaining the purpose of this permission group
 
@@ -86,15 +74,11 @@ Users who can edit files and folders in the workspace
 
 > **isDeleted**: `boolean`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:821](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L821)
-
 ***
 
 ### lastUpdatedAt
 
 > **lastUpdatedAt**: `number`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:820](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L820)
 
 UTC timestamp in milliseconds
 
@@ -110,8 +94,6 @@ UTC timestamp in milliseconds
 
 > **lastUpdatedBy**: [`Agent`](Agent.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:812](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L812)
-
 Represents a user or system entity that performed an action (e.g., created or updated a resource)
 
 ***
@@ -119,8 +101,6 @@ Represents a user or system entity that performed an action (e.g., created or up
 ### name
 
 > **name**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:849](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L849)
 
 The name of the permission group
 
@@ -136,8 +116,6 @@ Editors
 
 > **resourceId**: `string`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:796](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L796)
-
 Resource ID
 
 #### Example
@@ -151,8 +129,6 @@ wrkspce_000000000000000000000
 ### workspaceId
 
 > **workspaceId**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:841](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L841)
 
 Workspace ID
 

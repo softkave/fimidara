@@ -6,8 +6,6 @@
 
 # Class: FimidaraEndpoints
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1085](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1085)
-
 ## Extends
 
 - `AbstractSdkEndpoints`
@@ -17,8 +15,6 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1085](https://gith
 ### Constructor
 
 > **new FimidaraEndpoints**(`config`, `inheritConfigFrom?`): `FimidaraEndpoints`
-
-Defined in: [fimidara-js-sdk/src/endpoints/AbstractSdkEndpoints.ts:12](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/AbstractSdkEndpoints.ts#L12)
 
 #### Parameters
 
@@ -44,15 +40,11 @@ Defined in: [fimidara-js-sdk/src/endpoints/AbstractSdkEndpoints.ts:12](https://g
 
 > **agentTokens**: [`AgentTokensEndpoints`](AgentTokensEndpoints.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1086](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1086)
-
 ***
 
 ### collaborationRequests
 
 > **collaborationRequests**: [`CollaborationRequestsEndpoints`](CollaborationRequestsEndpoints.md)
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1092](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1092)
 
 ***
 
@@ -60,15 +52,11 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1092](https://gith
 
 > **collaborators**: [`CollaboratorsEndpoints`](CollaboratorsEndpoints.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1093](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1093)
-
 ***
 
 ### fileBackends
 
 > **fileBackends**: [`FileBackendsEndpoints`](FileBackendsEndpoints.md)
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1087](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1087)
 
 ***
 
@@ -76,15 +64,11 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1087](https://gith
 
 > **files**: [`FilesEndpoints`](FilesEndpoints.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1091](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1091)
-
 ***
 
 ### folders
 
 > **folders**: [`FoldersEndpoints`](FoldersEndpoints.md)
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1088](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1088)
 
 ***
 
@@ -92,15 +76,11 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1088](https://gith
 
 > **jobs**: [`JobsEndpoints`](JobsEndpoints.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1095](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1095)
-
 ***
 
 ### permissionGroups
 
 > **permissionGroups**: [`PermissionGroupsEndpoints`](PermissionGroupsEndpoints.md)
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1089](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1089)
 
 ***
 
@@ -108,15 +88,11 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1089](https://gith
 
 > **permissionItems**: [`PermissionItemsEndpoints`](PermissionItemsEndpoints.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1090](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1090)
-
 ***
 
 ### presignedPaths
 
 > **presignedPaths**: [`PresignedPathsEndpoints`](PresignedPathsEndpoints.md)
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1096](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1096)
 
 ***
 
@@ -124,15 +100,11 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1096](https://gith
 
 > **resources**: [`ResourcesEndpoints`](ResourcesEndpoints.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1097](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1097)
-
 ***
 
 ### usageRecords
 
 > **usageRecords**: [`UsageRecordsEndpoints`](UsageRecordsEndpoints.md)
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1094](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1094)
 
 ***
 
@@ -140,15 +112,11 @@ Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1094](https://gith
 
 > **workspaces**: [`WorkspacesEndpoints`](WorkspacesEndpoints.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicEndpoints.ts:1098](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicEndpoints.ts#L1098)
-
 ## Methods
 
 ### getSdkConfig()
 
 > **getSdkConfig**(): [`SdkConfig`](../interfaces/SdkConfig.md)
-
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:14
 
 #### Returns
 
@@ -163,8 +131,6 @@ Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-brow
 ### setSdkAuthToken()
 
 > **setSdkAuthToken**(`token`): `void`
-
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:12
 
 #### Parameters
 
@@ -185,8 +151,6 @@ Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-brow
 ### setSdkConfig()
 
 > **setSdkConfig**(`update`): `void`
-
-Defined in: node\_modules/.pnpm/mfdoc-js-sdk-base@0.3.0\_nanoid@5.1.5\_path-browserify@1.0.1\_type-fest@4.41.0/node\_modules/mfdoc-js-sdk-base/build/config.d.ts:13
 
 #### Parameters
 

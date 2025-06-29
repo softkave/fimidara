@@ -8,8 +8,6 @@
 
 > **File** = `object`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1073](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1073)
-
 File resource with metadata and location information
 
 ## Properties
@@ -17,8 +15,6 @@ File resource with metadata and location information
 ### createdAt
 
 > **createdAt**: `number`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1093](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1093)
 
 UTC timestamp in milliseconds
 
@@ -34,8 +30,6 @@ UTC timestamp in milliseconds
 
 > **createdBy**: [`Agent`](Agent.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1085](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1085)
-
 Represents a user or system entity that performed an action (e.g., created or updated a resource)
 
 ***
@@ -43,8 +37,6 @@ Represents a user or system entity that performed an action (e.g., created or up
 ### deletedAt?
 
 > `optional` **deletedAt**: `number`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1114](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1114)
 
 UTC timestamp in milliseconds
 
@@ -60,8 +52,6 @@ UTC timestamp in milliseconds
 
 > `optional` **deletedBy**: [`Agent`](Agent.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1118](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1118)
-
 Represents a user or system entity that performed an action (e.g., created or updated a resource)
 
 ***
@@ -69,8 +59,6 @@ Represents a user or system entity that performed an action (e.g., created or up
 ### description?
 
 > `optional` **description**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1203](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1203)
 
 Resource description
 
@@ -86,8 +74,6 @@ This is a resource description.
 
 > `optional` **encoding**: `string`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1187](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1187)
-
 File encoding
 
 #### Example
@@ -102,8 +88,6 @@ utf8
 
 > `optional` **ext**: `string`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1142](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1142)
-
 File ext, case insensitive
 
 #### Example
@@ -117,8 +101,6 @@ jpg
 ### idPath
 
 > **idPath**: `string`[]
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1160](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1160)
 
 List of parent folder IDs
 
@@ -136,15 +118,11 @@ List of parent folder IDs
 
 > **isDeleted**: `boolean`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1106](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1106)
-
 ***
 
 ### lastUpdatedAt
 
 > **lastUpdatedAt**: `number`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1105](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1105)
 
 UTC timestamp in milliseconds
 
@@ -160,8 +138,6 @@ UTC timestamp in milliseconds
 
 > **lastUpdatedBy**: [`Agent`](Agent.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1097](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1097)
-
 Represents a user or system entity that performed an action (e.g., created or updated a resource)
 
 ***
@@ -169,8 +145,6 @@ Represents a user or system entity that performed an action (e.g., created or up
 ### mimetype?
 
 > `optional` **mimetype**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1179](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1179)
 
 File MIME type
 
@@ -186,8 +160,6 @@ image/jpeg
 
 > **name**: `string`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1195](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1195)
-
 File name, case insensitive
 
 #### Example
@@ -201,8 +173,6 @@ my-file
 ### namepath
 
 > **namepath**: `string`[]
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1171](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1171)
 
 Folder path as a list of folder names. It should not include the workspace rootname. e.g ["my-folder", "my-sub-folder"].
 
@@ -221,8 +191,6 @@ Folder path as a list of folder names. It should not include the workspace rootn
 
 > **parentId**: `string` \| `null`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1150](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1150)
-
 Folder ID or null if resource is not in a folder (e.g., at workspace root)
 
 #### Example
@@ -236,8 +204,6 @@ folder0_000000000000000000000
 ### resourceId
 
 > **resourceId**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1081](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1081)
 
 Resource ID
 
@@ -253,8 +219,6 @@ wrkspce_000000000000000000000
 
 > **size**: `number`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1134](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1134)
-
 File size in bytes
 
 #### Example
@@ -269,8 +233,6 @@ File size in bytes
 
 > **version**: `number`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1211](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1211)
-
 File version, representing how many times a file has been uploaded
 
 #### Example
@@ -284,8 +246,6 @@ File version, representing how many times a file has been uploaded
 ### workspaceId
 
 > **workspaceId**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:1126](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L1126)
 
 Workspace ID
 

@@ -8,8 +8,6 @@
 
 > **getFullFolderContent**(`fimidara`, `listParams`): `Promise`\<\{ `files`: [`File`](../type-aliases/File.md)[]; `folders`: [`Folder`](../type-aliases/Folder.md)[]; \}\>
 
-Defined in: [fimidara-js-sdk/src/folder/getFullFolderContent.ts:26](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/folder/getFullFolderContent.ts#L26)
-
 Retrieves all files and folders from a specified folder by paginating through all available content.
 
 This function automatically handles pagination to fetch all content in a single call, making it

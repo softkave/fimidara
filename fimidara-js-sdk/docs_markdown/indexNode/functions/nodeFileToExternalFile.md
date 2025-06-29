@@ -8,8 +8,6 @@
 
 > **nodeFileToExternalFile**(`props`): `Promise`\<\{ `externalFile?`: [`FimidaraDiffExternalFile`](../../indexBrowser/type-aliases/FimidaraDiffExternalFile.md); `stats`: `Stats`; \}\>
 
-Defined in: [fimidara-js-sdk/src/node/nodeFileToExternalFile.ts:16](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/node/nodeFileToExternalFile.ts#L16)
-
 Converts a Node.js file or directory to a Fimidara external file representation.
 
 ## Parameters

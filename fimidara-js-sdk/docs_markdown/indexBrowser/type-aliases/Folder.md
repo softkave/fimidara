@@ -8,8 +8,6 @@
 
 > **Folder** = `object`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:618](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L618)
-
 Represents a folder in the workspace with its metadata and hierarchy information
 
 ## Properties
@@ -17,8 +15,6 @@ Represents a folder in the workspace with its metadata and hierarchy information
 ### createdAt
 
 > **createdAt**: `number`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:638](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L638)
 
 UTC timestamp in milliseconds
 
@@ -34,8 +30,6 @@ UTC timestamp in milliseconds
 
 > **createdBy**: [`Agent`](Agent.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:630](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L630)
-
 Represents a user or system entity that performed an action (e.g., created or updated a resource)
 
 ***
@@ -43,8 +37,6 @@ Represents a user or system entity that performed an action (e.g., created or up
 ### deletedAt?
 
 > `optional` **deletedAt**: `number`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:659](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L659)
 
 UTC timestamp in milliseconds
 
@@ -60,8 +52,6 @@ UTC timestamp in milliseconds
 
 > `optional` **deletedBy**: [`Agent`](Agent.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:663](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L663)
-
 Represents a user or system entity that performed an action (e.g., created or updated a resource)
 
 ***
@@ -69,8 +59,6 @@ Represents a user or system entity that performed an action (e.g., created or up
 ### description?
 
 > `optional` **description**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:687](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L687)
 
 Resource description
 
@@ -85,8 +73,6 @@ This is a resource description.
 ### idPath
 
 > **idPath**: `string`[]
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:697](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L697)
 
 List of parent folder IDs
 
@@ -104,15 +90,11 @@ List of parent folder IDs
 
 > **isDeleted**: `boolean`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:651](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L651)
-
 ***
 
 ### lastUpdatedAt
 
 > **lastUpdatedAt**: `number`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:650](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L650)
 
 UTC timestamp in milliseconds
 
@@ -128,8 +110,6 @@ UTC timestamp in milliseconds
 
 > **lastUpdatedBy**: [`Agent`](Agent.md)
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:642](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L642)
-
 Represents a user or system entity that performed an action (e.g., created or updated a resource)
 
 ***
@@ -137,8 +117,6 @@ Represents a user or system entity that performed an action (e.g., created or up
 ### name
 
 > **name**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:679](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L679)
 
 Resource name
 
@@ -153,8 +131,6 @@ My resource name
 ### namepath
 
 > **namepath**: `string`[]
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:708](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L708)
 
 Folder path as a list of folder names. It should not include the workspace rootname. e.g ["my-folder", "my-sub-folder"].
 
@@ -173,8 +149,6 @@ Folder path as a list of folder names. It should not include the workspace rootn
 
 > **parentId**: `string` \| `null`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:716](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L716)
-
 Folder ID or null if resource is not in a folder (e.g., at workspace root)
 
 #### Example
@@ -189,8 +163,6 @@ folder0_000000000000000000000
 
 > **resourceId**: `string`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:626](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L626)
-
 Resource ID
 
 #### Example
@@ -204,8 +176,6 @@ wrkspce_000000000000000000000
 ### workspaceId
 
 > **workspaceId**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:671](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L671)
 
 Workspace ID
 

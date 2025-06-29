@@ -8,8 +8,6 @@
 
 > **UploadFileEndpointParams** = `object`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:5297](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L5297)
-
 Complete parameters for file upload including metadata and binary data
 
 ## Properties
@@ -17,8 +15,6 @@ Complete parameters for file upload including metadata and binary data
 ### clientMultipartId?
 
 > `optional` **clientMultipartId**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:5357](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L5357)
 
 Client generated unique identifier for multipart uploads. It is used to identify the same multipart upload across multiple requests
 
@@ -34,8 +30,6 @@ upload-123e4567-e89b-12d3-a456-426614174000
 
 > **data**: `string` \| `Readable` \| `Blob` \| `Buffer`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:5317](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L5317)
-
 File binary
 
 ***
@@ -43,8 +37,6 @@ File binary
 ### description?
 
 > `optional` **description**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:5325](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L5325)
 
 Resource description
 
@@ -60,8 +52,6 @@ This is a resource description.
 
 > `optional` **encoding**: `string`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:5341](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L5341)
-
 File encoding
 
 #### Example
@@ -75,8 +65,6 @@ utf8
 ### fileId?
 
 > `optional` **fileId**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:5313](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L5313)
 
 File ID
 
@@ -92,8 +80,6 @@ file000_000000000000000000000
 
 > `optional` **filepath**: `string`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:5305](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L5305)
-
 File path, with each folder name separated by a forward slash. The first item must be the workspace rootname, and must include the file extension. e.g /workspace-rootname/my-folder/my-file.txt.
 
 #### Example
@@ -107,8 +93,6 @@ File path, with each folder name separated by a forward slash. The first item mu
 ### mimetype?
 
 > `optional` **mimetype**: `string`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:5349](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L5349)
 
 File MIME type
 
@@ -124,8 +108,6 @@ image/jpeg
 
 > `optional` **part**: `number`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:5365](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L5365)
-
 Part number of the multipart upload. -1 can be used to signify the end of a multipart upload.
 
 #### Example
@@ -139,8 +121,6 @@ Part number of the multipart upload. -1 can be used to signify the end of a mult
 ### size
 
 > **size**: `number`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:5333](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L5333)
 
 File size in bytes
 

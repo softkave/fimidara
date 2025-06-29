@@ -8,8 +8,6 @@
 
 > **UsageCosts** = `object`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:3282](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L3282)
-
 Breakdown of usage costs by category
 
 ## Properties
@@ -17,8 +15,6 @@ Breakdown of usage costs by category
 ### bin
 
 > **bin**: `number`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:3306](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L3306)
 
 Cost for inbound bandwidth usage
 
@@ -34,8 +30,6 @@ Cost for inbound bandwidth usage
 
 > **bout**: `number`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:3314](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L3314)
-
 Cost for outbound bandwidth usage
 
 #### Example
@@ -49,8 +43,6 @@ Cost for outbound bandwidth usage
 ### storage
 
 > **storage**: `number`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:3290](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L3290)
 
 Cost for storage usage
 
@@ -66,8 +58,6 @@ Cost for storage usage
 
 > **storageEver**: `number`
 
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:3298](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L3298)
-
 Cost for maximum storage ever consumed
 
 #### Example
@@ -81,8 +71,6 @@ Cost for maximum storage ever consumed
 ### total
 
 > **total**: `number`
-
-Defined in: [fimidara-js-sdk/src/endpoints/publicTypes.ts:3322](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/endpoints/publicTypes.ts#L3322)
 
 Total cost across all usage categories
 

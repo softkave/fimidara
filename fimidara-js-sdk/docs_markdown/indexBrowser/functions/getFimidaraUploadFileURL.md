@@ -8,8 +8,6 @@
 
 > **getFimidaraUploadFileURL**(`props`): `string`
 
-Defined in: [fimidara-js-sdk/src/path/file.ts:211](https://github.com/softkave/fimidara/blob/feac071900ab8644442d355e5cb5db9df2f34600/fimidara-js-sdk/src/path/file.ts#L211)
-
 Generates a URL for uploading a file to Fimidara
 
 ## Parameters

@@ -20,11 +20,11 @@ The `fimidara` package provides different exports optimized for different enviro
 
 #### Main Exports
 
-- **`fimidara/indexIsomorphic` (default)** - Isomorphic version that works in both browser and Node.js environments. Provides core functionality like `FimidaraEndpoints`, `RefreshAgentToken`, and basic file operations. See [Isomorphic documentation](/docs_markdown/indexIsomorphic/README.md).
+- **`fimidara/indexIsomorphic` (default)** - Isomorphic version that works in both browser and Node.js environments. Provides core functionality like `FimidaraEndpoints`, `RefreshAgentToken`, and basic file operations. See [Isomorphic documentation](https://github.com/softkave/fimidara/tree/main/fimidara-js-sdk/docs_markdown/indexIsomorphic/README.md).
 
-- **`fimidara/indexNode`** - Server-side version with additional Node.js-specific functions like `multipartUploadNode` for handling large file uploads on the server. See [Node.js documentation](/docs_markdown/indexNode/README.md).
+- **`fimidara/indexNode`** - Server-side version with additional Node.js-specific functions like `multipartUploadNode` for handling large file uploads on the server. See [Node.js documentation](https://github.com/softkave/fimidara/tree/main/fimidara-js-sdk/docs_markdown/indexNode/README.md).
 
-- **`fimidara/indexBrowser`** - Browser-specific version with additional browser-only functions like `multipartUploadBrowser` for handling large file uploads in the browser. See [Browser documentation](/docs_markdown/indexBrowser/README.md).
+- **`fimidara/indexBrowser`** - Browser-specific version with additional browser-only functions like `multipartUploadBrowser` for handling large file uploads in the browser. See [Browser documentation](https://github.com/softkave/fimidara/tree/main/fimidara-js-sdk/docs_markdown/indexBrowser/README.md).
   <br></br>
 
 #### Utility Exports
@@ -156,7 +156,7 @@ const file = await fimidara.files.readFile(
 
 ### Making API calls
 
-fimidara provides several APIs for operating with files, folders, permissions, agent tokens, etc. You can access them through an instance of [`FimidaraEndpoints`](/docs_markdown/indexBrowser/classes/FimidaraEndpoints.md).
+fimidara provides several APIs for operating with files, folders, permissions, agent tokens, etc. You can access them through an instance of [`FimidaraEndpoints`](https://github.com/softkave/fimidara/tree/main/fimidara-js-sdk/docs_markdown/indexBrowser/classes/FimidaraEndpoints.md).
 
 ```typescript
 // Import fimidara
