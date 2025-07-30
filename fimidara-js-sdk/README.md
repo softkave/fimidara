@@ -1,6 +1,7 @@
 # fimidara
 
 JavaScript SDK for [fimidara.com](https://www.fimidara.com), a file storage service. See REST API and other documentation at [https://www.fimidara.com/docs](https://www.fimidara.com/docs).
+
 <br></br>
 
 ## Installation
@@ -9,13 +10,15 @@ JavaScript SDK for [fimidara.com](https://www.fimidara.com), a file storage serv
 - Using `yarn` - `yarn add fimidara`
 - Using `pnpm` - `pnpm add fimidara`
 - Using `bun` - `bun add fimidara`
-  <br></br>
+
+<br></br>
 
 ## JS SDK Usage
 
 ### Exports
 
 The `fimidara` package provides different exports optimized for different environments:
+
 <br></br>
 
 #### Main Exports
@@ -25,12 +28,14 @@ The `fimidara` package provides different exports optimized for different enviro
 - **`fimidara/indexNode`** - Server-side version with additional Node.js-specific functions like `multipartUploadNode` for handling large file uploads on the server. See [Node.js documentation](https://github.com/softkave/fimidara/tree/main/fimidara-js-sdk/docs_markdown/indexNode/README.md).
 
 - **`fimidara/indexBrowser`** - Browser-specific version with additional browser-only functions like `multipartUploadBrowser` for handling large file uploads in the browser. See [Browser documentation](https://github.com/softkave/fimidara/tree/main/fimidara-js-sdk/docs_markdown/indexBrowser/README.md).
-  <br></br>
+
+<br></br>
 
 #### Utility Exports
 
 - **`fimidara/node`** - Node.js utility functions like `getNodeDirContent` for reading local directory contents.
-  <br></br>
+
+<br></br>
 
 #### Smart Import System
 
@@ -74,7 +79,8 @@ import {getNodeDirContent} from 'fimidara/node';
 - **Use `fimidara/indexNode`** when you need server-side specific features like `multipartUploadNode`
 - **Use `fimidara/indexBrowser`** when you need browser-specific features like `multipartUploadBrowser`
 - **Use `fimidara/node`** when you only need Node.js utility functions
-  <br></br>
+
+<br></br>
 
 ### Setting up fimidara
 
@@ -258,6 +264,7 @@ await multipartUploadBrowser({
 ## CLI Usage
 
 The fimidara JS SDK also provides a CLI.
+
 <br></br>
 
 ### Installation
@@ -300,6 +307,7 @@ fimidara sync [options]
 | `--silent`       | `-s`  | Do not print logs                                                | No       | `false`                    |
 
 <br></br>
+
 **Direction Options:**
 
 - `up`: Upload from local to fimidara

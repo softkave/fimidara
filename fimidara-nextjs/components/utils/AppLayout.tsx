@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import AppHeader from "../app/AppHeader.tsx";
 import FimidaraSideNav from "../app/FimidaraSideNav.tsx";
 import { usePageAuthRequired } from "../hooks/usePageAuthRequired.tsx";
@@ -11,7 +12,7 @@ export interface IAppLayoutProps {
   contentClassName?: string;
 }
 
-export const AppLayout = (props: IAppLayoutProps) => {
+const AppLayoutImpl = (props: IAppLayoutProps) => {
   const { children, contentClassName } = props;
 
   return usePageAuthRequired({
@@ -36,4 +37,12 @@ export const AppLayout = (props: IAppLayoutProps) => {
       );
     },
   });
+};
+
+export const AppLayout = (props: IAppLayoutProps) => {
+  return (
+    <Suspense fallback={null}>
+      <AppLayoutImpl {...props} />
+    </Suspense>
+  );
 };
