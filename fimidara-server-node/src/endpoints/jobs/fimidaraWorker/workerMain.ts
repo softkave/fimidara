@@ -1,3 +1,4 @@
+import {fimidxConsoleLogger} from 'softkave-node-utils/common';
 import {isMainThread} from 'worker_threads';
 import {FimidaraWorker} from './FimidaraWorker.js';
 
@@ -7,5 +8,7 @@ async function main() {
 }
 
 if (!isMainThread) {
-  main().catch(console.error.bind(console));
+  main().catch(error => {
+    fimidxConsoleLogger.error(error);
+  });
 }

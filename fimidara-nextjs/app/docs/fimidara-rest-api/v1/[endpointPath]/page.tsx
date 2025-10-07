@@ -9,6 +9,7 @@ import { last } from "lodash-es";
 import { MfdocHttpEndpointDefinitionTypePrimitive } from "mfdoc/mfdoc-core";
 import path from "path";
 import { use } from "react";
+import { fimidxConsoleLogger } from "softkave-node-utils/common";
 
 interface FimidaraRestApiEndpointDocPageProps {
   params: Promise<{ endpointPath: string }>;
@@ -57,6 +58,6 @@ const useEndpointInfo = async (endpointPath: string) => {
       }
     }
   } catch (error) {
-    console.error(error);
+    fimidxConsoleLogger.error(error);
   }
 };

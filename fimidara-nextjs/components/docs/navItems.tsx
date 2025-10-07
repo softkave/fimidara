@@ -2,6 +2,7 @@ import { kAppDocPaths } from "@/lib/definitions/paths/docs.ts";
 import assert from "assert";
 import { first } from "lodash-es";
 import { MfdocEndpointsTableOfContent } from "mfdoc/endpointInfo.d.ts";
+import { fimidxConsoleLogger } from "softkave-node-utils/common";
 import { ValueOf } from "type-fest";
 import restApiTableOfContent from "../../../fimidara-mfdoc-out/public-endpoints/table-of-content.json";
 import { IRawNavItem } from "../utils/page/side-nav/types.ts";
@@ -188,7 +189,7 @@ export function extractFilepathFromHref(href: string): string | undefined {
     const filepath = `fimidara/${category}/${endpointName}__${method}.json`;
     return filepath;
   } catch (error) {
-    console.error("Error extracting filepath from href:", error);
+    fimidxConsoleLogger.error("Error extracting filepath from href:", error);
     return undefined;
   }
 }

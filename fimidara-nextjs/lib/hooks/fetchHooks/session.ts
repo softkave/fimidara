@@ -3,6 +3,7 @@
 import { callSetCookieEndpoint } from "@/lib/api/account/index.ts";
 import { getPrivateFimidaraEndpointsUsingUserToken } from "@/lib/api/fimidaraEndpoints.ts";
 import { RefreshUserToken, User } from "fimidara-private-js-sdk";
+import { fimidxConsoleLogger } from "softkave-node-utils/common";
 import {
   UserSessionFetchStoreOther,
   useUserSessionFetchStore,
@@ -19,7 +20,7 @@ async function getUserDataInputFetchFn(): Promise<
 
   callSetCookieEndpoint({
     arg: { jwtToken: data.jwtToken, userId: data.user.resourceId },
-  }).catch(console.error.bind(console));
+  }).catch(fimidxConsoleLogger.error.bind(fimidxConsoleLogger));
 
   return {
     resource: data.user,

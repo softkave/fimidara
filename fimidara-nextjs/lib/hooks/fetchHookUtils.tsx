@@ -2,6 +2,7 @@
 
 import { uniq } from "lodash-es";
 import React from "react";
+import { fimidxConsoleLogger } from "softkave-node-utils/common";
 import { systemConstants } from "../definitions/system";
 import { toAppErrorList } from "../utils/errors";
 import { calculatePageSize } from "../utils/fns";
@@ -68,7 +69,7 @@ export function makeFetchResourceHook<
             return { data: savedData, loading: false, error: undefined };
           });
         } catch (error: unknown) {
-          console.error(error);
+          fimidxConsoleLogger.error(error);
           useStoreHook.getState().setFetchState(inputParams, (state) => ({
             loading: false,
             error: toAppErrorList(error),

@@ -1,3 +1,4 @@
+import { fimidxConsoleLogger } from "softkave-node-utils/common";
 import { ServerError } from "./errors";
 import { cast } from "./fns";
 import OperationError from "./OperationError";
@@ -9,7 +10,7 @@ export const fireAndForgetFn = async <Fn extends (...args: any) => any>(
   try {
     return await fn(...args);
   } catch (error) {
-    console.error(error);
+    fimidxConsoleLogger.error(error);
   }
 
   return undefined;
@@ -19,7 +20,7 @@ export const fireAndForgetPromise = async <T>(promise: Promise<T>) => {
   try {
     return await promise;
   } catch (error) {
-    console.error(error);
+    fimidxConsoleLogger.error(error);
   }
 
   return undefined;
@@ -41,7 +42,7 @@ export const wrapFireAndThrowError = <
     try {
       return await fn(...args);
     } catch (error) {
-      console.error(error);
+      fimidxConsoleLogger.error(error);
 
       if (throwError) {
         if (thrownError) {

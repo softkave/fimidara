@@ -1,10 +1,11 @@
-import {Logger} from './types.js';
+import {Logger} from 'softkave-js-utils';
+import {fimidxConsoleLogger} from 'softkave-node-utils/common';
 
 export class ConsoleLogger implements Logger {
   log: (...args: unknown[]) => void = (...args) => {
-    console.log(new Date().toISOString(), ...args);
+    fimidxConsoleLogger.log(...args);
   };
   error: (...args: unknown[]) => void = (...args) => {
-    console.error(new Date().toISOString(), ...args);
+    fimidxConsoleLogger.error(...args);
   };
 }

@@ -11,6 +11,7 @@ import { isNil } from "lodash-es";
 import { signOut } from "next-auth/react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ReactElement, useEffect, useRef } from "react";
+import { fimidxConsoleLogger } from "softkave-node-utils/common";
 import { useStateHistory } from "./useStateHistory.tsx";
 
 const defaultOnRedirecting = (): ReactElement => <></>;
@@ -46,7 +47,7 @@ export const usePageAuthRequired = (options: WithPageAuthRequiredOptions) => {
     if (isLogoutRequested && !isRedirecting) {
       const toastControl = toast({ title: "Logging out..." });
       callRmCookieEndpoint()
-        .catch(console.error.bind(console))
+        .catch(fimidxConsoleLogger.error.bind(fimidxConsoleLogger))
         .finally(() => toastControl.dismiss())
         .then(() => {
           logout();
@@ -76,7 +77,7 @@ export const usePageAuthRequired = (options: WithPageAuthRequiredOptions) => {
       if (!pathname.includes(kAppAccountPaths.login)) {
         const toastControl = toast({ title: "Logging out..." });
         callRmCookieEndpoint()
-          .catch(console.error.bind(console))
+          .catch(fimidxConsoleLogger.error.bind(fimidxConsoleLogger))
           .finally(() => toastControl.dismiss())
           .then(() => {
             const finalLoginPath =

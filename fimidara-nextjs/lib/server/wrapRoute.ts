@@ -1,6 +1,7 @@
 import { AssertionError } from "assert";
 import { NextRequest } from "next/server";
 import { AnyFn, AnyObject } from "softkave-js-utils";
+import { fimidxConsoleLogger } from "softkave-node-utils/common";
 import { ZodError } from "zod";
 import { OwnError, OwnServerError } from "../common/error.ts";
 
@@ -43,7 +44,7 @@ export const wrapRoute =
         );
       }
 
-      console.error(error);
+      fimidxConsoleLogger.error(error);
       return Response.json(
         { message: "Internal Server Error", name: "UnknownError" },
         { status: 500 }

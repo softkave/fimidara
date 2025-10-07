@@ -3,6 +3,7 @@ import { CloudUploadOutlined } from "@ant-design/icons";
 import { getFimidaraUploadFileURL } from "fimidara";
 import { defaultTo, first } from "lodash-es";
 import React from "react";
+import { fimidxConsoleLogger } from "softkave-node-utils/common";
 import { systemConstants } from "../../lib/definitions/system";
 import { useAssertGetUser } from "../hooks/useAssertGetUser";
 import { AvatarUpload, type UploadFile } from "../internal/upload";
@@ -94,7 +95,7 @@ const UploadAvatar: React.FC<IUploadAvatarProps> = (props) => {
         throw new Error(`Upload failed with status: ${response.status}`);
       }
     } catch (error) {
-      console.error("Upload error:", error);
+      fimidxConsoleLogger.error("Upload error:", error);
       errorMessageNotificatition(null, customMessages.failed, toast);
     } finally {
       setLoading(false);

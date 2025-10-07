@@ -12,7 +12,6 @@ import {
   LockStore,
   Logger,
   PromiseStore,
-  getLogger,
 } from 'softkave-js-utils';
 import {container} from 'tsyringe';
 import {getAgentTokenModel} from '../../db/agentToken.js';
@@ -134,6 +133,7 @@ import {IEmailProviderContext} from '../email/types.js';
 import {getEmailProvider} from '../email/utils.js';
 import {FileProviderResolver} from '../file/types.js';
 import {defaultFileProviderResolver} from '../file/utils.js';
+import {getLogger} from '../logger/getLogger.js';
 import {IPubSubContext} from '../pubsub/types.js';
 import {getPubSubContext} from '../pubsub/utils.js';
 import {IQueueContext} from '../queue/types.js';

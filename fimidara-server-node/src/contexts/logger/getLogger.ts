@@ -1,6 +1,5 @@
+import {kLoggerTypes, Logger, LoggerType, NoopLogger} from 'softkave-js-utils';
 import {ConsoleLogger} from './console.js';
-import {NoopLogger} from './noop.js';
-import {Logger, LoggerType, kLoggerTypes} from './types.js';
 
 export function getLogger(type: LoggerType = kLoggerTypes.noop): Logger {
   switch (type) {
@@ -8,5 +7,7 @@ export function getLogger(type: LoggerType = kLoggerTypes.noop): Logger {
       return new ConsoleLogger();
     case kLoggerTypes.noop:
       return new NoopLogger();
+    default:
+      throw new Error(`Invalid logger type: ${type}`);
   }
 }

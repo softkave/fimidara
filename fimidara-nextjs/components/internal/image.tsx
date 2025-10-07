@@ -4,6 +4,7 @@ import assert from "assert";
 import { getFimidaraReadFileURL } from "fimidara";
 import { first } from "lodash-es";
 import React from "react";
+import { fimidxConsoleLogger } from "softkave-node-utils/common";
 import { getPublicFimidaraEndpointsUsingUserToken } from "../../lib/api/fimidaraEndpoints";
 import { systemConstants } from "../../lib/definitions/system";
 import { useKvStore } from "../../lib/hooks/kvStore";
@@ -48,7 +49,7 @@ const Image: React.FC<ImageProps> = (props) => {
   );
 
   const onError = (evt: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    console.log("Image load failed", { props, evt });
+    fimidxConsoleLogger.log("Image load failed", { props, evt });
     setImageLoadFailed(true);
   };
 

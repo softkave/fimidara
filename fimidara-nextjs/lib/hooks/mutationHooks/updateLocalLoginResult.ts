@@ -2,6 +2,7 @@ import { callSetCookieEndpoint } from "@/lib/api/account/index.ts";
 import { getPrivateFimidaraEndpoints } from "@/lib/api/fimidaraEndpoints.ts";
 import { kUserSessionStorageFns } from "@/lib/storage/UserSessionStorageFns.ts";
 import { LoginResult, RefreshUserToken } from "fimidara-private-js-sdk";
+import { fimidxConsoleLogger } from "softkave-node-utils/common";
 import { FetchSingleResourceData, FetchState } from "../fetchHooks/types.ts";
 import {
   UserSessionFetchStoreOther,
@@ -77,7 +78,7 @@ export function updateLocalLoginResult(params: {
 
     callSetCookieEndpoint({
       arg: { jwtToken, userId: user.resourceId },
-    }).catch(console.error.bind(console));
+    }).catch(fimidxConsoleLogger.error.bind(fimidxConsoleLogger));
   }
 
   useUsersStore.getState().set(user.resourceId, user);

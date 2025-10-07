@@ -257,6 +257,9 @@ importers:
       softkave-js-utils:
         specifier: ^0.10.0
         version: 0.10.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0)
+      softkave-node-utils:
+        specifier: ^0.4.0
+        version: 0.4.0(@types/lodash-es@4.17.12)(@types/node@20.19.2)(fimidx@0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(lodash-es@4.17.21)(next@15.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(softkave-js-utils@0.10.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(zod@3.25.67)
       swr:
         specifier: ^2.3.2
         version: 2.3.3(react@18.3.1)
@@ -445,6 +448,9 @@ importers:
       softkave-js-utils:
         specifier: 0.14.0
         version: 0.14.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0)
+      softkave-node-utils:
+        specifier: ^0.4.0
+        version: 0.4.0(@types/lodash-es@4.17.12)(@types/node@22.15.34)(fimidx@0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(lodash-es@4.17.21)(next@15.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(softkave-js-utils@0.14.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(zod@3.25.67)
       stripe:
         specifier: ^8.222.0
         version: 8.222.0
@@ -4588,6 +4594,10 @@ packages:
     engines: {node: '>=13'}
     hasBin: true
 
+  fimidx@0.5.0:
+    resolution: {integrity: sha512-GPQDpwaUuowHjvXeeQ8uOzssvc0j4PjinNYQBcsQihQufglOnOY9EoMSQDfh6vLvYu+f1R3r6PLNPQSIp0KEcQ==}
+    engines: {node: '>=13'}
+
   finalhandler@1.3.1:
     resolution: {integrity: sha512-6BN9trH7bp3qvnrRyzsBz+g3lZxTNZTbVO2EV1CS0WIcDbawYVdYvGflME/9QP0h0pYlCDBCTjYa9nZzMDpyxQ==}
     engines: {node: '>= 0.8'}
@@ -5234,6 +5244,7 @@ packages:
 
   libsql@0.4.7:
     resolution: {integrity: sha512-T9eIRCs6b0J1SHKYIvD8+KCJMcWZ900iZyxdnSCdqxN12Z1ijzT+jY5nrk72Jw4B0HGzms2NgpryArlJqvc3Lw==}
+    cpu: [x64, arm64, wasm32]
     os: [darwin, linux, win32]
 
   lilconfig@3.1.3:
@@ -5598,8 +5609,39 @@ packages:
       socks:
         optional: true
 
+  mongodb@6.20.0:
+    resolution: {integrity: sha512-Tl6MEIU3K4Rq3TSHd+sZQqRBoGlFsOgNrH5ltAcFBV62Re3Fd+FcaVf8uSEQFOJ51SDowDVttBTONMfoYWrWlQ==}
+    engines: {node: '>=16.20.1'}
+    peerDependencies:
+      '@aws-sdk/credential-providers': ^3.188.0
+      '@mongodb-js/zstd': ^1.1.0 || ^2.0.0
+      gcp-metadata: ^5.2.0
+      kerberos: ^2.0.1
+      mongodb-client-encryption: '>=6.0.0 <7'
+      snappy: ^7.3.2
+      socks: ^2.7.1
+    peerDependenciesMeta:
+      '@aws-sdk/credential-providers':
+        optional: true
+      '@mongodb-js/zstd':
+        optional: true
+      gcp-metadata:
+        optional: true
+      kerberos:
+        optional: true
+      mongodb-client-encryption:
+        optional: true
+      snappy:
+        optional: true
+      socks:
+        optional: true
+
   mongoose@8.15.1:
     resolution: {integrity: sha512-RhQ4DzmBi5BNGcS0w4u1vdMRIKcteXTCNzDt1j7XRcdWYBz1MjMjulBhPaeC5jBCHOD1yinuOFTTSOWLLGexWw==}
+    engines: {node: '>=16.20.1'}
+
+  mongoose@8.19.0:
+    resolution: {integrity: sha512-Z4iRiBkC7aR7a/rxQxtUAUBasFdiXkBuv3EY4NwkRbs92xKA4pwzi1Q4D+odFBe+ChahMNAYg2JP+7tWzZM0sQ==}
     engines: {node: '>=16.20.1'}
 
   mpath@0.9.0:
@@ -6561,6 +6603,18 @@ packages:
       path-browserify: ^1.0.1
       type-fest: ^4.10.2
 
+  softkave-node-utils@0.4.0:
+    resolution: {integrity: sha512-6WGOY/MeF+/MA94oOuqo/NWy7njlctj7fRAkXP2lfJuUcPEDYf0D8Hh+M5MbjsAjUnltBUSHSpEwgvUml5rJ0Q==}
+    engines: {node: '>=13'}
+    peerDependencies:
+      '@types/lodash-es': ^4.17.12
+      '@types/node': ^20
+      fimidx: ^0.5.0
+      lodash-es: ^4.17.21
+      next: 15.2.0
+      softkave-js-utils: ^0.17.1
+      zod: ^4.1.11
+
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
@@ -7108,6 +7162,10 @@ packages:
 
   uuid@11.1.0:
     resolution: {integrity: sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==}
+    hasBin: true
+
+  uuid@13.0.0:
+    resolution: {integrity: sha512-XQegIaBTVUjSHliKqcnFqYypAd4S+WCYt5NIeRs6w/UAry7z8Y9j5ZwRRL4kzq9U3sD6v+85er9FvkEaBpji2w==}
     hasBin: true
 
   uuid@9.0.1:
@@ -11684,7 +11742,7 @@ snapshots:
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(eslint@8.57.1))(eslint@8.57.1)
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.57.1)
       eslint-plugin-react: 7.37.5(eslint@8.57.1)
       eslint-plugin-react-hooks: 5.0.0-canary-7118f5dd7-20230705(eslint@8.57.1)
@@ -11726,7 +11784,7 @@ snapshots:
       tinyglobby: 0.2.14
       unrs-resolver: 1.9.2
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -11759,7 +11817,7 @@ snapshots:
       eslint-utils: 2.1.0
       regexpp: 3.2.0
 
-  eslint-plugin-import@2.32.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1):
+  eslint-plugin-import@2.32.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9
@@ -12273,6 +12331,18 @@ snapshots:
     transitivePeerDependencies:
       - debug
       - nanoid
+
+  fimidx@0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0):
+    dependencies:
+      lodash-es: 4.17.21
+      mfdoc-js-sdk-base: 0.3.1(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0)
+      softkave-js-utils: 0.17.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0)
+    transitivePeerDependencies:
+      - assert
+      - debug
+      - nanoid
+      - path-browserify
+      - type-fest
 
   finalhandler@1.3.1:
     dependencies:
@@ -13579,11 +13649,36 @@ snapshots:
       bson: 6.10.4
       mongodb-connection-string-url: 3.0.2
 
+  mongodb@6.20.0:
+    dependencies:
+      '@mongodb-js/saslprep': 1.3.0
+      bson: 6.10.4
+      mongodb-connection-string-url: 3.0.2
+
   mongoose@8.15.1:
     dependencies:
       bson: 6.10.4
       kareem: 2.6.3
       mongodb: 6.16.0
+      mpath: 0.9.0
+      mquery: 5.0.0
+      ms: 2.1.3
+      sift: 17.1.3
+    transitivePeerDependencies:
+      - '@aws-sdk/credential-providers'
+      - '@mongodb-js/zstd'
+      - gcp-metadata
+      - kerberos
+      - mongodb-client-encryption
+      - snappy
+      - socks
+      - supports-color
+
+  mongoose@8.19.0:
+    dependencies:
+      bson: 6.10.4
+      kareem: 2.6.3
+      mongodb: 6.20.0
       mpath: 0.9.0
       mquery: 5.0.0
       ms: 2.1.3
@@ -14676,6 +14771,50 @@ snapshots:
       path-browserify: 1.0.1
       type-fest: 4.41.0
 
+  softkave-node-utils@0.4.0(@types/lodash-es@4.17.12)(@types/node@20.19.2)(fimidx@0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(lodash-es@4.17.21)(next@15.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(softkave-js-utils@0.10.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(zod@3.25.67):
+    dependencies:
+      '@types/lodash-es': 4.17.12
+      '@types/node': 20.19.2
+      fimidx: 0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0)
+      jsonwebtoken: 9.0.2
+      lodash-es: 4.17.21
+      mongoose: 8.19.0
+      next: 15.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      softkave-js-utils: 0.10.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0)
+      uuid: 13.0.0
+      zod: 3.25.67
+    transitivePeerDependencies:
+      - '@aws-sdk/credential-providers'
+      - '@mongodb-js/zstd'
+      - gcp-metadata
+      - kerberos
+      - mongodb-client-encryption
+      - snappy
+      - socks
+      - supports-color
+
+  softkave-node-utils@0.4.0(@types/lodash-es@4.17.12)(@types/node@22.15.34)(fimidx@0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(lodash-es@4.17.21)(next@15.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(softkave-js-utils@0.14.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(zod@3.25.67):
+    dependencies:
+      '@types/lodash-es': 4.17.12
+      '@types/node': 22.15.34
+      fimidx: 0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0)
+      jsonwebtoken: 9.0.2
+      lodash-es: 4.17.21
+      mongoose: 8.19.0
+      next: 15.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      softkave-js-utils: 0.14.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0)
+      uuid: 13.0.0
+      zod: 3.25.67
+    transitivePeerDependencies:
+      - '@aws-sdk/credential-providers'
+      - '@mongodb-js/zstd'
+      - gcp-metadata
+      - kerberos
+      - mongodb-client-encryption
+      - snappy
+      - socks
+      - supports-color
+
   source-map-js@1.2.1: {}
 
   source-map-support@0.5.21:
@@ -15303,6 +15442,8 @@ snapshots:
   utils-merge@1.0.1: {}
 
   uuid@11.1.0: {}
+
+  uuid@13.0.0: {}
 
   uuid@9.0.1: {}
 

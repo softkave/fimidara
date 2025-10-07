@@ -2,6 +2,7 @@
 
 import { OwnError } from "@/lib/common/error.ts";
 import { useEffect } from "react";
+import { fimidxConsoleLogger } from "softkave-node-utils/common";
 
 export default function Error({
   error,
@@ -12,7 +13,7 @@ export default function Error({
 }) {
   useEffect(() => {
     // Log the error to an error reporting service
-    console.error(error);
+    fimidxConsoleLogger.error(error);
   }, [error]);
 
   const errorMessage = OwnError.isOwnError(error)

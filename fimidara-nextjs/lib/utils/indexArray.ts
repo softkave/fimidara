@@ -1,4 +1,5 @@
 import { get } from "lodash-es";
+import { fimidxConsoleLogger } from "softkave-node-utils/common";
 
 function defaultIndexer(data: any, path: any) {
   if (path) {
@@ -39,7 +40,7 @@ export function indexArray<T, R = T>(
 
   if (typeof indexer !== "function") {
     if (typeof path !== "string") {
-      console.error(
+      fimidxConsoleLogger.error(
         new Error("Path must be provided if an indexer is not provided")
       );
 

@@ -5,6 +5,7 @@ import NextAuth, { Session } from "next-auth";
 import GitHub from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
 import { NextRequest } from "next/server";
+import { fimidxNextAuthLogger } from "softkave-node-utils/common";
 import { db } from "./db/schema";
 import { systemConstants } from "./lib/definitions/system.ts";
 import { IOAuthUser } from "./lib/definitions/user.ts";
@@ -16,6 +17,7 @@ if (!internalAuthSecret) {
 }
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  logger: fimidxNextAuthLogger,
   // debug: true,
   providers: [
     Google({

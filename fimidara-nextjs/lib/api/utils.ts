@@ -2,6 +2,7 @@ import { toast } from "@/hooks/use-toast.ts";
 import { isArray, isFunction, isString } from "lodash-es";
 import { useCallback, useMemo } from "react";
 import { AnyFn, OrArray, convertToArray } from "softkave-js-utils";
+import { fimidxConsoleLogger } from "softkave-node-utils/common";
 import { Arguments, useSWRConfig } from "swr";
 
 export async function handleResponseError(res: Response) {
@@ -75,7 +76,7 @@ export function useMutationHandler<TFn extends AnyFn>(
         onSuccess.forEach((fn) => fn?.(args, res));
         return res;
       } catch (error) {
-        console.error(error);
+        fimidxConsoleLogger.error(error);
         convertToArray(opts.onError)?.forEach((fn) => fn?.(error, args));
         if (showToast) {
           toast({

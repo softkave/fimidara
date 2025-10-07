@@ -1,5 +1,6 @@
 import { cn } from "@/components/utils";
 import React from "react";
+import { fimidxConsoleLogger } from "softkave-node-utils/common";
 import PageError from "./PageError";
 
 export interface IErrorBoundaryProps {
@@ -13,8 +14,8 @@ class ErrorBoundary extends React.Component<IErrorBoundaryProps> {
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
     // TODO: log error to server
     if (process.env.NODE_ENV === "development") {
-      console.error(error);
-      console.log(errorInfo);
+      fimidxConsoleLogger.error(error);
+      fimidxConsoleLogger.log(errorInfo);
     }
     this.setState({ error, errorInfo });
   }
