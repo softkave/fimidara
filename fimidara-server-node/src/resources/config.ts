@@ -1,6 +1,6 @@
 import config from 'config';
+import {LoggerType} from 'softkave-js-utils';
 import {ValueOf} from 'type-fest';
-import {LoggerType} from '../contexts/logger/types.js';
 
 /** Added after the app initialization phase. */
 export interface FimidaraRuntimeConfig {
