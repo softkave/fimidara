@@ -19,6 +19,7 @@ export type FimidaraConfigFilePersistenceProvider = ValueOf<
 
 export const kFimidaraConfigEmailProvider = {
   ses: 'ses',
+  resend: 'resend',
   noop: 'noop',
 } as const;
 
@@ -89,6 +90,7 @@ export type FimidaraSuppliedConfig = Partial<{
   // Email
   emailProvider: FimidaraConfigEmailProvider;
   senderEmailAddress: string;
+  resendApiKey?: string;
 
   // Secrets
   secretsManagerProvider: FimidaraConfigSecretsManagerProvider;

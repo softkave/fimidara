@@ -5,6 +5,7 @@ import {
   FimidaraSuppliedConfig,
   kFimidaraConfigEmailProvider,
 } from '../../resources/config.js';
+import {ResendEmailProviderContext} from './ResendEmailProviderContext.js';
 import {SESEmailProviderContext} from './SESEmailProviderContext.js';
 
 export function getEmailProvider(config: FimidaraSuppliedConfig) {
@@ -27,6 +28,13 @@ export function getEmailProvider(config: FimidaraSuppliedConfig) {
       region,
       secretAccessKey,
     });
+  } else if (config.emailProvider === kFimidaraConfigEmailProvider.resend) {
+    assert(
+      config.resendApiKey,
+      'provide resendApiKey for Resend email provider'
+    );
+
+    return new ResendEmailProviderContext(config.resendApiKey);
   } else if (config.emailProvider === kFimidaraConfigEmailProvider.noop) {
     return new NoopEmailProviderContext();
   }
