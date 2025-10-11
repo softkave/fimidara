@@ -72,7 +72,7 @@ describe.each(
 
     if (provider === kFimidaraConfigFilePersistenceProvider.fs) {
       const testLocalFsDir = kIjxUtils.suppliedConfig().localFsDir;
-      assert(testLocalFsDir);
+      assert.ok(testLocalFsDir);
       testDir = path.normalize(
         path.resolve(testLocalFsDir) + '/' + testDirName
       );
@@ -95,7 +95,7 @@ describe.each(
     await completeTests();
 
     if (provider === kFimidaraConfigFilePersistenceProvider.fs) {
-      assert(testDir);
+      assert.ok(testDir);
       await fse.remove(testDir);
     }
   });
@@ -155,7 +155,7 @@ describe.each(
 
     if (provider === kFimidaraConfigFilePersistenceProvider.s3) {
       const s3Bucket = kIjxUtils.suppliedConfig().awsConfigs?.s3Bucket;
-      assert(s3Bucket);
+      assert.ok(s3Bucket);
       expect(internalBackend.uploadFile).toBeCalledWith({
         ...params,
         mount: {...params.mount, mountedFrom: [s3Bucket]},
@@ -253,8 +253,8 @@ describe.each(
         part: 2,
       }),
     ]);
-    assert(result01.partId);
-    assert(result02.partId);
+    assert.ok(result01.partId);
+    assert.ok(result02.partId);
     await backend.completeMultipartUpload({
       mount,
       workspaceId,
@@ -281,7 +281,7 @@ describe.each(
       mount,
       workspaceId,
     });
-    assert(savedFile.body);
+    assert.ok(savedFile.body);
     await expectFileBodyEqual(Buffer.concat([data01, data02]), savedFile.body);
   });
 
@@ -359,8 +359,8 @@ describe.each(
         part: 2,
       }),
     ]);
-    assert(result01.partId);
-    assert(result02.partId);
+    assert.ok(result01.partId);
+    assert.ok(result02.partId);
 
     await backend.deleteMultipartUploadPart({
       mount,
@@ -395,7 +395,7 @@ describe.each(
 
     if (provider === kFimidaraConfigFilePersistenceProvider.s3) {
       const s3Bucket = kIjxUtils.suppliedConfig().awsConfigs?.s3Bucket;
-      assert(s3Bucket);
+      assert.ok(s3Bucket);
       expect(internalBackend.readFile).toBeCalledWith({
         ...params,
         mount: {...params.mount, mountedFrom: [s3Bucket]},

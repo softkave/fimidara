@@ -1,12 +1,12 @@
 import {Resend} from 'resend';
 import {kFimidaraConfigEmailProvider} from '../../resources/config.js';
-import {appAssert} from '../../utils/assertion.js';
 import {kIjxUtils} from '../ijx/injectables.js';
 import {
   EmailProviderSendEmailResult,
   IEmailProviderContext,
   SendEmailParams,
 } from './types.js';
+import {appAssert} from '../../utils/assertion.js';
 
 export class ResendEmailProviderContext implements IEmailProviderContext {
   protected resend: Resend;

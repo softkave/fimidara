@@ -66,7 +66,7 @@ export async function getPermissionGroupTestExecFn(
     permissionGroupId: permissionGroupId,
   };
   const result = await endpoint.permissionGroups.getPermissionGroup(input);
-  assert(result.permissionGroup.resourceId === permissionGroupId);
+  assert.ok(result.permissionGroup.resourceId === permissionGroupId);
   return result;
 }
 

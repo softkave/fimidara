@@ -116,7 +116,7 @@ describe.skip('S3FilePersistenceProvider', () => {
       mount,
       workspaceId,
     });
-    assert(savedFile.body);
+    assert.ok(savedFile.body);
     await expectFileBodyEqual(data, savedFile.body);
   });
 
@@ -216,8 +216,8 @@ describe.skip('S3FilePersistenceProvider', () => {
         part: 2,
       }),
     ]);
-    assert(result01.partId);
-    assert(result02.partId);
+    assert.ok(result01.partId);
+    assert.ok(result02.partId);
     await backend.completeMultipartUpload({
       mount,
       workspaceId,
@@ -244,7 +244,7 @@ describe.skip('S3FilePersistenceProvider', () => {
       mount,
       workspaceId,
     });
-    assert(savedFile.body);
+    assert.ok(savedFile.body);
     await expectFileBodyEqual(Buffer.concat([data01, data02]), savedFile.body);
   });
 
@@ -310,7 +310,7 @@ describe.skip('S3FilePersistenceProvider', () => {
       fileId,
     });
 
-    assert(result.body);
+    assert.ok(result.body);
     await expectFileBodyEqual(data, result.body);
   });
 
@@ -398,7 +398,7 @@ describe.skip('S3FilePersistenceProvider', () => {
       fileId,
     });
 
-    assert(result);
+    assert.ok(result);
     expect(result.filepath).toBe(filepath);
     expect(result.mountId).toBe(mount.resourceId);
     expect(result.size).toBe(buffer.byteLength);
@@ -432,7 +432,7 @@ describe.skip('S3FilePersistenceProvider', () => {
       folderpath,
     });
 
-    assert(result);
+    assert.ok(result);
     expect(result.folderpath).toBe(folderpath);
     expect(result.mountId).toBe(mount.resourceId);
   });
@@ -589,10 +589,10 @@ function getTestAWSConfig() {
   );
   const s3Bucket = conf.awsConfigs?.s3Bucket;
 
-  assert(awsCreds?.accessKeyId);
-  assert(awsCreds?.region);
-  assert(awsCreds?.secretAccessKey);
-  assert(s3Bucket);
+  assert.ok(awsCreds?.accessKeyId);
+  assert.ok(awsCreds?.region);
+  assert.ok(awsCreds?.secretAccessKey);
+  assert.ok(s3Bucket);
 
   return {awsCreds, bucket: s3Bucket};
 }

@@ -42,7 +42,7 @@ beforeAll(async () => {
 });
 
 afterEach(() => {
-  assert(defaultFileProviderResolver);
+  assert.ok(defaultFileProviderResolver);
   kRegisterIjxUtils.fileProviderResolver(defaultFileProviderResolver);
   if (defaultSuppliedConfig) {
     kRegisterIjxUtils.suppliedConfig(defaultSuppliedConfig);

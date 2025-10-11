@@ -230,16 +230,6 @@
                         ],
                         "children": {}
                     },
-                    "getWorkspaceRequest__post": {
-                        "basename": "getWorkspaceRequest__post",
-                        "filepath": "fimidara/collaborationRequests/getWorkspaceRequest__post.json",
-                        "names": [
-                            "fimidara",
-                            "collaborationRequests",
-                            "getWorkspaceRequest__post"
-                        ],
-                        "children": {}
-                    },
                     "respondToRequest__post": {
                         "basename": "respondToRequest__post",
                         "filepath": "fimidara/collaborationRequests/respondToRequest__post.json",
@@ -249,14 +239,23 @@
                             "respondToRequest__post"
                         ],
                         "children": {}
-                    },
-                    "updateRequest__post": {
-                        "basename": "updateRequest__post",
-                        "filepath": "fimidara/collaborationRequests/updateRequest__post.json",
+                    }
+                }
+            },
+            "collaborators": {
+                "basename": "collaborators",
+                "names": [
+                    "fimidara",
+                    "collaborators"
+                ],
+                "children": {
+                    "getCollaboratorsWithoutPermission__post": {
+                        "basename": "getCollaboratorsWithoutPermission__post",
+                        "filepath": "fimidara/collaborators/getCollaboratorsWithoutPermission__post.json",
                         "names": [
                             "fimidara",
-                            "collaborationRequests",
-                            "updateRequest__post"
+                            "collaborators",
+                            "getCollaboratorsWithoutPermission__post"
                         ],
                         "children": {}
                     }

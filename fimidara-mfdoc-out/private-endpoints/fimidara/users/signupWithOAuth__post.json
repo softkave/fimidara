@@ -562,7 +562,7 @@
                                             "required": true,
                                             "data": {
                                                 "__id": "FieldString",
-                                                "description": "Workspace ID. If not provided, the user's workspace is used",
+                                                "description": "Workspace ID",
                                                 "example": "wrkspce_000000000000000000000"
                                             }
                                         }

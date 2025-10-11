@@ -6,7 +6,6 @@ import {
   kJobType,
 } from '../../../definitions/job.js';
 import {kFimidaraResourceType} from '../../../definitions/system.js';
-import {appAssert} from '../../../utils/assertion.js';
 import {getNewIdForResource} from '../../../utils/resource.js';
 import {kReuseableErrors} from '../../../utils/reusableErrors.js';
 import {NotFoundError} from '../../errors.js';
@@ -24,6 +23,7 @@ import {
 } from '../../testHelpers/utils.js';
 import deleteFileBackendConfig from './handler.js';
 import {DeleteFileBackendConfigEndpointParams} from './types.js';
+import {appAssert} from '../../../utils/assertion.js';
 
 beforeAll(async () => {
   await initTests();

@@ -49,7 +49,7 @@ test('Agent token deleted', async () => {
   const result = await deleteAgentToken(reqData);
   assertEndpointResultOk(result);
 
-  assert(result.jobId);
+  assert.ok(result.jobId);
   const job = (await kIjxSemantic.job().getOneByQuery({
     type: kJobType.deleteResource,
     resourceId: result.jobId,

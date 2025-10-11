@@ -30,9 +30,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: DrizzleAdapter(db),
   events: {
     createUser: async ({ user }) => {
-      assert(user.id, "user ID is not set");
-      assert(user.name, "user name is not set");
-      assert(user.email, "user email is not set");
+      assert.ok(user.id, "User ID is not set");
+      assert.ok(user.name, "User name is not set");
+      assert.ok(user.email, "User email is not set");
 
       const endpoint = new FimidaraEndpoints({
         serverURL: systemConstants.serverAddr,
@@ -56,11 +56,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         serverURL: systemConstants.serverAddr,
       });
 
+      assert.ok(user.name, "User name is not set");
       const res = await endpoint.users.loginWithOAuth({
         oauthUserId: user.id,
         interServerAuthSecret: internalAuthSecret,
-        // there is no need to pass the emailVerifiedAt here, because it's
-        // already set in the createUser event
+        email: user.email,
+        name: user.name,
+        emailVerifiedAt: user.emailVerified?.valueOf(),
       });
       const userData: IOAuthUser = {
         ...user,
@@ -76,17 +78,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   pages: {
     error: "/error",
   },
-  // cookies: {
-  //   pkceCodeVerifier: {
-  //     name: "next-auth.pkce.code_verifier",
-  //     options: {
-  //       httpOnly: true,
-  //       sameSite: "none",
-  //       path: "/",
-  //       secure: true,
-  //     },
-  //   },
-  // },
 });
 
 export interface NextAuthRequest extends NextRequest {

@@ -41,7 +41,7 @@ test('collaboration request deleted', async () => {
   const result = await deleteCollaborationRequest(reqData);
   assertEndpointResultOk(result);
 
-  assert(result.jobId);
+  assert.ok(result.jobId);
   const job = (await kIjxSemantic.job().getOneByQuery({
     type: kJobType.deleteResource,
     resourceId: result.jobId,

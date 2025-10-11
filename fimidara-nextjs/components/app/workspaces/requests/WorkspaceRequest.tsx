@@ -17,7 +17,7 @@ function WorkspaceRequest(props: IWorkspaceRequestProps) {
   const router = useRouter();
 
   const onCompleteDeleteRequest = useCallback(async () => {
-    assert(resource, new Error("Collaboration request not found"));
+    assert.ok(resource, new Error("Collaboration request not found"));
     router.push(kAppWorkspacePaths.requestList(resource.workspaceId));
   }, [resource, router]);
 

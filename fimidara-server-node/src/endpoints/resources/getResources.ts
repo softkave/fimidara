@@ -14,7 +14,6 @@ import {
   SessionAgent,
   kFimidaraResourceType,
 } from '../../definitions/system.js';
-import {appAssert} from '../../utils/assertion.js';
 import {ServerError} from '../../utils/errors.js';
 import {
   convertToArray,
@@ -34,6 +33,7 @@ import {getFolderpathInfo, stringifyFolderpath} from '../folders/utils.js';
 import {checkResourcesBelongsToWorkspace} from './containerCheckFns.js';
 import {resourceListWithAssignedItems} from './resourceWithAssignedItems.js';
 import {FetchResourceItem} from './types.js';
+import {appAssert} from '../../utils/assertion.js';
 
 interface ExtendedPromiseWithId<T> extends PromiseWithId<T> {
   resourceType: FimidaraResourceType;
@@ -299,7 +299,7 @@ async function fetchResourcesById(
           item.resourceType,
           resource.resourceId,
         ]);
-        assert(action, 'action is undefined');
+        assert.ok(action, 'action is undefined');
         resources.push({
           action,
           resource,
@@ -333,7 +333,7 @@ const fetchFiles = async (workspaceId: string, filepathsMap: FilePathsMap) => {
 
   return compact(result).map((item): GetResourcesResourceWrapper => {
     const action = filepathsMap[stringifyFilenamepath(item)];
-    assert(action);
+    assert.ok(action);
     return {
       action,
       resourceId: item.resourceId,
@@ -364,7 +364,7 @@ const fetchFolders = async (
 
   return compact(result).map((item): GetResourcesResourceWrapper => {
     const action = folderpathsMap[stringifyFolderpath(item)];
-    assert(action);
+    assert.ok(action);
     return {
       action,
       resourceId: item.resourceId,

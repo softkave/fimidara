@@ -562,6 +562,35 @@ export type ForgotPasswordEndpointParams = {
   email: string;
 };
 /**
+ * Parameters for getting collaborators without a specific permission.
+ */
+export type GetCollaboratorsWithoutPermissionEndpointParams = {
+  /**
+   * ID of the workspace to check collaborators in. If not provided, the user's default workspace is used.
+   * @example
+   * ```
+   * wrkspce_000000000000000000000
+   * ```
+   */
+  workspaceId?: string;
+};
+/**
+ * A list of IDs of collaborators who do not have a specific permission.
+ */
+export type GetCollaboratorsWithoutPermissionEndpointResult = {
+  /**
+   * List of IDs of collaborators who do not have the permission.
+   * @example
+   * ```json
+   * [
+   *   "user000_000000000000000000000",
+   *   "user000_000000000000000000000"
+   * ]
+   * ```
+   */
+  collaboratorIds: Array<string>;
+};
+/**
  * Parameters for retrieving details of a specific collaboration request you have received.
  */
 export type GetUserCollaborationRequestEndpointParams = {
@@ -788,150 +817,6 @@ export type GetWaitlistedUsersEndpointResult = {
   users: Array<User>;
 };
 /**
- * Parameters for retrieving details of a specific collaboration request sent from your workspace.
- */
-export type GetWorkspaceCollaborationRequestEndpointParams = {
-  /**
-   * Resource ID
-   * @example
-   * ```
-   * wrkspce_000000000000000000000
-   * ```
-   */
-  requestId: string;
-  /**
-   * Workspace ID
-   * @example
-   * ```
-   * wrkspce_000000000000000000000
-   * ```
-   */
-  workspaceId?: string;
-};
-/**
- * A collaboration request as seen by the workspace owner. Contains details about who was invited and the current status of the invitation.
- */
-export type CollaborationRequestForWorkspace = {
-  /**
-   * Resource ID
-   * @example
-   * ```
-   * wrkspce_000000000000000000000
-   * ```
-   */
-  resourceId: string;
-  /**
-   * Represents a user or system entity that performed an action (e.g., created or updated a resource)
-   */
-  createdBy: Agent;
-  /**
-   * UTC timestamp in milliseconds
-   * @example
-   * ```
-   * 1672531200000
-   * ```
-   */
-  createdAt: number;
-  /**
-   * Represents a user or system entity that performed an action (e.g., created or updated a resource)
-   */
-  lastUpdatedBy: Agent;
-  /**
-   * UTC timestamp in milliseconds
-   * @example
-   * ```
-   * 1672531200000
-   * ```
-   */
-  lastUpdatedAt: number;
-  isDeleted: boolean;
-  /**
-   * UTC timestamp in milliseconds
-   * @example
-   * ```
-   * 1672531200000
-   * ```
-   */
-  deletedAt?: number;
-  /**
-   * Represents a user or system entity that performed an action (e.g., created or updated a resource)
-   */
-  deletedBy?: Agent;
-  /**
-   * Workspace ID
-   * @example
-   * ```
-   * wrkspce_000000000000000000000
-   * ```
-   */
-  workspaceId: string;
-  /**
-   * Email address of the user you want to collaborate with. This user will receive the collaboration request and can accept or decline it.
-   * @example
-   * ```
-   * babar@fimidara.com
-   * ```
-   */
-  recipientEmail: string;
-  /**
-   * Personal message to include with the collaboration request. Use this to explain why you want to collaborate or provide context about the workspace.
-   * @example
-   * ```
-   * Hi! I would love to collaborate with you on this project. Your expertise in data analysis would be very valuable.
-   * ```
-   */
-  message: string;
-  /**
-   * Expiration date as UTC timestamp in milliseconds
-   * @example
-   * ```
-   * 1704067200000
-   * ```
-   */
-  expiresAt?: number;
-  /**
-   * Workspace name, case insensitive
-   * @example
-   * ```
-   * fimidara
-   * ```
-   */
-  workspaceName: string;
-  /**
-   * UTC timestamp in milliseconds
-   * @example
-   * ```
-   * 1672531200000
-   * ```
-   */
-  readAt?: number;
-  /**
-   * Current status of the collaboration request. Shows whether the request is pending, accepted, declined, or revoked.
-   * @example
-   * ```
-   * accepted
-   * ```
-   */
-  status: CollaborationRequestStatusType;
-  /**
-   * UTC timestamp in milliseconds
-   * @example
-   * ```
-   * 1672531200000
-   * ```
-   */
-  statusDate: number;
-};
-/**
- * Details of a specific collaboration request sent from your workspace, showing its current status and recipient information.
- */
-export type GetWorkspaceCollaborationRequestEndpointResult = {
-  /**
-   * A collaboration request as seen by the workspace owner. Contains details about who was invited and the current status of the invitation.
-   */
-  request: CollaborationRequestForWorkspace;
-};
-/**
  * Parameters for retrieving all workspaces. This endpoint requires no additional parameters.
  */
 export type GetWorkspacesEndpointParams = {};
@@ -993,6 +878,22 @@ export type LoginWithOAuthEndpointParams = {
    * ```
    */
   emailVerifiedAt?: number;
+  /**
+   * Resource name
+   * @example
+   * ```
+   * My resource name
+   * ```
+   */
+  name: string;
+  /**
+   * Email address, case insensitive
+   * @example
+   * ```
+   * my-email-address@email-domain.com
+   * ```
+   */
+  email: string;
 };
 /**
  * Refresh token to generate new access tokens
@@ -1126,53 +1027,6 @@ export type SignupWithOAuthEndpointParams = {
    * ```
    */
   interServerAuthSecret: string;
-};
-/**
- * Fields you can update in a collaboration request. You can modify the message or extend the expiration date.
- */
-export type UpdateCollaborationRequestInput = {
-  /**
-   * Personal message to include with the collaboration request. Use this to explain why you want to collaborate or provide context about the workspace.
-   * @example
-   * ```
-   * Hi! I would love to collaborate with you on this project. Your expertise in data analysis would be very valuable.
-   * ```
-   */
-  message?: string;
-  /**
-   * Expiration date as UTC timestamp in milliseconds
-   * @example
-   * ```
-   * 1704067200000
-   * ```
-   */
-  expires?: number;
-};
-/**
- * Parameters for updating an existing collaboration request. You can modify the message or extend the expiration date.
- */
-export type UpdateCollaborationRequestEndpointParams = {
-  /**
-   * Resource ID
-   * @example
-   * ```
-   * wrkspce_000000000000000000000
-   * ```
-   */
-  requestId: string;
-  /**
-   * Fields you can update in a collaboration request. You can modify the message or extend the expiration date.
-   */
-  request: UpdateCollaborationRequestInput;
-};
-/**
- * Response returned after successfully updating a collaboration request with the updated details.
- */
-export type UpdateCollaborationRequestEndpointResult = {
-  /**
-   * A collaboration request as seen by the workspace owner. Contains details about who was invited and the current status of the invitation.
-   */
-  request: CollaborationRequestForWorkspace;
 };
 /**
  * User profile fields that can be updated. All fields are optional.

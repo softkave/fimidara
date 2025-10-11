@@ -50,8 +50,8 @@ describe('getNextJob', () => {
       .withTxn(opts => markJobStarted(job, runnerId, opts));
     const dbJob = await kIjxSemantic.job().getOneById(job.resourceId);
 
-    assert(inProgressJob);
-    assert(dbJob);
+    assert.ok(inProgressJob);
+    assert.ok(dbJob);
     expect(inProgressJob).toEqual(dbJob);
     expect(dbJob.status).toBe(kJobStatus.inProgress);
     expect(dbJob.runnerId).toBe(runnerId);
@@ -208,7 +208,7 @@ describe('getNextJob', () => {
         getNextUnfinishedJob(/** empty active runner */ [], [shard], opts)
       );
 
-    assert(unfinishedJob);
+    assert.ok(unfinishedJob);
     const dbJob = await kIjxSemantic
       .job()
       .getOneById(unfinishedJob?.resourceId);
@@ -422,7 +422,7 @@ describe('getNextJob', () => {
       .utils()
       .withTxn(opts => getNextPendingJob([shard], opts));
 
-    assert(pendingJob);
+    assert.ok(pendingJob);
     const dbJob = await kIjxSemantic.job().getOneById(pendingJob?.resourceId);
     expect(dbJob?.cooldownTill).toBeTruthy();
   });
@@ -567,7 +567,7 @@ describe('getNextJob', () => {
     expect(cronJob?.runnerId).toBe(runnerId01);
 
     await completeJob(job.resourceId);
-    assert(cronJob);
+    assert.ok(cronJob);
     await confirmJobHistoryEntry(cronJob, kJobStatus.inProgress);
     await confirmJobHistoryEntry(cronJob, kJobStatus.completed);
 
@@ -578,7 +578,7 @@ describe('getNextJob', () => {
     expect(cronJob?.status).toBe(kJobStatus.inProgress);
     expect(cronJob?.runnerId).toBe(runnerId02);
 
-    assert(cronJob);
+    assert.ok(cronJob);
     await confirmJobHistoryEntry(cronJob, kJobStatus.inProgress);
   });
 });

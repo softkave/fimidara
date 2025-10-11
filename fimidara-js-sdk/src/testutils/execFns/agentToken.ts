@@ -70,7 +70,7 @@ export async function getTokenTestExecFn(
     tokenId,
   };
   const result = await endpoint.agentTokens.getToken(input);
-  assert(result.token.resourceId === tokenId);
+  assert.ok(result.token.resourceId === tokenId);
   return result;
 }
 

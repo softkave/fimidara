@@ -251,7 +251,7 @@ describe.each([
             {
               expectFn: error => {
                 expect(error).toBeInstanceOf(UsageLimitExceededError);
-                assert(error instanceof UsageLimitExceededError);
+                assert.ok(error instanceof UsageLimitExceededError);
                 expect(error.blockingCategory).toBe(fnParams.category);
                 expect(error.reqCategory).toBe(fnParams.category);
               },
@@ -324,7 +324,7 @@ describe.each([
         year,
       });
 
-      assert(dbRecord);
+      assert.ok(dbRecord);
       expect(dbRecord.resourceId).toBe(existingRecord.resourceId);
       expect(dbRecord.usage).toBe(Math.max(0, existingRecord.usage - usage));
       expect(dbRecord.usageCost).toBe(

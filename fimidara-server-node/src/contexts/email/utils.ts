@@ -16,9 +16,9 @@ export function getEmailProvider(config: FimidaraSuppliedConfig) {
       config.awsConfigs?.ses
     );
 
-    assert(accessKeyId, 'provide accessKeyId for AWS SES email provider');
-    assert(region, 'provide region for AWS SES email provider');
-    assert(
+    assert.ok(accessKeyId, 'provide accessKeyId for AWS SES email provider');
+    assert.ok(region, 'provide region for AWS SES email provider');
+    assert.ok(
       secretAccessKey,
       'provide secretAccessKey for AWS SES email provider'
     );
@@ -29,7 +29,7 @@ export function getEmailProvider(config: FimidaraSuppliedConfig) {
       secretAccessKey,
     });
   } else if (config.emailProvider === kFimidaraConfigEmailProvider.resend) {
-    assert(
+    assert.ok(
       config.resendApiKey,
       'provide resendApiKey for Resend email provider'
     );

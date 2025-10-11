@@ -29,7 +29,7 @@ function PermissionGroupComponent(props: PermissionGroupComponentProps) {
     useFetchSingleResourceFetchState(fetchState);
 
   const onCompleteDeletePermissionGroup = useCallback(async () => {
-    assert(resource, new Error("Permission group not found"));
+    assert.ok(resource, new Error("Permission group not found"));
     router.push(kAppWorkspacePaths.collaboratorList(resource.workspaceId));
   }, [router, resource]);
 

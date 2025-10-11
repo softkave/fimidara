@@ -19,7 +19,7 @@ export async function getWorkspaceTestExecFn(
   };
   const input: GetWorkspaceEndpointParams = merge(genInput, props);
   const result = await endpoint.workspaces.getWorkspace(input);
-  assert(result.workspace.resourceId === vars.workspaceId);
+  assert.ok(result.workspace.resourceId === vars.workspaceId);
   return result;
 }
 
@@ -38,6 +38,6 @@ export async function updateWorkspaceTestExecFn(
   };
   const input: UpdateWorkspaceEndpointParams = merge(genInput, props);
   const result = await endpoint.workspaces.updateWorkspace(input);
-  assert(result.workspace.name === input.workspace.name);
+  assert.ok(result.workspace.name === input.workspace.name);
   return result;
 }

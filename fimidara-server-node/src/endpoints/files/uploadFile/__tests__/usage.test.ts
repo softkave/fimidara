@@ -131,13 +131,13 @@ describe.each([{isMultipart: true}, {isMultipart: false}])(
         ]).map(category => getUsageL2(workspace.resourceId, category)),
       ]);
 
-      assert(dbBandwidthInUsageL1);
-      assert(dbStorageUsageL1);
-      assert(dbStorageEverConsumedUsageL1);
-      assert(dbBandwidthInUsageL2);
-      assert(dbStorageUsageL2);
-      assert(dbStorageEverConsumedUsageL2);
-      assert(dbTotalUsageL2);
+      assert.ok(dbBandwidthInUsageL1);
+      assert.ok(dbStorageUsageL1);
+      assert.ok(dbStorageEverConsumedUsageL1);
+      assert.ok(dbBandwidthInUsageL2);
+      assert.ok(dbStorageUsageL2);
+      assert.ok(dbStorageEverConsumedUsageL2);
+      assert.ok(dbTotalUsageL2);
 
       expect(dbBandwidthInUsageL2.usage).toBe(dbFile.size);
       expect(dbBandwidthInUsageL2.usageCost.toFixed(2)).toBe(
@@ -238,7 +238,7 @@ describe.each([{isMultipart: true}, {isMultipart: false}])(
         },
         {
           expectFn: error => {
-            assert(error instanceof Error);
+            assert.ok(error instanceof Error);
             expect(error.message).toMatch(/Usage limit exceeded/);
           },
         }
@@ -250,13 +250,13 @@ describe.each([{isMultipart: true}, {isMultipart: false}])(
           ? kIjxSemantic.usageRecord().getOneById(usageDroppedL2.resourceId)
           : undefined,
       ]);
-      assert(dbUsageL2);
+      assert.ok(dbUsageL2);
 
       expect(dbUsageL2.usage).toBe(usageL2.usage);
       expect(dbUsageL2.usageCost).toBe(usageL2.usageCost);
 
       if (category !== kUsageRecordCategory.total) {
-        assert(dbUsageDroppedL2);
+        assert.ok(dbUsageDroppedL2);
         expect(dbUsageDroppedL2.usage).toBeGreaterThanOrEqual(
           usageDroppedL2.usage
         );

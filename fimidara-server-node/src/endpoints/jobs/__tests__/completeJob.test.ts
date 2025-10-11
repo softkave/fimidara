@@ -37,8 +37,8 @@ describe('completeJob', () => {
     const completedJob = await completeJob(job.resourceId);
     const dbJob = await kIjxSemantic.job().getOneById(job.resourceId);
 
-    assert(completedJob);
-    assert(dbJob);
+    assert.ok(completedJob);
+    assert.ok(dbJob);
     expect(omit(completedJob, '_id')).toEqual(omit(dbJob, '_id'));
     expect(dbJob.status).toBe(kJobStatus.completed);
     expect(dbJob.statusLastUpdatedAt).toBeGreaterThan(job.statusLastUpdatedAt);
@@ -60,8 +60,8 @@ describe('completeJob', () => {
     const completedJob = await completeJob(job.resourceId, status);
     const dbJob = await kIjxSemantic.job().getOneById(job.resourceId);
 
-    assert(completedJob);
-    assert(dbJob);
+    assert.ok(completedJob);
+    assert.ok(dbJob);
     expect(omit(completedJob, '_id')).toEqual(omit(dbJob, '_id'));
     expect(dbJob.status).toBe(status);
     expect(dbJob.statusLastUpdatedAt).toBeGreaterThan(job.statusLastUpdatedAt);
@@ -162,7 +162,7 @@ describe('completeJob', () => {
         .getOneById(parentJob.resourceId);
       const endStatus = params.endParentStatus(status);
 
-      assert(dbParentJob);
+      assert.ok(dbParentJob);
       expect(dbParentJob.status).toBe(endStatus);
 
       await Promise.all([
@@ -255,7 +255,7 @@ describe('completeJob', () => {
         .job()
         .getOneById(parentJob.resourceId);
 
-      assert(dbParentJob);
+      assert.ok(dbParentJob);
       expect(dbParentJob.status).toBe(params.endParentStatus(status));
       expect(dbParentJob.statusLastUpdatedAt).toBeGreaterThan(
         parentJob.statusLastUpdatedAt
@@ -284,8 +284,8 @@ describe('completeJob', () => {
     const completedJob = await completeJob(job.resourceId, status);
     const dbJob = await kIjxSemantic.job().getOneById(job.resourceId);
 
-    assert(completedJob);
-    assert(dbJob);
+    assert.ok(completedJob);
+    assert.ok(dbJob);
     expect(omit(completedJob, '_id')).toEqual(omit(dbJob, '_id'));
     expect(dbJob.status).toBe(kJobStatus.pending);
     expect(dbJob.runnerId).toBeFalsy();

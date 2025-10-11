@@ -9,12 +9,12 @@ import {setupFimidaraHttpEndpoints} from './endpoints/endpoints.js';
 import {initFimidara} from './endpoints/runtime/initFimidara.js';
 import {handleErrors, handleNotFound} from './middlewares/handleErrors.js';
 import redirectHttpToHttpsExpressMiddleware from './middlewares/redirectHttpToHttps.js';
-import {appAssert} from './utils/assertion.js';
 import cors = require('cors');
 import express = require('express');
 import http = require('http');
 import https = require('https');
 import process = require('process');
+import {appAssert} from './utils/assertion.js';
 
 interface RuntimeArtifacts {
   httpServer?: http.Server;

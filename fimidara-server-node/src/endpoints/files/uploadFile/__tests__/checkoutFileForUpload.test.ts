@@ -41,12 +41,12 @@ describe('checkoutFileForUpload', () => {
         });
       });
 
-      assert(checkedFile);
+      assert.ok(checkedFile);
       expect(checkedFile.isWriteAvailable).toEqual(false);
       expect(file.resourceId).toEqual(checkedFile.resourceId);
 
       const dbFile = await kIjxSemantic.file().getOneById(file.resourceId);
-      assert(dbFile);
+      assert.ok(dbFile);
       expect(dbFile.clientMultipartId).toEqual(clientMultipartId);
       expect(dbFile.isWriteAvailable).toEqual(false);
     }
@@ -96,7 +96,7 @@ describe('checkoutFileForUpload', () => {
       });
     });
 
-    assert(checkedFile);
+    assert.ok(checkedFile);
     expect(checkedFile.clientMultipartId).toEqual(clientMultipartId);
     expect(checkedFile.isWriteAvailable).toEqual(false);
     expect(file.resourceId).toEqual(checkedFile.resourceId);
@@ -126,7 +126,7 @@ describe('checkoutFileForUpload', () => {
       });
     });
 
-    assert(checkedFile);
+    assert.ok(checkedFile);
     expect(checkedFile.clientMultipartId).toEqual(newClientMultipartId);
     expect(checkedFile.isWriteAvailable).toEqual(false);
     expect(file.resourceId).toEqual(checkedFile.resourceId);
@@ -174,7 +174,7 @@ describe('checkoutFileForUpload', () => {
       });
     });
 
-    assert(checkedFile);
+    assert.ok(checkedFile);
     expect(checkedFile.isWriteAvailable).toEqual(false);
     expect(file.resourceId).toEqual(checkedFile.resourceId);
   });

@@ -1,7 +1,6 @@
 import {isNumber} from 'lodash-es';
 import {isObjectEmpty, OmitFrom} from 'softkave-js-utils';
 import {Readable} from 'stream';
-import {appAssert} from '../../utils/assertion.js';
 import {streamToBuffer} from '../../utils/fns.js';
 import {
   FilePersistenceCleanupMultipartUploadParams,
@@ -34,6 +33,7 @@ import {
   PersistedFolderDescription,
 } from './types.js';
 import {defaultToFimidaraPath, defaultToNativePath} from './utils.js';
+import {appAssert} from '../../utils/assertion.js';
 
 type MemoryFilePersistenceProviderFile = OmitFrom<
   PersistedFileDescription,

@@ -4,11 +4,11 @@ import {kIjxSemantic, kIjxUtils} from '../../contexts/ijx/injectables.js';
 import {SemanticProviderMutationParams} from '../../contexts/semantic/types.js';
 import {App, AppShardId, AppType} from '../../definitions/app.js';
 import {kFimidaraResourceType} from '../../definitions/system.js';
-import {appAssert} from '../../utils/assertion.js';
 import {getTimestamp} from '../../utils/dateFns.js';
 import {newResource} from '../../utils/resource.js';
 import {kAppConstants} from './constants.js';
 import {getServerInfo} from './serverInfo.js';
+import {appAssert} from '../../utils/assertion.js';
 
 // type ShardedDbResourceMigrationFn = AnyFn<
 //   [

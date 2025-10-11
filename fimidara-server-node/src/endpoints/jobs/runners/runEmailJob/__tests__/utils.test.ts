@@ -21,7 +21,7 @@ describe('runEmailJob utils', () => {
       emailAddress: [user.email],
     });
 
-    assert(emailRecipient);
+    assert.ok(emailRecipient);
     expect(user.resourceId).toBe(emailRecipient.resourceId);
   });
 
@@ -32,7 +32,7 @@ describe('runEmailJob utils', () => {
       emailAddress: [],
     });
 
-    assert(emailRecipient);
+    assert.ok(emailRecipient);
     expect(user.resourceId).toBe(emailRecipient.resourceId);
   });
 

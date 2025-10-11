@@ -14,7 +14,6 @@ import {
   stringifyFolderpath,
 } from '../../endpoints/folders/utils.js';
 import {kFimidaraConfigFilePersistenceProvider} from '../../resources/config.js';
-import {appAssert} from '../../utils/assertion.js';
 import {kReuseableErrors} from '../../utils/reusableErrors.js';
 import {kIjxSemantic, kIjxUtils} from '../ijx/injectables.js';
 import {LocalFsFilePersistenceProvider} from './LocalFsFilePersistenceProvider.js';
@@ -50,6 +49,7 @@ import {
   PersistedFileDescription,
   PersistedFolderDescription,
 } from './types.js';
+import {appAssert} from '../../utils/assertion.js';
 
 /** Seeing the root folder is mounted on fimidara, when we ingest new files or
  * folders from other mounts, there's a possiblity they'll be re-fetched in
@@ -429,7 +429,7 @@ export class FimidaraFilePersistenceProvider
     TParams extends Pick<FilePersistenceDefaultParams, 'workspaceId'> & {
       fileId: string;
       filepath: string;
-    },
+    }
   >(params: TParams): TParams {
     return {
       ...params,
@@ -441,14 +441,14 @@ export class FimidaraFilePersistenceProvider
     TParams extends FilePersistenceDefaultParams & {
       fileId: string;
       filepath: string;
-    },
+    }
   >(params: TParams): TParams {
     const config = kIjxUtils.suppliedConfig();
     let mount = params.mount;
 
     if (config.fileBackend === kFimidaraConfigFilePersistenceProvider.s3) {
       const s3Bucket = config.awsConfigs?.s3Bucket;
-      assert(s3Bucket);
+      assert.ok(s3Bucket);
       mount = {...mount, mountedFrom: [s3Bucket]};
     }
 

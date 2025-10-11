@@ -58,7 +58,7 @@ describe('FWorker', () => {
       ackTimeoutMs: 1_000,
     });
 
-    assert(FWorkerMessager.isWorkerTrackedMessage(response));
+    assert.ok(FWorkerMessager.isWorkerTrackedMessage(response));
     expect(response.value).toBe(value);
   });
 

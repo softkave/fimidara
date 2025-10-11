@@ -11,7 +11,7 @@ import {queueJobs} from '../queueJobs.js';
 import {setJobMeta02} from './utils.js';
 
 export async function runNewSignupsOnWaitlistJob(job: Job) {
-  assert(
+  assert.ok(
     job.type === kJobType.newSignupsOnWaitlist,
     `Invalid job type ${job.type}`
   );
@@ -29,7 +29,7 @@ export async function runNewSignupsOnWaitlistJob(job: Job) {
 
   if (newSignupsCount > 0) {
     const {rootUserEmail} = kIjxUtils.suppliedConfig();
-    assert(rootUserEmail, 'rootUserEmail not present in config');
+    assert.ok(rootUserEmail, 'rootUserEmail not present in config');
 
     await queueJobs<EmailJobParams>(
       /** workspace ID */ undefined,

@@ -6,11 +6,11 @@ import {
   Job,
   kJobType,
 } from '../../../definitions/job.js';
-import {appAssert} from '../../../utils/assertion.js';
 import {JobInput, queueJobs} from '../queueJobs.js';
+import {appAssert} from '../../../utils/assertion.js';
 
 export async function runIngestMountJob(job: Job) {
-  assert(job.type === kJobType.ingestMount);
+  assert.ok(job.type === kJobType.ingestMount);
   appAssert(job.workspaceId, 'workspaceId not present in job');
 
   const mount = await kIjxSemantic

@@ -118,8 +118,9 @@ export async function getPublicAgentToken(
   shouldEncode: boolean
 ) {
   if (shouldEncode) {
-    const {jwtTokenExpiresAt, refreshToken, jwtToken} =
-      await encodeAgentToken(token);
+    const {jwtTokenExpiresAt, refreshToken, jwtToken} = await encodeAgentToken(
+      token
+    );
 
     cast<PublicAgentToken>(token).jwtToken = jwtToken;
     cast<PublicAgentToken>(token).refreshToken = refreshToken;

@@ -21,7 +21,7 @@ afterAll(async () => {
   await completeTests();
   await Promise.all(
     secretIds.map(async secretId => {
-      assert(manager);
+      assert.ok(manager);
       await manager.deleteSecret({secretId});
     })
   );
@@ -29,7 +29,7 @@ afterAll(async () => {
 
 describe.skip('AWSSecretsManagerProvider', () => {
   test('addSecret', async () => {
-    assert(manager);
+    assert.ok(manager);
     const name = faker.lorem.word();
     const secret = Math.random().toString();
 
@@ -42,7 +42,7 @@ describe.skip('AWSSecretsManagerProvider', () => {
   });
 
   test('updateSecret', async () => {
-    assert(manager);
+    assert.ok(manager);
     const name = faker.lorem.word();
     const secret = Math.random().toString();
     const {secretId} = await manager.addSecret({name, text: secret});
@@ -56,7 +56,7 @@ describe.skip('AWSSecretsManagerProvider', () => {
   });
 
   test('deleteSecret', async () => {
-    assert(manager);
+    assert.ok(manager);
     const name = faker.lorem.word();
     const secret = Math.random().toString();
     const {secretId} = await manager.addSecret({name, text: secret});
@@ -65,13 +65,13 @@ describe.skip('AWSSecretsManagerProvider', () => {
     await manager.deleteSecret({secretId});
 
     await expectErrorThrown(async () => {
-      assert(manager);
+      assert.ok(manager);
       await manager.getSecret({secretId});
     });
   });
 
   test('getSecret', async () => {
-    assert(manager);
+    assert.ok(manager);
     const name = faker.lorem.word();
     const secret = Math.random().toString();
     const {secretId} = await manager.addSecret({name, text: secret});
@@ -92,10 +92,10 @@ function getTestAWSConfig() {
   );
   const s3Bucket = conf.awsConfigs?.s3Bucket;
 
-  assert(awsCreds?.accessKeyId);
-  assert(awsCreds?.region);
-  assert(awsCreds?.secretAccessKey);
-  assert(s3Bucket);
+  assert.ok(awsCreds?.accessKeyId);
+  assert.ok(awsCreds?.region);
+  assert.ok(awsCreds?.secretAccessKey);
+  assert.ok(s3Bucket);
 
   return {awsCreds, bucket: s3Bucket};
 }

@@ -6,7 +6,6 @@ import {
   UpdateSecretCommand,
 } from '@aws-sdk/client-secrets-manager';
 import {AWSConfig} from '../../resources/config.js';
-import {appAssert} from '../../utils/assertion.js';
 import {
   SecretsManagerProvider,
   SecretsManagerProviderAddSecretParams,
@@ -16,6 +15,7 @@ import {
   SecretsManagerProviderGetSecretResult,
   SecretsManagerProviderUpdateSecretParams,
 } from './types.js';
+import {appAssert} from '../../utils/assertion.js';
 
 export class AWSSecretsManagerProvider implements SecretsManagerProvider {
   protected client: SecretsManagerClient;

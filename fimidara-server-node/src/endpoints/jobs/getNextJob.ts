@@ -14,10 +14,10 @@ import {
 } from '../../definitions/job.js';
 import {JobHistory} from '../../definitions/jobHistory.js';
 import {kFimidaraResourceType} from '../../definitions/system.js';
-import {appAssert} from '../../utils/assertion.js';
 import {getTimestamp} from '../../utils/dateFns.js';
 import {newResource} from '../../utils/resource.js';
 import {AnyFn} from '../../utils/types.js';
+import {appAssert} from '../../utils/assertion.js';
 
 export const kJobDefaultCooldownDuration = 5 * 60 * 1_000; // 5 minutes
 let cooldownDuration = kJobDefaultCooldownDuration;
@@ -67,18 +67,15 @@ export async function areJobRunConditionsSatisfied(
     return true;
   }
 
-  const runAfterByJobId = job.runAfter.reduce(
-    (acc, condition) => {
-      if (acc[condition.jobId]) {
-        acc[condition.jobId].push(condition);
-      } else {
-        acc[condition.jobId] = [condition];
-      }
+  const runAfterByJobId = job.runAfter.reduce((acc, condition) => {
+    if (acc[condition.jobId]) {
+      acc[condition.jobId].push(condition);
+    } else {
+      acc[condition.jobId] = [condition];
+    }
 
-      return acc;
-    },
-    {} as Record<string, RunAfterJobItem[]>
-  );
+    return acc;
+  }, {} as Record<string, RunAfterJobItem[]>);
 
   const runAfterJobIds = Object.keys(runAfterByJobId);
   const runAfterJobs = await kIjxSemantic

@@ -533,7 +533,7 @@ const readFileSdkParams = mfdocConstruct.constructSdkParamsBody<
 const uploadMultipartWithAuthOptionalHeaderFields =
   mfdocEndpointHttpHeaderItems.requestHeaders_AuthOptional_MultipartContentType
     .fields;
-assert(uploadMultipartWithAuthOptionalHeaderFields);
+assert.ok(uploadMultipartWithAuthOptionalHeaderFields);
 const uploadFileEndpointHTTPHeaders =
   mfdocConstruct.constructObject<UploadFileEndpointHTTPHeaders>({
     name: 'UploadFileEndpointHTTPHeaders',

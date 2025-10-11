@@ -25,6 +25,24 @@
                     "description": "UTC timestamp in milliseconds",
                     "example": 1672531200000
                 }
+            },
+            "name": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Resource name",
+                    "example": "My resource name"
+                }
+            },
+            "email": {
+                "__id": "FieldObjectField",
+                "required": true,
+                "data": {
+                    "__id": "FieldString",
+                    "description": "Email address, case insensitive",
+                    "example": "my-email-address@email-domain.com"
+                }
             }
         }
     },
@@ -61,6 +79,24 @@
                         "__id": "FieldNumber",
                         "description": "UTC timestamp in milliseconds",
                         "example": 1672531200000
+                    }
+                },
+                "name": {
+                    "__id": "FieldObjectField",
+                    "required": true,
+                    "data": {
+                        "__id": "FieldString",
+                        "description": "Resource name",
+                        "example": "My resource name"
+                    }
+                },
+                "email": {
+                    "__id": "FieldObjectField",
+                    "required": true,
+                    "data": {
+                        "__id": "FieldString",
+                        "description": "Email address, case insensitive",
+                        "example": "my-email-address@email-domain.com"
                     }
                 }
             }
@@ -526,7 +562,7 @@
                                             "required": true,
                                             "data": {
                                                 "__id": "FieldString",
-                                                "description": "Workspace ID. If not provided, the user's workspace is used",
+                                                "description": "Workspace ID",
                                                 "example": "wrkspce_000000000000000000000"
                                             }
                                         }

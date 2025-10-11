@@ -17,7 +17,7 @@ describe('compiledDefinitions', () => {
       }
 
       childrenTypes.forEach(childType => {
-        assert(
+        assert.ok(
           def.deleteArtifacts[childType] || def.getArtifactsToDelete[childType],
           `${childType} not found in delete or get artifacts for ${type}`
         );

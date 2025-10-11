@@ -698,7 +698,7 @@ describe('checkAuthorization', () => {
       ),
     ]);
 
-    assert(user02.isEmailVerified === false);
+    assert.ok(user02.isEmailVerified === false);
     await expectErrorThrown(async () => {
       await checkAuthorizationWithAgent({
         agent: user02SessionAgent,
@@ -747,7 +747,7 @@ describe('checkAuthorization', () => {
       workspace: rawWorkspace,
     });
 
-    assert(resolveResult.access === kResolvedTargetChildrenAccess.full);
+    assert.ok(resolveResult.access === kResolvedTargetChildrenAccess.full);
     expect(resolveResult.item).toBeTruthy();
     expect(resolveResult.partialDenyIds.length).toBe(0);
     expect(resolveResult.partialDenyItems.length).toBe(0);
@@ -797,10 +797,10 @@ describe('checkAuthorization', () => {
       workspace: rawWorkspace,
     });
 
-    assert(resolveResult01.access === kResolvedTargetChildrenAccess.deny);
+    assert.ok(resolveResult01.access === kResolvedTargetChildrenAccess.deny);
     expect(resolveResult01.item).toBeTruthy();
 
-    assert(resolveResult02.access === kResolvedTargetChildrenAccess.partial);
+    assert.ok(resolveResult02.access === kResolvedTargetChildrenAccess.partial);
     expect(resolveResult02.item).toBeFalsy();
     expect(resolveResult02.partialAllowIds.length).toBe(0);
     expect(resolveResult02.partialAllowItems.length).toBe(0);
@@ -853,7 +853,7 @@ describe('checkAuthorization', () => {
       workspace: rawWorkspace,
     });
 
-    assert(resolveResult.access === kResolvedTargetChildrenAccess.partial);
+    assert.ok(resolveResult.access === kResolvedTargetChildrenAccess.partial);
     expect(resolveResult.item).toBeFalsy();
     expect(resolveResult.partialAllowIds?.length).toBe(1);
     expect(resolveResult.partialAllowItems?.length).toBe(1);
@@ -904,7 +904,7 @@ describe('checkAuthorization', () => {
     });
 
     expect(resolveResult.access).toBe(kResolvedTargetChildrenAccess.partial);
-    assert(resolveResult.access === kResolvedTargetChildrenAccess.partial);
+    assert.ok(resolveResult.access === kResolvedTargetChildrenAccess.partial);
     expect(resolveResult.item).toBeFalsy();
     expect(resolveResult.partialAllowIds?.length).toBe(1);
     expect(resolveResult.partialAllowItems?.length).toBe(1);
@@ -958,7 +958,7 @@ describe('checkAuthorization', () => {
       workspace: rawWorkspace,
     });
 
-    assert(resolveResult.access === kResolvedTargetChildrenAccess.full);
+    assert.ok(resolveResult.access === kResolvedTargetChildrenAccess.full);
     expect(resolveResult.item).toBeTruthy();
     expect(resolveResult.partialDenyIds?.length).toBe(1);
     expect(resolveResult.partialDenyItems?.length).toBe(1);

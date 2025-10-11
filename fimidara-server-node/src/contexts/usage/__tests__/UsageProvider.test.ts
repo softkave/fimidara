@@ -108,8 +108,8 @@ async function expectUsageDropped(props: {
       }),
     ]);
 
-  assert(usageL1);
-  assert(usageDroppedL2);
+  assert.ok(usageL1);
+  assert.ok(usageDroppedL2);
 
   const usageCost = getCostForUsage(category, usage);
 
@@ -180,9 +180,9 @@ async function expectUsageFulfilled(props: {
     }),
   ]);
 
-  assert(usageL1);
-  assert(usageL2);
-  assert(usageTotal);
+  assert.ok(usageL1);
+  assert.ok(usageL2);
+  assert.ok(usageTotal);
 
   const usageCost = getCostForUsage(category, usage);
   const fulfillmentStatus = kUsageRecordFulfillmentStatus.fulfilled;
@@ -258,7 +258,7 @@ describe.each(usageWithoutTotalList)(
           usage,
         });
 
-        assert(result.permitted);
+        assert.ok(result.permitted);
 
         const {month, year} = getUsageRecordReportingPeriod();
         await waitUntilUsageIsCommitted();
@@ -303,7 +303,7 @@ describe.each(usageWithoutTotalList)(
               usage,
             });
 
-          assert(result.permitted === false);
+          assert.ok(result.permitted === false);
           expect(result.reason).toBe(kUsageRecordDropReason.exceedsUsage);
           expect(result.category).toBe(exceededCategory);
 
@@ -341,7 +341,7 @@ describe.each(usageWithoutTotalList)(
           usage,
         });
 
-        assert(result.permitted === false);
+        assert.ok(result.permitted === false);
         expect(result.reason).toBe(kUsageRecordDropReason.billOverdue);
         expect(result.category).toBe(undefined);
 
@@ -395,7 +395,7 @@ describe.each(usageWithoutTotalList)(
             });
 
           if (exceededCategory === kUsageRecordCategory.storage) {
-            assert(result.permitted === false);
+            assert.ok(result.permitted === false);
             expect(result.reason).toBe(kUsageRecordDropReason.exceedsUsage);
             expect(result.category).toBe(exceededCategory);
 
@@ -411,10 +411,10 @@ describe.each(usageWithoutTotalList)(
               year,
             });
 
-            assert(usageFulfilledL2);
+            assert.ok(usageFulfilledL2);
             expect(usageFulfilledL2.persistent).toBeTruthy();
           } else {
-            assert(result.permitted);
+            assert.ok(result.permitted);
             await waitUntilUsageIsCommitted();
             await expectUsageFulfilled({
               workspace,
@@ -471,7 +471,7 @@ describe.each(usageWithoutTotalList)(
             year,
           });
 
-          assert(dbRecord);
+          assert.ok(dbRecord);
 
           if (existingRecord) {
             expect(dbRecord.resourceId).toBe(existingRecord.resourceId);

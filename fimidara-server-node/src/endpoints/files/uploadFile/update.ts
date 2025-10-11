@@ -4,13 +4,13 @@ import {kIjxSemantic} from '../../../contexts/ijx/injectables.js';
 import {SemanticProviderMutationParams} from '../../../contexts/semantic/types.js';
 import {File} from '../../../definitions/file.js';
 import {Agent, SessionAgent} from '../../../definitions/system.js';
-import {appAssert} from '../../../utils/assertion.js';
 import {getTimestamp} from '../../../utils/dateFns.js';
 import {mergeData} from '../../../utils/fns.js';
 import {getActionAgentFromSessionAgent} from '../../../utils/sessionUtils.js';
 import {getCleanupMultipartFileUpdate} from '../deleteFile/deleteMultipartUpload.js';
 import {writeFileParts} from '../utils/filePart.js';
 import {getNextMultipartTimeout} from '../utils/getNextMultipartTimeout.js';
+import {appAssert} from '../../../utils/assertion.js';
 
 export async function setFileWritable(fileId: string) {
   await kIjxSemantic.utils().withTxn(async opts => {

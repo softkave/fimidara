@@ -233,7 +233,7 @@ describe('getPresignedPathsForFiles', () => {
     // not exist yet
     await expectErrorThrown(async () => {
       const spentPath = first(pathsWithUsageCount);
-      assert(spentPath);
+      assert.ok(spentPath);
       await tryReadFile(spentPath);
     });
 

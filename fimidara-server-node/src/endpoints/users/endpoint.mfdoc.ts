@@ -223,6 +223,14 @@ const loginWithOAuthParams =
         required: false,
         data: fReusables.date,
       }),
+      name: mfdocConstruct.constructObjectField({
+        required: true,
+        data: fReusables.name,
+      }),
+      email: mfdocConstruct.constructObjectField({
+        required: true,
+        data: fReusables.emailAddress,
+      }),
     },
   });
 
@@ -446,6 +454,14 @@ const loginWithOAuthSdkParamsDef = mfdocConstruct.constructObject<
     emailVerifiedAt: mfdocConstruct.constructObjectField({
       required: false,
       data: fReusables.date,
+    }),
+    name: mfdocConstruct.constructObjectField({
+      required: true,
+      data: fReusables.name,
+    }),
+    email: mfdocConstruct.constructObjectField({
+      required: true,
+      data: fReusables.emailAddress,
     }),
   },
 });

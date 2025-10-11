@@ -43,7 +43,7 @@ export class FWorker extends FWorkerMessager implements DisposableResource {
   }
 
   getWorkerData(): ReadonlyDeep<FWorkerData> {
-    assert(FWorker.isWorkerData(workerData));
+    assert.ok(FWorker.isWorkerData(workerData));
     return workerData;
   }
 

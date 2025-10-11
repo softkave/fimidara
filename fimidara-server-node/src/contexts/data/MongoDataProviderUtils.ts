@@ -2,10 +2,10 @@ import {ClientSession} from 'mongoose';
 import {AnyObject} from 'softkave-js-utils';
 import {isMongoClientSession, isMongoConnection} from '../../db/connection.js';
 import mongoConstants from '../../db/constants.js';
-import {appAssert} from '../../utils/assertion.js';
 import {AnyFn} from '../../utils/types.js';
 import {kIjxUtils} from '../ijx/injectables.js';
 import {DataProviderUtils} from './types.js';
+import {appAssert} from '../../utils/assertion.js';
 
 export class MongoDataProviderUtils implements DataProviderUtils {
   async withTxn<TResult>(

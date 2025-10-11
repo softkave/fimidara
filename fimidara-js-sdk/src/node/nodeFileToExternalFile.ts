@@ -24,7 +24,7 @@ export async function nodeFileToExternalFile(props: {
     : df
     ? path.join(df.parentPath, df.name)
     : undefined;
-  assert(fp, 'nodeFileToExternalFile requires dirent or filepath');
+  assert.ok(fp, 'nodeFileToExternalFile requires dirent or filepath');
 
   const stats = await stat(fp);
   return {

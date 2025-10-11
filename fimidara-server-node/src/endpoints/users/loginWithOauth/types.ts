@@ -4,6 +4,8 @@ import {LoginResult} from '../login/types.js';
 export interface LoginWithOAuthEndpointParams {
   oauthUserId: string;
   emailVerifiedAt?: number;
+  name: string;
+  email: string;
 }
 
 export type LoginWithOAuthEndpoint = Endpoint<

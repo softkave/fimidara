@@ -12,7 +12,7 @@ export function makeGetAccessor<T, K extends keyof T>(obj: T, k: K) {
 export function makeAssertGetAccessor<T, K extends keyof T>(obj: T, k: K) {
   return () => {
     const v = obj[k];
-    assert(v, `${k.toString()} is not present`);
+    assert.ok(v, `${k.toString()} is not present`);
     return v as NonNullable<T[K]>;
   };
 }

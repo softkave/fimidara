@@ -3,7 +3,6 @@ import {isString} from 'lodash-es';
 import {afterEach, beforeEach, describe, expect, test} from 'vitest';
 import {kIjxSemantic, kIjxUtils} from '../../../contexts/ijx/injectables.js';
 import {kRegisterIjxUtils} from '../../../contexts/ijx/register.js';
-import {appAssert} from '../../../utils/assertion.js';
 import RequestData from '../../RequestData.js';
 import TestFimidaraFilePersistenceProviderContext from '../../testHelpers/context/file/TestFimidaraFilePersistenceProviderContext.js';
 import {
@@ -24,6 +23,7 @@ import {stringifyFilenamepath} from '../utils.js';
 import {getNextMultipartTimeout} from '../utils/getNextMultipartTimeout.js';
 import startMultipartUpload from './handler.js';
 import {StartMultipartUploadEndpointParams} from './types.js';
+import {appAssert} from '../../../utils/assertion.js';
 
 beforeEach(async () => {
   await initTests();

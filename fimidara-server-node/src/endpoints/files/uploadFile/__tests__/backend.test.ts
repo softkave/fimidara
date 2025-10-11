@@ -29,7 +29,7 @@ beforeAll(async () => {
 });
 
 afterEach(() => {
-  assert(defaultFileProviderResolver);
+  assert.ok(defaultFileProviderResolver);
   kRegisterIjxUtils.fileProviderResolver(defaultFileProviderResolver);
   if (defaultSuppliedConfig) {
     kRegisterIjxUtils.suppliedConfig(defaultSuppliedConfig);
@@ -99,8 +99,8 @@ describe.each([{isMultipart: true}, {isMultipart: false}])(
         filepath: stringifyFilenamepath(resFile),
       });
 
-      assert(persistedFile);
-      assert(dataBuffer);
+      assert.ok(persistedFile);
+      assert.ok(dataBuffer);
       expect(fartherMountPersistedFile).toBeFalsy();
       await expectFileBodyEqual(persistedFile.body, dataBuffer);
 
@@ -165,8 +165,8 @@ describe.each([{isMultipart: true}, {isMultipart: false}])(
         filepath: stringifyFilenamepath(resFile),
       });
 
-      assert(persistedFile);
-      assert(dataBuffer);
+      assert.ok(persistedFile);
+      assert.ok(dataBuffer);
       expect(fartherMountPersistedFile).toBeFalsy();
       await expectFileBodyEqual(dataBuffer, persistedFile.body);
     });

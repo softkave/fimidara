@@ -34,7 +34,7 @@ function assertMatchTree(
   actualFilenames: string[]
 ) {
   if (matchTree) {
-    assert(existingFilenames);
+    assert.ok(existingFilenames);
     expect(actualFilenames).not.toEqual(
       expect.arrayContaining(existingFilenames)
     );

@@ -98,7 +98,7 @@ describe('resolveMounts', () => {
             matcher: params => !!params.fileId,
             generator: async params => {
               const file = await kIjxSemantic.file().getOneById(params.fileId!);
-              assert(file);
+              assert.ok(file);
               return {namepath: file.namepath.slice(0, -1)};
             },
           },
@@ -108,7 +108,7 @@ describe('resolveMounts', () => {
               const folder = await kIjxSemantic
                 .folder()
                 .getOneById(params.folderId!);
-              assert(folder);
+              assert.ok(folder);
               return {namepath: folder.namepath};
             },
           },
@@ -131,7 +131,7 @@ describe('resolveMounts', () => {
         workspaceId: workspace.resourceId,
         ...seed,
       });
-      assert(seed?.namepath);
+      assert.ok(seed?.namepath);
 
       const reqData =
         RequestData.fromExpressRequest<ResolveFileBackendMountsEndpointParams>(
@@ -144,7 +144,7 @@ describe('resolveMounts', () => {
       await matchExpects<
         [
           ResolveFileBackendMountsEndpointParams,
-          ResolveFileBackendMountsEndpointResult,
+          ResolveFileBackendMountsEndpointResult
         ]
       >(
         [

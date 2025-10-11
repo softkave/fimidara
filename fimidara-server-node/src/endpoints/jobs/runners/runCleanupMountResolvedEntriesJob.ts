@@ -5,7 +5,7 @@ import {Job, kJobType} from '../../../definitions/job.js';
 export async function runCleanupMountResolvedEntriesJob(
   job: Pick<Job, 'params' | 'type'>
 ) {
-  assert(job.type === kJobType.cleanupMountResolvedEntries);
+  assert.ok(job.type === kJobType.cleanupMountResolvedEntries);
 
   await kIjxSemantic.utils().withTxn(async opts => {
     await kIjxSemantic

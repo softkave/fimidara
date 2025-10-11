@@ -1,15 +1,17 @@
 {
     "__id": "HttpEndpointDefinition",
-    "path": "/v1/workspaces/deleteWorkspace",
-    "method": "delete",
+    "path": "/v1/collaborators/getCollaboratorsWithoutPermission",
+    "method": "post",
     "requestBody": {
         "__id": "FieldObject",
-        "name": "DeleteWorkspaceEndpointParams",
-        "description": "Parameters for deleting a workspace. If workspaceId is not provided, deletes the current user's default workspace",
+        "name": "GetCollaboratorsWithoutPermissionEndpointParams",
+        "description": "Parameters for getting collaborators without a specific permission.",
         "fields": {
             "workspaceId": {
                 "__id": "FieldObjectField",
                 "required": false,
+                "description": "ID of the workspace to check collaborators in. If not provided, the user's default workspace is used.",
+                "example": "wrkspce_000000000000000000000",
                 "data": {
                     "__id": "FieldString",
                     "description": "Workspace ID",
@@ -68,22 +70,31 @@
     },
     "responseBody": {
         "__id": "FieldObject",
-        "name": "LongRunningJobResult",
-        "description": "Response for operations that run asynchronously in the background",
+        "name": "GetCollaboratorsWithoutPermissionEndpointResult",
+        "description": "A list of IDs of collaborators who do not have a specific permission.",
         "fields": {
-            "jobId": {
+            "collaboratorIds": {
                 "__id": "FieldObjectField",
-                "required": false,
+                "required": true,
+                "description": "List of IDs of collaborators who do not have the permission.",
                 "data": {
-                    "__id": "FieldString",
-                    "description": "Long-running job ID",
-                    "example": "job0000_000000000000000000000"
+                    "__id": "FieldArray",
+                    "type": {
+                        "__id": "FieldString",
+                        "description": "Resource ID",
+                        "example": "wrkspce_000000000000000000000"
+                    },
+                    "description": "Array of collaborator IDs.",
+                    "example": [
+                        "user000_000000000000000000000",
+                        "user000_000000000000000000000"
+                    ]
                 }
             }
         }
     },
-    "name": "fimidara/workspaces/deleteWorkspace",
-    "description": "Delete a workspace and all its contents. This is a long-running operation that cannot be undone",
+    "name": "fimidara/collaborators/getCollaboratorsWithoutPermission",
+    "description": "Get a list of collaborator IDs who do not have a specific permission in the workspace. This is an internal endpoint used for permission management and bulk operations. Returns only collaborator IDs, not full collaborator details.",
     "tags": [
         "private"
     ],

@@ -22,7 +22,7 @@ export function assertErrorHasName(
     `${missingTypes.join(', ')} not found in \n${format(error)}`
   );
 
-  assert(missingTypes.length === 0, missingError);
+  assert.ok(missingTypes.length === 0, missingError);
 }
 
 export async function expectErrorThrown(
@@ -38,7 +38,7 @@ export async function expectErrorThrown(
       const assertionResult = expected(error);
 
       if (!isUndefined(assertionResult)) {
-        assert(
+        assert.ok(
           assertionResult,
           isObject(assertionResult) ? assertionResult : 'Expectation not met'
         );

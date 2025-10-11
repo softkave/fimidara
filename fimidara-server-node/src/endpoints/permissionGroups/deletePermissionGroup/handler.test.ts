@@ -7,7 +7,6 @@ import {
 } from '../../../definitions/job.js';
 import {PermissionGroupMatcher} from '../../../definitions/permissionGroups.js';
 import {kFimidaraResourceType} from '../../../definitions/system.js';
-import {appAssert} from '../../../utils/assertion.js';
 import RequestData from '../../RequestData.js';
 import {completeTests} from '../../testHelpers/helpers/testFns.js';
 import {
@@ -19,6 +18,7 @@ import {
   mockExpressRequestWithAgentToken,
 } from '../../testHelpers/utils.js';
 import deletePermissionGroup from './handler.js';
+import {appAssert} from '../../../utils/assertion.js';
 
 beforeAll(async () => {
   await initTests();

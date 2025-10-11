@@ -22,7 +22,6 @@ import {
   PermissionDeniedError,
 } from '../endpoints/users/errors.js';
 import {kPublicSessionAgent, kSystemSessionAgent} from '../utils/agent.js';
-import {appAssert} from '../utils/assertion.js';
 import {ServerError} from '../utils/errors.js';
 import {cast, convertToArray} from '../utils/fns.js';
 import {indexArray} from '../utils/indexArray.js';
@@ -32,6 +31,7 @@ import {
   makeWorkspaceAgentTokenAgent,
 } from '../utils/sessionUtils.js';
 import {kIjxSemantic, kIjxUtils} from './ijx/injectables.js';
+import {appAssert} from '../utils/assertion.js';
 
 export const kSessionUtils = {
   permittedAgentTypes: {

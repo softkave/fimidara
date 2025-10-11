@@ -195,7 +195,7 @@ const getPresignedPathsForFilesResponseBody =
 const uploadMultipartWithAuthOptionalHeaderFields =
   mfdocEndpointHttpHeaderItems.requestHeaders_AuthOptional_MultipartContentType
     .fields;
-assert(uploadMultipartWithAuthOptionalHeaderFields);
+assert.ok(uploadMultipartWithAuthOptionalHeaderFields);
 
 export const issuePresignedPathEndpointDefinition =
   mfdocConstruct.constructHttpEndpointDefinition<

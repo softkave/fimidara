@@ -91,7 +91,7 @@ describe('updateMount', () => {
       const updatedMount = await kIjxSemantic
         .fileBackendMount()
         .getOneById(result.mount.resourceId);
-      assert(updatedMount);
+      assert.ok(updatedMount);
 
       await matchExpects<
         [UpdateFileBackendMountInput, UpdateFileBackendMountEndpointResult]
@@ -107,7 +107,7 @@ describe('updateMount', () => {
           {
             matcher: input => !!input.folderpath,
             expect: async (input, result) => {
-              assert(input.folderpath);
+              assert.ok(input.folderpath);
               const {namepath} = getFolderpathInfo(input.folderpath, {
                 containsRootname: true,
                 allowRootFolder: false,

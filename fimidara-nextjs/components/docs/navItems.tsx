@@ -88,7 +88,7 @@ function extractRestApiFromRawTableOfContent(
     rootKey === kDocNavRootKeysMap.restApi
       ? kAppDocPaths.fimidaraRestApiDoc
       : undefined;
-  assert(pFn);
+  assert.ok(pFn);
 
   function processTableOfContent(
     toc: MfdocEndpointsTableOfContent,

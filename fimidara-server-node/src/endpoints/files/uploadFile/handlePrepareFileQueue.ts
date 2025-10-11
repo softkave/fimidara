@@ -6,7 +6,6 @@ import {kUsageProviderConstants} from '../../../contexts/usage/constants.js';
 import {File} from '../../../definitions/file.js';
 import {SessionAgent} from '../../../definitions/system.js';
 import {Workspace} from '../../../definitions/workspace.js';
-import {appAssert} from '../../../utils/assertion.js';
 import {ValidationError} from '../../../utils/errors.js';
 import {
   singleItemHandleShardQueue,
@@ -31,6 +30,7 @@ import {
   UploadFileEndpointParams,
 } from './types.js';
 import {tryGetFile} from './utils.js';
+import {appAssert} from '../../../utils/assertion.js';
 
 async function createAndInsertNewFile(params: {
   agent: SessionAgent;

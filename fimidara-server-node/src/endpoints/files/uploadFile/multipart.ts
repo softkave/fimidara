@@ -3,9 +3,9 @@ import {FilePersistenceProvider} from '../../../contexts/file/types.js';
 import {kIjxSemantic, kIjxUtils} from '../../../contexts/ijx/injectables.js';
 import {File, FileWithRuntimeData} from '../../../definitions/file.js';
 import {FileBackendMount} from '../../../definitions/fileBackend.js';
-import {appAssert} from '../../../utils/assertion.js';
 import {deleteMultipartUpload} from '../deleteFile/deleteMultipartUpload.js';
 import {completeFileUpload} from './completeFileUpload.js';
+import {appAssert} from '../../../utils/assertion.js';
 
 export async function beginCleanupExpiredMultipartUpload(file: File) {
   appAssert(isString(file.internalMultipartId));

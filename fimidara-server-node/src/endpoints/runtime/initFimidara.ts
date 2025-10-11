@@ -77,10 +77,10 @@ async function setupDefaultUser() {
   const {user, userToken} = await kIjxSemantic.utils().withTxn(async opts => {
     const suppliedConfig = kIjxUtils.suppliedConfig();
     const nodeEnv = process.env.NODE_ENV;
-    assert(suppliedConfig.rootUserEmail);
-    assert(suppliedConfig.rootUserPassword);
-    assert(suppliedConfig.rootUserFirstName);
-    assert(suppliedConfig.rootUserLastName);
+    assert.ok(suppliedConfig.rootUserEmail);
+    assert.ok(suppliedConfig.rootUserPassword);
+    assert.ok(suppliedConfig.rootUserFirstName);
+    assert.ok(suppliedConfig.rootUserLastName);
     let user = await kIjxSemantic
       .user()
       .getByEmail(suppliedConfig.rootUserEmail, opts);

@@ -179,6 +179,9 @@ importers:
       ahooks:
         specifier: ^3.7.7
         version: 3.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      assert:
+        specifier: ^2.1.0
+        version: 2.1.0
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -258,8 +261,8 @@ importers:
         specifier: ^0.10.0
         version: 0.10.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0)
       softkave-node-utils:
-        specifier: ^0.4.1
-        version: 0.4.1(@types/lodash-es@4.17.12)(@types/node@20.19.2)(fimidx@0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(lodash-es@4.17.21)(next@15.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(softkave-js-utils@0.10.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(zod@3.25.67)
+        specifier: ^0.4.2
+        version: 0.4.2(@types/jsonwebtoken@9.0.10)(@types/lodash-es@4.17.12)(@types/node@20.19.2)(fimidx@0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(jsonwebtoken@9.0.2)(lodash-es@4.17.21)(mongoose@8.19.0)(next@15.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(softkave-js-utils@0.10.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(typescript@5.8.3)(zod@3.25.67)
       swr:
         specifier: ^2.3.2
         version: 2.3.3(react@18.3.1)
@@ -425,8 +428,8 @@ importers:
         specifier: ^4.17.21
         version: 4.17.21
       mfdoc:
-        specifier: ^0.4.0
-        version: 0.4.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)
+        specifier: ^0.4.1
+        version: 0.4.1(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)
       mongoose:
         specifier: 8.15.1
         version: 8.15.1
@@ -452,8 +455,8 @@ importers:
         specifier: 0.14.0
         version: 0.14.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0)
       softkave-node-utils:
-        specifier: ^0.4.1
-        version: 0.4.1(@types/lodash-es@4.17.12)(@types/node@22.15.34)(fimidx@0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(lodash-es@4.17.21)(next@15.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(softkave-js-utils@0.14.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(zod@3.25.67)
+        specifier: ^0.4.2
+        version: 0.4.2(@types/jsonwebtoken@9.0.10)(@types/lodash-es@4.17.12)(@types/node@22.15.34)(fimidx@0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(jsonwebtoken@9.0.2)(lodash-es@4.17.21)(mongoose@8.15.1)(next@15.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(softkave-js-utils@0.14.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(typescript@5.8.3)(zod@3.25.67)
       stripe:
         specifier: ^8.222.0
         version: 8.222.0
@@ -5441,6 +5444,11 @@ packages:
     engines: {node: '>=24'}
     hasBin: true
 
+  mfdoc@0.4.1:
+    resolution: {integrity: sha512-sO4/mVdjj2kfoLdxMRMvJ8l26tcZBM8AG00X21g7KOYIKBwOn9nVtt/27hl2+pIy0LQMLxRELyowSzHo4sianQ==}
+    engines: {node: '>=24'}
+    hasBin: true
+
   micromark-core-commonmark@2.0.3:
     resolution: {integrity: sha512-RDBrHEMSxVFLg6xvnXmb1Ayr2WzLAWjeSATAoxwKYJV94TeNavgoIdA0a9ytzDSVzBy2YKFK+emCPOEibLeCrg==}
 
@@ -6615,16 +6623,20 @@ packages:
       path-browserify: ^1.0.1
       type-fest: ^4.10.2
 
-  softkave-node-utils@0.4.1:
-    resolution: {integrity: sha512-56+OQMNy/WtrK9i4E+z2tnaOfFG5b1KR+czXObaMZVTUjg1h+gzRrdEuFPj4ojuaXrECvRDjVyLKONQThDso0w==}
+  softkave-node-utils@0.4.2:
+    resolution: {integrity: sha512-XfrdyupOo5o+NLfQMfox00s9f41Hml9/PVIWzPwIgnegZlUpI82NSJeLHs8J1Kwmgg+2TBuNJZp3qcygHOaShQ==}
     engines: {node: '>=13'}
     peerDependencies:
+      '@types/jsonwebtoken': ^9.0.10
       '@types/lodash-es': ^4.17.12
       '@types/node': ^20
       fimidx: ^0.5.0
+      jsonwebtoken: ^9.0.2
       lodash-es: ^4.17.21
+      mongoose: ^8.19.0
       next: 15.2.0
       softkave-js-utils: ^0.17.1
+      typescript: ^5.9.3
       zod: ^4.1.11
 
   source-map-js@1.2.1:
@@ -13391,6 +13403,21 @@ snapshots:
       - nanoid
       - path-browserify
 
+  mfdoc@0.4.1(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1):
+    dependencies:
+      case: 1.6.3
+      commander: 14.0.0
+      fs-extra: 11.3.0
+      lodash-es: 4.17.21
+      softkave-js-utils: 0.15.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0)
+      tsx: 4.20.3
+      type-fest: 4.41.0
+      zod: 3.25.67
+    transitivePeerDependencies:
+      - assert
+      - nanoid
+      - path-browserify
+
   micromark-core-commonmark@2.0.3:
     dependencies:
       decode-named-character-reference: 1.2.0
@@ -14777,49 +14804,37 @@ snapshots:
       path-browserify: 1.0.1
       type-fest: 4.41.0
 
-  softkave-node-utils@0.4.1(@types/lodash-es@4.17.12)(@types/node@20.19.2)(fimidx@0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(lodash-es@4.17.21)(next@15.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(softkave-js-utils@0.10.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(zod@3.25.67):
+  softkave-node-utils@0.4.2(@types/jsonwebtoken@9.0.10)(@types/lodash-es@4.17.12)(@types/node@20.19.2)(fimidx@0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(jsonwebtoken@9.0.2)(lodash-es@4.17.21)(mongoose@8.19.0)(next@15.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(softkave-js-utils@0.10.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(typescript@5.8.3)(zod@3.25.67):
     dependencies:
+      '@types/jsonwebtoken': 9.0.10
       '@types/lodash-es': 4.17.12
       '@types/node': 20.19.2
+      assert: 2.1.0
       fimidx: 0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0)
       jsonwebtoken: 9.0.2
       lodash-es: 4.17.21
       mongoose: 8.19.0
       next: 15.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       softkave-js-utils: 0.10.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0)
+      typescript: 5.8.3
       uuid: 13.0.0
       zod: 3.25.67
-    transitivePeerDependencies:
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - gcp-metadata
-      - kerberos
-      - mongodb-client-encryption
-      - snappy
-      - socks
-      - supports-color
 
-  softkave-node-utils@0.4.1(@types/lodash-es@4.17.12)(@types/node@22.15.34)(fimidx@0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(lodash-es@4.17.21)(next@15.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(softkave-js-utils@0.14.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(zod@3.25.67):
+  softkave-node-utils@0.4.2(@types/jsonwebtoken@9.0.10)(@types/lodash-es@4.17.12)(@types/node@22.15.34)(fimidx@0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(jsonwebtoken@9.0.2)(lodash-es@4.17.21)(mongoose@8.15.1)(next@15.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(softkave-js-utils@0.14.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0))(typescript@5.8.3)(zod@3.25.67):
     dependencies:
+      '@types/jsonwebtoken': 9.0.10
       '@types/lodash-es': 4.17.12
       '@types/node': 22.15.34
+      assert: 2.1.0
       fimidx: 0.5.0(assert@2.1.0)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0)
       jsonwebtoken: 9.0.2
       lodash-es: 4.17.21
-      mongoose: 8.19.0
+      mongoose: 8.15.1
       next: 15.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       softkave-js-utils: 0.14.0(assert@2.1.0)(lodash-es@4.17.21)(nanoid@5.1.5)(path-browserify@1.0.1)(type-fest@4.41.0)
+      typescript: 5.8.3
       uuid: 13.0.0
       zod: 3.25.67
-    transitivePeerDependencies:
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - gcp-metadata
-      - kerberos
-      - mongodb-client-encryption
-      - snappy
-      - socks
-      - supports-color
 
   source-map-js@1.2.1: {}
 
