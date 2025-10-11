@@ -21,7 +21,6 @@ import {
   kJobType,
 } from '../../definitions/job.js';
 import {FimidaraExternalError} from '../../utils/OperationError.js';
-import {appAssert} from '../../utils/assertion.js';
 import {ServerError} from '../../utils/errors.js';
 import {loopAndCollateAsync} from '../../utils/fns.js';
 import {kReuseableErrors} from '../../utils/reusableErrors.js';
@@ -33,6 +32,7 @@ import {
   kEndpointResultNotesToMessageMap,
 } from '../types.js';
 import {getBackendConfigsWithIdList} from './configUtils.js';
+import {appAssert} from '../../utils/assertion.js';
 
 export type FileBackendMountWeights = Record<string, number>;
 

@@ -6,7 +6,6 @@ import {
   kJobType,
 } from '../../../definitions/job.js';
 import {kFimidaraResourceType} from '../../../definitions/system.js';
-import {appAssert} from '../../../utils/assertion.js';
 import RequestData from '../../RequestData.js';
 import {completeTests} from '../../testHelpers/helpers/testFns.js';
 import {
@@ -18,6 +17,7 @@ import {
 } from '../../testHelpers/utils.js';
 import removeCollaborator from './handler.js';
 import {RemoveCollaboratorEndpointParams} from './types.js';
+import {appAssert} from '../../../utils/assertion.js';
 
 /**
  * TODO:

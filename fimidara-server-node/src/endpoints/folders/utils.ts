@@ -27,7 +27,6 @@ import {
   kFimidaraResourceType,
 } from '../../definitions/system.js';
 import {Workspace} from '../../definitions/workspace.js';
-import {appAssert} from '../../utils/assertion.js';
 import {getFields} from '../../utils/extract.js';
 import {
   getNewIdForResource,
@@ -47,6 +46,7 @@ import {assertRootname, checkWorkspaceExists} from '../workspaces/utils.js';
 import {createFolderList} from './addFolder/createFolderList.js';
 import {kFolderConstants} from './constants.js';
 import {assertGetFolderWithMatcher} from './getFolderWithMatcher.js';
+import {appAssert} from '../../utils/assertion.js';
 
 const folderFields = getFields<PublicFolder>({
   ...workspaceResourceFields,
@@ -156,7 +156,7 @@ export function getWorkspaceRootnameFromPath(providedPath: string | string[]) {
 }
 
 export async function checkFolderAuthorization<
-  T extends Pick<Folder, 'idPath' | 'workspaceId'>,
+  T extends Pick<Folder, 'idPath' | 'workspaceId'>
 >(
   agent: SessionAgent,
   folder: T,
@@ -215,7 +215,7 @@ export function assertFileOrFolderName(
 }
 
 export function addRootnameToPath<
-  T extends string | string[] = string | string[],
+  T extends string | string[] = string | string[]
 >(path: T, workspaceRootname: string | string[]): T {
   const rootname = isArray(workspaceRootname)
     ? last(workspaceRootname)

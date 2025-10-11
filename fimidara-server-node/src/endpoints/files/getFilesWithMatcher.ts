@@ -14,7 +14,6 @@ import {PresignedPath} from '../../definitions/presignedPath.js';
 import {kFimidaraResourceType} from '../../definitions/system.js';
 import {Workspace} from '../../definitions/workspace.js';
 import {kSystemSessionAgent} from '../../utils/agent.js';
-import {appAssert} from '../../utils/assertion.js';
 import {tryGetResourceTypeFromId} from '../../utils/resource.js';
 import {kReuseableErrors} from '../../utils/reusableErrors.js';
 import {
@@ -31,6 +30,7 @@ import {
   getWorkspaceFromFilepath,
   ingestFileByFilepath,
 } from './utils.js';
+import {appAssert} from '../../utils/assertion.js';
 
 export async function checkAndIncrementPresignedPathUsageCount(
   presignedPath: PresignedPath,

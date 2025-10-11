@@ -58,7 +58,7 @@ describe('FimidaraApp', () => {
     await waitTimeout(heartbeatIntervalMs * 2);
     dbApp = await kIjxSemantic.app().getOneById(appId);
     const preStopHeartbeatMs = dbApp?.lastUpdatedAt;
-    assert(startingHeartbeatMs);
+    assert.ok(startingHeartbeatMs);
     expect(preStopHeartbeatMs).toBeGreaterThan(startingHeartbeatMs);
 
     await app.dispose();

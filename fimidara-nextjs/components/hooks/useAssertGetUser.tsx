@@ -13,7 +13,7 @@ export function useAssertGetUser(): IUseAssertGetUserResult {
   const assertGet = (): LoginResult => {
     const state = first(useUserSessionFetchStore.getState().states);
     const [, existingState] = state ?? [];
-    assert(existingState?.data?.other?.refresh);
+    assert.ok(existingState?.data?.other?.refresh);
     return existingState.data.other.refresh.getValue();
   };
 

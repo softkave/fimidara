@@ -57,7 +57,7 @@ describe('getEntityAssignedPermissionGroups', () => {
     const pgListAssignedTo01IdList =
       extractResourceIdList(pgListAssignedToIn01);
     const [agentToken01] = tokens;
-    assert(agentToken01);
+    assert.ok(agentToken01);
     const tokenIdList = extractResourceIdList([agentToken01]);
     const agentToken01Req = mockExpressRequestWithAgentToken(agentToken01);
     await Promise.all([
@@ -129,7 +129,7 @@ describe('getEntityAssignedPermissionGroups', () => {
     const pgList01IdList = extractResourceIdList(pgList01);
     const pgListAssignedTo01IdList = extractResourceIdList(pgListAssignedTo01);
     const [agentToken01] = tokens;
-    assert(agentToken01);
+    assert.ok(agentToken01);
     const tokenIdList = extractResourceIdList([agentToken01]);
     const agentToken01Req = mockExpressRequestWithAgentToken(agentToken01);
     await Promise.all([
@@ -192,7 +192,7 @@ describe('getEntityAssignedPermissionGroups', () => {
     const pgList01IdList = extractResourceIdList(pgList01);
     const pgListAssignedTo01IdList = extractResourceIdList(pgListAssignedTo01);
     const [agentToken02] = tokens;
-    assert(agentToken02);
+    assert.ok(agentToken02);
     const userReq = mockExpressRequestWithAgentToken(userToken);
     const agentToken02Req = mockExpressRequestWithAgentToken(agentToken02);
     await Promise.all([
@@ -245,7 +245,7 @@ describe('getEntityAssignedPermissionGroups', () => {
     ]);
     const agent = makeUserSessionAgent(rawUser, userToken);
     const [agentToken02] = tokens;
-    assert(agentToken02);
+    assert.ok(agentToken02);
     const agentToken02Req = mockExpressRequestWithAgentToken(agentToken02);
     await Promise.all([
       assignPgListToIdList(

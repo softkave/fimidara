@@ -17,6 +17,7 @@
   "localFsDir": "./local-fs/dev",
   "localPartsFsDir": "./local-fs/dev-parts",
   "emailProvider": "noop",
+  "resendApiKey": "",
   "secretsManagerProvider": "mem",
   "FLAG_waitlistNewSignups": true,
   "appName": "fimidara",

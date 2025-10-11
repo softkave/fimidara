@@ -46,7 +46,7 @@ const kEmailJobTypeToHandlerMap: Record<
 export async function runEmailJob(
   job: Pick<Job, 'params' | 'resourceId' | 'type'>
 ) {
-  assert(job.type === kJobType.email);
+  assert.ok(job.type === kJobType.email);
 
   const params = job.params as EmailJobParams;
   const handler = kEmailJobTypeToHandlerMap[params.type];

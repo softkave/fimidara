@@ -213,7 +213,7 @@ function registerToken(
   use: 'value' | 'factory' = 'value'
 ) {
   if (use === 'factory') {
-    assert(isFunction(item));
+    assert.ok(isFunction(item));
     container.register(token, {useFactory: item as AnyFn});
   } else {
     if (isFunction((item as DisposableResource | undefined)?.dispose)) {
@@ -575,8 +575,8 @@ export async function registerIjxUtils(
     !suppliedConfig.dbType ||
     suppliedConfig.dbType === kFimidaraConfigDbType.mongoDb
   ) {
-    assert(suppliedConfig.mongoDbURI);
-    assert(suppliedConfig.mongoDbDatabaseName);
+    assert.ok(suppliedConfig.mongoDbURI);
+    assert.ok(suppliedConfig.mongoDbDatabaseName);
     kRegisterIjxUtils.dbConnection(
       new MongoDbConnection(
         suppliedConfig.mongoDbURI,

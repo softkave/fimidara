@@ -3,9 +3,9 @@ import {FilePersistenceProvider} from '../../../contexts/file/types.js';
 import {kIjxSemantic} from '../../../contexts/ijx/injectables.js';
 import {File} from '../../../definitions/file.js';
 import {FileBackendMount} from '../../../definitions/fileBackend.js';
-import {appAssert} from '../../../utils/assertion.js';
 import {resolveBackendsMountsAndConfigs} from '../../fileBackends/mountUtils.js';
 import {prepareMountFilepath} from '../utils/prepareMountFilepath.js';
+import {appAssert} from '../../../utils/assertion.js';
 
 export function getCleanupMultipartFileUpdate(): Partial<File> {
   return {

@@ -227,7 +227,7 @@ async function createFolderListWithTransaction(
     | {success: false; error: Error} {
     const error = getError(inputId);
     const folder = getFolder(folderpath);
-    assert(folder);
+    assert.ok(folder);
 
     if (error) {
       return {error, success: false};

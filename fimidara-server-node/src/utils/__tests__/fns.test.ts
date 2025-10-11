@@ -232,7 +232,7 @@ describe('fns', () => {
         const fnArgs = [index, ...extraArgs];
         const nthCallArgs = fn.mock.calls[index];
         expect(fnArgs).toEqual(nthCallArgs);
-        assert(indexResult.status === 'fulfilled');
+        assert.ok(indexResult.status === 'fulfilled');
         expect(indexResult.value).toEqual(fnArgs);
       });
 

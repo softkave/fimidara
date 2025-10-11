@@ -166,7 +166,7 @@ async function processDeleteArtifactsFromDef(
 }
 
 export async function runDeleteResourceJob(job: Job) {
-  assert(job.type === kJobType.deleteResource);
+  assert.ok(job.type === kJobType.deleteResource);
 
   const params = job.params as DeleteResourceJobParams;
   const {
@@ -182,7 +182,7 @@ export async function runDeleteResourceJob(job: Job) {
     },
   };
 
-  assert(job.workspaceId);
+  assert.ok(job.workspaceId);
   const preRunMeta = await getPreRunMetaFn({args: params, helpers: helperFns});
   await setDeleteJobPreRunMeta(job, preRunMeta);
   const proccessedTypes = await processGetArtifactsFromDef(

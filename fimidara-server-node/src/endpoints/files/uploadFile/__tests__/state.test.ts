@@ -29,7 +29,7 @@ beforeAll(async () => {
 });
 
 afterEach(() => {
-  assert(defaultFileProviderResolver);
+  assert.ok(defaultFileProviderResolver);
   kRegisterIjxUtils.fileProviderResolver(defaultFileProviderResolver);
   if (defaultSuppliedConfig) {
     kRegisterIjxUtils.suppliedConfig(defaultSuppliedConfig);
@@ -107,15 +107,15 @@ describe.each([{isMultipart: true}, {isMultipart: false}])(
           backend: kFileBackendType.fimidara,
         });
 
-      assert(fimidaraMount);
+      assert.ok(fimidaraMount);
       const persistedFile = backend.getMemoryFile({
         mount: fimidaraMount,
         workspaceId: insertWorkspaceResult.workspace.resourceId,
         filepath: stringifyFilenamepath(updatedResFile),
       });
 
-      assert(persistedFile);
-      assert(dataBuffer);
+      assert.ok(persistedFile);
+      assert.ok(dataBuffer);
       await expectFileBodyEqual(dataBuffer, persistedFile.body);
     });
 
@@ -123,7 +123,7 @@ describe.each([{isMultipart: true}, {isMultipart: false}])(
       const {dataBuffer, dbFile} = await uploadFileBaseTest({
         isMultipart,
       });
-      assert(dataBuffer);
+      assert.ok(dataBuffer);
       expect(dataBuffer.byteLength).toBeGreaterThan(0);
       expect(dbFile.size).toBe(dataBuffer.byteLength);
     });

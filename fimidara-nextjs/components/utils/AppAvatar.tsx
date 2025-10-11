@@ -40,7 +40,7 @@ export default function AppAvatar(props: IAppAvatarProps) {
 
     if (getResult.paths.length) {
       const p = first(getResult.paths);
-      assert(p);
+      assert.ok(p);
       return p.path;
     }
 

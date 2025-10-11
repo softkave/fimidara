@@ -3,7 +3,6 @@ import {kSessionUtils} from '../../../contexts/SessionContext.js';
 import {kIjxSemantic, kIjxUtils} from '../../../contexts/ijx/injectables.js';
 import {Job} from '../../../definitions/job.js';
 import {kFimidaraPermissionActions} from '../../../definitions/permissionItem.js';
-import {appAssert} from '../../../utils/assertion.js';
 import {validate} from '../../../utils/validate.js';
 import {InvalidRequestError} from '../../errors.js';
 import {getAndCheckFileAuthorization} from '../utils.js';
@@ -11,6 +10,7 @@ import {beginDeleteFile} from './beginDeleteFile.js';
 import {deleteMultipartUpload} from './deleteMultipartUpload.js';
 import {DeleteFileEndpoint} from './types.js';
 import {deleteFileJoiSchema} from './validation.js';
+import {appAssert} from '../../../utils/assertion.js';
 
 const deleteFile: DeleteFileEndpoint = async reqData => {
   const data = validate(reqData.data, deleteFileJoiSchema);

@@ -3,7 +3,6 @@ import fse from 'fs-extra';
 import {compact, first, isNumber} from 'lodash-es';
 import path from 'path';
 import {FimidaraSuppliedConfig} from '../../resources/config.js';
-import {appAssert} from '../../utils/assertion.js';
 import {noopAsync, pathJoin} from '../../utils/fns.js';
 import {AnyFn} from '../../utils/types.js';
 import {kIjxUtils} from '../ijx/injectables.js';
@@ -35,6 +34,7 @@ import {
   PersistedFolderDescription,
 } from './types.js';
 import {defaultToFimidaraPath, defaultToNativePath} from './utils.js';
+import {appAssert} from '../../utils/assertion.js';
 
 export interface LocalFsFilePersistenceProviderParams {
   dir: string;
@@ -298,7 +298,7 @@ export class LocalFsFilePersistenceProvider implements FilePersistenceProvider {
     TFn extends AnyFn<
       [fse.Stats, string, number],
       /** stop if `true`, continue if `false` or `undefined` */ boolean
-    >,
+    >
   >(
     params: FilePersistenceDescribeFolderFoldersParams,
     fn: TFn
@@ -455,8 +455,8 @@ export function getLocalFsDirFromSuppliedConfig(
   const configLocalFsDir = config.localFsDir;
   const configLocalPartsFsDir = config.localPartsFsDir;
 
-  assert(configLocalFsDir, 'localFsDir is required');
-  assert(configLocalPartsFsDir, 'localPartsFsDir is required');
+  assert.ok(configLocalFsDir, 'localFsDir is required');
+  assert.ok(configLocalPartsFsDir, 'localPartsFsDir is required');
 
   const localFsDir = path.resolve(configLocalFsDir);
   const localPartsFsDir = path.resolve(configLocalPartsFsDir);

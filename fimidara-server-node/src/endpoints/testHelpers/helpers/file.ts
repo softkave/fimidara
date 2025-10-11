@@ -15,8 +15,8 @@ export async function expectFileBodyEqual(
     Buffer.isBuffer(expectedBody) ? expectedBody : streamToBuffer(expectedBody),
   ]);
 
-  assert(bodyBuffer);
-  assert(expectedBuffer);
+  assert.ok(bodyBuffer);
+  assert.ok(expectedBuffer);
   expect(expectedBuffer.equals(bodyBuffer)).toBe(true);
 }
 
@@ -25,7 +25,7 @@ export async function expectFileBodyEqualById(
   expectedBody: Buffer | Readable
 ) {
   const file = await kIjxSemantic.file().getOneById(id);
-  assert(file);
+  assert.ok(file);
 
   const {primaryBackend, primaryMount} = await resolveBackendsMountsAndConfigs({
     file,
@@ -39,6 +39,6 @@ export async function expectFileBodyEqualById(
     workspaceId: file.workspaceId,
   });
 
-  assert(body);
+  assert.ok(body);
   await expectFileBodyEqual(body, expectedBody);
 }

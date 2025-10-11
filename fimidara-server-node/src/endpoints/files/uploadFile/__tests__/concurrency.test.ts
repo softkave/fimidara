@@ -55,7 +55,7 @@ beforeAll(async () => {
 });
 
 afterEach(() => {
-  assert(defaultFileProviderResolver);
+  assert.ok(defaultFileProviderResolver);
   kRegisterIjxUtils.fileProviderResolver(defaultFileProviderResolver);
   if (defaultSuppliedConfig) {
     kRegisterIjxUtils.suppliedConfig(defaultSuppliedConfig);
@@ -348,7 +348,7 @@ describe.each([{isMultipart: true}, {isMultipart: false}])(
         const result = await readFile(reqData);
         assertEndpointResultOk(result);
 
-        assert(dataBuffer);
+        assert.ok(dataBuffer);
         await expectFileBodyEqual(dataBuffer, result.stream);
       }
 

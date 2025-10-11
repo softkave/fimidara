@@ -15,7 +15,6 @@ import {
   kJobType,
 } from '../../../definitions/job.js';
 import {SessionAgent} from '../../../definitions/system.js';
-import {appAssert} from '../../../utils/assertion.js';
 import {pathJoin, pathSplit} from '../../../utils/fns.js';
 import {getBackendConfigsWithIdList} from '../../fileBackends/configUtils.js';
 import {
@@ -24,6 +23,7 @@ import {
 } from '../../fileBackends/ingestionUtils.js';
 import {initBackendProvidersForMounts} from '../../fileBackends/mountUtils.js';
 import {JobInput, queueJobs} from '../queueJobs.js';
+import {appAssert} from '../../../utils/assertion.js';
 
 async function setContinuationTokenInJob(
   job: Job,
@@ -124,7 +124,7 @@ async function ingestFolderpathContents(
 }
 
 export async function runIngestFolderpathJob(job: Job) {
-  assert(job.type === kJobType.ingestFolderpath);
+  assert.ok(job.type === kJobType.ingestFolderpath);
   appAssert(job.workspaceId, 'workspaceId not present in job');
   appAssert(job.createdBy, 'agent not present in job');
 

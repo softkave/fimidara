@@ -178,7 +178,7 @@ describe.each([
         });
         assert.fail('Expected error');
       } catch (e) {
-        assert(firstTryCompletedParts.length > 0);
+        assert.ok(firstTryCompletedParts.length > 0);
 
         // Retry
         const reqAgain = getData();

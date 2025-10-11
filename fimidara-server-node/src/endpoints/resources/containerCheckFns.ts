@@ -7,10 +7,10 @@ import {
   WorkspaceResource,
 } from '../../definitions/system.js';
 import {UserWithWorkspace} from '../../definitions/user.js';
-import {appAssert} from '../../utils/assertion.js';
 import {ServerError} from '../../utils/errors.js';
 import {getCollaboratorWorkspace} from '../collaborators/utils.js';
 import {NotFoundError} from '../errors.js';
+import {appAssert} from '../../utils/assertion.js';
 
 export function isResourcePartOfWorkspace(
   workspaceId: string,

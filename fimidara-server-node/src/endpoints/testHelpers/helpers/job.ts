@@ -31,7 +31,7 @@ export async function confirmJobHistoryEntry(job: Job, status?: JobStatus) {
     );
   const jobHistory = first(jobHistoryList);
 
-  assert(
+  assert.ok(
     jobHistory,
     `No job history with jobId=${job.resourceId} status=${job.status}`
   );

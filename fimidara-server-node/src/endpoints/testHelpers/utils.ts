@@ -297,7 +297,7 @@ export async function insertUserWithOAuthForTest(
 
   const sessionAgent = makeUserSessionAgent(rawUser, userToken);
   const oauthUserId = user.oauthUserId;
-  assert(oauthUserId);
+  assert.ok(oauthUserId);
 
   return {
     oauthUserId,
@@ -339,7 +339,7 @@ export async function insertWorkspaceForTest(
   const rawWorkspace = await kIjxSemantic
     .workspace()
     .getOneById(result.workspace.resourceId);
-  assert(rawWorkspace);
+  assert.ok(rawWorkspace);
   return {rawWorkspace, workspace: result.workspace};
 }
 
@@ -423,7 +423,7 @@ export async function insertAgentTokenForTest(
   const rawToken = await kIjxSemantic
     .agentToken()
     .getOneById(result.token.resourceId);
-  assert(rawToken);
+  assert.ok(rawToken);
 
   return {...result, rawToken};
 }
@@ -448,7 +448,7 @@ export async function insertFileBackendConfigForTest(
   const rawConfig = await kIjxSemantic
     .fileBackendConfig()
     .getOneById(result.config.resourceId);
-  assert(rawConfig);
+  assert.ok(rawConfig);
 
   return {...result, rawConfig};
 }
@@ -546,7 +546,7 @@ export async function insertFileForTest(
   let dataBuffer: Buffer | undefined = undefined;
 
   if (fileInput.data) {
-    assert(
+    assert.ok(
       isNumber(fileInput.size),
       'size param must be provided if data param is set'
     );

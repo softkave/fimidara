@@ -76,7 +76,7 @@ describe('updateConfig s3', () => {
       const updatedConfig = await kIjxSemantic
         .fileBackendConfig()
         .getOneById(result.config.resourceId);
-      assert(updatedConfig);
+      assert.ok(updatedConfig);
 
       await matchExpects<
         [UpdateFileBackendConfigInput, UpdateFileBackendConfigEndpointResult]

@@ -18,9 +18,12 @@ export function getSecretsProvider(config: FimidaraSuppliedConfig) {
       config.awsConfigs?.secretsManager
     );
 
-    assert(accessKeyId, 'Provide accessKeyId for AWS SecretsManager provider');
-    assert(region, 'Provide region for AWS SecretsManager provider');
-    assert(
+    assert.ok(
+      accessKeyId,
+      'Provide accessKeyId for AWS SecretsManager provider'
+    );
+    assert.ok(region, 'Provide region for AWS SecretsManager provider');
+    assert.ok(
       secretAccessKey,
       'Provide secretAccessKey for AWS SecretsManager provider'
     );

@@ -82,7 +82,7 @@ describe('assignPermissionGroups', () => {
     ]);
     const pgList01Input = toAssignedPgListInput(pgList01);
     const collaborator = first(collaboratorList);
-    assert(collaborator);
+    assert.ok(collaborator);
 
     const result01 = await assignPermissionGroups(
       RequestData.fromExpressRequest(

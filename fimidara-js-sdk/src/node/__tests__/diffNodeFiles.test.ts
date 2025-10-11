@@ -93,7 +93,7 @@ describe('diffNodeFiles', () => {
     );
 
     dirContent = await getNodeDirContent({folderpath});
-    assert(dirContent);
+    assert.ok(dirContent);
 
     newEFList = newEFList.map(getActualEF);
     updatedEFList = updatedEFList.map(getActualEF);
@@ -113,7 +113,7 @@ describe('diffNodeFiles', () => {
   });
 
   test('without dir content', async () => {
-    assert(ffList);
+    assert.ok(ffList);
 
     const {
       newExternalFileList,
@@ -147,7 +147,7 @@ describe('diffNodeFiles', () => {
   });
 
   test('with dir content', async () => {
-    assert(ffList);
+    assert.ok(ffList);
 
     const {
       newExternalFileList,

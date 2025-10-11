@@ -76,7 +76,7 @@ async function expectStorageUsageRecord(params: {
     ...getUsageRecordReportingPeriod(),
     workspaceId,
   });
-  assert(usageL2);
+  assert.ok(usageL2);
 
   if (op === 'gt') {
     expect(usageL2.usage).toBeGreaterThan(size);
@@ -132,7 +132,7 @@ describe('runDeleteResourceJob, file', () => {
       genResourceFn: () => Promise.resolve(mainResource),
       genWorkspaceFn: () => Promise.resolve(workspace.resourceId),
       genOtherFn: async () => {
-        assert(dataBuffer);
+        assert.ok(dataBuffer);
         await Promise.all([
           providersMap[mount01.rawMount.resourceId]?.uploadFile({
             workspaceId: workspace.resourceId,

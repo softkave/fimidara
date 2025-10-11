@@ -139,7 +139,7 @@ describe('sendConfirmEmailAddressEmail', () => {
     );
 
     const suppliedConfig = kIjxUtils.suppliedConfig();
-    assert(suppliedConfig.verifyEmailLink);
+    assert.ok(suppliedConfig.verifyEmailLink);
     const link = await getLinkWithConfirmEmailToken(
       user,
       suppliedConfig.verifyEmailLink

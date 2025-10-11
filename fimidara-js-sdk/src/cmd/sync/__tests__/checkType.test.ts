@@ -36,8 +36,8 @@ describe('checkType', () => {
       serverURL: fimidaraTestVars.serverURL,
     });
 
-    assert(response);
-    assert(response.type === kFileEntryType.file);
+    assert.ok(response);
+    assert.ok(response.type === kFileEntryType.file);
     expect(response.file).toBeTruthy();
     expect(filepath).toBe(
       stringifyFimidaraFilepath(
@@ -62,8 +62,8 @@ describe('checkType', () => {
       serverURL: fimidaraTestVars.serverURL,
     });
 
-    assert(response);
-    assert(response.type === kFileEntryType.folder);
+    assert.ok(response);
+    assert.ok(response.type === kFileEntryType.folder);
     expect(response.folder).toBeTruthy();
     expect(folderpath).toBe(
       stringifyFimidaraFolderpath(

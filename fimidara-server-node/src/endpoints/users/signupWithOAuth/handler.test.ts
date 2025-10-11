@@ -135,7 +135,7 @@ describe('signupWithOAuth', () => {
       });
 
       test(`userEmailVerified=${userEmailVerified} with emailVerifiedAt=${emailVerifiedAt}`, async () => {
-        assert(rawUser, 'rawUser is not defined');
+        assert.ok(rawUser, 'rawUser is not defined');
 
         const result = await insertUserWithOAuthForTest({
           userInput: {

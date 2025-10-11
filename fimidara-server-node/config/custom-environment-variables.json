@@ -33,5 +33,6 @@
   "dsetProvider": "DSET_PROVIDER",
   "redisURL": "REDIS_URL",
   "redisDatabase": "REDIS_DATABASE",
+  "resendApiKey": "RESEND_API_KEY",
   "interServerAuthSecret": "INTER_SERVER_AUTH_SECRET"
 }

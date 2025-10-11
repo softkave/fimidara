@@ -90,7 +90,7 @@ export const skTest: SoftkaveTest = {
     return (...testArgs: unknown[]) => {
       const fnIndex = findLastIndex(testArgs, isFunction);
       const fn = testArgs[fnIndex];
-      assert(isFunction(fn), 'No test function');
+      assert.ok(isFunction(fn), 'No test function');
       testArgs[fnIndex] = async (...args: unknown[]) => {
         await kIjxUtils.asyncLocalStorage().run(() => fn(...args));
       };
@@ -103,7 +103,7 @@ export const skTest: SoftkaveTest = {
 };
 
 export interface PerformPaginationTestParams<
-  T extends Endpoint<AnyObject, PaginatedResult>,
+  T extends Endpoint<AnyObject, PaginatedResult>
 > {
   params: Omit<InferEndpointParams<T>, keyof PaginationQuery>;
   otherTestsFn?: AnyFn<[InferEndpointResult<T>]>;
@@ -115,10 +115,10 @@ export interface PerformPaginationTestParams<
 
 export async function performPaginationTest<
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  T extends Endpoint<any, PaginatedResult>,
+  T extends Endpoint<any, PaginatedResult>
 >(endpoint: T, props: PerformPaginationTestParams<T>) {
   const {params, req, count, fields, otherTestsFn = noop} = props;
-  assert(params);
+  assert.ok(params);
 
   const pageSize = props.pageSize || getRandomInt(1, count);
   const maxPages = calculateMaxPages(count, pageSize);

@@ -44,7 +44,7 @@ describe('runScript', () => {
     expect(fn).toHaveBeenCalled();
 
     const dbScript = await kIjxSemantic.script().getScript({name});
-    assert(dbScript);
+    assert.ok(dbScript);
     expect(dbScript.status).toBe(kJobStatus.completed);
   });
 
@@ -95,8 +95,8 @@ describe('runScript', () => {
     deferred01.resolve();
     await Promise.all([p01, p02]);
     await deferred02.promise;
-    assert(timestamp01);
-    assert(timestamp02);
+    assert.ok(timestamp01);
+    assert.ok(timestamp02);
     expect(timestamp02).toBeGreaterThan(timestamp01);
   });
 
@@ -187,7 +187,7 @@ describe('runScript', () => {
     });
 
     const dbScript = await kIjxSemantic.script().getScript({name});
-    assert(dbScript);
+    assert.ok(dbScript);
     expect(dbScript.status).toBe(kJobStatus.failed);
   });
 });

@@ -81,7 +81,7 @@ async function generateNonWorkspaceResources(id: string) {
     id,
     otherWorkspaceId
   );
-  assert(assignedItem);
+  assert.ok(assignedItem);
 
   return {assignedItem, pItems, files, otherWorkspaceId};
 }

@@ -25,7 +25,6 @@ import {
   kFimidaraResourceType,
 } from '../../definitions/system.js';
 import {Workspace} from '../../definitions/workspace.js';
-import {appAssert} from '../../utils/assertion.js';
 import {getFields, makeExtract, makeListExtract} from '../../utils/extract.js';
 import {pathBasename, pathJoin} from '../../utils/fns.js';
 import {
@@ -56,6 +55,7 @@ import {
 } from '../workspaces/utils.js';
 import {kFileConstants} from './constants.js';
 import {getFileWithMatcher} from './getFilesWithMatcher.js';
+import {appAssert} from '../../utils/assertion.js';
 
 const presignedPathFields = getFields<PublicPresignedPath>({
   ...workspaceResourceFields,

@@ -130,6 +130,6 @@ export async function getTestFilepath(
     );
   }
 
-  assert(filepath);
+  assert.ok(filepath);
   return {filepath, uploadFileResult};
 }

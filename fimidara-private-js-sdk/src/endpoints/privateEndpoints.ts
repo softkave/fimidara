@@ -33,12 +33,10 @@ import {
   type GetUserCollaborationRequestEndpointResult,
   type GetUserCollaborationRequestsEndpointParams,
   type GetUserCollaborationRequestsEndpointResult,
-  type GetWorkspaceCollaborationRequestEndpointParams,
-  type GetWorkspaceCollaborationRequestEndpointResult,
   type RespondToCollaborationRequestEndpointParams,
   type RespondToCollaborationRequestEndpointResult,
-  type UpdateCollaborationRequestEndpointParams,
-  type UpdateCollaborationRequestEndpointResult,
+  type GetCollaboratorsWithoutPermissionEndpointParams,
+  type GetCollaboratorsWithoutPermissionEndpointResult,
   type GetUsersEndpointParams,
   type GetUsersEndpointResult,
   type GetWaitlistedUsersEndpointParams,
@@ -324,19 +322,6 @@ export class CollaborationRequestsEndpoints extends AbstractSdkEndpoints {
       opts,
     );
   };
-  getWorkspaceRequest = async (
-    props: GetWorkspaceCollaborationRequestEndpointParams,
-    opts?: MfdocEndpointOpts,
-  ): Promise<GetWorkspaceCollaborationRequestEndpointResult> => {
-    return this.executeJson(
-      {
-        data: props,
-        path: '/v1/collaborationRequests/getWorkspaceRequest',
-        method: 'POST',
-      },
-      opts,
-    );
-  };
   respondToRequest = async (
     props: RespondToCollaborationRequestEndpointParams,
     opts?: MfdocEndpointOpts,
@@ -350,14 +335,19 @@ export class CollaborationRequestsEndpoints extends AbstractSdkEndpoints {
       opts,
     );
   };
-  updateRequest = async (
-    props: UpdateCollaborationRequestEndpointParams,
+}
+export class CollaboratorsEndpoints extends AbstractSdkEndpoints {
+  /**
+   * Get a list of collaborator IDs who do not have a specific permission in the workspace. This is an internal endpoint used for permission management and bulk operations. Returns only collaborator IDs, not full collaborator details.
+   */
+  getCollaboratorsWithoutPermission = async (
+    props?: GetCollaboratorsWithoutPermissionEndpointParams,
     opts?: MfdocEndpointOpts,
-  ): Promise<UpdateCollaborationRequestEndpointResult> => {
+  ): Promise<GetCollaboratorsWithoutPermissionEndpointResult> => {
     return this.executeJson(
       {
         data: props,
-        path: '/v1/collaborationRequests/updateRequest',
+        path: '/v1/collaborators/getCollaboratorsWithoutPermission',
         method: 'POST',
       },
       opts,
@@ -425,5 +415,6 @@ export class FimidaraEndpoints extends AbstractSdkEndpoints {
   workspaces = new WorkspacesEndpoints(this.config, this);
   users = new UsersEndpoints(this.config, this);
   collaborationRequests = new CollaborationRequestsEndpoints(this.config, this);
+  collaborators = new CollaboratorsEndpoints(this.config, this);
   internal = new InternalEndpoints(this.config, this);
 }

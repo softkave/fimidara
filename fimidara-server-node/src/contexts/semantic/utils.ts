@@ -1,6 +1,5 @@
 import {isNil, set} from 'lodash-es';
 import {AnyFn, AnyObject} from 'softkave-js-utils';
-import {appAssert} from '../../utils/assertion.js';
 import {convertToArray} from '../../utils/fns.js';
 import {getNewId} from '../../utils/resource.js';
 import {OrArray, StringKeysOnly} from '../../utils/types.js';
@@ -14,6 +13,7 @@ import {
   SemanticProviderMutationParams,
   SemanticProviderUtils,
 } from './types.js';
+import {appAssert} from '../../utils/assertion.js';
 
 interface InternalTxnStructure {
   __fimidaraTxnId?: string;
@@ -34,16 +34,13 @@ export class DataSemanticProviderUtils implements SemanticProviderUtils {
     fn: AnyFn<[SemanticProviderMutationParams], Promise<TResult>>,
     opts?: SemanticProviderMutationParams
   ): Promise<TResult> {
-    return await kIjxData.utils().withTxn(
-      async txn => {
-        if (!(txn as InternalTxnStructure).__fimidaraTxnId) {
-          (txn as InternalTxnStructure).__fimidaraTxnId = 'txn_' + getNewId();
-        }
+    return await kIjxData.utils().withTxn(async txn => {
+      if (!(txn as InternalTxnStructure).__fimidaraTxnId) {
+        (txn as InternalTxnStructure).__fimidaraTxnId = 'txn_' + getNewId();
+      }
 
-        return await fn({txn});
-      },
-      opts?.txn
-    );
+      return await fn({txn});
+    }, opts?.txn);
   }
 }
 
@@ -80,7 +77,7 @@ export function getStringListQuery<TData extends AnyObject>(
 export function getInAndNinQuery<
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   TData extends Record<string, any>,
-  TKey extends StringKeysOnly<TData> = StringKeysOnly<TData>,
+  TKey extends StringKeysOnly<TData> = StringKeysOnly<TData>
 >(
   prefix: TKey,
   /** `null` or `undefined` will not go into query. To explicitly handle them,

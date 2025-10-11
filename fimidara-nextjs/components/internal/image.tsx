@@ -77,7 +77,7 @@ const Image: React.FC<ImageProps> = (props) => {
 
     if (getResult.paths.length) {
       const p = first(getResult.paths);
-      assert(p);
+      assert.ok(p);
       return p.path;
     }
 

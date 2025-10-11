@@ -27,7 +27,7 @@ afterEach(async () => {
 
 async function getDBEmailJob(shard: AppShardId) {
   const {rootUserEmail} = kIjxUtils.suppliedConfig();
-  assert(rootUserEmail);
+  assert.ok(rootUserEmail);
 
   const query: DataQuery<Job<EmailJobParams>> = {
     shard,
@@ -89,7 +89,9 @@ describe('runNewSignupsOnWaitlistJob', () => {
       }
 
       if (dbEmailJob) {
-        assert(dbEmailJob?.params.type === kEmailJobType.newSignupsOnWaitlist);
+        assert.ok(
+          dbEmailJob?.params.type === kEmailJobType.newSignupsOnWaitlist
+        );
 
         // Using toBeGreaterThanOrEqual because other tests create users in
         // their runs which influences this test. This is also the reason we're
@@ -117,7 +119,9 @@ describe('runNewSignupsOnWaitlistJob', () => {
       }
 
       if (dbEmailJob) {
-        assert(dbEmailJob?.params.type === kEmailJobType.newSignupsOnWaitlist);
+        assert.ok(
+          dbEmailJob?.params.type === kEmailJobType.newSignupsOnWaitlist
+        );
         // Using toBeGreaterThanOrEqual because other tests create users in
         // their runs which influences this test
         expect(dbEmailJob.params.params.count).toBeGreaterThanOrEqual(

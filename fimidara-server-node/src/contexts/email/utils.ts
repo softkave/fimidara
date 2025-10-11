@@ -5,6 +5,7 @@ import {
   FimidaraSuppliedConfig,
   kFimidaraConfigEmailProvider,
 } from '../../resources/config.js';
+import {ResendEmailProviderContext} from './ResendEmailProviderContext.js';
 import {SESEmailProviderContext} from './SESEmailProviderContext.js';
 
 export function getEmailProvider(config: FimidaraSuppliedConfig) {
@@ -15,9 +16,9 @@ export function getEmailProvider(config: FimidaraSuppliedConfig) {
       config.awsConfigs?.ses
     );
 
-    assert(accessKeyId, 'provide accessKeyId for AWS SES email provider');
-    assert(region, 'provide region for AWS SES email provider');
-    assert(
+    assert.ok(accessKeyId, 'provide accessKeyId for AWS SES email provider');
+    assert.ok(region, 'provide region for AWS SES email provider');
+    assert.ok(
       secretAccessKey,
       'provide secretAccessKey for AWS SES email provider'
     );
@@ -27,6 +28,13 @@ export function getEmailProvider(config: FimidaraSuppliedConfig) {
       region,
       secretAccessKey,
     });
+  } else if (config.emailProvider === kFimidaraConfigEmailProvider.resend) {
+    assert.ok(
+      config.resendApiKey,
+      'provide resendApiKey for Resend email provider'
+    );
+
+    return new ResendEmailProviderContext(config.resendApiKey);
   } else if (config.emailProvider === kFimidaraConfigEmailProvider.noop) {
     return new NoopEmailProviderContext();
   }

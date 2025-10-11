@@ -40,7 +40,7 @@ export function transformUsageThresholInput(
   const usageThresholds: UsageThresholdsByCategory = {};
   cast<UsageRecordCategory[]>(Object.keys(input)).forEach(category => {
     const usageThreshold = input[category];
-    assert(usageThreshold);
+    assert.ok(usageThreshold);
     usageThresholds[category] = {
       ...usageThreshold,
       usage: getUsageForCost(category, usageThreshold.budget),

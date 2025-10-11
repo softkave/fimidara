@@ -171,7 +171,7 @@ describe('readFile', () => {
     assertEndpointResultOk(result);
 
     const resultBuffer = await streamToBuffer(result.stream);
-    assert(resultBuffer);
+    assert.ok(resultBuffer);
     const fileMetadata = await sharp(resultBuffer).metadata();
     expect(fileMetadata.width).toEqual(expectedWidth);
     expect(fileMetadata.height).toEqual(expectedHeight);
@@ -180,8 +180,9 @@ describe('readFile', () => {
   test.each(kTestSessionAgentTypes)(
     '%s can read file from public folder',
     async agentType => {
-      const {workspace, adminUserToken: userToken} =
-        await getTestSessionAgent(agentType);
+      const {workspace, adminUserToken: userToken} = await getTestSessionAgent(
+        agentType
+      );
       const {folder} = await insertFolderForTest(userToken, workspace);
       await insertPermissionItemsForTest(userToken, workspace.resourceId, {
         targetId: folder.resourceId,
@@ -387,9 +388,9 @@ describe('readFile', () => {
         getUsageL2(workspace.resourceId, kUsageRecordCategory.total),
       ]);
 
-    assert(dbBandwidthOutUsageL1);
-    assert(dbBandwidthOutUsageL2);
-    assert(dbTotalUsageL2);
+    assert.ok(dbBandwidthOutUsageL1);
+    assert.ok(dbBandwidthOutUsageL2);
+    assert.ok(dbTotalUsageL2);
 
     expect(dbBandwidthOutUsageL2.usage).toBe(file.size);
     expect(dbBandwidthOutUsageL2.usageCost).toBe(
@@ -436,7 +437,7 @@ describe('readFile', () => {
           category,
         }),
       ]);
-      assert(usageL2);
+      assert.ok(usageL2);
 
       const {file} = await insertFileForTest(userToken, workspace);
 
@@ -473,7 +474,7 @@ describe('readFile', () => {
         {
           expectFn: error => {
             expect(error).toBeInstanceOf(UsageLimitExceededError);
-            assert(error instanceof UsageLimitExceededError);
+            assert.ok(error instanceof UsageLimitExceededError);
             expect(error.blockingCategory).toBe(category);
           },
         }
@@ -487,13 +488,13 @@ describe('readFile', () => {
           ? kIjxSemantic.usageRecord().getOneById(usageDroppedL2.resourceId)
           : undefined,
       ]);
-      assert(dbUsageL2);
+      assert.ok(dbUsageL2);
 
       expect(dbUsageL2.usage).toBeGreaterThanOrEqual(usageL2.usage);
       expect(dbUsageL2.usageCost).toBeGreaterThanOrEqual(usageL2.usageCost);
 
       if (category !== kUsageRecordCategory.total) {
-        assert(dbUsageDroppedL2);
+        assert.ok(dbUsageDroppedL2);
         expect(dbUsageDroppedL2.usage).toBe(usageDroppedL2.usage + file.size);
         expect(dbUsageDroppedL2.usageCost).toBe(
           usageDroppedL2.usageCost + getCostForUsage(category, file.size)

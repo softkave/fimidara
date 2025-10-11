@@ -46,15 +46,15 @@ beforeAll(async () => {
 
 afterAll(async () => {
   await completeTests();
-  assert(testDir);
-  assert(testPartsDir);
+  assert.ok(testDir);
+  assert.ok(testPartsDir);
   await Promise.all([fse.remove(testDir), fse.remove(testPartsDir)]);
 });
 
 describe('LocalFsFilePersistenceProvider', () => {
   test('toNativePath', () => {
-    assert(testDir);
-    assert(testPartsDir);
+    assert.ok(testDir);
+    assert.ok(testPartsDir);
     const workspaceId = getNewIdForResource(kFimidaraResourceType.Workspace);
     const mount = generateFileBackendMountForTest({workspaceId});
     const filepath = generateTestFilepathString({length: 4});
@@ -75,8 +75,8 @@ describe('LocalFsFilePersistenceProvider', () => {
   });
 
   test('toFimidaraPath', () => {
-    assert(testDir);
-    assert(testPartsDir);
+    assert.ok(testDir);
+    assert.ok(testPartsDir);
     const workspaceId = getNewIdForResource(kFimidaraResourceType.Workspace);
     const mount = generateFileBackendMountForTest({workspaceId});
     const filepath = generateTestFilepathString({length: 4});
@@ -93,8 +93,8 @@ describe('LocalFsFilePersistenceProvider', () => {
   });
 
   test('uploadFile', async () => {
-    assert(testDir);
-    assert(testPartsDir);
+    assert.ok(testDir);
+    assert.ok(testPartsDir);
     const filepath = generateTestFilepathString({length: 3});
     const buffer = Buffer.from('Hello world!');
     const data = Readable.from(buffer);
@@ -121,8 +121,8 @@ describe('LocalFsFilePersistenceProvider', () => {
   });
 
   test('startMultipartUpload', async () => {
-    assert(testDir);
-    assert(testPartsDir);
+    assert.ok(testDir);
+    assert.ok(testPartsDir);
     const workspaceId = getNewIdForResource(kFimidaraResourceType.Workspace);
     const [mount] = await generateAndInsertFileBackendMountListForTest(1, {
       workspaceId,
@@ -148,8 +148,8 @@ describe('LocalFsFilePersistenceProvider', () => {
   });
 
   test('uploadFile, multipart', async () => {
-    assert(testDir);
-    assert(testPartsDir);
+    assert.ok(testDir);
+    assert.ok(testPartsDir);
     const workspaceId = getNewIdForResource(kFimidaraResourceType.Workspace);
     const [mount] = await generateAndInsertFileBackendMountListForTest(1, {
       workspaceId,
@@ -188,8 +188,8 @@ describe('LocalFsFilePersistenceProvider', () => {
   });
 
   test('completeMultipartUpload', async () => {
-    assert(testDir);
-    assert(testPartsDir);
+    assert.ok(testDir);
+    assert.ok(testPartsDir);
     const workspaceId = getNewIdForResource(kFimidaraResourceType.Workspace);
     const [mount] = await generateAndInsertFileBackendMountListForTest(1, {
       workspaceId,
@@ -234,8 +234,8 @@ describe('LocalFsFilePersistenceProvider', () => {
         part: 2,
       }),
     ]);
-    assert(result01.partId);
-    assert(result02.partId);
+    assert.ok(result01.partId);
+    assert.ok(result02.partId);
     await backend.completeMultipartUpload({
       mount,
       workspaceId,
@@ -262,13 +262,13 @@ describe('LocalFsFilePersistenceProvider', () => {
       mount,
       workspaceId,
     });
-    assert(savedFile.body);
+    assert.ok(savedFile.body);
     await expectFileBodyEqual(Buffer.concat([data01, data02]), savedFile.body);
   });
 
   test('cleanupMultipartUpload', async () => {
-    assert(testDir);
-    assert(testPartsDir);
+    assert.ok(testDir);
+    assert.ok(testPartsDir);
     const workspaceId = getNewIdForResource(kFimidaraResourceType.Workspace);
     const [mount] = await generateAndInsertFileBackendMountListForTest(1, {
       workspaceId,
@@ -320,8 +320,8 @@ describe('LocalFsFilePersistenceProvider', () => {
   });
 
   test('deleteMultipartUploadPart', async () => {
-    assert(testDir);
-    assert(testPartsDir);
+    assert.ok(testDir);
+    assert.ok(testPartsDir);
     const workspaceId = getNewIdForResource(kFimidaraResourceType.Workspace);
     const [mount] = await generateAndInsertFileBackendMountListForTest(1, {
       workspaceId,
@@ -382,8 +382,8 @@ describe('LocalFsFilePersistenceProvider', () => {
         part: 2,
       }),
     ]);
-    assert(result01.partId);
-    assert(result02.partId);
+    assert.ok(result01.partId);
+    assert.ok(result02.partId);
 
     await backend.deleteMultipartUploadPart({
       mount,
@@ -411,8 +411,8 @@ describe('LocalFsFilePersistenceProvider', () => {
   });
 
   test('readFile', async () => {
-    assert(testDir);
-    assert(testPartsDir);
+    assert.ok(testDir);
+    assert.ok(testPartsDir);
     const buffer = Buffer.from('Hello world!');
     const workspaceId = getNewIdForResource(kFimidaraResourceType.Workspace);
     const [mount] = await generateAndInsertFileBackendMountListForTest(1, {
@@ -436,13 +436,13 @@ describe('LocalFsFilePersistenceProvider', () => {
       fileId: getNewIdForResource(kFimidaraResourceType.File),
     });
 
-    assert(result.body);
+    assert.ok(result.body);
     await expectFileBodyEqual(buffer, result.body);
   });
 
   test('deleteFiles', async () => {
-    assert(testDir);
-    assert(testPartsDir);
+    assert.ok(testDir);
+    assert.ok(testPartsDir);
     const buffer = Buffer.from('Hello, world!');
     const workspaceId = getNewIdForResource(kFimidaraResourceType.Workspace);
     const [mount] = await generateAndInsertFileBackendMountListForTest(1, {
@@ -497,8 +497,8 @@ describe('LocalFsFilePersistenceProvider', () => {
   });
 
   test('deleteFolders', async () => {
-    assert(testDir);
-    assert(testPartsDir);
+    assert.ok(testDir);
+    assert.ok(testPartsDir);
     const workspaceId = getNewIdForResource(kFimidaraResourceType.Workspace);
     const [mount] = await generateAndInsertFileBackendMountListForTest(1, {
       workspaceId,
@@ -550,8 +550,8 @@ describe('LocalFsFilePersistenceProvider', () => {
   });
 
   test('describeFile', async () => {
-    assert(testDir);
-    assert(testPartsDir);
+    assert.ok(testDir);
+    assert.ok(testPartsDir);
     const buffer = Buffer.from('Hello world!');
     const workspaceId = getNewIdForResource(kFimidaraResourceType.Workspace);
     const [mount] = await generateAndInsertFileBackendMountListForTest(1, {
@@ -576,7 +576,7 @@ describe('LocalFsFilePersistenceProvider', () => {
       fileId: getNewIdForResource(kFimidaraResourceType.File),
     });
 
-    assert(result);
+    assert.ok(result);
     expect(result.filepath).toBe(filepath);
     expect(result.mountId).toBe(mount.resourceId);
     expect(result.size).toBe(buffer.byteLength);
@@ -584,8 +584,8 @@ describe('LocalFsFilePersistenceProvider', () => {
   });
 
   test('describeFolder', async () => {
-    assert(testDir);
-    assert(testPartsDir);
+    assert.ok(testDir);
+    assert.ok(testPartsDir);
     const workspaceId = getNewIdForResource(kFimidaraResourceType.Workspace);
     const [mount] = await generateAndInsertFileBackendMountListForTest(1, {
       workspaceId,
@@ -610,14 +610,14 @@ describe('LocalFsFilePersistenceProvider', () => {
       folderpath,
     });
 
-    assert(result);
+    assert.ok(result);
     expect(result.folderpath).toBe(folderpath);
     expect(result.mountId).toBe(mount.resourceId);
   });
 
   test('describeFolderContent', async () => {
-    assert(testDir);
-    assert(testPartsDir);
+    assert.ok(testDir);
+    assert.ok(testPartsDir);
     const buffer = Buffer.from('Hello, world!');
     const workspaceId = getNewIdForResource(kFimidaraResourceType.Workspace);
     const [mount] = await generateAndInsertFileBackendMountListForTest(1, {

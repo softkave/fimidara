@@ -1,4 +1,7 @@
-import {PermissionItem, PublicPermissionItem} from '../../definitions/permissionItem.js';
+import {
+  PermissionItem,
+  PublicPermissionItem,
+} from '../../definitions/permissionItem.js';
 import {
   FimidaraResourceType,
   SessionAgent,
@@ -26,7 +29,8 @@ const permissionItemFields = getFields<PublicPermissionItem>({
 });
 
 export const permissionItemExtractor = makeExtract(permissionItemFields);
-export const permissionItemListExtractor = makeListExtract(permissionItemFields);
+export const permissionItemListExtractor =
+  makeListExtract(permissionItemFields);
 
 export function throwPermissionItemNotFound() {
   throw kReuseableErrors.permissionItem.notFound();
@@ -48,7 +52,9 @@ export function getTargetType(data: {
   return targetType;
 }
 
-export function assertPermissionItem(item?: PermissionItem | null): asserts item {
+export function assertPermissionItem(
+  item?: PermissionItem | null
+): asserts item {
   appAssert(item, kReuseableErrors.permissionItem.notFound());
 }
 

@@ -19,7 +19,6 @@ import {AnyObject} from 'softkave-js-utils';
 import {Readable} from 'stream';
 import {kFolderConstants} from '../../endpoints/folders/constants.js';
 import {FimidaraSuppliedConfig} from '../../resources/config.js';
-import {appAssert} from '../../utils/assertion.js';
 import {streamToBuffer} from '../../utils/fns.js';
 import {kReuseableErrors} from '../../utils/reusableErrors.js';
 import {kIjxUtils} from '../ijx/injectables.js';
@@ -50,6 +49,7 @@ import {
   PersistedFolderDescription,
 } from './types.js';
 import {defaultToFimidaraPath, defaultToNativePath} from './utils.js';
+import {appAssert} from '../../utils/assertion.js';
 
 export interface S3FilePersistenceProviderInitParams {
   accessKeyId: string;

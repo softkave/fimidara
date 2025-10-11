@@ -13,7 +13,6 @@ import {
   kFimidaraPermissionActions,
 } from '../../../definitions/permissionItem.js';
 import {Agent, kFimidaraResourceType} from '../../../definitions/system.js';
-import {appAssert} from '../../../utils/assertion.js';
 import {getTimestamp} from '../../../utils/dateFns.js';
 import {
   convertToArray,
@@ -31,6 +30,7 @@ import {
   getPermissionItemTargets,
 } from '../../permissionItems/getPermissionItemTargets.js';
 import {queueJobs} from '../queueJobs.js';
+import {appAssert} from '../../../utils/assertion.js';
 
 type PartialPermissionItem = Pick<PermissionItem, 'resourceId'>;
 type FetchArgs = {
@@ -132,7 +132,7 @@ const processPermissionItems: PaginatedFetchProcessFn<
 export async function runDeletePermissionItemsJob(
   job: Job<DeletePermissionItemInput>
 ) {
-  assert(job.type === kJobType.deletePermissionItem);
+  assert.ok(job.type === kJobType.deletePermissionItem);
 
   const workspaceId = job.workspaceId;
   const item: DeletePermissionItemInput = job.params;

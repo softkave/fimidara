@@ -9,7 +9,6 @@ import {
   kJobType,
 } from '../../../definitions/job.js';
 import {kFimidaraResourceType} from '../../../definitions/system.js';
-import {appAssert} from '../../../utils/assertion.js';
 import RequestData from '../../RequestData.js';
 import TestMemoryFilePersistenceProviderContext from '../../testHelpers/context/file/TestMemoryFilePersistenceProviderContext.js';
 import {generateAndInsertTestFileParts} from '../../testHelpers/generate/file.js';
@@ -27,6 +26,7 @@ import {StartMultipartUploadEndpointParams} from '../startMultipartUpload/types.
 import {stringifyFilenamepath} from '../utils.js';
 import deleteFile from './handler.js';
 import {DeleteFileEndpointParams} from './types.js';
+import {appAssert} from '../../../utils/assertion.js';
 
 beforeAll(async () => {
   await initTests();

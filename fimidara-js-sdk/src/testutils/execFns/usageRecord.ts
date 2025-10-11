@@ -15,15 +15,15 @@ export async function getWorkspaceSummedUsageTestExecFn(
   };
   const result = await endpoint.usageRecords.getWorkspaceSummedUsage(input);
   result.records.forEach(record => {
-    assert(record.workspaceId === vars.workspaceId);
+    assert.ok(record.workspaceId === vars.workspaceId);
   });
 }
 
 export async function getUsageCostsTestExecFn(endpoint: FimidaraEndpoints) {
   const result = await endpoint.usageRecords.getUsageCosts();
-  assert(isNumber(result.costs['bin']));
-  assert(isNumber(result.costs['bout']));
-  assert(isNumber(result.costs['storage']));
-  assert(isNumber(result.costs['storageEver']));
+  assert.ok(isNumber(result.costs['bin']));
+  assert.ok(isNumber(result.costs['bout']));
+  assert.ok(isNumber(result.costs['storage']));
+  assert.ok(isNumber(result.costs['storageEver']));
   return result;
 }

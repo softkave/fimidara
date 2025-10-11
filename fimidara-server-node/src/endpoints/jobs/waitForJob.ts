@@ -1,9 +1,9 @@
 import {isNumber} from 'lodash-es';
 import {kIjxSemantic} from '../../contexts/ijx/injectables.js';
 import {kJobStatus} from '../../definitions/job.js';
-import {appAssert} from '../../utils/assertion.js';
 import {getTimestamp} from '../../utils/dateFns.js';
 import {TimeoutError} from '../../utils/errors.js';
+import {appAssert} from '../../utils/assertion.js';
 
 /** Waits for job and children to complete. Use extremely sparingly, and
  * primarily for testing. */

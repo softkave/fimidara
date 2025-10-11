@@ -7,8 +7,8 @@ import {
   newSignupsOnWaitlistEmailHTML,
   newSignupsOnWaitlistEmailText,
 } from '../../../../emailTemplates/newSignupsOnWaitlist.js';
-import {appAssert} from '../../../../utils/assertion.js';
 import {getBaseEmailTemplateProps} from './utils.js';
+import {appAssert} from '../../../../utils/assertion.js';
 
 export async function sendNewSignupsOnWaitlistEmail(
   jobId: string,
@@ -20,7 +20,7 @@ export async function sendNewSignupsOnWaitlistEmail(
   );
 
   const {upgradeWaitlistLink} = kIjxUtils.suppliedConfig();
-  assert(upgradeWaitlistLink, 'upgradeWaitlistLink not present');
+  assert.ok(upgradeWaitlistLink, 'upgradeWaitlistLink not present');
 
   const {user, base, source} = await getBaseEmailTemplateProps(params);
   const emailProps: NewSignupsOnWaitlistEmailProps = {

@@ -25,11 +25,14 @@ afterAll(async () => {
 describe('loginWithOAuth', () => {
   test('user login successful with token reuse', async () => {
     const {user, userToken, oauthUserId} = await insertUserWithOAuthForTest();
-
     const reqData =
       RequestData.fromExpressRequest<LoginWithOAuthEndpointParams>(
         mockExpressRequest(),
-        {oauthUserId}
+        {
+          oauthUserId,
+          name: user.firstName + ' ' + user.lastName,
+          email: user.email,
+        }
       );
 
     const result = await login(reqData);
@@ -77,13 +80,18 @@ describe('loginWithOAuth', () => {
       });
 
       test(`userEmailVerified=${userEmailVerified} with emailVerifiedAt=${emailVerifiedAt}`, async () => {
-        assert(rawUser, 'rawUser is not defined');
-        assert(oauthUserId, 'oauthUserId is not defined');
+        assert.ok(rawUser, 'rawUser is not defined');
+        assert.ok(oauthUserId, 'oauthUserId is not defined');
 
         const reqData =
           RequestData.fromExpressRequest<LoginWithOAuthEndpointParams>(
             mockExpressRequest(),
-            {oauthUserId, emailVerifiedAt}
+            {
+              oauthUserId,
+              emailVerifiedAt,
+              name: rawUser.firstName + ' ' + rawUser.lastName,
+              email: rawUser.email,
+            }
           );
         const result = await login(reqData);
         assertEndpointResultOk(result);

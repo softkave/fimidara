@@ -3,7 +3,6 @@ import {kSessionUtils} from '../../../contexts/SessionContext.js';
 import {kIjxUtils} from '../../../contexts/ijx/injectables.js';
 import {FileWithRuntimeData} from '../../../definitions/file.js';
 import {SessionAgent} from '../../../definitions/system.js';
-import {appAssert} from '../../../utils/assertion.js';
 import {ByteCounterPassThroughStream} from '../../../utils/streams.js';
 import {validate} from '../../../utils/validate.js';
 import RequestData from '../../RequestData.js';
@@ -20,6 +19,7 @@ import {UploadFileEndpoint, UploadFileEndpointParams} from './types.js';
 import {setFileWritable} from './update.js';
 import {handleIntermediateStorageUsageRecords} from './usage.js';
 import {uploadFileJoiSchema} from './validation.js';
+import {appAssert} from '../../../utils/assertion.js';
 
 async function handleUploadFile(params: {
   file: FileWithRuntimeData;

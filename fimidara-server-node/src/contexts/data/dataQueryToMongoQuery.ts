@@ -8,8 +8,8 @@ import {
   set,
 } from 'lodash-es';
 import {AnyObject} from 'softkave-js-utils';
-import {appAssert} from '../../utils/assertion.js';
 import {DataQuery} from './types.js';
+import {appAssert} from '../../utils/assertion.js';
 
 export function dataQueryToMongoQuery<TQuery extends DataQuery<AnyObject>>(
   query: TQuery
