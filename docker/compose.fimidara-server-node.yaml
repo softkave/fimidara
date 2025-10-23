@@ -1,0 +1,11 @@
+services:
+  fimidara-server-node:
+    # TODO: update to the correct registry and image name as appropriate
+    image: infra-registry.fimidara.com/fimidara-server-node-amd64:latest
+    environment:
+      NODE_ENV: production
+    network_mode: host
+    volumes:
+      - ./certs:/usr/src/app/fimidara-server-node/certs
+      - ./config:/usr/src/app/fimidara-server-node/config
+      - .env:/usr/src/app/fimidara-server-node/.env

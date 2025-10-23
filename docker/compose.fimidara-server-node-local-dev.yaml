@@ -1,0 +1,8 @@
+services:
+  fimidara-server-node:
+    image: docker.io/library/fimidara-server-node-local-dev:latest
+    environment:
+      NODE_ENV: development
+    network_mode: host
+    volumes:
+      - .:/usr/src/app/fimidara-server-node # Mount source code for live reload
