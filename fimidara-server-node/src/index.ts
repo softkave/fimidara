@@ -1,6 +1,11 @@
+import cors from 'cors';
+import express from 'express';
 import {expressjwt} from 'express-jwt';
 import fs from 'fs';
 import helmet from 'helmet';
+import http from 'http';
+import https from 'https';
+import process from 'process';
 import {format} from 'util';
 import {globalDispose, globalSetup} from './contexts/globalUtils.js';
 import {kIjxUtils} from './contexts/ijx/injectables.js';
@@ -9,11 +14,6 @@ import {setupFimidaraHttpEndpoints} from './endpoints/endpoints.js';
 import {initFimidara} from './endpoints/runtime/initFimidara.js';
 import {handleErrors, handleNotFound} from './middlewares/handleErrors.js';
 import redirectHttpToHttpsExpressMiddleware from './middlewares/redirectHttpToHttps.js';
-import cors = require('cors');
-import express = require('express');
-import http = require('http');
-import https = require('https');
-import process = require('process');
 import {appAssert} from './utils/assertion.js';
 
 interface RuntimeArtifacts {
